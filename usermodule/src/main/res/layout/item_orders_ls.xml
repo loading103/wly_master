@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.daqsoft.provider.bean.OrderListDataBean" />
+
+        <variable
+            name="status"
+            type="String" />
+
+        <variable
+            name="price"
+            type="String" />
+
+        <variable
+            name="total"
+            type="String" />
+
+        <variable
+            name="time"
+            type="String" />
+
+        <variable
+            name="statusColor"
+            type="Integer" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@color/white"
+        android:paddingTop="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_16">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:background="@drawable/user_back_red_round_5"
+            android:padding="@dimen/dp_4"
+            android:text="@string/order_book"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.daqsoft.provider.view.ItemView
+            android:id="@+id/booking_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_4"
+            app:contentGravity="left"
+            app:labelPadding="@dimen/dp_4"
+            app:labelSize="@dimen/sp_13"
+            app:layout_constraintBaseline_toBaselineOf="@id/label"
+            app:layout_constraintLeft_toRightOf="@id/label"
+            app:layout_constraintRight_toLeftOf="@id/tvStatus"
+            app:leftLabel="@string/order_booking_number"
+            app:rightContent='@{item.orderCode ?? @string/user_non_fix}'
+            app:rightContentSize="@dimen/sp_13"
+            app:showArrow="false"
+            app:showDivider="false" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:padding="@dimen/dp_4"
+            android:text="@{status }"
+            android:textColor="@{statusColor}"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintBaseline_toBaselineOf="@id/label"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@color/dividing_line"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label" />
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:scaleType="centerCrop"
+            app:corner_radius="@dimen/dp_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@id/label"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <ImageView
+            android:id="@+id/iv_cxyx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/mine_credit_xyqy_enjoy"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@+id/image"
+            app:layout_constraintTop_toTopOf="@+id/image" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_16"
+            android:maxEms="8"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <TextView
+            android:id="@+id/tv_order_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toBottomOf="@+id/name"
+            app:layout_constraintLeft_toRightOf="@+id/name"
+            app:layout_constraintTop_toTopOf="@+id/name" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:text="@{price}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <TextView
+            android:id="@+id/tv_venue_commtator_tip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_20"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:lines="1"
+            android:textColor="@color/color_ff9e05"
+            android:textSize="@dimen/sp_12"
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            app:layout_constraintRight_toLeftOf="@+id/tv_activity_room_num"
+            app:layout_constraintTop_toBottomOf="@id/name" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_20"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:lines="1"
+            android:text="@{time}"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            app:layout_constraintRight_toLeftOf="@+id/tv_activity_room_num"
+            app:layout_constraintTop_toBottomOf="@id/tv_venue_commtator_tip" />
+
+        <TextView
+            android:id="@+id/their_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_20"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:lines="1"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            app:layout_constraintRight_toLeftOf="@+id/tv_activity_room_num"
+            app:layout_constraintTop_toBottomOf="@id/tv_time" />
+
+        <TextView
+            android:id="@+id/tv_activity_room_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_20"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="@dimen/dp_220"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_12"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/tv_time"
+            app:layout_constraintTop_toBottomOf="@id/tv_time" />
+
+        <TextView
+            android:id="@+id/tv_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_20"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            app:layout_constraintStart_toStartOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/address" />
+
+        <com.daqsoft.provider.view.ItemView
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:gravity="end"
+            app:contentGravity="left"
+            app:labelPadding="@dimen/dp_0"
+            app:labelSize="@dimen/sp_12"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/their_view"
+            app:leftLabel="@string/order_total_pay"
+            app:leftLabelColor="@color/txt_gray"
+            app:rightContent='@{total}'
+            app:rightContentColor="@color/c_36cd64"
+            app:rightContentSize="@dimen/sp_14"
+            app:showArrow="false"
+            app:showDivider="false" />
+
+        <TextView
+            android:id="@+id/tv_go_to_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_6"
+            android:background="@drawable/user_back_wite_strok_d4_round_5"
+            android:text="@string/order_comment_mine"
+            android:textColor="@color/color_ff9e05"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            app:layout_constraintRight_toLeftOf="@+id/tv_cancel"
+            app:layout_constraintTop_toBottomOf="@id/tvTotal" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginEnd="@dimen/dp_6"
+            android:background="@drawable/user_back_wite_strok_d4_round_5"
+            android:text="@string/order_cancel_order"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            app:layout_constraintRight_toLeftOf="@+id/mReviewsTv"
+            app:layout_constraintTop_toBottomOf="@id/tvTotal"
+
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/mReviewsTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/user_back_wite_strok_d4_round_5"
+            android:text="@string/order_comment_reservation"
+            android:textColor="@color/color_ff9e05"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotal" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

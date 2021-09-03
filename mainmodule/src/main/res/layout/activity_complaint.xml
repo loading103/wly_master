@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.daqsoft.travelCultureModule.complaint.ComplaintViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            tools:context="com.daqsoft.travelCultureModule.complaint.ComplaintActivity">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/shape_main_line_v_3"
+                android:drawablePadding="@dimen/dp_16"
+                android:paddingTop="@dimen/dp_20"
+                android:text="基本信息"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="wrap_content"
+                    android:text="姓名"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_15" />
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_24"
+                    android:background="@null"
+                    android:hint="请输入姓名"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/f5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="wrap_content"
+                    android:text="手机号码"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_15" />
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_24"
+                    android:background="@null"
+                    android:hint="请输入手机号码"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/f5" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="wrap_content"
+                    android:text="性别"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_15" />
+
+                <EditText
+                    android:id="@+id/tv_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_24"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:drawableRight="@mipmap/story_add_arrow"
+                    android:focusableInTouchMode="false"
+                    android:hint="请选择性别"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_8"
+                android:background="@color/f5" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/shape_main_line_v_3"
+                android:drawablePadding="@dimen/dp_16"
+                android:paddingTop="@dimen/dp_20"
+                android:text="投诉事件"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="wrap_content"
+                    android:text="投诉类型"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_15" />
+
+                <EditText
+                    android:id="@+id/tv_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_24"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:drawableRight="@mipmap/story_add_arrow"
+                    android:focusableInTouchMode="false"
+                    android:hint="请选择类型"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/f5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="wrap_content"
+                    android:text="事发地     "
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_15" />
+
+                <EditText
+                    android:id="@+id/tv_region"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_24"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:drawableRight="@mipmap/story_add_arrow"
+                    android:focusableInTouchMode="false"
+                    android:hint="请选择发生地点"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/f5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="wrap_content"
+                    android:text="被投诉方"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_15" />
+
+                <EditText
+                    android:id="@+id/tv_complaint_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_24"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:drawableRight="@mipmap/story_add_arrow"
+                    android:focusableInTouchMode="false"
+                    android:hint="请选择被投诉方"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/f5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_10">
+
+                <TextView
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="wrap_content"
+                    android:text="详细地址"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_15" />
+
+                <EditText
+                    android:id="@+id/et_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_24"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:background="@null"
+                    android:hint="请输入事件发生的详细地址"
+                    android:maxLines="4"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/f5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="wrap_content"
+                    android:text="发生时间"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_15" />
+
+                <EditText
+                    android:id="@+id/tv_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_24"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:drawableRight="@mipmap/story_add_arrow"
+                    android:focusableInTouchMode="false"
+                    android:hint="请选择事件发生的时间"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/f5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="wrap_content"
+                    android:text="投诉事由"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_15" />
+
+                <EditText
+                    android:id="@+id/et_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_24"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:background="@null"
+                    android:hint="请简单描述事件缘由"
+                    android:maxLines="4"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/f5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_12"
+                android:text="上传凭证"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_15" />
+
+            <me.nereo.multi_image_selector.view.UploadRecyclerView
+                android:id="@+id/recycler_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                app:layout_constraintTop_toBottomOf="@id/tv_add_tag" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_4"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:text="图片+视频最多9个"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_10" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/f5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="wrap_content"
+                    android:text="允许公开"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_15" />
+
+                <EditText
+                    android:id="@+id/tv_public"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_24"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:drawableRight="@mipmap/story_add_arrow"
+                    android:focusableInTouchMode="false"
+                    android:hint="允许"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/main_background">
+
+                <TextView
+                    android:id="@+id/tv_save_complaint"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_44"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_16"
+                    android:background="@drawable/main_shape_36cd64_8_radius"
+                    android:gravity="center"
+                    android:text="提交投诉"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_15" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

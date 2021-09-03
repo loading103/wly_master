@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="content"
+            type="String" />
+
+        <variable
+            name="location"
+            type="String" />
+
+        <variable
+            name="slogn"
+            type="String" />
+
+        <variable
+            name="serviceTime"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_16">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/iv_image"
+            android:layout_width="@dimen/dp_98"
+            android:layout_height="@dimen/dp_98"
+            android:scaleType="center"
+            app:border_color="@color/white"
+            app:corner_bottom_left_radius="@dimen/dp_6"
+            app:corner_bottom_right_radius="@dimen/dp_6"
+            app:corner_top_left_radius="@dimen/dp_6"
+            app:corner_top_right_radius="@dimen/dp_6"
+            app:is_circle="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{name}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_17"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tool:text="adsfasdfasdfasdf" />
+
+        <TextView
+            android:id="@+id/tv_slogn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:text="@{slogn}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            tool:text="9.6分" />
+
+        <TextView
+            android:id="@+id/rv_team_member"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:text="@{content}"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toTopOf="@id/rv_location"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="@id/tv_name"
+            app:layout_constraintRight_toLeftOf="@id/rv_service_time"
+            tool:text="9.6分" />
+
+        <TextView
+            android:id="@+id/rv_service_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:text="@{serviceTime}"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_12"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/rv_location"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/rv_team_member"
+            app:layout_constraintRight_toRightOf="parent"
+            tool:text="9.6分" />
+
+        <TextView
+            android:id="@+id/rv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/volunteer_activity_details_position"
+            android:drawablePadding="@dimen/dp_6"
+            android:text="@{location}"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toBottomOf="@id/iv_image"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            tool:text="9.6分" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

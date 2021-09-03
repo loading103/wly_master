@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="name"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_provider_details_around"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_40"
+        app:layout_constraintTop_toBottomOf="@+id/cl_venues_details_comment">
+
+        <TextView
+            android:id="@+id/tv_scenic_spot_details_around"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:drawableLeft="@mipmap/whcgxq_bt_bq"
+            android:drawablePadding="@dimen/dp_12"
+            android:text="实景直播"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_19"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/v_to_tour_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_20"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_scenic_spot_details_around"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_scenic_spot_details_around">
+
+            <TextView
+                android:id="@+id/tv_to_tour_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_6"
+                android:text="查看更多"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_12"
+               />
+
+            <ImageView
+                android:layout_toRightOf="@+id/tv_to_tour_guide"
+                android:id="@+id/img_to_tour_guide_arrow"
+                android:layout_width="@dimen/dp_4_5"
+                android:layout_height="@dimen/dp_9"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/more_right_arrow" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/v_tour_guide_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintTop_toBottomOf="@+id/tv_scenic_spot_details_around">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_activities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label_ticket" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="bean"
+            type="com.daqsoft.travelCultureModule.country.bean.CountryHapDetailBean" />
+
+        <variable
+            name="vm"
+            type="com.daqsoft.travelCultureModule.country.model.CountryHapDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_20">
+
+        <TextView
+            android:id="@+id/tv_country_hap_detail_name"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            android:includeFontPadding="false"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:text="@{bean.name}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_23"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.daqsoft.provider.scrollview.DqRecylerView
+            android:id="@+id/recycler_country_hap_details_label"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:minHeight="25dp"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_country_hap_detail_name" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="@dimen/dp_6"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:textSize="@dimen/sp_11"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_country_hap_details_label" />
+
+        <TextView
+            android:id="@+id/tv_country_box_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:includeFontPadding="false"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:textSize="@dimen/sp_11"
+            android:visibility="@{bean.boxNum.equals(``)?View.GONE:View.VISIBLE}"
+            app:layout_constraintTop_toBottomOf="@+id/tv_status" />
+
+        <TextView
+            android:id="@+id/tv_country_hap_details_address_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_34"
+            android:includeFontPadding="false"
+            android:text="联系地址"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            android:visibility="@{bean.regionName.equals(``)?View.GONE:View.VISIBLE}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_country_box_num" />
+
+        <TextView
+            android:id="@+id/tv_country_hap_details_address_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:drawableEnd="@mipmap/whcgxq_lcdz_dt"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="@{bean.regionName}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:visibility="@{bean.regionName.equals(``)?View.GONE:View.VISIBLE}"
+            app:layout_constraintLeft_toRightOf="@+id/tv_country_hap_details_address_title"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_country_hap_details_address_title" />
+
+        <TextView
+            android:id="@+id/tv_country_hap_details_phone_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_24"
+            android:includeFontPadding="false"
+            android:text="@string/details_phone"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            android:visibility="@{bean.phone.equals(``)?View.GONE:View.VISIBLE}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_country_hap_details_address_value" />
+
+        <TextView
+            android:id="@+id/tv_country_hap_details_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:drawableEnd="@mipmap/whcgxq_lxdh"
+            android:includeFontPadding="false"
+            android:text="@{bean.phone}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:visibility="@{bean.phone.equals(``)?View.GONE:View.VISIBLE}"
+            app:layout_constraintLeft_toRightOf="@+id/tv_country_hap_details_phone_title"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_country_hap_details_phone_title" />
+
+        <LinearLayout
+            android:id="@+id/ll_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/dp_20"
+            android:paddingEnd="@dimen/dp_20"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_country_hap_details_phone_title">
+
+            <LinearLayout
+                android:id="@+id/ll_venues_details_bathroom"
+                style="@style/ll_provider_details_server"
+                onClickCommand="@{vm.goToilet}"
+                android:layout_marginRight="@dimen/dp_4">
+
+                <TextView
+                    style="@style/tv_provider_details_server"
+                    android:text="@string/details_server_bathroom" />
+
+                <ImageView
+                    style="@style/iv_provider_details_server"
+                    android:src="@mipmap/whcgxq_bjfw_zcs" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_venues_details_parking"
+                style="@style/ll_provider_details_server"
+                onClickCommand="@{vm.goToPark}"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:layout_marginRight="@dimen/dp_4">
+
+                <TextView
+                    style="@style/tv_provider_details_server"
+                    android:text="@string/details_server_parking" />
+
+                <ImageView
+                    style="@style/iv_provider_details_server"
+                    android:src="@mipmap/whcgxq_bjfw_tcc" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_venues_details_bus"
+                style="@style/ll_provider_details_server"
+                onClickCommand="@{vm.goToQueryBus}"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:layout_marginRight="@dimen/dp_4">
+
+                <TextView
+                    style="@style/tv_provider_details_server"
+                    android:text="@string/details_server_bus" />
+
+                <ImageView
+                    style="@style/iv_provider_details_server"
+                    android:layout_gravity="bottom|right"
+                    android:src="@mipmap/whcgxq_bjfw_gjcx" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_venues_details_complaint"
+                style="@style/ll_provider_details_server"
+                onClickCommand="@{vm.goToComplaint}"
+                android:layout_marginLeft="@dimen/dp_4">
+
+                <TextView
+                    style="@style/tv_provider_details_server"
+                    android:text="@string/details_server_complaint" />
+
+                <ImageView
+                    style="@style/iv_provider_details_server"
+                    android:src="@mipmap/whcgxq_bjfw_lyts" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--农家乐简介-->
+        <TextView
+            android:id="@+id/tv_country_introduce_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_40"
+            android:drawableStart="@mipmap/whcgxq_bt_bq"
+            android:drawablePadding="@dimen/dp_12"
+            android:includeFontPadding="false"
+            android:text="@string/country_introduce"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_19"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_layout" />
+
+        <TextView
+            android:id="@+id/tv_country_introduce"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="@dimen/dp_4"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_country_introduce_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_country_introduce_title" />
+        <!--农家乐资讯-->
+        <com.daqsoft.provider.businessview.view.ProviderInformationView
+            android:id="@+id/pcv_provider_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_40"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@+id/tv_country_hap_details_phone"
+            app:layout_constraintTop_toBottomOf="@+id/pcv_country_hap_detail_food_product" />
+        <!--美食商品-->
+        <com.daqsoft.travelCultureModule.country.view.MerchantsGoodsView
+            android:id="@+id/pcv_country_hap_detail_food_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_40"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_country_introduce" />
+        <!--评论-->
+        <com.daqsoft.provider.businessview.view.ProviderCommentsView
+            android:id="@+id/pcv_country_hap_detail_comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_40"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pcv_provider_info" />
+        <!--推荐-->
+        <com.daqsoft.provider.businessview.view.ProviderRecommendView
+            android:id="@+id/prv_country_hap_detail_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:visibility="gone"
+            app:defaultType="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pcv_country_hap_detail_comments" />
+        <!--故事-->
+        <com.daqsoft.provider.businessview.view.ProviderStoriesView
+            android:id="@+id/psv_country_hap_stories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/prv_country_hap_detail_recommend" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

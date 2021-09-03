@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/cl_provider_details_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_30"
+        >
+
+        <TextView
+            android:id="@+id/tv_provider_details_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@mipmap/whcgxq_bt_bq"
+            android:drawablePadding="@dimen/dp_12"
+            android:includeFontPadding="false"
+            android:text="农家乐资讯"
+            android:paddingTop="@dimen/dp_10"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_19"
+            android:textStyle="bold"
+            android:paddingStart="@dimen/dp_20"
+            />
+
+        <TextView
+            android:paddingEnd="@dimen/dp_12"
+            android:paddingStart="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_8"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/tv_provider_see_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@mipmap/provider_whcgxq_cghd_more"
+            android:drawablePadding="@dimen/dp_8"
+            android:visibility="gone"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_12"
+            tools:text="查看全部" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_provider_details_title"
+            android:paddingEnd="@dimen/dp_6"
+            android:paddingStart="@dimen/dp_14"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/dp_20"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:paddingTop="@dimen/dp_0_5"
+                android:id="@+id/recycler_provider_details_story"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

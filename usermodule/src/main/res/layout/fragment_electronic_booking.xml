@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="image"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+        <variable
+            name="productName"
+            type="String" />
+        <variable
+            name="time"
+            type="String" />
+        <variable
+            name="address"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background"
+        android:orientation="vertical">
+
+        <com.daqsoft.provider.view.ItemView
+            android:id="@+id/iv_booking_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftLabel="@string/order_consume_time"
+            app:rightContent='@{time ?? @string/user_non_fix}'
+            app:showArrow="true"
+            android:padding="@dimen/dp_12"/>
+        <com.daqsoft.provider.view.ItemInputView
+            android:id="@+id/iv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftLabel="@string/order_consume_name"
+            app:rightContentPosition="right"
+            app:isNeed="false"
+            app:etHint="@string/order_consume_hint_name"/>
+        <com.daqsoft.provider.view.ItemInputView
+            android:id="@+id/iv_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftLabel="@string/order_consume_take_phone"
+            app:rightContentPosition="right"
+            app:isNeed="false"
+            app:etHint="@string/user_str_your_phone"/>
+        <com.daqsoft.provider.view.ItemView
+            android:id="@+id/iv_ic_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftLabel="@string/user_str_id_type"
+            app:rightContent='@{time ?? @string/user_non_fix}'
+            app:showArrow="true"
+            android:padding="@dimen/dp_12"/>
+        <com.daqsoft.provider.view.ItemInputView
+            android:id="@+id/iv_ic_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftLabel="@string/user_str_id_card"
+            app:rightContentPosition="right"
+            app:isNeed="false"
+            app:etHint="@string/user_str_your_cert_number"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_16"
+            android:paddingBottom="@dimen/dp_16"
+            android:paddingLeft="@dimen/dp_16"
+            android:gravity="center_vertical"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/order_consume_number_apply"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_13" />
+
+            <com.daqsoft.usermodule.view.NumberOperateView
+                android:id="@+id/validNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/iv_check"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:leftLabel="@string/order_consume_check"
+                app:rightContent='@{time ?? @string/user_non_fix}'
+                app:showArrow="false"
+                app:showDivider="false"
+                android:layout_gravity="center"
+                android:padding="@dimen/dp_12"/>
+            <TextView
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/user_selector_main_gray"
+                android:paddingTop="@dimen/dp_12"
+                android:paddingBottom="@dimen/dp_12"
+                android:paddingLeft="@dimen/dp_24"
+                android:paddingRight="@dimen/dp_24"
+                android:text="@string/order_consume_confirm_booking"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                android:enabled="false"
+               />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="datas"
+            type="com.daqsoft.provider.bean.ThemeAreaListBean" />
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils"/>
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:scaleType="centerCrop"
+            android:id="@+id/iv_bg"
+            android:layout_width="match_parent"
+            android:background="@color/c_36cd64"
+            android:layout_height="@dimen/dp_170" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/dp_16"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            tools:text="哈哈哈哈哈"/>
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_666"
+            android:layout_marginTop="@dimen/dp_12"
+            tools:text="哈哈哈哈哈"
+            android:textSize="@dimen/sp_12" />
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_666"
+            android:layout_marginTop="@dimen/dp_8"
+            tools:text="哈哈哈哈哈"
+            android:textSize="@dimen/sp_12" />
+    </LinearLayout>
+</layout>

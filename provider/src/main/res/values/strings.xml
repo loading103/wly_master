@@ -1,0 +1,179 @@
+<resources>
+    <string name="app_name">provider</string>
+
+    <string name="user_str_count_down">%1$d秒后重发</string>
+    <string name="user_label_code">验证码</string>
+    <string name="user_label_send_code">发送验证码</string>
+    <string name="faild_reason">不通过原因</string>
+    <string name="word_titles">文字</string>
+    <string name="picture_titles">图片</string>
+    <string name="video_titles">视频</string>
+    <string name="audio_titles">音频</string>
+
+    <item name="tag_key_data" type="id" />
+    <item name="tag_key_position" type="id" />
+
+    <string name="activity_name">活动：</string>
+    <string name="venues_list_name">文化场馆</string>
+    <string name="search_hint_info">搜索场馆名称</string>
+    <string name="search_str_tip">搜索</string>
+    <string name="open_week">开放时间：</string>
+    <string name="details_open_week">开放时间</string>
+    <string name="details_address">联系地址</string>
+    <string name="details_phone">联系电话</string>
+    <string name="details_entry">立即进入</string>
+    <string name="details_listener">听解说</string>
+    <string name="details_activity">场馆活动</string>
+    <string name="details_room">活动室</string>
+    <string name="details_comment">用户评论</string>
+    <string name="details_around">周边推荐</string>
+    <string name="details_story">读故事</string>
+    <string name="details_server">便捷服务</string>
+    <string name="details_server_bathroom">找厕所</string>
+    <string name="details_server_parking">停车场</string>
+    <string name="details_server_bus">公交查询</string>
+    <string name="details_server_bus1">公交车</string>
+    <string name="details_server_complaint">旅游投诉</string>
+    <string name="details_venues_content">场馆介绍</string>
+    <string name="details_traffic_info">交通信息</string>
+    <string name="know_titles">知道了</string>
+    <string name="edit_titles">去编辑</string>
+    <string name="website">官网地址</string>
+    <string name="wexin_number">微信公众号</string>
+    <string name="read_online">在线阅读</string>
+    <string name="qr_code_info">查看二维码</string>
+    <string name="home_weather_str">%1$s&#8451;</string>
+    <string name="look_scenic_spot">逛景点</string>
+    <string name="scenic_spot_desc">景点·</string>
+    <string name="scenic_router_desc">线路·</string>
+    <string name="scenic_parking_desc">停车场·</string>
+    <string name="scenic_toilent_desc">厕所·</string>
+    <string name="provider_comment_num">共%1$s条评论</string>
+    <string name="hotel_details_address">酒店地址</string>
+    <string name="venue_story">故事</string>
+    <string name="main_reprint">转载</string>
+    <string name="venue_story_image_number">%1$s图</string>
+    <string name="venue_story_type_strategy">游记攻略</string>
+
+    <string name="provider_activity_rest_number">还剩%1$s个名额</string>
+    <string name="provider_activity_rest_numbers">剩余名额%1$s个</string>
+    <string name="provider_activity_total_number">招募人数：%1$s / %2$s</string>
+    <string name="provider_order_free">免费</string>
+    <string name="provider_order_on_line">线上报名</string>
+    <string name="provider_order_off_line">线下报名</string>
+    <string name="provider_order_activity_room_time_stamp_">%1$s-%2$s</string>
+    <string name="provider_order_integral">积分</string>
+
+    <string name="provider_to_post_comment">我也说两句</string>
+    <string name="provider_venus_comment">场馆点评</string>
+    <string name="provider_scenic_comment">景区点评</string>
+    <string name="provider_food_comment">美食点评</string>
+    <string name="provider_hotel_comment">酒店点评</string>
+
+    <string name="provider_comment_image_tip">图片+视频最多9个</string>
+    <string name="provider_comment_submit">发表点评</string>
+    <string name="provider_comment_order_submit">发表评价</string>
+    <string name="provider_comment_hint">请写下评论的具体内容</string>
+
+    <string name="provider_all_comment">全部点评</string>
+    <string name="provider_good_comment">好评</string>
+    <string name="provider_commonly_comment">一般</string>
+    <string name="provider_bad_comment">差评</string>
+    <string name="hint_order_comment">写下你评价的具体内容...</string>
+
+    <string name="provider_success">提交成功</string>
+    <string name="provider_comment_result_tip">若您依然有不满意之处，还可以提交投诉</string>
+    <string name="provider_comment_result_btn_left">我要投诉</string>
+    <string name="provider_comment_result_btn_right">返回点评</string>
+    <string name="order_select_tip">请选择购买平台</string>
+    <string name="order_cancel">订单取消</string>
+    <string name="user_str_conform">确定</string>
+    <string name="common_cance">取消</string>
+    <string name="yuan">¥</string>
+
+    <string name="home_activity_total_number">招募人数：%1$s / %2$s</string>
+
+    <string name="user_more">查看更多</string>
+    <string name="user_recover">收起</string>
+    <string name="provider_venue_uninput_info">请在预约信息中填写您真实的手机号、身份证号，以便查询健康码信息，顺利预约。</string>
+    <string name="provider_venue_unregster_health_code">很抱歉，未查询到您的健康码信息，不支持预约</string>
+    <!--智游天府码信息-->
+    <string name="venue_zytf_code_title_one">一、智游天府码是什么</string>
+    <string name="venue_zytf_code_title_two">二、智游天府码有什么用</string>
+    <string name="venue_zytf_code_title_three">三、智游天府码怎么用</string>
+    <string name="venue_zytf_code_title_four">四、智游天府码怎么领</string>
+    <string name="venue_zytf_code_info_one">点击“签到”按钮，选择“我要签到”，即可成功签到计时，活动结束后点击“点击签退”即可完成签到签
+退计时。</string>
+    <string name="venue_zytf_code_info_two">仅限于申请志愿服务并通过审核的志愿者进行签到，请您与志愿团队管理人员确认您是否在名单中。</string>
+    <string name="venue_zytf_code_info_three">您现在签到的时间与该志愿服务对应的时间不符，请您和志愿团队管理人员确认志愿服务时间是否正
+确。</string>
+    <string name="venue_zytf_code_info_four">可由志愿服务团队管理员核实后补录本次服务的公益时长数。
+</string>
+    <string name="venue_res_zytf_first">预约成功后，我们将根据您填写的预约信息为你</string>
+    <string name="venue_res_zytf_two">自动生成%1$s</string>
+    <string name="venue_res_zytf_three">，可显示健康信息以及预约核销，一次申领，全省（州）通用。您的实名信息，将受到法律隐私保护。</string>
+    <string name="venue_unregister_health_code_first">很抱歉，未查询到您的健康码信息。</string>
+    <string name="venue_unregister_health_code_second">如您未注册健康码，</string>
+    <string name="venue_unregister_health_code_three">“微信小程序-国家政府服务”</string>
+    <string name="venue_unregister_health_code_four">进行注册！如您已注册，请检查填写的姓名、手机号、身份证号是否正确。</string>
+    <string name="health_normal">低风险</string>
+    <string name="health_middle">中风险</string>
+    <string name="health_bad">高风险</string>
+    <string name="health_can_reseravtion">支持预约</string>
+    <string name="health_canot_reseravtion">很抱歉，不支持预约</string>
+    <string name="travel_code_name">%1$s状况</string>
+    <string name="commentator_tip_date">%1$s可开始预约讲解服务</string>
+    <string name="provider_take_photo">拍照</string>
+    <string name="provider_local_select_photo">照片图库</string>
+    <string name="provider_cance">取消</string>
+
+    <string name="provider_hot_activity">热门活动</string>
+    <string name="provider_chinese_yuan">元</string>
+
+    <string name="provider_integral">积分</string>
+    <string name="home_activity_rest_number">还剩%1$s个名额</string>
+    <string name="home_activity_rest_numbers">剩余名额%1$s个</string>
+    <string name="order_free">免费</string>
+    <string name="order_free_reserve">免费预订</string>
+    <string name="order_on_line">线上报名</string>
+    <string name="order_off_line">线下报名</string>
+    <string name="order_activity_room_time_stamp_">%1$s-%2$s</string>
+    <string name="order_integral">积分</string>
+    <string name="home_search_hint">搜索目的地、活动、景区、酒店等</string>
+
+    <string name="change_the_batch">换一批</string>
+
+
+    <string name="hot">HOT</string>
+    <string name="recommend">推荐</string>
+    <string name="good_story">个好故事</string>
+    <string name="home_line_name">精品线路</string>
+    <string name="home_topic_hot">热门</string>
+    <string name="home_topic_content">内容</string>
+    <string name="home_topic_participate">参与</string>
+    <string name="home_topic_browse">浏览</string>
+    <string name="home_topic">焦点话题</string>
+    <string name="home_topic_content_number">%1$s条内容</string>
+    <string name="home_story_type_strategy">游记攻略</string>
+    <string name="home_story_image_number">%1$s图</string>
+
+    <string name="ticket_activity">活动</string>
+    <string name="rmb">¥</string>
+    <string name="qi">起</string>
+    <string name="food_product_confirm">预订</string>
+    <string name="food_product_count_time">距开始还剩</string>
+    <string name="ticket_appointment_info">预订说明</string>
+    <string name="ticket_appointment_seting">退款设置</string>
+    <string name="ticket_appointment_cance_oder">订单取消</string>
+    <string name="ticket_appointment_ruyuan_pz">入园凭证</string>
+    <string name="ticket_appointment_ruyuan_action">入园方式</string>
+    <string name="ticket_appointment_runyuan_num">入园人数</string>
+    <string name="ticket_appointment_ruyuan_cishu">入园次数</string>
+    <string name="ticket_appointment_ruyuan_xz">入园限制</string>
+    <string name="ticket_appointment_cash">费用包含</string>
+
+    <string name="tip_out_platform">您即将离开游新疆平台，跳转第三方平台</string>
+    <string name="provider_all_time_title">时光故事</string>
+
+    <string name="provider_publish_time_tip">发布时间：%1$s</string>
+</resources>

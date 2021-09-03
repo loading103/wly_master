@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.daqsoft.provider.bean.CommponentDetail" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:orientation="vertical">
+
+        <com.daqsoft.provider.view.cardview.CardView
+            android:id="@+id/cv_service_custom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_70"
+            app:cardCornerRadius="@dimen/dp_5"
+            app:cardElevation="@dimen/dp_0">
+
+            <RelativeLayout
+                android:id="@+id/rv_service_custom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_70"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_14">
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    imageUrl="@{item.icon}"
+                    android:layout_width="@dimen/dp_36"
+                    app:is_circle="true"
+                    android:layout_height="@dimen/dp_36"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:text="@{item.mainTitle}"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="bold"
+                        tools:text="sssssssss" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_name"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:text="@{item.subTitle}"
+                        android:textColor="@color/color_999"
+                        android:textSize="@dimen/sp_11"
+                        tools:text="bbb" />
+                </LinearLayout>
+            </RelativeLayout>
+        </com.daqsoft.provider.view.cardview.CardView>
+    </LinearLayout>
+</layout>

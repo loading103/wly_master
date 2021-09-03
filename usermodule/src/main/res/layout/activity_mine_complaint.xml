@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background">
+
+        <LinearLayout
+            android:id="@+id/ll_complaint"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_complaint_all"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableBottom="@drawable/selected_bootom_line_3"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_16"
+                android:text="全部"
+                android:textColor="@drawable/selected_txt_black_gray"
+                android:textSize="@dimen/sp_15" />
+
+            <TextView
+                android:id="@+id/tv_complaint_deal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableBottom="@drawable/selected_bootom_line_3"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_16"
+                android:text="已处理"
+                android:textColor="@drawable/selected_txt_black_gray"
+                android:textSize="@dimen/sp_15" />
+
+            <TextView
+                android:id="@+id/tv_complaint_accept"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableBottom="@drawable/selected_bootom_line_3"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_16"
+                android:text="已受理"
+                android:textColor="@drawable/selected_txt_black_gray"
+                android:textSize="@dimen/sp_15" />
+
+            <TextView
+                android:id="@+id/tv_complaint_no_hand"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableBottom="@drawable/selected_bootom_line_3"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_16"
+                android:text="待处理"
+                android:textColor="@drawable/selected_txt_black_gray"
+                android:textSize="@dimen/sp_15" />
+
+        </LinearLayout>
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/refresh_mine_complaint"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_8"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_complaint">
+            <com.daqsoft.baselib.widgets.PandaRefreshHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.daqsoft.baselib.widgets.PandaRefreshHeader>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_mine_complaint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20"
+                android:paddingBottom="@dimen/dp_20"
+                android:scrollbars="none" />
+
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        <ImageView
+            android:id="@+id/iv_complaint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_20"
+            android:src="@mipmap/stroke_line_jq_btn_normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.daqsoft.legacyModule">
+
+    <application>
+        <activity android:name=".smriti.ui.LegacySmritiActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".home.LegacyHomeActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".media.LegacyMediaActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".story.LegacyStoryActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".smriti.ui.LegacySmritiDetailActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            />
+        <activity android:name=".food.LegacyFoodListActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".news.LegacyNewsActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".smriti.ui.LegacyPeopleDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+
+            />
+        <activity android:name=".smriti.ui.LegacyExperienceBaseDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".product.LegacyProductListActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".mine.MineLegacyActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".mine.MineWorksListActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".mine.MineFansListActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".mine.PublishWorksActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".mine.WorksDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".product.LegacyWorksListActivity"
+            android:screenOrientation="portrait"
+            />
+
+
+
+        <activity
+            android:name=".smriti.ui.AllIntangibleHeritageStories"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
+
+</manifest>

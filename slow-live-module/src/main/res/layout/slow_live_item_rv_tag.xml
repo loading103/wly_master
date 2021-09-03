@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tag"
+            type="java.lang.String" />
+
+    </data>
+
+    <FrameLayout
+        android:paddingLeft="@dimen/dp_5"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_30">
+
+    <com.flyco.roundview.RoundTextView android:text="@{tag}"
+        android:height="@dimen/dp_20"
+        app:rv_cornerRadius="@dimen/dp_3"
+        android:layout_gravity="center"
+        android:paddingLeft="@dimen/dp_5"
+        android:paddingRight="@dimen/dp_5"
+        android:paddingTop="@dimen/dp_2"
+        android:paddingBottom="@dimen/dp_2"
+        tools:text="AAAA"
+        android:gravity="center"
+        android:textSize="@dimen/sp_10"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:rv_backgroundColor="@color/white"
+        app:rv_strokeWidth="@dimen/dp_1"
+        app:rv_strokeColor="@color/ff9e05"
+        android:textColor="@color/slow_live_ff9e05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    </FrameLayout>
+</layout>

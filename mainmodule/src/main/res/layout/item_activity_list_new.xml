@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="datas"
+            type="com.daqsoft.provider.bean.ActivityBean" />
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils"/>
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_15"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_170"
+            tools:ignore="MissingConstraints">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:scaleType="centerCrop"
+                android:id="@+id/iv_bg"
+                android:layout_width="match_parent"
+                imageUrl="@{datas.getRealImages()}"
+                raduis='@{"6"}'
+                android:layout_height="@dimen/dp_170" />
+
+            <ImageView
+                android:id="@+id/iv_tag_720"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/exhibit_list_icon_720" />
+
+
+            <ImageView
+                android:id="@+id/img_collect"
+                android:layout_width="@dimen/dp_19"
+                android:layout_height="@dimen/dp_19"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:src="@mipmap/activity_collect_normal" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/dp_16"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            android:text="@{datas.name}"
+            tools:text="1111"/>
+
+
+        <TextView
+            android:id="@+id/tv_title_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{datas.resourceNameStr}"
+            android:visibility="gone"
+            android:textColor="@color/common_1995ff"
+            android:layout_marginTop="@dimen/dp_12"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textSize="@dimen/sp_12" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tag1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text= "@{datas.getShowStartTime()}"
+            android:visibility='@{ TextUtils.isEmpty(datas.getShowStartTime) ? View.GONE:View.VISIBLE}'
+            android:textColor="@color/color_666"
+            android:layout_marginTop="@dimen/dp_12"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text= "@{datas.getShowAdress()}"
+            android:visibility='@{ TextUtils.isEmpty(datas.getShowAdress()) ? View.GONE:View.VISIBLE}'
+            android:textColor="@color/color_666"
+            android:layout_marginTop="@dimen/dp_12"
+            android:textSize="@dimen/sp_12" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tag2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+    </LinearLayout>
+</layout>

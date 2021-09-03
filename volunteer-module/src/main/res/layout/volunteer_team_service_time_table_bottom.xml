@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:background="@drawable/table_content_border_top"
+		android:orientation="horizontal"
+		android:gravity="center"
+		android:layout_marginBottom="@dimen/dp_1"
+		android:layout_marginHorizontal="@dimen/dp_1"
+		android:layout_height="wrap_content">
+		<TextView
+			android:id="@+id/tv_apply"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/shape_btn_primary_20"
+			android:text="申请志愿服务签到"
+			android:textSize="@dimen/sp_13"
+			android:textColor="@color/white"
+			android:layout_marginVertical="@dimen/dp_16"
+			/>
+	</LinearLayout>
+</layout>

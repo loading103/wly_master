@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/dp_16">
+
+        <ImageView
+            android:id="@+id/mCoverIv"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mShopNameTv"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toRightOf="@id/mCoverIv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="超值新鲜汶川车厘子一箱包邮，10斤礼盒装" />
+
+        <TextView
+            android:id="@+id/mStandardTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/order_standard"
+            app:layout_constraintLeft_toRightOf="@id/mCoverIv"
+            app:layout_constraintTop_toBottomOf="@id/mShopNameTv" />
+
+        <TextView
+            android:id="@+id/mStandardNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/mStandardTv"
+            app:layout_constraintTop_toTopOf="@id/mStandardTv"
+            tools:text="礼物盒" />
+
+        <TextView
+            android:id="@+id/mNumberTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:text="@string/order_number"
+            app:layout_constraintLeft_toRightOf="@id/mStandardNameTv"
+            app:layout_constraintTop_toTopOf="@id/mStandardTv" />
+
+        <TextView
+            android:id="@+id/mNumberValueTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/mNumberTv"
+            app:layout_constraintTop_toTopOf="@id/mStandardTv"
+            tools:text="2" />
+
+        <TextView
+            android:id="@+id/mTagTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            app:layout_constraintLeft_toRightOf="@id/mNumberValueTv"
+            app:layout_constraintTop_toTopOf="@id/mStandardTv"
+            tools:text="已申退1" />
+
+        <TextView
+            android:id="@+id/mPriceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toRightOf="@id/mCoverIv"
+            app:layout_constraintTop_toBottomOf="@id/mStandardTv"
+            tools:text="￥240" />
+
+        <View
+            android:id="@+id/mDivideLine"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_0_5"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@color/dividing_line"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mPriceTv" />
+
+        <TextView
+            android:id="@+id/mTotalPriceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/order_toatal_price"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mDivideLine" />
+
+        <TextView
+            android:id="@+id/mTotalPriceValueTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/txt_black"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mTotalPriceTv"
+            tools:text="￥240" />
+
+        <TextView
+            android:id="@+id/mFreightTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/order_freight"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mTotalPriceTv" />
+
+        <TextView
+            android:id="@+id/mFreightValueTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/txt_black"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mFreightTv"
+            tools:text="￥10" />
+
+        <TextView
+            android:id="@+id/mRealPayTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/order_real_pay"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mFreightTv" />
+
+        <TextView
+            android:id="@+id/mRealPayValueTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/main"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mRealPayTv"
+            tools:text="￥258" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

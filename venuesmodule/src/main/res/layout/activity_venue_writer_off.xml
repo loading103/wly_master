@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/order_hexiao_list_bg_top" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@mipmap/order_hexiao_list_bg_bottom" />
+
+
+        <TextView
+            android:id="@+id/tv_writer_off_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_28"
+            android:alpha="0.5"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_15"
+            android:visibility="gone"
+            tools:text="2020-05-13 星期三" />
+
+        <TextView
+            android:id="@+id/tv_writer_off_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_writer_off_time"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@drawable/shape_ffff_r20"
+            android:gravity="center"
+            android:minHeight="@dimen/dp_40"
+            android:paddingLeft="@dimen/dp_22"
+            android:paddingTop="@dimen/sp_8"
+            android:paddingRight="@dimen/dp_22"
+            android:paddingBottom="@dimen/sp_8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_28"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="08：08：11" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_writer_off_orders"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_writer_off_timer"
+            android:layout_marginTop="@dimen/dp_12"
+            android:paddingLeft="@dimen/dp_12"
+            android:paddingRight="@dimen/dp_12"
+            android:paddingBottom="@dimen/dp_12"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/rll_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_writer_off_timer"
+            android:layout_margin="@dimen/dp_20"
+            android:background="@drawable/shape_white_r5"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/img_hexiao_empty"
+                    android:layout_width="@dimen/dp_149"
+                    android:layout_height="@dimen/dp_100"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/order_hexiao_list_defalt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_hexiao_empty"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:text="@string/venue_reservation_empty_order"
+                    android:textColor="@color/color_999"
+                    android:textSize="@dimen/sp_14" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

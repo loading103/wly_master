@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="distance"
+            type="String" />
+
+        <variable
+            name="address"
+            type="String" />
+
+        <variable
+            name="currentIndex"
+            type="String" />
+
+        <variable
+            name="totalSize"
+            type="String" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="placeholder"
+            type="android.graphics.drawable.Drawable" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/transparent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    android:id="@+id/img_parking_head"
+                    placeholder="@{placeholder}"
+                    url="@{imageUrl}"
+                    android:layout_width="@dimen/dp_44"
+                    android:layout_height="@dimen/dp_44"
+                    android:scaleType="fitXY"
+                    app:corner_radius="@dimen/dp_5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/v_park_name"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    app:layout_goneMarginLeft="@dimen/dp_0"
+                    android:layout_marginRight="@dimen/dp_45"
+                    app:layout_constraintLeft_toRightOf="@+id/img_parking_head"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/txt_park_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@{name}"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tool:text="水水水水水水水水水水水水水水水水水" />
+
+                    <TextView
+                        android:id="@+id/txt_park_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_3"
+                        android:layout_marginTop="@dimen/dp_3"
+                        android:background="@drawable/shape_appointment_r5_s1_d4d4d4"
+                        android:minLines="1"
+                        android:paddingLeft="@dimen/dp_3"
+                        android:paddingRight="@dimen/dp_3"
+                        android:text="离我最近"
+                        android:textColor="@color/color_999"
+                        android:textSize="@dimen/sp_10"
+                        app:layout_constraintLeft_toRightOf="@id/txt_park_name"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/txt_park_name" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/txt_distance_for_me"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginTop="@dimen/dp_10"
+                    app:layout_goneMarginLeft="@dimen/dp_0"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:includeFontPadding="false"
+                    android:text="@{distance}"
+                    android:textColor="@color/color_999"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintLeft_toRightOf="@+id/img_parking_head"
+                    app:layout_constraintRight_toLeftOf="@+id/txt_parking_index_current"
+                    app:layout_constraintTop_toBottomOf="@+id/v_park_name" />
+
+                <View
+                    android:id="@+id/v_disantce_divider"
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:background="@color/color_d4d4d4"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_distance_for_me"
+                    app:layout_constraintLeft_toRightOf="@+id/txt_distance_for_me"
+                    app:layout_constraintTop_toTopOf="@+id/txt_distance_for_me" />
+
+                <TextView
+                    android:id="@+id/txt_parking_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:includeFontPadding="false"
+                    android:text="@{address}"
+                    android:textColor="@color/color_999"
+                    android:textSize="@dimen/sp_12"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_distance_for_me"
+                    app:layout_constraintLeft_toRightOf="@+id/v_disantce_divider"
+                    app:layout_constraintTop_toTopOf="@+id/txt_distance_for_me" />
+
+                <TextView
+                    android:id="@+id/txt_parking_index_current"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{currentIndex}"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_distance_for_me"
+                    app:layout_constraintRight_toLeftOf="@+id/txt_parking_index_total"
+                    app:layout_constraintTop_toTopOf="@+id/txt_distance_for_me" />
+
+                <TextView
+                    android:id="@+id/txt_parking_index_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{totalSize}"
+                    android:textColor="@color/color_999"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_distance_for_me"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txt_distance_for_me" />
+
+                <View
+                    android:id="@+id/v_line_parking"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_distance_for_me" />
+
+                <include
+                    android:id="@+id/v_item_side_tour_parking_other"
+                    layout="@layout/item_side_tour_parking_othre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/v_line_parking" />
+
+                <RelativeLayout
+                    android:id="@+id/v_control_parking_more_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_25"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/v_item_side_tour_parking_other">
+
+                    <ImageView
+                        android:id="@+id/img_control_parking"
+                        android:layout_width="@dimen/dp_10"
+                        android:layout_height="5dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@mipmap/map_arrow_up" />
+                </RelativeLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:id="@+id/v_parking_to_nav"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginRight="@dimen/dp_12"
+                android:background="@drawable/shape_circle_36cd64"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_map_guide"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@mipmap/map_guide" />
+
+                <TextView
+                    android:id="@+id/txt_map_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_map_guide"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:includeFontPadding="false"
+                    android:text="前往"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dp_12" />
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</layout>

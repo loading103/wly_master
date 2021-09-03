@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="price"
+            type="String" />
+
+        <variable
+            name="left"
+            type="String" />
+
+        <variable
+            name="totalNumber"
+            type="String" />
+
+        <variable
+            name="time"
+            type="String" />
+
+        <variable
+            name="address"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_16">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/image"
+            url="@{url}"
+            android:layout_width="@dimen/dp_94"
+            android:layout_height="@dimen/dp_70"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"
+            android:scaleType="center"
+            app:border_color="@color/white"
+            app:corner_bottom_left_radius="@dimen/dp_6"
+            app:corner_bottom_right_radius="@dimen/dp_6"
+            app:corner_top_left_radius="@dimen/dp_6"
+            app:corner_top_right_radius="@dimen/dp_6"
+            app:is_circle="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_12"
+            android:src="@drawable/home_selector_collect"
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="@id/image"
+            app:layout_constraintTop_toTopOf="@id/image" />
+
+        <TextView
+            android:id="@+id/tv_integral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_12"
+            android:text="@string/order_integral"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_11"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_price"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{price}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_name"
+            app:layout_constraintRight_toLeftOf="@id/tv_integral" />
+
+        <TextView
+            android:id="@+id/tv_money_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_11"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_price"
+            app:layout_constraintBottom_toBottomOf="@id/tv_price"
+            app:layout_constraintRight_toLeftOf="@id/tv_price"
+            app:layout_constraintTop_toBottomOf="@id/image" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_12"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{name}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            app:layout_constraintRight_toLeftOf="@id/tv_money_unit"
+            app:layout_constraintTop_toTopOf="@id/image"
+            tools:text="adfadfasdfad" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tags"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="@id/tv_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="时间："
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/rv_tags" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_20"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{time}"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toBottomOf="@id/tv_time_label"
+            app:layout_constraintLeft_toRightOf="@id/tv_time_label"
+            app:layout_constraintTop_toTopOf="@id/tv_time_label"
+            tools:text="" />
+
+        <TextView
+            android:id="@+id/tv_address_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="地址："
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_time_label" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_20"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{address}"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_address_label"
+            app:layout_constraintLeft_toRightOf="@id/tv_address_label"
+            app:layout_constraintTop_toTopOf="@id/tv_address_label"
+            tools:text="ad" />
+
+
+        <TextView
+            android:id="@+id/tv_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:background="@drawable/shape_colorprimy_r3"
+            android:text="查看"
+            android:textColor="@color/white"
+            android:paddingTop="@dimen/dp_3"
+            android:paddingBottom="@dimen/dp_3"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
+            app:layout_constraintLeft_toLeftOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_address_label" />
+
+        <TextView
+            android:id="@+id/tv_navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/shape_colorprimy_r3"
+            android:text="导航"
+            android:paddingTop="@dimen/dp_3"
+            android:paddingBottom="@dimen/dp_3"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toRightOf="@id/tv_check"
+            app:layout_constraintTop_toBottomOf="@id/tv_address_label" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <com.ruffian.library.widget.RImageView
+            android:src="@color/black"
+            android:scaleType="centerCrop"
+            android:id="@+id/image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:corner_radius="@dimen/dp_5"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_245">
+        </com.ruffian.library.widget.RImageView>
+
+        <TextView
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:ellipsize="end"
+            android:singleLine="true"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="阿拉善左旗"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/dp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/content"
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_marginHorizontal="@dimen/dp_13"
+            android:layout_marginBottom="@dimen/dp_13"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="阿拉善左旗地处于内蒙古自治区西部，东接巴盟磴口县、乌拉山口..."
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/image"
+            android:id="@+id/content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <com.ruffian.library.widget.RTextView
+            app:background_normal="@color/gray_966614_alpha60"
+            app:layout_constraintLeft_toLeftOf="@id/image"
+            app:layout_constraintBottom_toBottomOf="@id/image"
+            app:layout_constraintTop_toTopOf="@id/image"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="0dp">
+        </com.ruffian.library.widget.RTextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

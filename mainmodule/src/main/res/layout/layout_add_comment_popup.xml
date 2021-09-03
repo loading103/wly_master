@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:padding="@dimen/dp_10"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<EditText
+    android:id="@+id/et_content"
+    android:layout_width="0dp"
+    android:layout_height="@dimen/dp_100"
+    android:hint="@string/home_activity_comment_popup_hint"
+    android:background="@color/gray_f0"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintRight_toLeftOf="@+id/btn_send"
+    android:textSize="@dimen/sp_12"
+    android:layout_margin="@dimen/dp_10"
+    android:padding="@dimen/dp_5"
+    android:gravity="left|top"
+    />
+    <TextView
+        android:id="@+id/btn_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:paddingVertical="@dimen/dp_5"
+        android:text="@string/home_activity_comment_popup_btn"
+        app:layout_constraintLeft_toRightOf="@+id/et_content"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/main_shape_primary_color_radius"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintBottom_toBottomOf="@+id/et_content"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

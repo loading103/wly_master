@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_16"
+        android:background="@drawable/itinerary_shape_stroke_dotted_grey">
+
+        <TextView
+            tools:text="成都市博物馆"
+            android:id="@+id/name_view"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="@dimen/sp_16"
+            android:drawablePadding="@dimen/dp_5"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_333333"/>
+
+        <TextView
+            android:id="@+id/time_view"
+            tools:text="游玩时间：5小时"
+            style="@style/ViewWrap"
+            android:textSize="@dimen/sp_11"
+            android:textColor="@color/color_999999"/>
+
+    </LinearLayout>
+
+</layout>

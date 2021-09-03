@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="qrCodeUrl"
+            type="String" />
+
+        <variable
+            name="detail"
+            type="com.daqsoft.provider.bean.OrderDetail" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        tools:ignore="MissingConstraints">
+
+        <!--动态显示-->
+
+
+        <View
+            android:id="@+id/line_view"
+            style="@style/HeightWrap"
+            android:background="#f1f6f7"
+            tools:ignore="MissingConstraints"
+            android:layout_height="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+          />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/writeoffs_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/line_view">
+            <TextView
+                android:text="核销信息"
+                android:id="@+id/title_view2"
+                style="@style/NewOrderDetailTitle"
+                android:layout_marginTop="@dimen/dp_15"/>
+
+            <com.daqsoft.provider.view.ItemView
+                app:leftLabel="核销数量"
+                style="@style/NewOrderDetail2"
+                android:id="@+id/write_offs_view"/>
+
+            <com.daqsoft.provider.view.ItemView
+                app:leftLabel="核销时间"
+                style="@style/NewOrderDetail2"
+                android:id="@+id/write_offs_Date"/>
+
+            <com.daqsoft.provider.view.ItemView
+                app:leftLabel="核  销  人"
+                android:visibility="gone"
+                style="@style/NewOrderDetail2"
+                android:id="@+id/write_offs_people"/>
+
+            <com.daqsoft.provider.view.ItemView
+                style="@style/NewOrderDetail2"
+                android:visibility="gone"
+                android:id="@+id/write_offs_time"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_view2"
+            style="@style/HeightWrap"
+            android:background="#f1f6f7"
+            tools:ignore="MissingConstraints"
+            android:layout_height="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintTop_toBottomOf="@id/writeoffs_layout"/>
+
+        <LinearLayout
+            android:id="@+id/health_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/line_view2">
+
+            <TextView
+                android:text="健康码信息"
+                android:id="@+id/title_view3"
+                style="@style/NewOrderDetailTitle"
+                android:layout_marginTop="@dimen/dp_15"
+                app:layout_constraintTop_toBottomOf="@id/line_view2"/>
+
+            <com.daqsoft.provider.view.ItemView
+                app:leftLabel="注   册   地"
+                android:id="@+id/address_view"
+                style="@style/NewOrderDetail2"/>
+
+            <com.daqsoft.provider.view.ItemView
+                app:leftLabel="健 康 状 况"
+                style="@style/NewOrderDetail2"
+                android:id="@+id/health_view"
+                app:rightContentColor="@color/color_36cd64"/>
+
+            <com.daqsoft.provider.view.ItemView
+                app:leftLabel="旅游码状况"
+                style="@style/NewOrderDetail2"
+                android:id="@+id/travel_health"
+                app:rightContentColor="@color/color_36cd64"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_view3"
+            style="@style/HeightWrap"
+            android:background="#f1f6f7"
+            tools:ignore="MissingConstraints"
+            android:layout_height="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintTop_toBottomOf="@id/health_layout"/>
+
+        <LinearLayout
+            android:id="@+id/more_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/line_view3">
+
+            <LinearLayout
+                android:paddingEnd="@dimen/dp_15"
+                android:paddingStart="@dimen/dp_15"
+                android:id="@+id/order_code_layout"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/ViewWrap"
+                    android:text="订单编号"
+                    android:textSize="@dimen/sp_13"
+                    android:textColor="@color/color_999"/>
+
+                <TextView
+                    style="@style/ViewWrap"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/dp_32"
+                    tools:text="2050 2489 6014 5870"
+                    android:textSize="@dimen/sp_13"
+                    android:text="@{detail.orderCode}"
+                    android:textColor="@color/color_333"/>
+
+                <TextView
+                    style="@style/ViewWrap"
+                    android:text="复制"
+                    android:padding="@dimen/dp_6"
+                    android:textSize="@dimen/sp_13"
+                    android:id="@+id/copy_view"
+                    android:textColor="@color/color_999"
+                    android:background="@drawable/shape_order_list_btn"/>
+
+            </LinearLayout>
+
+            <com.daqsoft.provider.view.ItemView
+                app:leftLabel="下单时间"
+                android:id="@+id/ordering_date"
+                style="@style/NewOrderDetail2"
+                app:rightContent="@{detail.createTime}"/>
+
+            <com.daqsoft.provider.view.ItemView
+                app:leftLabel="预  约  人"
+                android:id="@+id/appoint_people"
+                style="@style/NewOrderDetail2"
+                app:rightContent="@{detail.userName}"/>
+
+            <com.daqsoft.provider.view.ItemView
+                app:leftLabel="联系电话"
+                android:id="@+id/phone_view"
+                style="@style/NewOrderDetail2"
+                app:rightContent="@{detail.userPhone}"/>
+
+            <com.daqsoft.provider.view.ItemView
+                app:leftLabel="证件号码"
+                android:id="@+id/idCard_view"
+                style="@style/NewOrderDetail2"/>
+
+        </LinearLayout>
+
+        <Button
+            android:text="立即核销"
+            android:visibility="gone"
+            android:textSize="@dimen/sp_16"
+            android:id="@+id/soon_view"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_36cd64"
+            app:layout_constraintTop_toBottomOf="@id/more_layout"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

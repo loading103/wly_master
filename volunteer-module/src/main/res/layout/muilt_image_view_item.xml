@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="@dimen/dp_106"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_80"
+            android:scaleType="centerCrop"
+            app:border_color="@color/white"
+            app:corner_bottom_left_radius="@dimen/dp_6"
+            app:corner_bottom_right_radius="@dimen/dp_6"
+            app:corner_top_left_radius="@dimen/dp_6"
+            app:corner_top_right_radius="@dimen/dp_6"
+            android:src="@drawable/placeholder_img_fail_h300"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/iv_ci_play"
+            android:layout_width="@dimen/dp_27"
+            android:layout_height="@dimen/dp_27"
+            app:layout_constraintLeft_toLeftOf="@id/iv_image"
+            app:layout_constraintRight_toRightOf="@id/iv_image"
+            app:layout_constraintTop_toTopOf="@id/iv_image"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/iv_image"
+            android:background="@mipmap/community_play_small" />
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/iv_image"
+            app:layout_constraintRight_toRightOf="@id/iv_image"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_11"
+            android:paddingHorizontal="@dimen/dp_8"
+            android:paddingVertical="@dimen/dp_4"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_8"
+            android:visibility="gone"
+            android:background="@drawable/volunteer_shape_black_a40_r9"
+            tools:text="12图"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

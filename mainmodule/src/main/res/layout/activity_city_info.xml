@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingConstraints">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.daqsoft.baselib.utils.SPUtils" />
+
+        <import type="com.daqsoft.provider.SPKey" />
+
+        <variable
+            name="citybean"
+            type="com.daqsoft.thetravelcloudwithculture.home.bean.CityCardDetail" />
+
+        <variable
+            name="imgevisible"
+            type="Boolean" />
+
+        <variable
+            name="videovisible"
+            type="Boolean" />
+
+        <variable
+            name="menuevisible"
+            type="Boolean" />
+
+        <variable
+            name="weather"
+            type="com.daqsoft.provider.bean.WeatherBean" />
+
+    </data>
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/mSwipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <com.daqsoft.baselib.widgets.PandaRefreshHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></com.daqsoft.baselib.widgets.PandaRefreshHeader>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:visibility="@{weather.min==null?View.GONE:View.VISIBLE}">
+
+                            <ImageView
+                                url="@{weather.pic}"
+                                android:layout_width="@dimen/dp_14"
+                                android:layout_height="@dimen/dp_13"
+                                android:layout_marginRight="@dimen/dp_6"
+                                android:scaleType="fitXY" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{weather.min+`～`+weather.max+`℃`}"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_12" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_hello_city"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/dp_6"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_15"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_city_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableEnd="@mipmap/main_arrow_down"
+                                android:drawablePadding="@dimen/dp_6"
+                                android:onClick="onClick"
+                                android:text="@{citybean.name}"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_19"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_11"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:visibility="@{citybean.summary.equals(``)?View.GONE:View.VISIBLE}">
+
+                            <ImageView
+                                url="@{citybean.logo}"
+                                android:layout_width="@dimen/dp_14"
+                                android:layout_height="@dimen/dp_14"
+                                android:layout_marginRight="@dimen/dp_8"
+                                android:scaleType="fitXY"
+                                android:src="@mipmap/city_card_top_logo" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{`“`+citybean.summary+`”`}"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_13"
+                                android:visibility="@{citybean.summary==null?View.GONE:View.VISIBLE}" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_city_imgs"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_176"
+                            android:layout_marginTop="@dimen/dp_20">
+
+                            <androidx.viewpager.widget.ViewPager
+                                android:id="@+id/vp_city_head"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_176" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginRight="@dimen/dp_18"
+                                android:layout_marginBottom="@dimen/dp_18"
+                                android:gravity="bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_city_video"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/dp_4"
+                                    android:background="@drawable/club_info_introduce_img"
+                                    android:paddingLeft="@dimen/dp_7"
+                                    android:paddingTop="@dimen/dp_6"
+                                    android:paddingRight="@dimen/dp_7"
+                                    android:paddingBottom="@dimen/dp_6"
+                                    android:text="视频"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_10"
+                                    android:visibility="@{videovisible?View.VISIBLE:View.GONE}" />
+
+                                <TextView
+                                    android:id="@+id/tv_city_720"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/dp_4"
+                                    android:background="@drawable/club_info_introduce_img"
+                                    android:onClick="onClick"
+                                    android:paddingLeft="@dimen/dp_7"
+                                    android:paddingTop="@dimen/dp_6"
+                                    android:paddingRight="@dimen/dp_7"
+                                    android:paddingBottom="@dimen/dp_6"
+                                    android:text="720"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_10"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:id="@+id/tv_city_imgs"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/club_info_introduce_img"
+                                    android:paddingLeft="@dimen/dp_7"
+                                    android:paddingTop="@dimen/dp_6"
+                                    android:paddingRight="@dimen/dp_7"
+                                    android:paddingBottom="@dimen/dp_6"
+                                    android:text="画册"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_10"
+                                    android:visibility="@{imgevisible?View.VISIBLE:View.GONE}" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="@{menuevisible?View.VISIBLE:View.GONE}">
+
+                            <com.daqsoft.provider.view.AutoHeightViewPager
+                                android:id="@+id/view_pager"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_4" />
+
+                            <com.daqsoft.provider.view.ViewPagerIndicatorView
+                                android:id="@+id/circleIndicator"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_20"
+                                android:layout_gravity="center_horizontal"
+                                app:loadingcolor="@color/colorPrimary" />
+                        </LinearLayout>
+                        <!--发现身边-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/ll_city_found_around"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/tv_city_found_around"
+                                style="@style/CityCardMoreTitle"
+                                android:text="发现身边" />
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_city_found_around"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_24"
+                                app:layout_constraintTop_toBottomOf="@id/tv_city_found_around" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!--各区县-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/ll_city_dqx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:visibility="gone">
+
+                            <TextView
+                                style="@style/CityCardMoreTitle"
+                                android:text="@{citybean.name+`各区县`}" />
+
+                            <TextView
+                                android:id="@+id/tv_city_dqx"
+                                style="@style/CityCardViewMore"
+                                android:text="查看更多" />
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_city_dqx"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_24"
+                                app:layout_constraintTop_toBottomOf="@id/tv_city_dqx" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!--品牌展播-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/ll_city_brand"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:visibility="gone">
+
+                            <TextView
+                                style="@style/CityCardMoreTitle"
+                                android:text="@string/culture_brand_ls" />
+
+                            <TextView
+                                android:id="@+id/tv_city_brand"
+                                style="@style/CityCardViewMore"
+                                android:text="查看更多" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_city_brand"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_24"
+                                app:layout_constraintTop_toBottomOf="@id/tv_city_brand" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!--必游景区-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/ll_city_secnic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:visibility="gone">
+
+                            <TextView
+                                style="@style/CityCardMoreTitle"
+                                android:text="必游景区" />
+
+                            <TextView
+                                android:id="@+id/tv_city_secnic"
+                                style="@style/CityCardViewMore"
+                                android:text="查看更多" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_city_secnic"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_24"
+                                app:layout_constraintTop_toBottomOf="@id/tv_city_secnic" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <!--特产-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/ll_city_special"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:visibility="gone">
+
+                            <TextView
+                                style="@style/CityCardMoreTitle"
+                                android:text="特产" />
+
+                            <TextView
+                                android:id="@+id/tv_city_special"
+                                style="@style/CityCardViewMore"
+                                android:text="查看更多" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_city_special"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_24"
+                                app:layout_constraintTop_toBottomOf="@id/tv_city_special" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <!--找活动-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/ll_city_activity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:visibility="gone">
+
+                            <TextView
+                                style="@style/CityCardMoreTitle"
+                                android:text="找活动" />
+
+                            <TextView
+                                android:id="@+id/tv_city_activity"
+                                style="@style/CityCardViewMore"
+                                android:text="查看更多" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_city_activity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_24"
+                                app:layout_constraintTop_toBottomOf="@id/tv_city_activity" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <!--找场馆-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ll_city_changguan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/CityCardMoreTitle"
+                            android:text="找场馆" />
+
+                        <TextView
+                            android:id="@+id/tv_city_changguan"
+                            style="@style/CityCardViewMore"
+                            android:text="查看更多" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_city_changugan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            app:layout_constraintTop_toBottomOf="@id/tv_city_changguan" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--旅游线路-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ll_city_lvyouluxian"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/CityCardMoreTitle"
+                            android:text="旅游线路" />
+
+                        <TextView
+                            android:id="@+id/tv_city_lvyouluxian"
+                            style="@style/CityCardViewMore"
+                            android:text="查看更多" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_city_lvyouxianlu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            app:layout_constraintTop_toBottomOf="@id/tv_city_lvyouluxian" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--住酒店-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ll_city_hotel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:paddingBottom="@dimen/dp_30"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/CityCardMoreTitle"
+                            android:text="住酒店" />
+
+                        <TextView
+                            android:id="@+id/tv_city_hotel"
+                            style="@style/CityCardViewMore"
+                            android:text="查看更多" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_city_hotel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            app:layout_constraintTop_toBottomOf="@id/tv_city_hotel" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--吃美食-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ll_city_food"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/CityCardMoreTitle"
+                            android:text="吃美食" />
+
+                        <TextView
+                            android:id="@+id/tv_city_food"
+                            style="@style/CityCardViewMore"
+                            android:text="查看更多" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_city_food"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            app:layout_constraintTop_toBottomOf="@id/tv_city_food" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--读故事-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ll_city_story"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/CityCardMoreTitle"
+                            android:text="读故事" />
+
+                        <TextView
+                            android:id="@+id/tv_city_story"
+                            style="@style/CityCardViewMore"
+                            android:text="查看更多" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_city_story"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            app:layout_constraintTop_toBottomOf="@id/tv_city_story" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_boom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:layout_gravity="bottom"
+                android:background="@color/f5"
+                android:paddingTop="@dimen/dp_8"
+                android:visibility="gone"
+                app:layout_behavior="com.daqsoft.travelCultureModule.citycard.CityInfoBehavior">
+
+                <TextView
+                    android:id="@+id/tv_ci_city_cg"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="找场馆"
+                    android:textColor="@color/home_hot_text_gray_blue_selector"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/tv_ci_city_lylx"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_ci_city_lylx"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="旅游线路"
+                    android:textColor="@color/home_hot_text_gray_blue_selector"
+                    android:textSize="@dimen/sp_15"
+                    android:visibility="gone"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@id/tv_ci_city_cg"
+                    app:layout_constraintRight_toLeftOf="@id/tv_ci_city_hotle"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_ci_city_hotle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="住酒店"
+                    android:textColor="@color/home_hot_text_gray_blue_selector"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@id/tv_ci_city_lylx"
+                    app:layout_constraintRight_toLeftOf="@id/tv_ci_city_food"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_ci_city_food"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="吃美食"
+                    android:textColor="@color/home_hot_text_gray_blue_selector"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@id/tv_ci_city_hotle"
+                    app:layout_constraintRight_toRightOf="@id/tv_ci_city_story"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_ci_city_story"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="读故事"
+                    android:textColor="@color/home_hot_text_gray_blue_selector"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@id/tv_ci_city_food"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/v_ci_indicator"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_3"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:background="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_ci_city_cg"
+                    app:layout_constraintRight_toRightOf="@id/tv_ci_city_cg" />
+
+                <View
+                    android:id="@+id/meiyong"
+                    android:layout_width="@dimen/dp_32"
+                    android:layout_height="@dimen/dp_4"
+                    android:background="@color/d4d4d4"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+</layout>

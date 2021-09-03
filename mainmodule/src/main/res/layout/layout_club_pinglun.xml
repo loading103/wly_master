@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_item_pinglun"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_24"
+            android:paddingBottom="@dimen/dp_20">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="精彩评论"
+                android:textSize="@dimen/sp_19"
+                android:textStyle="bold"
+                android:textColor="@color/color_333" />
+            <TextView
+                android:id="@+id/tv_club_pinglun_allnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="（36）"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_13"
+                android:gravity="bottom"
+                android:layout_marginLeft="@dimen/dp_6"/>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_club_pinglun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</layout>

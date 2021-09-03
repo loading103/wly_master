@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10">
+
+            <RelativeLayout
+                android:id="@+id/rv_ci_audio"
+                android:layout_width="@dimen/dp_96"
+                android:layout_height="@dimen/dp_96"
+                android:layout_marginRight="@dimen/dp_16"
+                android:background="#E3FCE9"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_ci_img"
+                    android:layout_width="@dimen/dp_75"
+                    android:layout_height="@dimen/dp_18"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/slow_live_community_audio" />
+
+                <ImageView
+                    android:id="@+id/iv_ci_play"
+                    android:layout_width="@dimen/dp_32"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/slow_live_community_play_small" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_ci_tilte_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    tools:text="成都90个旅游景点，名单都在这里，想去耍的赶紧点击观看" />
+
+                <TextView
+                    android:id="@+id/tv_ci_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_11"
+                    android:maxLines="2"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_12"
+                    tools:text="6月19日" />
+
+                <LinearLayout
+                    android:id="@+id/ll_ci_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:orientation="horizontal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_20">
+
+                    <ImageView
+                        android:id="@+id/iv_ci_commany_img"
+                        android:layout_width="@dimen/dp_24"
+                        android:layout_height="@dimen/dp_24"
+                        android:layout_marginRight="@dimen/dp_8"
+                        android:scaleType="center" />
+
+                    <TextView
+                        android:id="@+id/tv_ci_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_12"
+                        tools:text="智游天府" />
+
+                    <TextView
+                        android:id="@+id/tv_ci_look"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_999"
+                        android:textSize="@dimen/sp_12"
+                        tools:text="1058浏览·784赞·52评论" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:background="@color/e8e8e8" />
+    </LinearLayout>
+
+</layout>

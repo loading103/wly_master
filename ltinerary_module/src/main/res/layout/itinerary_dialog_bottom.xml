@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_F5F5F5">
+
+    <TextView
+        android:text="编辑名称"
+        android:gravity="center"
+        android:id="@+id/edit_view"
+        android:textSize="@dimen/sp_16"
+        android:layout_height="@dimen/dp_48"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:textColor="@color/color_333333"/>
+
+    <TextView
+        android:text="删除"
+        android:layout_marginTop="@dimen/dp_1"
+        android:gravity="center"
+        android:id="@+id/delete_view"
+        android:textSize="@dimen/sp_16"
+        android:layout_height="@dimen/dp_48"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:textColor="@color/color_FF4E4E"/>
+
+    <TextView
+        android:text="取消"
+        android:gravity="center"
+        android:id="@+id/cance_view"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textSize="@dimen/sp_16"
+        android:layout_height="@dimen/dp_48"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:textColor="@color/color_333333"/>
+
+</LinearLayout>

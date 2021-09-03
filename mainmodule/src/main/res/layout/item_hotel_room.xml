@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/v_hotel_room_img"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_60"
+            app:cardCornerRadius="@dimen/dp_5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_hotel_room"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/img_hotel_room_720"
+                android:layout_width="@dimen/dp_26"
+                android:layout_height="@dimen/dp_15"
+                android:src="@mipmap/hotel_details_room_720"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/img_hotel_room_video"
+                android:layout_width="@dimen/dp_27"
+                android:layout_height="@dimen/dp_27"
+                android:layout_gravity="center"
+                android:src="@mipmap/hotel_details_video"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txt_hotel_room_imgs_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginRight="@dimen/dp_4"
+                android:layout_marginBottom="@dimen/dp_4"
+                android:background="@drawable/shape_black_2_imgs_num"
+                android:includeFontPadding="false"
+                android:paddingLeft="@dimen/dp_5"
+                android:paddingRight="@dimen/dp_5"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10"
+                android:visibility="gone" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txt_hotel_room_name"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="2"
+            android:textColor="@color/color_444444"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@+id/v_hotel_room_img"
+            app:layout_constraintRight_toLeftOf="@+id/v_hotel_room_tip"
+            app:layout_constraintTop_toTopOf="@+id/v_hotel_room_img"
+            tools:text="花园雅居-庭院房" />
+
+        <TextView
+            android:id="@+id/txt_hotel_info"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_marginRight="@dimen/dp_10"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="1"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toRightOf="@+id/v_hotel_room_img"
+            app:layout_constraintRight_toLeftOf="@+id/v_hotel_room_tip"
+            app:layout_constraintTop_toBottomOf="@+id/txt_hotel_room_name"
+            tools:text="无早·单床" />
+
+        <TextView
+            android:id="@+id/txt_hotel_tags"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_10"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:includeFontPadding="false"
+            android:maxLines="2"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toRightOf="@+id/v_hotel_room_img"
+            app:layout_constraintRight_toLeftOf="@+id/v_hotel_room_tip"
+            app:layout_constraintTop_toBottomOf="@+id/txt_hotel_info"
+            tools:text="入住当日" />
+
+        <LinearLayout
+            android:id="@+id/v_hotel_room_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/v_hotel_room_img">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_hotel_room_rmb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/txt_hotel_room_price"
+                    android:includeFontPadding="false"
+                    android:text="@string/rmb"
+                    android:textColor="@color/color_ff9e05"
+                    android:textSize="@dimen/sp_10" />
+
+                <TextView
+                    android:id="@+id/txt_hotel_room_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/txt_hotel_room_rmb"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/color_ff9e05"
+                    android:textSize="@dimen/sp_16"
+                    tools:text="288" />
+
+                <TextView
+                    android:id="@+id/txt_hotel_room_qi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/txt_hotel_room_price"
+                    android:layout_toRightOf="@+id/txt_hotel_room_price"
+                    android:includeFontPadding="false"
+                    android:text="@string/qi"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_10" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/txt_hotel_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_6"
+                android:background="@drawable/shape_3cd64_13"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingRight="@dimen/dp_16"
+                android:paddingBottom="@dimen/dp_8"
+                android:text="预订"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/txt_hotel_surplus_room_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_2"
+                android:textColor="@color/color_36cd64"
+                android:textSize="@dimen/sp_10" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

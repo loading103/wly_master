@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="bgUrl"
+            type="String" />
+
+        <variable
+            name="item"
+            type="com.daqsoft.legacyModule.bean.LegacyHeritageItemListBean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp_10"
+        android:layout_marginHorizontal="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_10">
+
+        <com.daqsoft.widget.RoundImageView
+            android:id="@+id/iv"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_170"
+            android:scaleType="fitXY"
+            app:corner_radius="@dimen/dp_3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:type="round" />
+
+        <ImageView
+            android:id="@+id/img_topic_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_12"
+            android:src="@mipmap/activity_collect_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_5"
+            android:text="@{item.name}"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintTop_toBottomOf="@+id/iv"
+            tools:text="非遗名称" />
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_5"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            tools:text="地区：成都市·高新区" />
+
+
+        <TextView
+            android:id="@+id/tv_des_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_5"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintTop_toBottomOf="@+id/tv_des"
+            tools:text="个非遗故事" />
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tv_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingTop="@dimen/dp_3"
+            android:paddingRight="@dimen/dp_3"
+            android:paddingBottom="@dimen/dp_3"
+            android:text="@{item.type}"
+            android:textColor="@color/legacy_module_34ac9e"
+            android:textSize="@dimen/sp_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_des_num"
+            app:rv_backgroundColor="@color/legacy_module_eaf7f5"
+            app:rv_cornerRadius="@dimen/dp_3"
+            tools:text="传统美术" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

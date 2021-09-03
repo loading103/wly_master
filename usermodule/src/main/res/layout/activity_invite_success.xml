@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="ownHeader"
+            type="String" />
+
+        <variable
+            name="otherHeader"
+            type="String" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/mine_member_invitecourtesy_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/mine_member_invitecourtesy_bg_hongbao" />
+
+                <ImageView
+                    android:id="@+id/img_invite_title"
+                    android:layout_width="@dimen/dp_260"
+                    android:layout_height="@dimen/dp_76"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_44"
+                    android:src="@mipmap/mine_member_invitecourtesy_maintitle" />
+
+                <TextView
+                    android:id="@+id/tv_invite_success"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_invite_title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_80"
+                    android:background="@drawable/shape_invite_r20_btn_bg"
+                    android:minHeight="@dimen/dp_40"
+                    android:paddingLeft="@dimen/dp_34"
+                    android:paddingTop="@dimen/dp_8"
+                    android:paddingRight="@dimen/dp_34"
+                    android:paddingBottom="@dimen/dp_8"
+                    android:text="邀请成功"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_20" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/v_invite_tip_integral"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_invite_success"
+                    android:layout_marginTop="@dimen/dp_10">
+
+                    <TextView
+                        android:id="@+id/tv_mine_invite_process"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/mine_invite_success"
+                        android:textColor="@color/color_ffdcc7"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:layout_width="@dimen/dp_8"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:background="@color/color_ffdcc7"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_mine_invite_process"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_mine_invite_process"
+                        app:layout_constraintTop_toTopOf="@+id/tv_mine_invite_process" />
+
+                    <View
+                        android:layout_width="@dimen/dp_8"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_marginRight="@dimen/dp_6"
+                        android:background="@color/color_ffdcc7"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_mine_invite_process"
+                        app:layout_constraintRight_toLeftOf="@+id/tv_mine_invite_process"
+                        app:layout_constraintTop_toTopOf="@+id/tv_mine_invite_process" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <RelativeLayout
+                    android:id="@+id/v_invite_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_invite_tip_integral"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_30">
+
+                    <com.daqsoft.baselib.widgets.ArcImageView
+                        android:id="@+id/img_header_other"
+                        imageUrl="@{otherHeader}"
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="@dimen/dp_60"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_52"
+                        app:is_circle="true" />
+
+                    <com.daqsoft.baselib.widgets.ArcImageView
+                        android:id="@+id/img_header_own"
+                        imageUrl="@{ownHeader}"
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="@dimen/dp_60"
+                        android:padding="@dimen/dp_6"
+                        android:src="@mipmap/placeholder_img_fail_240_180"
+                        app:border_color="@color/transparent"
+                        app:border_width="@dimen/dp_6"
+                        app:is_circle="true" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_mine_to_invite"
+                    android:layout_width="@dimen/dp_260"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_invite_header"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_80"
+                    android:background="@drawable/shape_invite_success_fwhite_r20"
+                    android:gravity="center"
+                    android:minHeight="@dimen/dp_40"
+                    android:text="我要邀请"
+                    android:textColor="@color/color_f24b25"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_mine_to_index"
+                    android:layout_width="@dimen/dp_260"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_mine_to_invite"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/shape_invite_success_ffedcc_r20"
+                    android:gravity="center"
+                    android:minHeight="@dimen/dp_40"
+                    android:text="回到首页"
+                    android:textColor="@color/color_f24b25"
+                    android:textSize="@dimen/sp_15" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

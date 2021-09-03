@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="playfunnum"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_brand_palyfun_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_48">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+                <TextView
+                    android:id="@+id/tv_brand_bpjs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="游玩攻略"
+                    android:textSize="@dimen/sp_19"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_centerHorizontal="true"/>
+                <View
+                    android:layout_width="@dimen/dp_73"
+                    android:layout_height="@dimen/dp_4"
+                    android:background="#80ffffff"
+                    android:layout_alignBottom="@+id/tv_brand_bpjs"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/dp_4"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_brand_allnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{"全部("+playfunnum+")"}'
+                android:textSize="@dimen/sp_12"
+                android:textColor="#80ffffff"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:drawablePadding="@dimen/dp_4"/>
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_playfun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"/>
+    </LinearLayout>
+</layout>

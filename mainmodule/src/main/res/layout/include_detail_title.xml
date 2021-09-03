@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="leftLabel"
+            type="String" />
+
+        <variable
+            name="rightContent"
+            type="String" />
+
+        <variable
+            name="hide"
+            type="Boolean" />
+
+        <variable
+            name="hideRight"
+            type="Boolean" />
+        <import type="android.view.View"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp_20"
+        android:visibility="@{hide?View.GONE:View.VISIBLE}">
+        <View
+            android:layout_width="@dimen/dp_4"
+            android:layout_height="@dimen/dp_19"
+            android:background="@drawable/home_b_blue_r_2"
+            android:visibility="@{hide?View.GONE:View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@id/tv_location_label"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_location_label" />
+
+        <TextView
+            android:id="@+id/tv_location_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_14"
+            android:text="@{leftLabel}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_19"
+            android:textStyle="bold"
+            android:visibility="@{hide?View.GONE:View.VISIBLE}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tool:text="3D看文物"/>
+
+        <TextView
+            android:id="@+id/tv_replay_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/activity_details_right"
+            android:drawablePadding="@dimen/dp_6"
+            android:text="@{rightContent}"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_12"
+            android:visibility="@{hideRight?View.GONE:View.VISIBLE}"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_location_label"
+            app:layout_constraintRight_toRightOf="parent"
+            tool:text=""/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

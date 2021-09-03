@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp_32">
+
+        <TextView
+            android:id="@+id/country_travel_guide_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_24"
+            android:layout_toLeftOf="@+id/cdtv_travel_guide_more"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="游记攻略"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_19"
+            android:textStyle="bold" />
+
+        <com.daqsoft.baselib.widgets.CenterDrawableTextView
+            android:id="@+id/cdtv_travel_guide_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/country_travel_guide_title"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/dp_20"
+            android:drawableRight="@mipmap/common_button_arrow_more_small"
+            android:drawablePadding="@dimen/dp_6"
+            android:gravity="center"
+            android:text="@string/user_more"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_14" />
+
+        <com.daqsoft.provider.view.XGallery
+            android:id="@+id/x_travel_guide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/country_travel_guide_title"
+            android:layout_marginBottom="@dimen/dp_48"
+            app:layout_constraintTop_toTopOf="parent"
+            app:xGallery_itemHeight="@dimen/dp_200"
+            app:xGallery_itemWidth="@dimen/dp_320" />
+    </RelativeLayout>
+</layout>

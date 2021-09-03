@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="desc"
+            type="String" />
+
+        <variable
+            name="item"
+            type="com.daqsoft.integralmodule.repository.bean.DetailBean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/mTaskIv"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/iv_type_icon"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60"
+                android:scaleType="fitXY"
+                app:is_circle="true"
+                tools:src="@mipmap/placeholder_img_fail_h158" />
+
+            <com.daqsoft.baselib.widgets.CenterDrawableTextView
+                android:id="@+id/tv_modifyPoint"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_15"
+                android:layout_gravity="bottom"
+                android:background="@drawable/shape_504747_large"
+                android:drawableLeft="@mipmap/mine_member_portal_icon_point"
+                android:drawablePadding="@dimen/dp_2"
+                android:gravity="center"
+                android:text="@{`+`+item.modifyPoint.toString()}"
+                android:textColor="@color/ffe3af"
+                android:textSize="@dimen/sp_10"
+                 />
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintLeft_toRightOf="@+id/mTaskIv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/mRecordNameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@{item.name}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_16"
+                android:maxLines="2"
+                android:ellipsize="end"
+                app:layout_constraintRight_toLeftOf="@+id/tv_point"
+                app:layout_constraintBottom_toTopOf="@id/mRecordDesTv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="注册注册注册注册注册注册注册注册注册注册注册" />
+
+            <TextView
+                android:id="@+id/mRecordDesTv"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{desc}"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toTopOf="@id/mTimeTv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/tv_point"
+                app:layout_constraintTop_toBottomOf="@id/mRecordNameTv"
+                tools:text="成功注册账号" />
+
+            <TextView
+                android:id="@+id/mTimeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@{item.time}"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mRecordDesTv"
+                tools:text="2019-09-09" />
+
+
+            <ImageView
+                android:id="@+id/img_point_arrow"
+                android:layout_width="@dimen/dp_4_5"
+                android:layout_height="@dimen/dp_9"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:src="@mipmap/more_right_arrow"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/mTimeTv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/mRecordNameTv" />
+
+            <TextView
+                android:id="@+id/tv_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@id/mTimeTv"
+                app:layout_constraintRight_toLeftOf="@+id/img_point_arrow"
+                app:layout_constraintTop_toTopOf="@id/mRecordNameTv"
+                tools:text="+1000积分" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

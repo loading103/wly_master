@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="strategy"
+            type="com.daqsoft.provider.bean.StrategyDetail" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:paddingTop="@dimen/dp_12">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/dp_20"
+            android:text="@{strategy.title}"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_17"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/llc_video"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/v_starategy_video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/dp_6"></androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:text="建议在wifi环境下观看"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_video_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="@dimen/dp_2"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llc_video">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/image"
+                url="@{strategy.content}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_180"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:scaleType="centerCrop"
+                android:visibility="@{strategy.content!=null&amp;&amp;!!strategy.content.empty}"
+                app:border_color="@color/white"
+                app:corner_radius="@dimen/dp_6"
+                app:is_circle="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_image_into"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="@dimen/dp_2"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{strategy.introduction!=null&amp;&amp;!strategy.introduction.empty}"
+                tool:text="sssssssssssssss" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="@dimen/dp_2"
+            android:paddingLeft="@dimen/dp_8"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tool:text="sssssssssssssss" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="url"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            url="@{url}"
+            placeholder="@{@drawable/grid_placeholde}"
+            android:id="@id/view_poster"
+            app:corner_radius="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_101"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+            style="@style/ViewWrap"
+            android:id="@+id/choice_view"
+            android:layout_gravity="center"
+            android:src="@drawable/itinerary_icon_tick_normal"
+            app:layout_constraintTop_toTopOf="@id/view_poster"
+            app:layout_constraintEnd_toEndOf="@id/view_poster"
+            app:layout_constraintBottom_toBottomOf="@id/view_poster"
+            app:layout_constraintStart_toStartOf="@id/view_poster"/>
+
+        <LinearLayout
+            android:padding="@dimen/dp_10"
+            android:visibility="gone"
+            android:id="@+id/add_layout"
+            android:background="#80000000"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/view_poster">
+
+            <TextView
+                android:text="—"
+                android:gravity="center"
+                android:layout_height="@dimen/dp_20"
+                android:layout_width="@dimen/dp_20"
+                android:id="@+id/minus_view"
+                android:textColor="@color/white"
+                android:background="@drawable/itinerary_shape_corners_green"/>
+
+            <TextView
+                tools:text="3天"
+                android:gravity="center_horizontal"
+                android:id="@+id/day_view"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/add_view"
+                android:layout_height="@dimen/dp_20"
+                android:layout_width="@dimen/dp_20"
+                android:src="@drawable/itinerary_icon_add" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/ViewWrap"
+            tools:text="成都"
+            android:id="@+id/name_view"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/color_333333"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_poster" />
+
+        <TextView
+            style="@style/ViewWrap"
+            tools:text="推荐2-4天"
+            android:id="@+id/recomm_day"
+            android:textSize="@dimen/sp_14"
+            android:layout_marginTop="@dimen/dp_8"
+            android:textColor="@color/color_999999"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

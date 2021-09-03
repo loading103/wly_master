@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="activity_room_color_f7915f">#f7915f</color>
+    <color name="color_dbfae4">#dbfae4</color>
+    <color name="color_fff5e6">#fff5e6</color>
+
+    <color name="color_1995FF">#1995ff</color>
+    <color name="color_E8F4FF">#e8f4ff</color>
+    <color name="color_FF4E4E">#ff4e4e</color>
+    <color name="color_FFEDED">#ffeded</color>
+    <color name="color_36CD64">#36cd64</color>
+    <color name="color_E2FCE9">#e2fce9</color>
+    <color name="color_fafafa">#fafafa</color>
+</resources>

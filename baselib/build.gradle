@@ -1,0 +1,221 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-noarg'
+apply plugin: 'kotlin-allopen'
+apply plugin: 'org.jetbrains.dokka'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+// 判断版本是Release or Snapshots
+def isReleaseBuild() {
+    return !VERSION.contains("SNAPSHOT");
+}
+
+// 获取仓库url
+def getRepositoryUrl() {
+    return isReleaseBuild() ? RELEASE_URL : SNAPSHOT_URL;
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment {
+                MavenDeployment deployment -> signing.signPom(deployment)
+            }
+
+            pom.version = VERSION
+            pom.artifactId = ARTIFACT_ID
+            pom.groupId = GROUP_ID
+
+            repository(url: getRepositoryUrl()) {
+                authentication(userName: NAME, password: PASSWORD)
+                // maven授权信息
+
+            }
+        }
+    }
+}
+
+
+// 进行数字签名
+signing {
+// 当 发布版本 & 存在"uploadArchives"任务时，才执行
+    required { isReleaseBuild() && gradle.taskGraph.hasTask("uploadArchives") }
+    sign configurations.archives
+}
+
+android {
+    compileSdkVersion rootProject.compile_sdk_version
+
+
+    defaultConfig {
+        minSdkVersion rootProject.min_sdk_version
+        targetSdkVersion rootProject.target_sdk_version
+        versionCode 1
+        versionName "1.0"
+        consumerProguardFiles 'proguard-rules.pro'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+
+task generateSourcesJar(type: Jar) {
+    group = 'jar'
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    options.encoding = "UTF-8"
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
+    outputFormat = "javadoc"
+    outputDirectory = javadoc.destinationDir
+}
+
+task generateJavadoc(type: Jar, dependsOn: dokkaJavadoc) {
+    group = 'jar'
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives generateJavadoc
+    archives generateSourcesJar
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    api "androidx.appcompat:appcompat:$rootProject.androidx_version"
+    implementation project(path: ':bcprov-jdk15on-1.59')
+//    implementation files('libs\\bcprov-jdk15on-1.59.jar')
+    testImplementation 'junit:junit:4.12'
+    testImplementation "org.robolectric:robolectric:$rootProject.robolectric_version"
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    testImplementation "org.mockito:mockito-core:$rootProject.mockito_version"
+    androidTestImplementation "org.mockito:mockito-android:$rootProject.mockito_version"
+
+    api 'androidx.cardview:cardview:1.0.0'
+
+    api 'com.google.android.material:material:1.0.0'
+    api "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayout_version"
+
+    // ViewModel
+    api "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
+
+    // Retrofit Okhttp
+    api "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.retrofit_version"
+    api "com.squareup.okhttp3:okhttp:$rootProject.okhttp_version"
+    api "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofit_version"
+    api('com.github.ihsanbal:LoggingInterceptor:3.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    // Rx系列
+    api "io.reactivex.rxjava2:rxjava:$rootProject.rxjava_version"
+    api "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid_version"
+    api "io.reactivex.rxjava2:rxkotlin:$rootProject.rxkotlin_version"
+    api "com.trello.rxlifecycle3:rxlifecycle:$rootProject.rxlifecycle_version"
+
+    // If you want to use Kotlin syntax
+    api "com.trello.rxlifecycle3:rxlifecycle-kotlin:$rootProject.rxlifecycle_version"
+
+    // If you want pre-written Activities and Fragments you can subclass as providers
+    api "com.trello.rxlifecycle3:rxlifecycle-components:$rootProject.rxlifecycle_version"
+
+    // anko
+    api "org.jetbrains.anko:anko:$rootProject.anko_version"
+
+    // Support-v4 (only Anko Commons)
+    api "org.jetbrains.anko:anko-support-v4-commons:$rootProject.anko_version"
+
+    api "com.jakewharton.timber:timber:$rootProject.timber_version"
+    api 'jp.wasabeef:glide-transformations:4.0.0'
+    // ARouter
+    api "com.alibaba:arouter-api:$rootProject.arouter_version"
+
+    kapt "com.alibaba:arouter-compiler:$arouter_compiler"
+
+    //    api 'com.google.code.findbugs:jsr305:3.1.2'
+
+    // Glide
+    api "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+    api files('libs/BASE64Encoder.jar')
+    api "com.airbnb.android:lottie:$rootProject.lottie_version"
+    api "org.jsoup:jsoup:$rootProject.jsoup_version"
+    // EventBus
+    api "org.greenrobot:eventbus:$rootProject.eventbus_version"
+    // RxPermissions
+    api "com.github.tbruyelle:rxpermissions:$rootProject.rxpermission_version"
+
+    api  "com.umeng.umsdk:analytics:$rootProject.umsdk_analytics_version"
+    api  "com.umeng.umsdk:common:$rootProject.umsd_common_version"
+    api "com.umeng.umsdk:share-core:$rootProject.umsdk_share_version"
+    api "com.umeng.umsdk:share-board:$rootProject.umsdk_share_version"
+    api "com.umeng.umsdk:share-qq:$rootProject.umsdk_share_version"
+    api "com.umeng.umsdk:share-wx:$rootProject.umsdk_share_version"
+
+    api "com.contrarywind:Android-PickerView:$rootProject.pickerview_version"
+    api "com.scwang.smart:refresh-layout-kernel:$rootProject.smartRefresh_version"
+    // dkplayer
+    api "com.github.dueeeke.dkplayer:dkplayer-java:$rootProject.dueeke_player"
+    api "com.github.dueeeke.dkplayer:dkplayer-ui:$rootProject.dueeke_player"
+    api "com.github.dueeeke.dkplayer:player-ijk:$rootProject.dueeke_player"
+    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.base_adapter_version"
+    // zxing
+    api "com.google.zxing:core:$rootProject.zxing_version"
+    debugApi("com.squareup.leakcanary:leakcanary-android:$rootProject.leak_canary_version") {
+        exclude group: 'com.squareup.okio'
+    }
+    api("com.alibaba.android:vlayout:$rootProject.vlayout_version@aar") {
+        transitive = true
+    }
+    api'com.blankj:utilcode:1.25.2'
+
+    api "com.youth.banner:banner:$rootProject.youth_banner_verion"
+
+    api 'com.liulishuo.filedownloader:library:1.7.7'
+
+    api "com.ruffian.library:RWidgetHelper-AndroidX:0.0.6"
+
+    api 'me.zhanghai.android.materialratingbar:library:1.4.0'
+
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+
+    api 'com.tencent.liteavsdk:LiteAVSDK_Smart:8.9.10355@aar'
+
+    // MagicIndicator
+    api "com.github.hackware1993:MagicIndicator:1.7.0"
+
+    api 'com.hedgehog.ratingbar:app:1.1.2'
+}

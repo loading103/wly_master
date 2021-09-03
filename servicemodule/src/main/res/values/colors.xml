@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="service_upload_pic_tex">#36cd64</color>
+    <color name="service_upload_pic_bg">#f5f5f5</color>
+    <color name="service_sos_detail_333">#333333</color>
+    <color name="service_sos_detail_999">#999</color>
+    <color name="service_sos_tex_bg">#36cd64</color>
+    <color name="service_bus_lin">#e2e2e2</color>
+    <color name="color_333">#333333</color>
+    <color name="color_999">#999999</color>
+    <color name="color_666">#666666</color>
+    <color name="color_d4d4d4">#d4d4d4</color>
+    <color name="color_12000000">#12000000</color>
+    <color name="color_4Dff9e05">#26ff9e05</color>
+    <color name="color_fafafa">#fafafa</color>
+    <color name="color_alpha_80">#CC000000</color>
+    <color name="color_e5e5e5">#e5e5e5</color>
+    <color name="color_d1d1d1">#d1d1d1</color>
+    <color name="translate_white">#80ffffff</color>
+    <color name="translate_80_white">#C2ffffff</color>
+    <color name="light_translate_black">#4D000000</color>
+    <color name="service_e4f9fe">#e4f9fe</color>
+    <color name="service_f2f2ff">#f2f2ff</color>
+    <color name="service_fff9e9">#fff9e9</color>
+    <color name="service_e6f9e4">#e6f9e4</color>
+    <color name="service_fff2f1">#fff2f1</color>
+</resources>

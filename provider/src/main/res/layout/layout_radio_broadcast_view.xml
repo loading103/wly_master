@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_36"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@drawable/shape_radio_bradcast_r5">
+
+        <ImageView
+            android:id="@+id/img_radio_bradcast"
+            android:layout_width="@dimen/dp_23"
+            android:layout_height="@dimen/dp_18"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:src="@mipmap/home_announce_icon_laba" />
+
+        <ViewFlipper
+            android:id="@+id/vf_radio_bradcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_toRightOf="@+id/img_radio_bradcast" />
+    </RelativeLayout>
+</layout>

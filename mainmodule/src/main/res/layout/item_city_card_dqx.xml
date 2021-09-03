@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="dqx"
+            type="com.daqsoft.provider.bean.BrandMDD"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_item_click_dqx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="@dimen/dp_12">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_mdd_logo_dqx"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_77"
+                android:scaleType="centerCrop"/>
+            <TextView
+                android:id="@+id/tv_mdd_sign_dqx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{dqx.siteLabelNames}"
+                android:textSize="@dimen/sp_9"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_3"
+                android:paddingBottom="@dimen/dp_3"
+                android:paddingLeft="@dimen/dp_6"
+                android:paddingRight="@dimen/dp_6"
+                android:background="@drawable/city_dqx_sign"
+                android:visibility="@{dqx.siteLabelNames.equals(``)?View.GONE:View.VISIBLE}"/>
+            <ImageView
+                android:id="@+id/iv_mdd_play_dqx"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:background="@mipmap/city_card_gs_video"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_8"
+                android:layout_alignBottom="@id/iv_mdd_logo_dqx"
+                android:layout_marginBottom="@dimen/dp_8"
+                android:visibility="@{dqx.videoUrl.equals(``)?View.GONE:View.VISIBLE}"/>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_19">
+            <TextView
+                android:id="@+id/tv_mdd_name_dqx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{dqx.name}"
+                android:textSize="@dimen/sp_15"
+                android:textColor="@color/color_333"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/dp_11"
+                android:singleLine="true"
+                android:ellipsize="end"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

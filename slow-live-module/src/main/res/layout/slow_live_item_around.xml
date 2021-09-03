@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.daqsoft.slowLiveModule.bean.LiveAroundBean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="@dimen/dp_190"
+            android:layout_height="@dimen/dp_110"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:clipChildren="true"
+            app:cardCornerRadius="@dimen/dp_5"
+            app:cardElevation="@dimen/dp_2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_bg"
+                url="@{item.getImageBg()}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <com.daqsoft.slowLiveModule.widget.MarqueeTextView
+            android:id="@+id/tv_name"
+            android:layout_width="@dimen/dp_190"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/dp_8"
+            android:ellipsize="end"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="@{item.scenicSpotsName}"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@id/card"
+            app:layout_constraintTop_toBottomOf="@id/card"
+            tools:text="日落九曲十八弯" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_play_info"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/card"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name">
+
+            <ImageView
+                android:layout_width="@dimen/dp_13"
+                android:layout_height="@dimen/dp_13"
+                android:layout_gravity="center"
+                android:src="@drawable/slow_live_video_list_play_pic"
+                android:tint="@color/slow_live_color_bdbdbd" />
+
+            <TextView
+                android:id="@+id/tv_play_num"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_3"
+                android:text="@{String.valueOf(item.showNum)}"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_12"
+                tools:text="389" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

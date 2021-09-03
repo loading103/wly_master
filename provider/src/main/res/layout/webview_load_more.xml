@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="WebViewLayout">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <com.daqsoft.provider.view.web.ContentWebView
+            android:id="@+id/web_load_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        </FrameLayout>
+        <RelativeLayout
+            android:id="@+id/v_web_load_more"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_32">
+
+            <ImageView
+                android:id="@+id/img_load_more"
+                android:layout_width="@dimen/dp_10"
+                android:layout_height="@dimen/dp_5"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/provider_arrow_down" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

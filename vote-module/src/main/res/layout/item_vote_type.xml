@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+    </data>
+
+    <TextView
+        android:id="@+id/txt_tab_recommend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_8"
+        android:includeFontPadding="false"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_6"
+        android:paddingRight="@dimen/dp_12"
+        android:paddingBottom="@dimen/dp_6"
+        android:text="@{name}"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_11" />
+</layout>

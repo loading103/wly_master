@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingEnd="@dimen/dp_20">
+
+        <TextView
+            android:id="@+id/country_fw_recommend_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            android:layout_marginBottom="@dimen/dp_24"
+            android:layout_toLeftOf="@+id/cdtv_fw_recommend_more"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="风物推荐"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_19"
+            android:textStyle="bold" />
+
+        <com.daqsoft.baselib.widgets.CenterDrawableTextView
+            android:id="@+id/cdtv_fw_recommend_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/country_fw_recommend_title"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_vertical"
+            android:drawableRight="@mipmap/common_button_arrow_more_small"
+            android:drawablePadding="@dimen/dp_6"
+            android:gravity="center"
+            android:text="@string/user_more"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_14" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recy_fw_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/country_fw_recommend_title" />
+
+        <LinearLayout
+            android:id="@+id/ll_change"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_36"
+            android:layout_below="@id/recy_fw_recommend"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@drawable/home_b_f5_stroke_null_round_5"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="换一批"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_12" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:src="@mipmap/city_card_refresh" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

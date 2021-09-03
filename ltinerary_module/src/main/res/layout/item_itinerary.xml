@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.daqsoft.itinerary.bean.ItineraryBean"/>
+        <variable name="itinerary" type="ItineraryBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingBottom="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            url="@{itinerary.headUrl}"
+            placeholder="@{@drawable/mine_profile_photo_default}"
+            android:id="@id/view_avatar"
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            app:corner_radius="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_24"
+            app:srcCompat="@drawable/mine_profile_photo_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/ViewWrap"
+            tools:text="用户名"
+            android:text="@{itinerary.createName}"
+            android:id="@id/user_name"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_13"
+            android:layout_marginTop="@dimen/dp_22"
+            android:layout_marginStart="@dimen/dp_8"
+            app:layout_constraintStart_toEndOf="@id/view_avatar"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/ViewWrap"
+            android:id="@id/create_time"
+            tools:text="2019-01-07 15:30"
+            android:text="@{itinerary.createTime}"
+            android:textColor="#999999"
+            android:textSize="@dimen/sp_13"
+            android:layout_marginStart="@dimen/dp_8"
+            app:layout_constraintStart_toEndOf="@id/view_avatar"
+            app:layout_constraintTop_toBottomOf="@id/user_name"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            style="@style/ViewWrap"
+            android:padding="@dimen/dp_10"
+            android:id="@+id/view_renamed"
+            app:srcCompat="@drawable/img_more"
+            android:layout_marginTop="@dimen/dp_30"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/poster_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_168"
+            android:layout_marginTop="@dimen/dp_21"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/create_time"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/itinerary_name"
+            tools:text="吃+耍+住，1天打卡国宝大熊猫路线"
+            android:text="@{itinerary.name}"
+            style="@style/ViewWrap"
+            android:textColor="#333333"
+            android:textSize="@dimen/sp_18"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginTop="@dimen/dp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/poster_layout"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/ViewWrap"
+            android:id="@+id/itinerary_periods"
+            tools:text="行程历时4天，2019.1.12-2019.1.16"
+            android:textColor="#999999"
+            android:textSize="@dimen/sp_13"
+            android:layout_marginTop="@dimen/dp_8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/itinerary_name"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/ViewWrap"
+            android:id="@+id/view_labels"
+            tools:text="个城市·12个景区·4个酒店·5个文化场所"
+            android:textColor="#1995FF"
+            android:textSize="@dimen/sp_13"
+            android:layout_marginTop="@dimen/dp_5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/itinerary_periods"/>
+
+        <com.daqsoft.itinerary.widget.FlexBoxLayout
+            android:id="@+id/tag_layout"
+            android:layout_marginTop="@dimen/dp_9"
+            app:horizontalSpace="@dimen/dp_2"
+            app:vertivalSpace="@dimen/dp_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_labels">
+
+            <TextView
+                tools:text="跟团游"
+                style="@style/ItineraryLabel" />
+
+            <TextView
+                tools:text="跟团游"
+                style="@style/ItineraryLabel"/>
+
+        </com.daqsoft.itinerary.widget.FlexBoxLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

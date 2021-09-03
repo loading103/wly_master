@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.daqsoft.slowLiveModule">
+
+    <application>
+
+        <activity android:name=".liveList.SlowLiveListActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".liveDetail.SlowLiveDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".liveDetail.SlowLivePlayActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
+            android:name=".video.VideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name=".liveContent.ContentActivity" />
+
+    </application>
+
+</manifest>

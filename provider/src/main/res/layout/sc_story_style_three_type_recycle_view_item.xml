@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:scaleType="centerCrop"
+            android:id="@+id/image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="@dimen/dp_80"
+            app:layout_constraintDimensionRatio="h,1:1"
+            android:layout_height="0dp">
+        </ImageView>
+
+        <TextView
+            android:layout_margin="@dimen/dp_8"
+            android:id="@+id/title"
+            android:ellipsize="end"
+            android:maxLines="2"
+            app:layout_constraintRight_toRightOf="@id/image"
+            app:layout_constraintLeft_toLeftOf="@+id/image"
+            app:layout_constraintBottom_toBottomOf="@id/image"
+            android:text="#姥姥说"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        </TextView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

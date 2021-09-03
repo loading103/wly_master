@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_8">
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_30"
+            android:layout_weight="1"
+            android:background="@drawable/shape_edit_search_3"
+            android:layout_gravity="center_vertical"
+            android:hint="@string/home_strategy_graph_title_hint"
+            android:textSize="@dimen/sp_13"
+            android:paddingLeft="@dimen/dp_12"
+            android:maxLength="20"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/tv_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_30"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@drawable/home_b_36cd64_stroke_null_round_2"
+            android:gravity="center"
+            android:text="完成"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_13" />
+    </LinearLayout>
+
+</layout>

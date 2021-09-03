@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="price"
+            type="String" />
+
+        <variable
+            name="left"
+            type="String" />
+
+        <variable
+            name="totalTime"
+            type="String" />
+
+        <variable
+            name="address"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_20">
+
+        <ImageView
+            android:layout_marginLeft="@dimen/dp_3"
+            android:id="@+id/image"
+            android:layout_width="@dimen/dp_105"
+            android:layout_height="@dimen/dp_140"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+        </ImageView>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/iv_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_8"
+            android:src="@drawable/home_selector_collect"
+            app:layout_constraintRight_toRightOf="@id/image"
+            app:layout_constraintTop_toTopOf="@id/image" />
+
+        <TextView
+            android:gravity="center"
+            android:text="报名中"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10"
+            android:background="@drawable/shape_home_popular_activity_tag_bg_green"
+            android:minWidth="@dimen/dp_55"
+            android:id="@+id/tv_active_status"
+            app:layout_constraintTop_toTopOf="@+id/image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_height="@dimen/dp_24"
+            android:layout_width="@dimen/dp_49">
+        </TextView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintHeight_min="@dimen/dp_140"
+            app:layout_constraintLeft_toRightOf="@+id/image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/image"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="@dimen/dp_16"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/color_333333"
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:text="08.04 - 08.31"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:layout_marginTop="@dimen/dp_17"
+                app:layout_constraintLeft_toLeftOf="@+id/title"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/color_333333"
+                android:id="@+id/period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/gray_999999"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:id="@+id/delimiter"
+                android:text="@string/main_delimiter_vertical"
+                app:layout_constraintLeft_toRightOf="@+id/period"
+                app:layout_constraintBaseline_toBaselineOf="@+id/period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/gray_999999"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:id="@+id/already"
+                android:text="@string/main_already_recruit"
+                app:layout_constraintLeft_toRightOf="@+id/delimiter"
+                app:layout_constraintBaseline_toBaselineOf="@+id/period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:layout_marginLeft="@dimen/dp_8"
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/color_333333"
+                android:id="@+id/already_amount"
+                android:text=""
+                app:layout_constraintLeft_toRightOf="@+id/already"
+                app:layout_constraintBaseline_toBaselineOf="@+id/period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/gray_999999"
+                android:id="@+id/total_recruitment"
+                android:text=""
+                app:layout_constraintLeft_toRightOf="@+id/already_amount"
+                app:layout_constraintBaseline_toBaselineOf="@+id/period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <androidx.constraintlayout.widget.Group
+                android:visibility="gone"
+                android:id="@+id/group_recruit"
+                app:constraint_referenced_ids="delimiter,already,already_amount,total_recruitment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </androidx.constraintlayout.widget.Group>
+
+            <com.daqsoft.provider.view.FlowLayout
+                app:layout_constraintVertical_chainStyle="spread_inside"
+                android:layout_marginBottom="@dimen/dp_5"
+                app:layout_constraintBottom_toTopOf="@+id/arrow"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dp_9"
+                app:layout_constraintRight_toRightOf="@+id/title"
+                app:layout_constraintLeft_toLeftOf="@+id/title"
+                app:layout_constraintTop_toBottomOf="@+id/period"
+                android:id="@+id/label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+            </com.daqsoft.provider.view.FlowLayout>
+
+            <TextView
+                android:layout_marginBottom="@dimen/dp_4"
+                app:layout_constraintTop_toTopOf="@+id/arrow"
+                app:layout_constraintLeft_toLeftOf="@+id/title"
+                android:textStyle="bold"
+                android:textColor="@color/ff9e05"
+                android:textSize="@dimen/sp_18"
+                android:text="500"
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:textStyle="bold"
+                android:text="@string/provider_chinese_yuan"
+                android:textColor="@color/ff9e05"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintLeft_toRightOf="@+id/price"
+                app:layout_constraintBaseline_toBaselineOf="@+id/price"
+                android:id="@+id/unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <androidx.constraintlayout.widget.Group
+                app:constraint_referenced_ids="price,unit"
+                android:visibility="gone"
+                android:id="@+id/group_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </androidx.constraintlayout.widget.Group>
+            <TextView
+                android:layout_marginBottom="@dimen/dp_4"
+                app:layout_constraintTop_toTopOf="@+id/arrow"
+                app:layout_constraintLeft_toLeftOf="@+id/title"
+                android:textStyle="bold"
+                android:textColor="@color/green_36cd64"
+                android:textSize="@dimen/sp_15"
+                android:text="@string/provider_order_free"
+                android:id="@+id/free"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_marginBottom="@dimen/dp_4"
+                app:layout_constraintTop_toBottomOf="@+id/label"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:src="@mipmap/activity_calendar_icon_entrance"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20">
+            </ImageView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

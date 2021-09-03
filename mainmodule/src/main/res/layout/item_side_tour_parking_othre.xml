@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="park"
+            type="com.daqsoft.provider.bean.ParkingBean" />
+
+        <variable
+            name="totalInfo"
+            type="String" />
+
+        <variable
+            name="scaleSize"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dp_14"
+        android:paddingBottom="@dimen/dp_15">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/e8e8e8"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:visibility="@{park.total!=null&amp;&amp;!park.total.empty&amp;&amp;totalInfo!=null&amp;&amp;!totalInfo.empty}"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15">
+
+            <TextView
+                android:id="@+id/txt_park_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_14"
+                android:includeFontPadding="false"
+                android:text="@string/side_tour_park_info"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_13" />
+
+            <TextView
+                android:id="@+id/txt_park_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/txt_park_info"
+                android:layout_toRightOf="@+id/txt_park_info"
+                android:includeFontPadding="false"
+                android:text="@{totalInfo}"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_13" />
+
+            <TextView
+                android:id="@+id/txt_park_scale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_alignBaseline="@+id/txt_park_info"
+                android:layout_toRightOf="@+id/txt_park_num"
+                android:background="@drawable/map_mode_f5f5f5_stroke_2"
+                android:text="@{scaleSize}"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_13" />
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_park_num"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_toRightOf="@+id/txt_park_info"
+                android:includeFontPadding="false"
+                android:text="@string/side_tour_park_tip"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_11" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{park.charges!=null&amp;&amp;!park.charges.empty}"
+            android:layout_marginTop="@dimen/dp_15">
+
+            <TextView
+                android:id="@+id/txt_park_charge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_14"
+                android:includeFontPadding="false"
+                android:text="@string/side_tour_park_charge"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_13" />
+
+            <TextView
+                android:id="@+id/txt_park_charge_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_park_charge"
+                android:text="@{park.charges}"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_13" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="@{park.openTime!=null&amp;&amp;!park.openTime.empty}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15">
+
+            <TextView
+                android:id="@+id/txt_park_times"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_14"
+                android:includeFontPadding="false"
+                android:text="@string/side_tour_park_time"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_13" />
+
+            <TextView
+                android:id="@+id/txt_park_times_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_park_times"
+                android:includeFontPadding="false"
+                android:text="@{park.openTime}"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_13" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_14"
+            android:visibility="@{park.phone!=null&amp;&amp;!park.phone.empty}"
+            android:layout_marginTop="@dimen/dp_15">
+
+            <TextView
+                android:id="@+id/txt_park_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/side_tour_park_phone_number"
+                android:layout_marginRight="@dimen/dp_14"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_13" />
+
+            <TextView
+                android:id="@+id/txt_park_phone_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_park_contact"
+                android:includeFontPadding="false"
+                android:text="@{park.phone}"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_13" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/v_park_images"
+            android:visibility="@{park.images!=null&amp;&amp;!park.images.empty}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15">
+
+            <TextView
+                android:id="@+id/txt_park_images"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_14"
+                android:includeFontPadding="false"
+                android:text="@string/side_tour_park_images"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_13" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recy_park_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_park_images" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

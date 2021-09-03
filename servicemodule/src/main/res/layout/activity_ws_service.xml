@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="imgUrl"
+            type="String" />
+    </data>
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/rl_service"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"/>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_34"
+            android:visibility="gone"
+            android:paddingBottom="@dimen/dp_13"
+            android:text="享服务 Exclusive Service"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold" />
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:orientation="vertical">
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    android:id="@+id/iv_ad"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_120"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    app:url="@{imgUrl}"
+                    app:corner_bottom_left_radius="@dimen/dp_6"
+                    app:corner_bottom_right_radius="@dimen/dp_6"
+                    app:corner_top_left_radius="@dimen/dp_6"
+                    app:corner_top_right_radius="@dimen/dp_6"
+                    app:is_circle="false"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_28"
+                    android:src="@mipmap/common_image_screen_no_data"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:text="查询服务"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_19" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/serviceTravelRv"
+                    android:layout_marginStart="@dimen/dp_14"
+                    android:layout_marginEnd="@dimen/dp_14"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_48"
+                    android:text="@string/service_traffic_title"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_19" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/serviceTrafficRv"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginStart="@dimen/dp_14"
+                    android:layout_marginEnd="@dimen/dp_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_48"
+                    android:text="@string/service_helper_title"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_19" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/servicePlayRv"
+                    android:layout_marginStart="@dimen/dp_14"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginEnd="@dimen/dp_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_48"
+                    android:text="@string/service_public_title"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_19"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/servicePublicRv"
+                    android:layout_marginStart="@dimen/dp_14"
+                    android:layout_marginEnd="@dimen/dp_14"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

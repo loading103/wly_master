@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="location"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="likeNumber"
+            type="String" />
+
+        <variable
+            name="commentNumber"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_20">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/iv_user"
+                android:layout_width="@dimen/dp_28"
+                android:layout_height="@dimen/dp_28"
+                android:scaleType="center"
+                android:src="@mipmap/mine_profile_photo_default"
+                app:is_circle="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/iv_user"
+                app:layout_constraintLeft_toRightOf="@id/iv_user"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_user">
+
+                <TextView
+                    android:id="@+id/tv_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:ellipsize="end"
+                    android:maxLength="15"
+                    android:text="@{name}"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_11" />
+
+                <TextView
+                    android:id="@+id/reprint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_toRightOf="@+id/tv_user"
+                    android:background="@drawable/shape_reprint"
+                    android:paddingHorizontal="@dimen/dp_6"
+                    android:paddingVertical="@dimen/dp_4"
+                    android:text="@string/main_reprint"
+                    android:textColor="@color/ff9e05"
+                    android:textSize="@dimen/sp_9"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+
+            <com.daqsoft.travelCultureModule.hotActivity.view.MuiltImageView
+                android:id="@+id/ai_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                app:layout_constraintTop_toBottomOf="@id/iv_user" />
+
+            <ImageView
+                android:id="@+id/iv_video"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="40dp"
+                android:layout_margin="@dimen/dp_20"
+                android:src="@mipmap/home_gs_video"
+                app:layout_constraintBottom_toBottomOf="@id/ai_image"
+                app:layout_constraintLeft_toLeftOf="@id/ai_image"
+                app:layout_constraintRight_toRightOf="@id/ai_image"
+                app:layout_constraintTop_toTopOf="@id/ai_image" />
+
+            <TextView
+                android:id="@+id/tv_image_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_20"
+                android:background="@mipmap/home_gs_tmb"
+                android:gravity="center"
+                android:padding="@dimen/dp_5"
+                android:text="aasd"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_8"
+                app:layout_constraintBottom_toBottomOf="@id/ai_image"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/location_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_18"
+                android:drawableLeft="@mipmap/time_home_hot_position"
+                android:drawablePadding="@dimen/dp_6"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{location}"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_11"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ai_image" />
+
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toEndOf="@id/location_name"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="@id/location_name"
+                app:layout_constraintTop_toBottomOf="@id/location_name" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_18"
+                android:drawableLeft="@mipmap/time_home_list_time"
+                android:drawablePadding="@dimen/dp_3"
+                android:gravity="center"
+                android:textSize="@dimen/sp_12"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tv_comment"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_comment"
+                tool:text="ad" />
+
+            <TextView
+                android:id="@+id/tv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_18"
+                android:drawableLeft="@mipmap/time_home_list_comment"
+                android:drawablePadding="@dimen/dp_3"
+                android:gravity="center"
+                android:text="@{commentNumber}"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintLeft_toRightOf="@id/tv_time"
+                app:layout_constraintTop_toBottomOf="@id/tv_content"
+                app:layout_goneMarginLeft="@dimen/dp_0"
+                tool:text="ad" />
+
+            <TextView
+                android:id="@+id/tv_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_18"
+                android:drawableLeft="@mipmap/time_home_list_like"
+                android:drawablePadding="@dimen/dp_3"
+                android:gravity="center"
+                android:text="@{likeNumber}"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toBottomOf="@id/tv_comment"
+                app:layout_constraintLeft_toRightOf="@id/tv_comment"
+                app:layout_constraintTop_toTopOf="@id/tv_comment"
+                tool:text="ad" />
+
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"
+                android:src="@mipmap/raiders_detail_delete"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_comment"
+                app:layout_constraintTop_toTopOf="@+id/tv_comment" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--        <View-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="@dimen/dp_0_5"-->
+        <!--            android:background="@color/divider_e2"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
+    </LinearLayout>
+
+
+</layout>

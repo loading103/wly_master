@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="waitWriterOffNum"
+            type="String" />
+
+        <variable
+            name="havedWriterOffNum"
+            type="String" />
+
+        <variable
+            name="selectTab"
+            type="Integer" />
+
+        <variable
+            name="isShowTabBar"
+            type="Boolean" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.daqsoft.provider.scrollview.DqScrollView
+            android:id="@+id/scroll_appoint_user"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/v_wait_writer_off_users"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_22">
+
+                    <ImageView
+                        android:id="@+id/img_whcg_01"
+                        android:layout_width="@dimen/dp_3"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_centerVertical="true"
+                        android:background="@mipmap/whcgxq_bt_bq" />
+
+                    <TextView
+                        android:id="@+id/tv_all_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_toRightOf="@+id/img_whcg_01"
+                        android:text="待核销用户"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_toRightOf="@+id/tv_all_user"
+                        android:textColor="@color/color_999"
+                        android:textSize="@dimen/sp_13"
+                        tools:text="(6)" />
+
+                </RelativeLayout>
+
+                <com.daqsoft.provider.scrollview.DqRecylerView
+                    android:id="@+id/rv_no_writer_users"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_20" />
+
+                <View
+                    android:id="@+id/v_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:background="@color/f5" />
+
+                <RelativeLayout
+                    android:id="@+id/v_haved_writer_off_users"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_22">
+
+                    <ImageView
+                        android:id="@+id/img_whcg_02"
+                        android:layout_width="@dimen/dp_3"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_centerVertical="true"
+                        android:background="@mipmap/whcgxq_bt_bq" />
+
+                    <TextView
+                        android:id="@+id/tv_haved_writer_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_toRightOf="@+id/img_whcg_02"
+                        android:text="已核销用户"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_toRightOf="@+id/tv_haved_writer_user"
+                        android:textColor="@color/color_999"
+                        android:textSize="@dimen/sp_13"
+                        tools:text="(6)" />
+                </RelativeLayout>
+
+                <com.daqsoft.provider.scrollview.DqRecylerView
+                    android:id="@+id/rv_haved_writer_users"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_20" />
+            </LinearLayout>
+        </com.daqsoft.provider.scrollview.DqScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:visibility="@{isShowTabBar}">
+
+            <RelativeLayout
+                android:id="@+id/v_tab_wait_hexiao"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/tv_wait_writer_off_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="待核销用户"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_3"
+                        android:layout_toRightOf="@+id/tv_wait_writer_off_title"
+                        android:text="@{waitWriterOffNum}"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="@{waitWriterOffNum!=null}"
+                        tools:text="(3)" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_3"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/app_main_color"
+                    android:visibility="@{selectTab==0}" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/e8e8e8" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/v_tab_haved_hexiao"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/tv_haved_writer_off_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="已核销用户"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_3"
+                        android:layout_toRightOf="@+id/tv_haved_writer_off_title"
+                        android:text="@{havedWriterOffNum}"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="@{havedWriterOffNum!=null}"
+                        tools:text="(3)" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_3"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/app_main_color"
+                    android:visibility="@{selectTab==1}" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/e8e8e8" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>

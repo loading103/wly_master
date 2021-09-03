@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/lv_appoint_cance_bottom">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:background="@drawable/shape_provider_f5_r3"
+                    android:minHeight="@dimen/dp_32">
+
+                    <ImageView
+                        android:id="@+id/img_search"
+                        android:layout_width="@dimen/dp_13"
+                        android:layout_height="@dimen/dp_13"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:background="@mipmap/provider_search" />
+
+                    <EditText
+                        android:id="@+id/et_search_words"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:layout_toRightOf="@+id/img_search"
+                        android:background="@null"
+                        android:ellipsize="end"
+                        android:hint="请输入用户名称关键字进行搜索"
+                        android:imeOptions="actionSearch"
+                        android:singleLine="true"
+                        android:textColor="@color/color_333"
+                        android:textColorHint="@color/color_999"
+                        android:textSize="@dimen/sp_13" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_22">
+
+                    <ImageView
+                        android:id="@+id/img_whcg"
+                        android:layout_width="@dimen/dp_3"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_centerVertical="true"
+                        android:background="@mipmap/whcgxq_bt_bq" />
+
+                    <TextView
+                        android:id="@+id/tv_haved_select_users"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_toRightOf="@+id/img_whcg"
+                        android:text="不核销用户"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_no_user_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_toRightOf="@+id/tv_haved_select_users"
+                        android:textColor="@color/color_999"
+                        android:textSize="@dimen/sp_13"
+                        tools:text="(6)" />
+
+                </RelativeLayout>
+                <com.daqsoft.provider.view.LabelsView
+                    android:id="@+id/llv_reservation_persons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:minHeight="@dimen/dp_25"
+                    android:padding="@dimen/dp_5"
+                    app:labelBackground="@drawable/shape_venue_default_r3"
+                    app:labelTextColor="@color/color_333"
+                    app:labelTextHeight="wrap_content"
+                    app:labelTextPaddingBottom="@dimen/dp_8"
+                    app:labelTextPaddingLeft="@dimen/dp_14"
+                    app:labelTextPaddingRight="@dimen/dp_14"
+                    app:labelTextPaddingTop="@dimen/dp_8"
+                    app:labelTextSize="@dimen/sp_13"
+                    app:labelTextWidth="wrap_content"
+                    app:lineMargin="@dimen/dp_8"
+                    app:maxSelect="0"
+                    app:minSelect="1"
+                    app:selectType="MULTI"
+                    app:wordMargin="@dimen/dp_10" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:background="@color/f5" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_22">
+
+                    <ImageView
+                        android:id="@+id/img_whcg_01"
+                        android:layout_width="@dimen/dp_3"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_centerVertical="true"
+                        android:background="@mipmap/whcgxq_bt_bq" />
+
+                    <TextView
+                        android:id="@+id/tv_all_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_toRightOf="@+id/img_whcg_01"
+                        android:text="全部用户"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_all_user_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_toRightOf="@+id/tv_all_user"
+                        android:textColor="@color/color_999"
+                        android:textSize="@dimen/sp_13"
+                        tools:text="(6)" />
+
+                </RelativeLayout>
+
+                <com.daqsoft.provider.scrollview.DqRecylerView
+                    android:id="@+id/recycler_all_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_20" />
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/lv_appoint_cance_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp_120"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_select_status"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:background="@mipmap/register_button_choose_normal" />
+
+                <TextView
+                    android:id="@+id/tv_select_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_toRightOf="@+id/img_select_status"
+                    android:text="全选"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_15" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_no_verify_user"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/app_main_color"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                tools:text="确认取消6人的预约" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--投诉item的属性-->
+    <declare-styleable name="ItemView">
+        <attr name="leftLabel" format="string" />
+        <attr name="rightContent" format="string" />
+        <attr name="leftLabelColor" format="color" />
+        <attr name="rightHintColor" format="color" />
+        <attr name="rightContentColor" format="color" />
+        <attr name="rightContentSize" format="dimension" />
+        <attr name="rightContentMaxLength" format="integer"/>
+        <attr name="rightContentPosition" format="enum">
+            <enum name="right" value="0" />
+            <enum name="bottom" value="1" />
+        </attr>
+        <attr name="etHint" format="string" />
+
+        <attr name="inputLines" format="integer" />
+        <attr name="isNeed" format="boolean" />
+        <attr name="showArrow" format="boolean"/>
+        <attr name="maxElms" format="integer" />
+
+        <attr name="labelSize" format="dimension" />
+        <attr name="labelPadding" format="dimension" />
+        <attr name="textType" format="enum">
+            <enum name="text" value="0" />
+            <enum name="image" value="1" />
+        </attr>
+        <attr name="drawableLeft" format="reference"/>
+        <attr name="labelType" format="enum">
+            <enum name="bold" value="0"/>
+            <enum name="normal" value="1"/>
+        </attr>
+        <attr name="showDivider" format="boolean"/>
+        <attr name="contentGravity" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>
+        <attr name="labelWidth" format="dimension"/>
+    </declare-styleable>
+
+    <attr name="resourceFilterStyle" format="reference" />
+
+    <attr name="hideRight" format="boolean"/>
+    <attr name="hide" format="boolean"/>
+</resources>

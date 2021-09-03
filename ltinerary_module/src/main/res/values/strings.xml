@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">智能行程</string>
+    
+    <string name="smart_itinerary">智能行程</string>
+    <string name="itinerary_settings">定制行程</string>
+
+    <!--分隔符-->
+    <string name="separator">-</string>
+    <string name="process_day">行程历时%d天，</string>
+
+    <string name="itinerary_adjust">行程调整</string>
+    <string name="traffic_assistant">交通助手</string>
+    <string name="default_city">乌鲁木齐市</string>
+
+</resources>

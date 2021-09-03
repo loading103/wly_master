@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="topAd"
+            type="String" />
+
+        <variable
+            name="happyUrl"
+            type="String" />
+
+        <variable
+            name="happyName"
+            type="String" />
+
+        <variable
+            name="vm"
+            type="com.daqsoft.thetravelcloudwithculture.sc.fragment.SCHomeBannerAndHappyFragmentViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+            android:id="@+id/banner_top_adv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_90"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:visibility="gone" />
+        <LinearLayout
+            android:id="@+id/ll_home_found"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_found_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_found_around"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_24"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:text="@string/home_found_info"
+                        android:textColor="@color/txt_gray"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:layout_height="wrap_content">
+<!--                    <ImageView-->
+<!--                        android:id="@+id/iv_bg"-->
+<!--                        app:layout_constraintTop_toTopOf="parent"-->
+<!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                        app:layout_constraintRight_toRightOf="parent"-->
+<!--                        android:src="@mipmap/home_nearby_bg"-->
+<!--                        android:layout_width="@dimen/dp_335"-->
+<!--                        android:layout_height="@dimen/dp_160"/>-->
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/iv_bg"
+                        app:lottie_imageAssetsFolder="radar"
+                        app:lottie_fileName="lottie_animation_radar.json"
+                        app:lottie_loop="true"
+                        app:lottie_autoPlay="true"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_width="@dimen/dp_335"
+                        android:layout_height="@dimen/dp_160">
+                    </com.airbnb.lottie.LottieAnimationView>
+                    <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+                        android:id="@+id/banner_found"
+                        android:layout_width="@dimen/dp_295"
+                        android:layout_height="@dimen/dp_120"
+                        app:layout_constraintTop_toTopOf="@+id/iv_bg"
+                        app:layout_constraintLeft_toLeftOf="@+id/iv_bg"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_bg"
+                        app:layout_constraintRight_toRightOf="@+id/iv_bg"
+                         />
+                    <com.daqsoft.provider.view.ViewPagerIndicatorView
+                        android:id="@+id/circleIndicator"
+                        android:layout_width="@dimen/dp_100"
+                        android:layout_height="@dimen/dp_30"
+                        app:layout_constraintBottom_toBottomOf="@+id/banner_found"
+                        app:layout_constraintLeft_toLeftOf="@+id/banner_found"
+                        app:circle_flag="true"
+                        app:loadingcolor="@color/colorPrimary" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/ll_home_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:orientation="vertical"
+           >
+
+            <LinearLayout
+                android:id="@+id/ll_home_activity_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_20"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_hot_activity"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_24"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:text="@string/home_hot_activity_info"
+                        android:textColor="@color/txt_gray"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+                <com.daqsoft.baselib.widgets.CenterDrawableTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_gravity="center_vertical"
+                    android:drawableRight="@mipmap/more_right_arrow"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:gravity="center"
+                    android:text="@string/user_more"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+<!--            <com.daqsoft.provider.view.XGallery-->
+<!--                android:id="@+id/x_branch_activity"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="@dimen/dp_20"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:xGallery_itemHeight="@dimen/dp_310"-->
+<!--                app:xGallery_itemWidth="@dimen/dp_320"-->
+<!--                />-->
+<!--            <androidx.viewpager.widget.ViewPager-->
+<!--                android:id="@+id/x_branch_activity"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="@dimen/dp_20"-->
+<!--                >-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipChildren="false">
+
+                <com.daqsoft.provider.view.AutoHeightViewPager
+                    android:id="@+id/x_branch_activity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_26"
+                    android:clipChildren="false" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_home_happy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:orientation="vertical"
+
+            >
+
+            <LinearLayout
+                android:id="@+id/ll_home_happy_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title_happy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_city_introduce"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_24"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:text="@string/home_city_introduce_info"
+                        android:textColor="@color/txt_gray"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+                <com.daqsoft.baselib.widgets.CenterDrawableTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:drawableRight="@mipmap/more_right_arrow"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:gravity="center"
+                    android:text="@string/user_more"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_244"
+                android:layout_marginTop="@dimen/dp_20"
+                android:orientation="horizontal">
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    android:id="@+id/iv_home_happy"
+                    android:layout_width="@dimen/dp_236"
+                    android:layout_height="0dp"
+                    app:corner_bottom_left_radius="@dimen/dp_5"
+                    app:corner_bottom_right_radius="@dimen/dp_5"
+                    app:corner_top_left_radius="@dimen/dp_5"
+                    app:corner_top_right_radius="@dimen/dp_5"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_16"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_home_happy"
+                    app:layout_constraintLeft_toLeftOf="@+id/iv_home_happy"
+                    app:layout_constraintRight_toRightOf="@id/iv_home_happy">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_28"
+                        android:background="@drawable/shape_provider_fff_5"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/dp_12"
+                        android:paddingRight="@dimen/dp_12"
+                        android:text="@{happyName}"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="bold"
+                        tools:text="皮影戏" />
+                </LinearLayout>
+
+
+                <com.daqsoft.provider.scrollview.DqRecylerView
+                    android:id="@+id/recycler_home_happy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_8"
+                    app:layout_constraintLeft_toRightOf="@+id/iv_home_happy"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_happy_change"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_change"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_14" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_13"
+                    android:layout_height="@dimen/dp_13"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:src="@mipmap/home_hyp_sx" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>

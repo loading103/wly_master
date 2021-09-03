@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".smriti.ui.LegacySmritiActivity">
+    <data/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_search"
+            android:text="@string/legacy_module_search_hint"
+            android:layout_marginTop="@dimen/dp_12"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/color_333"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:drawablePadding="@dimen/dp_8"
+            android:background="@drawable/legacy_shape_f5f5f5_3_radius"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:paddingStart="@dimen/dp_12"
+            android:drawableStart="@drawable/legacy_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.flyco.tablayout.SlidingTabLayout
+            android:background="@color/white"
+            android:id="@+id/slidingTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            app:tl_indicator_margin_left="@dimen/dp_2"
+            app:tl_indicator_margin_right="@dimen/dp_2"
+            app:tl_textBold="SELECT"
+            android:paddingStart="@dimen/dp_10"
+            app:tl_tab_padding="@dimen/dp_10"
+            app:tl_indicator_width="@dimen/dp_32"
+            app:tl_indicator_margin_top="@dimen/dp_4"
+            app:tl_textUnselectColor="@color/color_666"
+            app:tl_textSelectColor="@color/legacy_module_color_34ac9e"
+            app:tl_indicator_color="@color/legacy_module_color_34ac9e"
+            app:tl_indicator_height="@dimen/dp_3"
+            app:tl_textsize="@dimen/sp_14"
+            app:tl_indicator_style="NORMAL" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_8"
+            android:background="@color/color_f5f5f5"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+
+
+</layout>

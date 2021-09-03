@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/c_36cd64"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_22"
+                android:layout_marginRight="@dimen/dp_20"
+                android:text="@string/credit_history_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_19"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_now_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_19"
+                android:text="本月"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_description"
+                app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+
+            <TextView
+                android:id="@+id/tv_now_month_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_19"
+                android:background="@drawable/shape_white_9"
+                android:paddingHorizontal="@dimen/dp_5"
+                android:textColor="@color/c_36cd64"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintLeft_toRightOf="@+id/tv_now_month"
+                app:layout_constraintTop_toBottomOf="@+id/tv_description"
+                tool:text="100" />
+
+            <TextView
+                android:id="@+id/tv_pre_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_19"
+                android:text="@string/credit_history_pre_score"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintLeft_toRightOf="@+id/tv_now_month_score"
+                app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+
+            <TextView
+                android:id="@+id/tv_credit_level"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_20"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_now_month"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pre_month"
+                tool:text="你的诚信一般，丰富的守约行为，有助于提升你的诚信等级" />
+
+            <com.daqsoft.usermodule.view.LonProgress
+                android:id="@+id/lp_credit_level"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_100"
+                android:paddingHorizontal="@dimen/dp_40"
+                app:layout_constraintTop_toBottomOf="@id/tv_credit_level" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_credit_type_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:padding="@dimen/dp_4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_top">
+
+            <TextView
+                android:id="@+id/tv_keep"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dp_4"
+                android:gravity="center"
+                android:padding="@dimen/dp_8"
+                android:text="@string/credit_history_keep_record"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toTopOf="@id/v_indicator"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_lost"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginBottom="@dimen/dp_4"
+                android:gravity="center"
+                android:padding="@dimen/dp_8"
+                android:text="@string/credit_history_lost_record"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toTopOf="@id/v_indicator"
+                app:layout_constraintLeft_toRightOf="@id/tv_keep"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/v_indicator"
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_3"
+                android:layout_marginTop="@dimen/dp_4"
+                android:background="@drawable/user_back_main_strok_main_round_large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/tv_keep"
+                app:layout_constraintRight_toRightOf="@id/tv_keep" />
+
+            <TextView
+                android:id="@+id/tv_calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_20"
+                android:drawableLeft="@mipmap/mine_integrity_calendar"
+                android:padding="@dimen/dp_8"
+                android:text="@string/credit_history_calendar"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_keep" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_credit_records"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            app:layout_constraintTop_toBottomOf="@id/cl_credit_type_select" />
+    </LinearLayout>
+</layout>

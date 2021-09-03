@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.daqsoft.provider.network.home.bean.NoPassResourceBean" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/ll_resource"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44">
+
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/image"
+                url="@{item.url}"
+                android:layout_width="@dimen/dp_44"
+                android:layout_height="@dimen/dp_44"
+                android:scaleType="matrix"
+                app:border_color="@color/white"
+                app:corner_bottom_left_radius="@dimen/dp_5"
+                app:corner_bottom_right_radius="@dimen/dp_5"
+                app:corner_top_left_radius="@dimen/dp_5"
+                app:corner_top_right_radius="@dimen/dp_5"
+                app:is_circle="false" />
+
+            <View
+                android:id="@+id/cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/home_b_600_stroke_null_round_5" />
+
+
+            <ImageView
+                android:id="@+id/iv_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/pop_ups_play"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@{item.description}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            tools:text="暴力图片" />
+    </LinearLayout>
+
+</layout>

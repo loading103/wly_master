@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.daqsoft.provider.bean.OrderUserBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/selected_choose_user"
+            android:drawablePadding="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_17"
+            android:paddingBottom="@dimen/dp_17"
+            android:text="@{item.userName}"
+            android:textColor="@drawable/selected_txt_black_gray"
+            android:textSize="@dimen/sp_12"
+            tools:text="张珊珊" />
+
+        <include layout="@layout/include_space_one" />
+
+    </LinearLayout>
+</layout>

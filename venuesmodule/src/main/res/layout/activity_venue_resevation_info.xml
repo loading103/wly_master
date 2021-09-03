@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/v_venue_main_reservation_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+       >
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dip"
+            android:layout_height="0dip"
+            app:layout_constraintBottom_toTopOf="@+id/llv_venue_rtn_bottom"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dp_20">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_20">
+
+                    <com.daqsoft.baselib.widgets.ArcImageView
+                        android:id="@+id/img_venue"
+                        android:layout_width="@dimen/dp_80"
+                        android:layout_height="@dimen/dp_60"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        app:corner_radius="@dimen/dp_3"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_venue_name"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_15"
+                        app:layout_constraintLeft_toRightOf="@+id/img_venue"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="水水水水水水水水" />
+
+                    <TextView
+                        android:id="@+id/txt_venue_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        app:layout_constraintLeft_toRightOf="@+id/img_venue"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_venue_name"
+                        tools:text="博物馆" />
+
+                    <TextView
+                        android:id="@+id/txt_venue_max_person"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:textColor="@color/color_999"
+                        android:textSize="@dimen/sp_12"
+                        app:layout_constraintLeft_toRightOf="@+id/img_venue"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_venue_type"
+                        app:layout_goneMarginTop="@dimen/dp_12"
+                        tools:text="最大接待人数：14000" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_8"
+                    android:background="@color/f5" />
+                <!--预约信息-->
+                <include
+                    android:id="@+id/v_reservation_info"
+                    layout="@layout/layout_reservation_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_8"
+                    android:background="@color/f5" />
+                <!--预约人信息-->
+                <include
+                    android:id="@+id/v_person_reservation_info"
+                    layout="@layout/layout_person_resevation_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_8"
+                    android:background="@color/f5" />
+                <!--预约讲解员-->
+                <include
+                    layout="@layout/layout_venue_resevation_commentator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_8"
+                    android:background="@color/f5"
+                    android:visibility="gone" />
+                <!--备注-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_venue_rtn_in_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_14"
+                        android:text="@string/venue_reservation_in_time"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_15"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/edt_venue_rtn_in_time"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_24"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:background="@null"
+                        android:hint="@string/venue_reservation_hint_in_time"
+                        android:inputType="text"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:singleLine="false"
+                        android:textColor="@color/color_333"
+                        android:textColorHint="@color/color_999"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_venue_rtn_in_time"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_venue_rtn_in_time" />
+
+                    <View
+                        android:id="@+id/v_line_ione"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_0_5"
+                        android:layout_marginTop="@dimen/dp_14"
+                        android:background="@color/white"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_venue_rtn_in_time" />
+
+                    <TextView
+                        android:id="@+id/tv_venue_rtn_remark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_14"
+                        android:text="@string/venue_reservation_reamrk"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_15"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/v_line_ione" />
+
+                    <EditText
+                        android:id="@+id/edt_venue_rtn_remark_value"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_24"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:background="@drawable/shape_venues_edt_bg"
+                        android:gravity="left|top"
+                        android:hint="@string/venue_reservation_hint_remark"
+                        android:inputType="textMultiLine"
+                        android:maxLength="50"
+                        android:maxLines="3"
+                        android:singleLine="false"
+                        android:textColor="@color/color_333"
+                        android:textColorHint="@color/color_999"
+                        android:textSize="@dimen/sp_15"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_venue_rtn_remark"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tv_venue_rtn_remark" />
+
+                    <View
+                        android:id="@+id/v_line_itwo"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_0_5"
+                        android:layout_marginTop="@dimen/dp_14"
+                        android:background="@color/white"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_venue_rtn_remark_value" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:id="@+id/llv_venue_rtn_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:id="@+id/tv_confirm_to_reseravation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="确认提交"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

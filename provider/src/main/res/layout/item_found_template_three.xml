@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_found_template_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_114"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_foud_recommend"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_found_template_three_bg_4">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawableBottom="@mipmap/mode_nearby_icon_arrow"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:ems="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="为您推荐" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recy_founds"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_6"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

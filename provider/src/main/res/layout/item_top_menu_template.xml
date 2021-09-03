@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants">
+
+            <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+                android:id="@+id/cbr_menus"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_180" />
+        </RelativeLayout>
+
+        <com.daqsoft.provider.view.ViewPagerIndicatorView
+            android:id="@+id/circleIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_gravity="center_horizontal"
+            app:loadingcolor="@color/colorPrimary" />
+    </LinearLayout>
+</layout>

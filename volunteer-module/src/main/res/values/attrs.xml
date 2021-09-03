@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleMoreBar">
+        <!--标题-->
+        <attr name="volunteer_title" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="VolunteerWeekRankItem">
+        <attr name="volunteer_type" format="string"/>
+        <attr name="volunteer_bg" format="reference"/>
+        <attr name="rank_type" format="string"/>
+    </declare-styleable>
+</resources>

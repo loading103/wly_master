@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/cons_re_found"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content">
+            <View
+                android:id="@+id/v_l"
+                android:layout_width="@dimen/dp_4"
+                android:layout_height="@dimen/dp_24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:background="@color/colorPrimary" />
+            <TextView
+                android:id="@+id/tv_re_back_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/order_electronic_re_back_label"
+                android:textColor="@color/txt_black"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/v_l"
+                android:padding="@dimen/dp_20"
+                android:textSize="@dimen/sp_16"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_op_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingTop="@dimen/dp_16"
+            android:paddingBottom="@dimen/dp_16"
+            android:paddingRight="@dimen/dp_16">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/order_consume_number_apply"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_15" />
+
+            <com.daqsoft.usermodule.view.NumberOperateView
+                android:id="@+id/no_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_price"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <com.daqsoft.provider.view.ItemView
+            android:id="@+id/iv_deliver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftLabel="@string/order_electronic_re_back_deliver"
+            app:labelSize="@dimen/sp_15"
+            app:leftLabelColor="@color/txt_gray"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            app:labelPadding="@dimen/dp_16"
+            android:paddingTop="@dimen/sp_16"
+            android:visibility="gone"/>
+        <com.daqsoft.provider.view.ItemView
+            android:id="@+id/iv_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftLabel="@string/order_electronic_re_back_money"
+            app:labelSize="@dimen/sp_15"
+            app:leftLabelColor="@color/txt_gray"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            app:rightContent=""
+            app:labelPadding="@dimen/dp_16"
+            android:paddingTop="@dimen/sp_16"/>
+        <com.daqsoft.provider.view.ItemView
+            android:id="@+id/iv_reason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:leftLabel="@string/order_electronic_re_back_reason"
+            app:labelSize="@dimen/sp_15"
+            app:leftLabelColor="@color/txt_gray"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            app:rightContent=""
+            app:showArrow="true"
+            app:labelPadding="@dimen/dp_16"
+            android:paddingTop="@dimen/sp_16"
+            android:onClick="showReasonPv"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content">
+            <View
+                android:id="@+id/v_2"
+                android:layout_width="@dimen/dp_4"
+                android:layout_height="@dimen/dp_24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:background="@color/colorPrimary" />
+            <TextView
+                android:id="@+id/tv_re_back_label_remark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/v_2"
+                android:text="@string/order_electronic_re_back_remark"
+                android:textColor="@color/txt_black"
+                android:padding="@dimen/dp_20"
+                android:textSize="@dimen/sp_16"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <EditText
+            android:id="@+id/et_refund_remark"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:hint="@string/order_electronic_re_back_remark_hint"
+            android:background="@color/white"
+            android:maxLength="120"
+            android:gravity="left"
+            android:padding="@dimen/dp_20"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@color/txt_black"
+            android:textColorHint="@color/text_gray"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="@dimen/dp_16"
+            android:text="@string/order_electronic_comment_submit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16"
+            android:onClick="submit"/>
+    </LinearLayout>
+</ScrollView>
+</layout>

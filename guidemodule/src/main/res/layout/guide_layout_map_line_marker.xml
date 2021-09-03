@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+<!--        <com.flyco.roundview.RoundFrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--            app:rv_backgroundColor="@color/guide_green_6ac302"-->
+<!--            app:rv_isRadiusHalfHeight="true"-->
+<!--            android:layout_width="@dimen/dp_35"-->
+<!--            android:layout_height="@dimen/dp_28"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:scaleType="fitXY" />-->
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/tv_marker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{name}"
+            android:textSize="@dimen/sp_10"
+            android:textColor="@color/guide_green_6ac302"
+            android:background="@drawable/shape_provider_fff_5"
+            android:textStyle="bold"
+            tools:text="景点111" />
+
+    </FrameLayout>
+</layout>

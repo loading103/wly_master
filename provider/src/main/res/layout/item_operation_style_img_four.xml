@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <import type="com.daqsoft.provider.bean.CommonTemlate" />
+
+        <variable
+            name="template"
+            type="CommonTemlate" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_160"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingTop="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20">
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/dp_6"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                clickData="@{template.getOperation(0)}"
+                imageUrl="@{template.getOperationImageUrl(0)}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_64"
+                android:scaleType="fitXY"
+                app:corner_radius="@dimen/dp_5" />
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                clickData="@{template.getOperation(2)}"
+                imageUrl="@{template.getOperationImageUrl(2)}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_64"
+                android:layout_marginTop="@dimen/dp_12"
+                android:scaleType="fitXY"
+                app:corner_radius="@dimen/dp_5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                clickData="@{template.getOperation(1)}"
+                imageUrl="@{template.getOperationImageUrl(1)}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_64"
+                android:scaleType="fitXY"
+                app:corner_radius="@dimen/dp_5" />
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                clickData="@{template.getOperation(3)}"
+                imageUrl="@{template.getOperationImageUrl(3)}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_64"
+                android:layout_marginTop="@dimen/dp_12"
+                android:scaleType="fitXY"
+                app:corner_radius="@dimen/dp_5" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

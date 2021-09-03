@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.daqsoft.provider.bean.CommonTemlate" />
+
+        <import type="com.daqsoft.provider.uiTemplate.titleBar.TitleBarStyle" />
+
+        <variable
+            name="template"
+            type="CommonTemlate" />
+
+        <variable
+            name="titleBarStyle"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_contain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/v_title_bar_template_one"
+            layout="@layout/item_title_bar_template_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:template="@{template}" />
+
+        <include
+            android:id="@+id/v_title_bar_template_two"
+            layout="@layout/item_title_bar_template_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:template="@{template}" />
+
+        <include
+            android:id="@+id/v_title_bar_template_three"
+            layout="@layout/item_title_bar_template_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:template="@{template}" />
+    </LinearLayout>
+</layout>

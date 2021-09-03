@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.daqsoft.provider.bean.Contact" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.tubb.smrv.SwipeHorizontalMenuLayout
+            android:id="@+id/swipeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@id/smContentView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_20"
+                android:paddingBottom="@dimen/dp_20">
+
+                <TextView
+                    android:id="@+id/mNameTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="@dimen/dp_20"
+                    android:text="@{item.name}"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_edit"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:src="@drawable/user_selector_edit_address"
+                    app:layout_constraintBottom_toBottomOf="@+id/mNameTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:paddingRight="@dimen/dp_20"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_8"
+                    app:labelSize="@dimen/sp_13"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mNameTv"
+                    app:leftLabel="@string/user_contact_phone"
+                    app:leftLabelColor="@color/txt_gray"
+                    app:rightContent="@{item.phone}"
+                    app:rightContentColor="@color/txt_gray"
+                    app:rightContentSize="@dimen/sp_13"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/certType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:paddingRight="@dimen/dp_20"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_8"
+                    app:labelSize="@dimen/sp_13"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/phone"
+                    app:leftLabel="@string/user_str_id_type"
+                    app:leftLabelColor="@color/txt_gray"
+                    app:rightContent="@{item.certType}"
+                    app:rightContentColor="@color/txt_gray"
+                    app:rightContentSize="@dimen/sp_13"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/cert"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:paddingRight="@dimen/dp_20"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_8"
+                    app:labelSize="@dimen/sp_13"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/certType"
+                    app:leftLabel="@string/user_str_id_card"
+                    app:leftLabelColor="@color/txt_gray"
+                    app:rightContent="@{item.certNumber}"
+                    app:rightContentColor="@color/txt_gray"
+                    app:rightContentSize="@dimen/sp_13"
+                    app:showDivider="false" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@id/smMenuViewRight"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btnDelete"
+                    android:layout_width="@dimen/dp_80"
+                    android:layout_height="match_parent"
+                    android:background="@color/ff9e05"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_18"
+                    android:paddingRight="@dimen/dp_18"
+                    android:text="@string/user_delete"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dp_17" />
+            </LinearLayout>
+        </com.tubb.smrv.SwipeHorizontalMenuLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:background="@color/e8e8e8"
+            app:layout_constraintTop_toBottomOf="@+id/cert" />
+    </LinearLayout>
+
+
+</layout>

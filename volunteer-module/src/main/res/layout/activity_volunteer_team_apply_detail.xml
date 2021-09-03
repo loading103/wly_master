@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_apply_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/volunteer_module_level_2"
+                android:drawableLeft="@mipmap/volunteer_personal_apply_history_details_icon_warning"
+                android:drawablePadding="@dimen/dp_6"
+                android:paddingVertical="@dimen/dp_17"
+                android:paddingLeft="@dimen/dp_20"
+                android:text="审核中"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                android:visibility="gone" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ff4e4e"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:src="@mipmap/volunteer_personal_apply_history_details_icon_warning"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:includeFontPadding="false"
+                    android:text="审核不通过"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintLeft_toRightOf="@id/iv_icon"
+                    app:layout_constraintTop_toTopOf="@id/iv_icon" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_11"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_icon"
+                    tools:text="2019-08-25 15:43:23" />
+
+                <TextView
+                    android:id="@+id/tv_apply_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_16"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_status"
+                    app:layout_constraintTop_toBottomOf="@id/iv_icon"
+                    tools:text="您上传的资料真实度存疑，请重新上传" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/volunteer_module_register_label_service_region"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_service_region"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_16"
+                    tools:text="测试测试" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/volunteer_module_register_label_team_region"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_volunteer_region"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_16"
+                    tools:text="测试测试" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/volunteer_module_team_register_label_teamname"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_teamname"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_16"
+                    tools:text="测试测试" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/volunteer_module_team_register_service_type"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_service_type"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_16"
+                    tools:text="测试测试" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/volunteer_module_team_register_create_time"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_team_create_time"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_16"
+                    tools:text="测试测试" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:id="@+id/ll_unit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/volunteer_module_team_register_company"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_nuit"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_16"
+                    tools:text="测试测试" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:id="@+id/ll_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/volunteer_module_team_register_logo"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15" />
+
+                <ImageView
+                    android:id="@+id/iv_logo"
+                    android:layout_width="@dimen/dp_56"
+                    android:layout_height="@dimen/dp_56"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginVertical="@dimen/dp_16"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/volunteer_team_register_upload_logo" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/volunteer_module_team_register_address"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_16"
+                    tools:text="测试测试" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/volunteer_module_team_register_contact"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_contact"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_16"
+                    tools:text="测试测试" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:id="@+id/ll_brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/volunteer_module_team_register_brand"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_brand"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_16"
+                    tools:text="测试测试" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_introduce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/volunteer_module_team_register_introduce"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_introduce"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_16"
+                    tools:text="测试测试" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@color/white"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/dp_30"
+                    android:background="@color/text"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/dp_15"
+                    android:text="撤销申请"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

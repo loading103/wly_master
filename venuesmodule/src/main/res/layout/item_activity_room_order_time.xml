@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="@dimen/dp_12">
+
+        <TextView
+            android:id="@+id/tv_order_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:textColor="@drawable/color_activity_room_order_time_txt"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_order_remark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_6"
+            android:layout_toRightOf="@+id/tv_order_time"
+            android:inputType="textMultiLine"
+            android:paddingVertical="@dimen/dp_8"
+            android:singleLine="false"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_10">
+
+        <ImageView
+            android:id="@+id/iv_bg"
+            android:layout_width="@dimen/dp_98"
+            android:layout_height="@dimen/dp_98"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/legacy_people_details_project_texture"
+            />
+        <com.daqsoft.widget.RoundImageView
+            android:id="@+id/iv"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            android:scaleType="fitXY"
+            app:layout_constraintLeft_toLeftOf="@+id/iv_bg"
+            app:layout_constraintTop_toTopOf="@+id/iv_bg"
+            app:layout_constraintRight_toRightOf="@+id/iv_bg"
+            app:layout_constraintBottom_toBottomOf="@id/iv_bg"
+            app:type="circle" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_marginLeft="@dimen/dp_16"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/iv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_333"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="@dimen/sp_15"
+            android:layout_width="@dimen/dp_0"
+            android:layout_marginRight="@dimen/dp_20"
+            tools:text="非遗名称非遗" />
+
+        <TextView
+            android:id="@+id/tv_level"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            app:layout_constraintLeft_toLeftOf="@id/tv_name"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_12"
+            tools:text="传承项目"
+            />
+
+        <TextView
+            android:id="@+id/tv_des_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_12"
+            android:layout_marginTop="@dimen/dp_16"
+            app:layout_constraintLeft_toLeftOf="@id/tv_level"
+            app:layout_constraintTop_toBottomOf="@+id/tv_level"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="个非遗故事" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

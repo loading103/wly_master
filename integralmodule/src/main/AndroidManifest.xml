@@ -1,0 +1,15 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.daqsoft.integralmodule">
+
+    <application>
+        <activity
+            android:name=".ui.MemberHomeActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.IntegralDetailActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/img_user_header"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_16"
+            app:is_circle="true" />
+
+        <TextView
+            android:id="@+id/txt_request_words"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_6"
+            android:layout_toLeftOf="@+id/img_user_header"
+            android:background="@mipmap/robot_detail_talk_bg_user"
+            android:maxWidth="@dimen/dp_250"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            tools:text="水水水水水水水水水水" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".smriti.ui.LegacySmritiDetailActivity">
+<data/>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_height="match_parent">
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:layout_height="wrap_content">
+                    <include
+                        android:id="@+id/legacy_header"
+                        layout="@layout/legacy_people_detail_header"/>
+
+                    <!--传承项目 -->
+                    <com.daqsoft.provider.businessview.view.MoreListView
+                        android:id="@+id/mv_project"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:visibility="gone"
+                        />
+
+                    <!--传承人介绍 -->
+                    <include
+                        android:id="@+id/legacy_people_introduce"
+                        layout="@layout/legacy_module_people_detail_introduce"/>
+
+                    <!--传承人作品 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_product"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/dp_50"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:layout_width="@dimen/dp_4"
+                            android:layout_height="@dimen/dp_19"
+                            android:background="@drawable/legacy_project_details_title_line"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_title_label"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_title_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sp_14"
+                            android:text="@string/legacy_people_product_title"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_19"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                           />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintTop_toBottomOf="@id/tv_title_label"
+                            app:layout_constraintLeft_toLeftOf="@+id/tv_title_label"
+                            android:text="@string/legacy_people_product_title_info"
+                            android:textColor="@color/color_999"
+                            android:textSize="@dimen/sp_11"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_product_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableRight="@mipmap/activity_details_right"
+                            android:drawablePadding="@dimen/dp_6"
+                            android:textColor="@color/txt_gray_black"
+                            android:layout_marginRight="@dimen/dp_20"
+                            android:text="@string/home_product_number"
+                            android:textSize="@dimen/sp_12"
+                            app:layout_constraintBaseline_toBaselineOf="@id/tv_title_label"
+                            app:layout_constraintRight_toRightOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.daqsoft.provider.scrollview.DqRecylerView
+                        android:id="@+id/rv_product"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_28"
+                        />
+
+
+                    <!--传承人音频 -->
+                    <com.daqsoft.provider.businessview.view.ListenerAudioView
+                        android:id="@+id/v_people_detail_audios"
+                        android:layout_width="match_parent"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:visibility="gone" />
+
+                    <!--用户评论 -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_comments"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/dp_60"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:layout_width="@dimen/dp_4"
+                            android:layout_height="@dimen/dp_19"
+                            android:background="@drawable/legacy_project_details_title_line"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_comments_label"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_comments_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sp_14"
+                            android:text="用户评论"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_19"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_replay_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableRight="@mipmap/activity_details_right"
+                            android:drawablePadding="@dimen/dp_6"
+                            android:textColor="@color/txt_gray_black"
+                            android:text="@string/home_comments_number"
+                            android:textSize="@dimen/sp_12"
+                            app:layout_constraintBaseline_toBaselineOf="@id/tv_comments_label"
+                            app:layout_constraintRight_toRightOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.daqsoft.provider.scrollview.DqRecylerView
+                        android:id="@+id/rv_comments"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_28"
+                        />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+            <LinearLayout
+                android:id="@+id/ll_bottom_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_like"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/bottom_icon_like_normal"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_11" />
+
+                <TextView
+                    android:id="@+id/tv_collect"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/bottom_icon_collect_normal"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_11" />
+                            <TextView
+                                android:id="@+id/tv_add_comment"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:drawableTop="@mipmap/bottom_icon_comment"
+                                android:text="写评论"
+                                android:textSize="@dimen/sp_11"
+                                android:textColor="@color/txt_gray_black"
+                                android:gravity="center"
+                                android:drawablePadding="@dimen/dp_5"
+                                />
+                <!--            <TextView-->
+                <!--                android:id="@+id/tv_share"-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_weight="1"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:drawableTop="@mipmap/bottom_icon_share"-->
+                <!--                android:text="0"-->
+                <!--                android:textSize="@dimen/sp_11"-->
+                <!--                android:textColor="@color/txt_gray_black"-->
+                <!--                android:gravity="center"-->
+                <!--                android:drawablePadding="@dimen/dp_5"-->
+                <!--                />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_add_comment"-->
+<!--                    android:layout_width="@dimen/dp_140"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/legacy_shape_f5f5f5_3_radius"-->
+<!--                    android:gravity="left|center_vertical"-->
+<!--                    android:padding="@dimen/dp_5"-->
+<!--                    android:text="说点什么吧"-->
+<!--                    android:textColor="@color/txt_gray"-->
+<!--                    android:textSize="@dimen/sp_12" />-->
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="distance"
+            type="String" />
+
+        <variable
+            name="address"
+            type="String" />
+
+        <variable
+            name="currentIndex"
+            type="String" />
+
+        <variable
+            name="totalSize"
+            type="String" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="aidNumber"
+            type="String" />
+
+        <variable
+            name="type"
+            type="String" />
+
+        <variable
+            name="level"
+            type="String" />
+
+        <variable
+            name="placeholder"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="bean"
+            type="com.daqsoft.provider.bean.BusShopInfoBean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/transparent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    android:id="@+id/img_parking_head"
+                    placeholder="@{placeholder}"
+                    url="@{imageUrl}"
+                    android:layout_width="@dimen/dp_44"
+                    android:layout_height="@dimen/dp_44"
+                    android:scaleType="fitXY"
+                    app:corner_radius="@dimen/dp_5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/v_bus_stop_name"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_45"
+                    app:layout_constraintLeft_toRightOf="@+id/img_parking_head"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/txt_bus_stop_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@{name}"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="水水水水水水水水水水水水水水水水水" />
+
+                    <TextView
+                        android:id="@+id/txt_bus_stop_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_3"
+                        android:layout_marginTop="@dimen/dp_3"
+                        android:background="@drawable/shape_appointment_r5_s1_d4d4d4"
+                        android:minLines="1"
+                        android:paddingLeft="@dimen/dp_3"
+                        android:paddingRight="@dimen/dp_3"
+                        android:text="离我最近"
+                        android:textColor="@color/color_999"
+                        android:textSize="@dimen/sp_10"
+                        app:layout_constraintLeft_toRightOf="@id/txt_bus_stop_name"
+                        app:layout_constraintTop_toTopOf="@+id/txt_bus_stop_name" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/txt_distance_for_me"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:includeFontPadding="false"
+                    android:text="@{distance}"
+                    android:textColor="@color/color_999"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintLeft_toRightOf="@+id/img_parking_head"
+                    app:layout_constraintRight_toLeftOf="@+id/txt_parking_index_current"
+                    app:layout_constraintTop_toBottomOf="@+id/v_bus_stop_name" />
+
+                <View
+                    android:id="@+id/v_disantce_divider"
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:background="@color/color_d4d4d4"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_distance_for_me"
+                    app:layout_constraintLeft_toRightOf="@+id/txt_distance_for_me"
+                    app:layout_constraintTop_toTopOf="@+id/txt_distance_for_me" />
+
+                <TextView
+                    android:id="@+id/txt_parking_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:includeFontPadding="false"
+                    android:text="@{address}"
+                    android:textColor="@color/color_999"
+                    android:textSize="@dimen/sp_12"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_distance_for_me"
+                    app:layout_constraintLeft_toRightOf="@+id/v_disantce_divider"
+                    app:layout_constraintTop_toTopOf="@+id/txt_distance_for_me" />
+
+                <TextView
+                    android:id="@+id/txt_parking_index_current"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{currentIndex}"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_distance_for_me"
+                    app:layout_constraintRight_toLeftOf="@+id/txt_parking_index_total"
+                    app:layout_constraintTop_toTopOf="@+id/txt_distance_for_me" />
+
+                <TextView
+                    android:id="@+id/txt_parking_index_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{totalSize}"
+                    android:textColor="@color/color_999"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_distance_for_me"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txt_distance_for_me" />
+
+                <View
+                    android:id="@+id/v_line_parking"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_distance_for_me" />
+
+                <RelativeLayout
+                    android:id="@+id/v_bottom_bus_stop_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/v_line_parking">
+
+                    <View
+                        android:id="@+id/v_line_divide"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_0_1"
+                        android:background="@color/e8e8e8" />
+
+                    <RelativeLayout
+                        android:id="@+id/v_bus_stop_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_aid_number">
+
+                        <TextView
+                            android:id="@+id/tv_hospital_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:text="收费标准"
+                            android:textColor="@color/color_333"
+                            android:textSize="@dimen/sp_13"
+                            android:visibility="@{bean.charges!=null&amp;&amp;!bean.charges.empty}" />
+
+                        <TextView
+                            android:id="@+id/tv_hospital_type_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:layout_marginRight="@dimen/dp_16"
+                            android:layout_toRightOf="@+id/tv_hospital_type"
+                            android:text="@{bean.charges}"
+                            android:textColor="@color/color_999"
+                            android:textSize="@dimen/sp_13"
+                            android:visibility="@{bean.charges!=null&amp;&amp;!bean.charges.empty}"
+                            tools:text="中西药" />
+
+                        <TextView
+                            android:id="@+id/tv_hospital_level"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_hospital_type"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:text="运营时间"
+                            android:textColor="@color/color_333"
+                            android:textSize="@dimen/sp_13"
+                            android:visibility="@{bean.openTime!=null&amp;&amp;!bean.openTime.empty}" />
+
+                        <TextView
+                            android:id="@+id/tv_hospital_level_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:layout_below="@+id/tv_hospital_type"
+                            android:layout_toRightOf="@+id/tv_hospital_level"
+                            android:text="@{bean.openTime}"
+                            android:textColor="@color/color_999"
+                            android:textSize="@dimen/sp_13"
+                            android:visibility="@{bean.openTime!=null&amp;&amp;!bean.openTime.empty}"
+                            tools:text="三级" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_address_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/v_bus_stop_info"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:text="@string/main_address_img"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="@{bean.images!=null&amp;&amp;!bean.images.empty}" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_address_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/tv_address_img"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginRight="@dimen/dp_8"
+                        android:layout_toRightOf="@+id/tv_address_img"
+                        android:visibility="@{bean.images!=null&amp;&amp;!bean.images.empty}" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/img_control_bus_stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:src="@mipmap/map_arrow_up"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/v_bottom_bus_stop_info" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:id="@+id/v_parking_to_nav"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginRight="@dimen/dp_12"
+                android:background="@drawable/shape_circle_36cd64"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_map_guide"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@mipmap/map_guide" />
+
+                <TextView
+                    android:id="@+id/txt_map_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_map_guide"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:includeFontPadding="false"
+                    android:text="前往"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dp_12" />
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</layout>

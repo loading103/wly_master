@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/map_tag_background"
+            android:gravity="center"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_10"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_market"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_45"
+            android:src="@drawable/home_selector_market" />
+    </LinearLayout>
+</layout>

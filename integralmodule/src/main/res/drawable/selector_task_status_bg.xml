@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/shape_ecc783_large" />
+    <item android:drawable="@drawable/shape_504747_large" android:state_pressed="true" />
+    <item android:drawable="@drawable/shape_cbcbcb_large" android:state_selected="true" />
+
+
+</selector>

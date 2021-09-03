@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.daqsoft.provider.bean.MineComplaintListBean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20">
+
+        <TextView
+            android:id="@+id/tv_complaint_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_20"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_complaint_status"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2015.02.01投诉就框架尽快" />
+
+        <TextView
+            android:id="@+id/tv_complaint_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_main_3"
+            android:padding="@dimen/dp_4"
+            android:text="已处理"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_complaint_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_complaint_name" />
+
+        <TextView
+            android:id="@+id/tv_complaint_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{item.complaintsReasons}"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintTop_toBottomOf="@+id/tv_complaint_name"
+            tools:text="前几天在网上买了东西，在买之前就跟客服沟通好了立即发
+货才会购买，结果客服答应了却做不到还不退钱！" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@+id/tv_complaint_content" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@color/dividing_line"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_img" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/dp_20">
+            <ImageView
+                android:id="@+id/iv_cizn"
+                android:layout_width="@dimen/dp_101"
+                android:layout_height="@dimen/dp_76"
+                android:scaleType="fitXY"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/dp_16">
+                <TextView
+                    android:id="@+id/iv_cizn_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="成都市高新区图书馆开展帮残日阅读推广活动"
+                    android:textSize="@dimen/sp_15"
+                    android:textColor="@color/color_333"
+                    android:maxLines="2"
+                    android:lines="2"
+                    android:gravity="top"
+                    android:ellipsize="end"/>
+                <TextView
+                    android:id="@+id/iv_cizn_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="高新区文旅局"
+                    android:textSize="@dimen/sp_12"
+                    android:textColor="@color/color_666"
+                    android:layout_marginTop="@dimen/dp_26"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

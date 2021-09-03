@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="headUrl"
+            type="String" />
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="likeNum"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_2_5"
+        android:layout_marginTop="@dimen/dp_2_5"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_12"
+        app:cardCornerRadius="@dimen/dp_5"
+        app:cardElevation="@dimen/dp_2_5">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp_12">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/img_provider_story_one"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_162"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_provider_story_video"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_18"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_8"
+                android:src="@mipmap/provider_details_story_video"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/img_provider_story_one"
+                app:layout_constraintRight_toRightOf="parent" />
+
+
+            <TextView
+                android:id="@+id/txt_provider_store_img_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_8"
+                android:background="@drawable/shape_provider_black_10"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingLeft="@dimen/dp_8"
+                android:paddingTop="@dimen/dp_4"
+                android:paddingRight="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_4"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/img_provider_story_one"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_provider_story_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_8"
+                android:drawableStart="@mipmap/home_story_icon_location"
+                android:paddingLeft="@dimen/dp_8"
+                android:paddingTop="@dimen/dp_4"
+                android:paddingRight="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_4"
+                android:gravity="center_vertical"
+                android:text="2222"
+                android:background="@drawable/shape_provider_black_10"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:textSize="@dimen/sp_10"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/img_provider_story_one" />
+
+            <TextView
+                android:id="@+id/txt_provider_store_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingEnd="@dimen/dp_10"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="@dimen/dp_12"
+                tools:text="11111"
+                app:layout_constraintTop_toBottomOf="@+id/img_provider_story_one" />
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingEnd="@dimen/dp_10"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_11"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="@dimen/dp_12"
+                tools:text="11111"
+                app:layout_constraintTop_toBottomOf="@+id/txt_provider_store_content" />
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/img_provider_story_user_head"
+                url="@{headUrl}"
+                placeholder=""
+                android:layout_width="@dimen/dp_18"
+                android:layout_height="@dimen/dp_18"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:scaleType="center"
+                app:is_circle="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_type" />
+
+            <TextView
+                android:id="@+id/txt_provider_story_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_6"
+                android:ellipsize="end"
+                android:maxEms="7"
+                android:maxLines="1"
+                android:text="@{name}"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintBottom_toBottomOf="@+id/img_provider_story_user_head"
+                app:layout_constraintLeft_toRightOf="@+id/img_provider_story_user_head"
+                app:layout_constraintTop_toTopOf="@+id/img_provider_story_user_head" />
+
+            <ImageView
+                android:id="@+id/iv_dz"
+                android:layout_width="@dimen/dp_13"
+                android:layout_height="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_4"
+                android:src="@mipmap/provider_details_like"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_provider_story_like_num"
+                app:layout_constraintRight_toLeftOf="@+id/txt_provider_story_like_num"
+                app:layout_constraintTop_toTopOf="@+id/txt_provider_story_like_num" />
+
+            <TextView
+                android:id="@+id/txt_provider_story_like_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:text="@{likeNum}"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintBottom_toBottomOf="@+id/img_provider_story_user_head"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/img_provider_story_user_head" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,66 @@
+<resources>
+    <!--个人中心的更多服务-->
+    <string-array name="mine_service_title">
+        <item>购物退款</item>
+<!--        <item>我的投诉</item>-->
+        <item>我的信用</item>
+        <item>Ai客服</item>
+        <item>意见反馈</item>
+<!--        <item>我的学习</item>-->
+<!--        <item>我的问答</item>-->
+    </string-array>
+    <!--个人中心的更多服务的图标-->
+    <array name="mine_service_icon">
+        <item>@mipmap/mine_center_service_refund</item>
+<!--        <item>@mipmap/mine_center_service_complaint</item>-->
+        <item>@mipmap/mine_center_service_credit</item>
+        <item>@mipmap/mine_center_service_robot</item>
+        <item>@mipmap/mine_center_service_opinion</item>
+<!--        <item>@mipmap/mine_center_service_study</item>-->
+<!--        <item>@mipmap/mine_center_service_question</item>-->
+    </array>
+    <!--个人中心的更多服务的标识-->
+    <string-array name="mine_service_type">
+        <item>refund</item>
+<!--        <item>complaint</item>-->
+        <item>credit</item>
+        <item>aicommpent</item>
+        <item>feedback</item>
+<!--        <item>study</item>-->
+<!--        <item>requetion</item>-->
+    </string-array>
+    <string name="home_topic">话题</string>
+    <string name="home_topic_info">如切如磋 · 见仁见智</string>
+    <string name="home_city_introduce">新疆是个好地方</string>
+    <string name="home_city_introduce_info">九大资源 十足风情</string>
+    <string name="home_hot_activity">热门活动</string>
+    <string name="home_hot_activity_info">贵在参与 乐享其中</string>
+    <string name="home_city_name">目的地城市</string>
+    <string name="home_city_info">山河大地 魅力无限</string>
+    <string name="home_branch_name">印象新疆</string>
+    <string name="home_branch_label">让选择变得更简单</string>
+    <string name="home_line_name">精品主题线路</string>
+    <string name="home_line_info">偶遇 酝酿已久的邂逅</string>
+    <string name="home_story_info">踏进时光回廊 倾听西游故事</string>
+    <string name="home_story">时光故事</string>
+    <string name="app_name">乐游乌鲁木齐</string>
+    <string name="welcome_title">欢迎来到新疆</string>
+
+    <string name="main_scenic_title">游景区</string>
+    <string name="main_hotel_title">住酒店</string>
+    <string name="main_food_title">吃美食</string>
+    <string name="user_more">查看更多</string>
+    <string name="culture_and_tourism_brand">文旅品牌</string>
+    <string name="culture_citycard_ls">下一站，出发</string>
+    <string name="culture_citycard_info">城市名片</string>
+    <string name="home_mine">个人中心</string>
+
+    <string name="tip_out_platform">您即将离开乌市平台，跳转第三方平台</string>
+
+    <string name="home_branch_label_ws">Brand</string>
+    <string name="home_line_name_ws">精品线路</string>
+    <string name="home_line_info_ws">Fine line</string>
+    <string name="home_story_info_ws">Stories</string>
+    <string name="home_branch_name_ws">印象乌鲁木齐</string>
+    <string name="splash_allow">欢迎使用乐游乌鲁木齐</string>
+</resources>

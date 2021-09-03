@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lv_side_tour_types"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:background="@color/e8e8e8" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/v_tab_toilet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/dp_16"
+                        android:paddingRight="@dimen/dp_16">
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/img_map_tab_toilet"
+                                android:layout_width="@dimen/dp_14"
+                                android:layout_height="@dimen/dp_14"
+                                android:layout_centerVertical="true"
+                                android:background="@mipmap/map_tab_toilet_normal" />
+
+                            <TextView
+                                android:id="@+id/txt_map_tab_toilet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_8"
+                                android:layout_toRightOf="@+id/img_map_tab_toilet"
+                                android:text="厕所"
+                                android:textColor="@color/scenic_bottom_tab_blue_selector"
+                                android:textSize="@dimen/sp_16" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/v_tab_park"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/dp_16"
+                        android:paddingRight="@dimen/dp_16">
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/img_map_tab_park"
+                                android:layout_width="@dimen/dp_9"
+                                android:layout_height="@dimen/dp_14"
+                                android:layout_centerVertical="true"
+                                android:background="@mipmap/map_tab_park_normal" />
+
+                            <TextView
+                                android:id="@+id/txt_map_tab_park"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_6"
+                                android:layout_toRightOf="@+id/img_map_tab_park"
+                                android:text="停车场"
+                                android:textColor="@color/scenic_bottom_tab_blue_selector"
+                                android:textSize="@dimen/sp_16" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/v_tab_gasoline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clickable="false"
+                        android:paddingLeft="@dimen/dp_16"
+                        android:paddingRight="@dimen/dp_16">
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/img_map_tab_gasoline"
+                                android:layout_width="@dimen/dp_14"
+                                android:layout_height="@dimen/dp_14"
+                                android:layout_centerVertical="true"
+                                android:background="@mipmap/map_tab_gasoline_normal" />
+
+                            <TextView
+                                android:id="@+id/txt_map_tab_gasoline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_8"
+                                android:layout_toRightOf="@+id/img_map_tab_gasoline"
+                                android:text="加油站"
+                                android:textColor="@color/scenic_bottom_tab_blue_selector"
+                                android:textSize="@dimen/sp_16" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/v_tab_casevac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clickable="false"
+                        android:paddingLeft="@dimen/dp_16"
+                        android:paddingRight="@dimen/dp_16">
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/img_map_tab_casevac"
+                                android:layout_width="@dimen/dp_14"
+                                android:layout_height="@dimen/dp_14"
+                                android:layout_centerVertical="true"
+                                android:background="@mipmap/map_tab_gasoline_normal" />
+
+                            <TextView
+                                android:id="@+id/txt_map_tab_casevac"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_8"
+                                android:layout_toRightOf="@+id/img_map_tab_casevac"
+                                android:text="医疗点"
+                                android:textColor="@color/scenic_bottom_tab_blue_selector"
+                                android:textSize="@dimen/sp_16" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/v_tab_bus_shop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clickable="false"
+                        android:paddingLeft="@dimen/dp_16"
+                        android:paddingRight="@dimen/dp_16">
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/img_map_tab_bus_stop"
+                                android:layout_width="@dimen/dp_14"
+                                android:layout_height="@dimen/dp_14"
+                                android:layout_centerVertical="true"
+                                android:background="@mipmap/near_icon_bus_normal" />
+
+                            <TextView
+                                android:id="@+id/txt_map_tab_bus_stop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_8"
+                                android:layout_toRightOf="@+id/img_map_tab_bus_stop"
+                                android:text="乘车点"
+                                android:textColor="@color/scenic_bottom_tab_blue_selector"
+                                android:textSize="@dimen/sp_16" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/v_tab_shop_mail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clickable="false"
+                        android:paddingLeft="@dimen/dp_16"
+                        android:paddingRight="@dimen/dp_16">
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/img_map_tab_shop_mail"
+                                android:layout_width="@dimen/dp_14"
+                                android:layout_height="@dimen/dp_14"
+                                android:layout_centerVertical="true"
+                                android:background="@mipmap/near_icon_shopping_normal" />
+
+                            <TextView
+                                android:id="@+id/txt_map_tab_shop_mail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_8"
+                                android:layout_toRightOf="@+id/img_map_tab_shop_mail"
+                                android:text="购物点"
+                                android:textColor="@color/scenic_bottom_tab_blue_selector"
+                                android:textSize="@dimen/sp_16" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <com.daqsoft.provider.mapview.MyMapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/lv_side_tour_types"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="1" />
+
+        <com.daqsoft.provider.view.ClearEditText
+            android:id="@+id/edt_search_map_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/home_b_white_stroke_e2_round_5"
+            android:drawableLeft="@mipmap/activity_search"
+            android:drawablePadding="@dimen/dp_8"
+            android:hint="搜索关键字"
+            android:imeOptions="actionSearch"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dp_12"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_6"
+            android:paddingBottom="@dimen/dp_8"
+            android:singleLine="true"
+            android:textColor="@color/txt_black"
+            android:textColorHint="@color/color_333"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_map_position"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_32"
+            android:layout_margin="@dimen/dp_17"
+            android:background="@drawable/home_b_white_stroke_e2_round_5"
+            android:scaleType="center"
+            android:src="@mipmap/map_position"
+            app:layout_constraintBottom_toTopOf="@+id/v_side_tour_page_info"
+            app:layout_constraintRight_toRightOf="@id/map_view" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_17"
+            android:background="@drawable/home_b_white_stroke_e2_round_5"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/iv_map_position"
+            app:layout_constraintRight_toRightOf="@id/map_view">
+
+            <ImageView
+                android:id="@+id/iv_map_zoom_out"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:scaleType="center"
+                android:src="@mipmap/map_large"
+                app:layout_constraintBottom_toBottomOf="@id/map_view"
+                app:layout_constraintRight_toRightOf="@id/map_view" />
+
+            <ImageView
+                android:id="@+id/iv_map_zoom_in"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:scaleType="center"
+                android:src="@mipmap/map_small"
+                app:layout_constraintBottom_toBottomOf="@id/map_view"
+                app:layout_constraintRight_toRightOf="@id/map_view" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/v_side_tour_page_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/lv_side_tour_types"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <com.daqsoft.provider.view.AutoHeightViewPager
+                android:id="@+id/au_vpager_side_tour_toilent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:visibility="gone" />
+
+            <com.daqsoft.provider.view.AutoHeightViewPager
+                android:id="@+id/au_vpager_side_tour_parking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:visibility="gone" />
+
+            <com.daqsoft.provider.view.AutoHeightViewPager
+                android:id="@+id/au_vpager_gasstation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:visibility="gone" />
+
+            <com.daqsoft.provider.view.AutoHeightViewPager
+                android:id="@+id/au_vpager_casevac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:visibility="gone" />
+            <com.daqsoft.provider.view.AutoHeightViewPager
+                android:id="@+id/au_vpager_bus_stop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:visibility="gone" />
+            <com.daqsoft.provider.view.AutoHeightViewPager
+                android:id="@+id/au_vpager_shop_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:visibility="gone" />
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

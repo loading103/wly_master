@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="bean"
+            type="com.daqsoft.provider.bean.ThemeProjectDetailBean" />
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils"/>
+    </data>
+    <LinearLayout
+        android:id="@+id/ll_infor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:paddingRight="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_20"
+        app:layout_constraintTop_toBottomOf="@+id/pro_all_culture"
+        tools:ignore="WebViewLayout">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ll_JJ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_20">
+            <View
+                android:layout_width="@dimen/dp_4"
+                android:layout_height="@dimen/dp_19"
+                android:background="@drawable/home_b_blue_r_2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sp_14"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_19"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="项目简介"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="项目类型"
+                android:textColor="@color/color_333"
+                android:textStyle="bold"
+                android:textSize="@dimen/dp_14"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="体验行"
+                android:layout_marginLeft="@dimen/dp_14"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/dp_14"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_td"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="项目特点"
+                android:textColor="@color/color_333"
+                android:textStyle="bold"
+                android:textSize="@dimen/dp_14"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="媒体点"
+                android:layout_marginLeft="@dimen/dp_14"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/dp_14"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_person"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="适合人群"
+                android:textColor="@color/color_333"
+                android:textStyle="bold"
+                android:textSize="@dimen/dp_14"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="大人小孩"
+                android:layout_marginLeft="@dimen/dp_14"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/dp_14"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="身高限制"
+                android:textColor="@color/color_333"
+                android:textStyle="bold"
+                android:textSize="@dimen/dp_14"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.2m以上"
+                android:layout_marginLeft="@dimen/dp_14"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/dp_14"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_else"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_28"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="备注信息"
+                android:textColor="@color/color_333"
+                android:textStyle="bold"
+                android:textSize="@dimen/dp_14"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="这里是备这里是备注信息这里是备注信息这里是备注信息这里是备注信息注信息"
+                android:layout_marginLeft="@dimen/dp_14"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/dp_14"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

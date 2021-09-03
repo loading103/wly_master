@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="urlcover"
+            type="String" />
+
+        <variable
+            name="detail"
+            type="com.daqsoft.provider.bean.OrderDetail" />
+
+        <variable
+            name="helath"
+            type="com.daqsoft.provider.bean.HelathInfoBean" />
+
+        <import type="com.daqsoft.provider.bean.CertTypes" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/writeoff_but"
+            android:background="@color/white">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/order_state_view"
+                    style="@style/ViewWrap"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:textColor="@color/color_36cd64"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="完成" />
+
+                <TextView
+                    android:id="@+id/order_date_view"
+                    style="@style/ViewWrap"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textColor="@color/color_999"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/order_state_view"
+                    tools:text="2020年7月7日" />
+
+                <TextView
+                    android:id="@+id/appraise_view"
+                    style="@style/ViewWrap"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/order_date_view"
+                    tools:text="倒计时" />
+
+                <View
+                    android:id="@+id/line_view"
+                    style="@style/HeightWrap"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:background="#f1f6f7"
+                    app:layout_constraintTop_toBottomOf="@id/appraise_view"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/label_title"
+                    style="@style/NewOrderDetailTitle"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:text="预约信息"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line_view" />
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    android:id="@+id/cover_view"
+                    placeholder="@{@drawable/placeholder_img_fail_240_180}"
+                    url="@{urlcover}"
+                    android:layout_width="@dimen/dp_80"
+                    android:layout_height="@dimen/dp_80"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:src="@drawable/placeholder_img_fail_240_180"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_title" />
+
+                <TextView
+                    android:id="@+id/title_view"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{detail.resourceName}"
+                    android:textColor="@color/color_333"
+                    app:layout_constraintLeft_toRightOf="@+id/cover_view"
+                    app:layout_constraintRight_toLeftOf="@+id/cost_type_view"
+                    app:layout_constraintTop_toTopOf="@id/cover_view"
+                    tools:text="标题" />
+
+                <TextView
+                    android:id="@+id/cost_type_view"
+                    style="@style/ViewWrap"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:textColor="@color/color_36cd64"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/title_view"
+                    tools:text="免费" />
+
+                <TextView
+                    android:id="@+id/cost_view"
+                    style="@style/ViewWrap"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:textColor="@color/color_999"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="@id/title_view"
+                    app:layout_constraintTop_toBottomOf="@id/title_view" />
+
+                <TextView
+                    android:id="@+id/number_view"
+                    style="@style/ViewWrap"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:text="@{'X'+detail.orderNum}"
+                    android:textColor="@color/color_999"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintEnd_toEndOf="@id/cost_type_view"
+                    app:layout_constraintTop_toBottomOf="@id/cost_type_view"
+                    tools:text="X1" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/appoint_type"
+                    style="@style/NewOrderDetail2"
+                    app:layout_constraintTop_toBottomOf="@id/cover_view"
+                    app:leftLabel="预约类型" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/appoint_time"
+                    style="@style/NewOrderDetail2"
+                    app:layout_constraintTop_toBottomOf="@id/appoint_type"
+                    app:leftLabel="预约时间" />
+
+                <RelativeLayout
+                    android:id="@+id/v_appoint_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:layout_marginBottom="@dimen/dp_15"
+                    app:layout_constraintTop_toBottomOf="@id/appoint_time">
+
+                    <com.daqsoft.provider.view.ItemView
+                        android:id="@+id/appoint_num"
+                        style="@style/NewOrderDetail2"
+                        android:layout_centerVertical="true"
+                        app:leftLabel="预约人数"
+                        app:rightContentColor="@color/app_main_color" />
+
+                    <ImageView
+                        android:id="@+id/iv_to_apoint_num"
+                        android:layout_width="@dimen/dp_6"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:src="@mipmap/common_button_arrow_more_small" />
+                </RelativeLayout>
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/appoint_expiry"
+                    style="@style/NewOrderDetail2"
+                    app:layout_constraintTop_toBottomOf="@id/v_appoint_num"
+                    app:leftLabel="有  效  期"
+                    app:showDivider="true" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/user_name"
+                    style="@style/NewOrderDetail2"
+                    app:layout_constraintTop_toBottomOf="@id/appoint_expiry"
+                    app:leftLabel="预  约  人"
+                    app:rightContent="@{detail.userName}" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/user_phone"
+                    style="@style/NewOrderDetail2"
+                    app:layout_constraintTop_toBottomOf="@id/user_name"
+                    app:leftLabel="手  机  号"
+                    app:rightContent="@{detail.phone}" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/idCard_view"
+                    style="@style/NewOrderDetail2"
+                    app:layout_constraintTop_toBottomOf="@id/user_phone"
+                    app:leftLabel="身份证号"
+                    app:rightContent="@{detail.idCard}" />
+
+                <View
+                    android:id="@+id/line_view2"
+                    style="@style/HeightWrap"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#f1f6f7"
+                    app:layout_constraintTop_toBottomOf="@id/idCard_view"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/tv_label_title2"
+                    style="@style/NewOrderDetailTitle"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:text="健康信息"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line_view2" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/tv_regist_addres"
+                    style="@style/NewOrderDetail2"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/tv_label_title2"
+                    app:leftLabel="健康码注册地" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/tv_health_state"
+                    style="@style/NewOrderDetail2"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/tv_regist_addres"
+                    app:leftLabel="健 康 状 况"
+                    app:rightContentColor="@color/color_36cd64" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/tv_travel_code_state"
+                    style="@style/NewOrderDetail2"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/tv_health_state"
+                    app:leftLabel="旅游码状况"
+                    app:rightContentColor="@color/color_36cd64" />
+
+                <View
+                    android:id="@+id/line_view3"
+                    style="@style/HeightWrap"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#f1f6f7"
+                    android:visibility="invisible"
+                    app:layout_constraintTop_toBottomOf="@id/tv_travel_code_state"
+                    tools:ignore="MissingConstraints" />
+
+                <RelativeLayout
+                    android:id="@+id/v_hexiao_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line_view3">
+
+                    <TextView
+                        android:id="@+id/label_title3"
+                        style="@style/NewOrderDetailTitle"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:text="核销信息" />
+
+                    <TextView
+                        android:id="@+id/tv_to_hexiao_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:drawableRight="@mipmap/common_button_arrow_more_small"
+                        android:drawablePadding="@dimen/dp_4"
+                        android:text="详情"
+                        android:textColor="@color/app_main_color"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_order_single"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    app:layout_constraintTop_toBottomOf="@id/v_hexiao_label">
+
+                    <com.daqsoft.provider.view.ItemView
+                        android:id="@+id/has_write_off"
+                        style="@style/NewOrderDetail2"
+                        app:leftLabel="已核销数量" />
+
+                    <RelativeLayout
+                        android:id="@+id/v_single_has_more_num"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_15"
+                        android:layout_marginTop="@dimen/dp_12"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/has_write_off">
+
+                        <TextView
+                            android:id="@+id/tv_label_single_writer_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="待核销数量"
+                            android:textColor="@color/color_999"
+                            android:textSize="@dimen/sp_13" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            android:layout_toRightOf="@+id/tv_label_single_writer_num">
+
+                            <ImageView
+                                android:id="@+id/img_reduce_single_num"
+                                android:layout_width="@dimen/dp_16"
+                                android:layout_height="@dimen/dp_16"
+                                android:layout_centerVertical="true"
+                                android:scaleType="fitXY"
+                                android:src="@mipmap/ic_reduce_num" />
+
+                            <TextView
+                                android:id="@+id/tv_label_single_current_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_5"
+                                android:layout_toRightOf="@+id/img_reduce_single_num"
+                                android:text="1"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_13" />
+
+                            <ImageView
+                                android:id="@+id/img_add_single_num"
+                                android:layout_width="@dimen/dp_16"
+                                android:layout_height="@dimen/dp_16"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_5"
+                                android:layout_toRightOf="@+id/tv_label_single_current_num"
+                                android:scaleType="fitXY"
+                                android:src="@mipmap/ic_add_num" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <com.daqsoft.provider.view.ItemView
+                        android:id="@+id/can_write_off"
+                        style="@style/NewOrderDetail2"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@id/v_single_has_more_num"
+                        app:leftLabel="待核销数量" />
+
+
+                    <com.daqsoft.provider.view.ItemView
+                        android:id="@+id/electron_code"
+                        style="@style/NewOrderDetail2"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/can_write_off"
+                        app:leftLabel="电子核销码" />
+
+                    <com.daqsoft.provider.view.ItemView
+                        android:id="@+id/write_off_time"
+                        style="@style/NewOrderDetail2"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@id/electron_code"
+                        app:leftLabel="核 销 时 间" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_verify_single_choose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_order_single">
+
+                    <com.daqsoft.provider.view.ItemView
+                        android:id="@+id/has_write_off_single_choose"
+                        style="@style/NewOrderDetail2"
+                        app:leftLabel="已核销数量" />
+
+                    <RelativeLayout
+                        android:id="@+id/ll_choose_single_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.daqsoft.provider.view.ItemView
+                            android:id="@+id/can_write_off_single_choose"
+                            style="@style/NewOrderDetail2"
+                            android:layout_centerVertical="true"
+                            app:leftLabel="待核销数量" />
+
+                        <ImageView
+                            android:id="@+id/iv_choose_single_num"
+                            android:layout_width="@dimen/dp_6"
+                            android:layout_height="@dimen/dp_14"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/dp_20"
+                            android:src="@mipmap/activity_details_right" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cl_order_multiple"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/ll_verify_single_choose">
+
+                    <com.daqsoft.provider.view.ItemView
+                        android:id="@+id/has_write_off_more"
+                        style="@style/NewOrderDetail2"
+                        app:leftLabel="已核销数量" />
+
+                    <RelativeLayout
+                        android:id="@+id/ll_choose_no_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.daqsoft.provider.view.ItemView
+                            android:id="@+id/can_write_off_more"
+                            style="@style/NewOrderDetail2"
+                            android:layout_centerVertical="true"
+                            app:leftLabel="不核销用户" />
+
+                        <ImageView
+                            android:id="@+id/iv_choose_no_user"
+                            android:layout_width="@dimen/dp_6"
+                            android:layout_height="@dimen/dp_14"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/dp_20"
+                            android:src="@mipmap/activity_details_right" />
+                    </RelativeLayout>
+
+                    <com.daqsoft.provider.view.ItemView
+                        android:id="@+id/electron_code_more"
+                        style="@style/NewOrderDetail2"
+                        app:leftLabel="电子核销码" />
+
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_details_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:scrollbars="none"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_order_multiple" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/writeoff_but"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/color_36cd64"
+            android:text="立即核销"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16" />
+    </RelativeLayout>
+</layout>

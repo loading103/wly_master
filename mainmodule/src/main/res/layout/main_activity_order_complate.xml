@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="price"
+            type="String" />
+
+        <variable
+            name="activityName"
+            type="String" />
+
+        <variable
+            name="date"
+            type="String" />
+
+        <variable
+            name="time"
+            type="String" />
+
+        <variable
+            name="address"
+            type="String" />
+
+        <variable
+            name="recreation"
+            type="String" />
+
+        <variable
+            name="notice"
+            type="String" />
+
+        <variable
+            name="total"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_80"/>
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="提交成功，请等待审核！"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintLeft_toRightOf="@id/iv_image"
+            app:layout_constraintTop_toTopOf="@id/iv_image"
+            tool:text="adfadf" />
+
+
+        <TextView
+            android:id="@+id/tv_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="@{date}"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintLeft_toRightOf="@id/tv_data_label"
+            app:layout_constraintTop_toTopOf="@id/tv_data_label"
+            tool:text="2019.05.08~2019.09.02" />
+
+        <TextView
+            android:id="@+id/tv_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="@{notice}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:layout_marginHorizontal="@dimen/dp_50"
+            app:layout_constraintLeft_toRightOf="@id/tv_data_label"
+            app:layout_constraintTop_toTopOf="@id/tv_data_label"
+            tool:text="您的预约信息需要审核，审核通过后我们将用短信的方式告知您，请及时关注短信通知，谢谢!" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp_45">
+
+            <TextView
+                android:id="@+id/tv_check"
+                android:layout_width="@dimen/dp_140"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/shape_btn_primary_5"
+                android:gravity="center"
+                android:text="查看订单"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                />
+
+
+
+            <TextView
+                android:id="@+id/tv_order"
+                android:layout_width="@dimen/dp_140"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/shape_btn_primary_5"
+                android:gravity="center"
+                android:onClick="countinue"
+                android:text="继续浏览"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                android:layout_marginLeft="@dimen/dp_12"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</layout>

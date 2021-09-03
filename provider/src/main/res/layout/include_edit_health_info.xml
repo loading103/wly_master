@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_edit_health_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_8"
+            android:background="@color/f5" />
+
+        <TextView
+            android:id="@+id/tv_venue_res_health_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:drawableLeft="@mipmap/whcgxq_bt_bq"
+            android:drawablePadding="@dimen/dp_15"
+            android:text="健康码信息"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_20"
+            android:includeFontPadding="false"
+            android:text="应国家预约新要求，用户预约需提供个人健康信息"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_12" />
+
+        <LinearLayout
+            android:id="@+id/ll_health_code_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_health_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="健康码注册地"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_15"
+                android:visibility="gone" />
+
+            <com.daqsoft.provider.view.LabelsView
+                android:id="@+id/llv_health_typies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_8"
+                android:minHeight="@dimen/dp_25"
+                android:padding="@dimen/dp_5"
+                app:labelBackground="@drawable/shape_venue_default_r3"
+                app:labelTextColor="@color/color_333"
+                app:labelTextHeight="wrap_content"
+                app:labelTextPaddingBottom="@dimen/dp_8"
+                app:labelTextPaddingLeft="@dimen/dp_14"
+                app:labelTextPaddingRight="@dimen/dp_14"
+                app:labelTextPaddingTop="@dimen/dp_8"
+                app:labelTextSize="@dimen/sp_13"
+                app:labelTextWidth="wrap_content"
+                app:lineMargin="@dimen/dp_8"
+                app:maxSelect="0"
+                app:minSelect="1"
+                app:selectType="SINGLE_IRREVOCABLY"
+                app:wordMargin="@dimen/dp_10" />
+
+            <TextView
+                android:id="@+id/tv_more_health_tyoe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_6"
+                android:drawableRight="@mipmap/provider_arrow_down"
+                android:drawablePadding="@dimen/dp_5"
+                android:text="查看更多"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_13"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/llv_health_code_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:text="健康状况"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_15" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10">
+
+                    <ImageView
+                        android:id="@+id/img_health_status"
+                        android:layout_width="@dimen/dp_16"
+                        android:layout_height="@dimen/dp_16"
+                        android:layout_centerVertical="true" />
+
+                    <TextView
+                        android:id="@+id/tv_health_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_8"
+                        android:layout_toRightOf="@+id/img_health_status"
+                        android:textColor="@color/c_36cd64"
+                        android:textSize="@dimen/sp_14"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_health_can_reservation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:layout_toRightOf="@+id/tv_health_status"
+                        android:textColor="@color/c_36cd64"
+                        android:textSize="@dimen/sp_14" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_un_input_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:background="@drawable/shape_back_f5_r5"
+            android:gravity="center"
+            android:padding="@dimen/dp_16"
+            android:text="@string/provider_venue_uninput_info"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_12" />
+
+        <RelativeLayout
+            android:id="@+id/rv_un_register_health_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:background="@drawable/shape_back_f5_r5"
+            android:paddingTop="@dimen/dp_16"
+            android:paddingBottom="@dimen/dp_16"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_tip_unregsiter_health_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
+                android:gravity="center"
+                android:text="@string/provider_venue_unregster_health_code"
+                android:textColor="@color/ff4e4e"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_tip_to_register_health_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_tip_unregsiter_health_code"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_14"
+                android:background="@drawable/shape_primary_r3"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingRight="@dimen/dp_16"
+                android:paddingBottom="@dimen/dp_8"
+                android:text="去注册"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llv_zy_code_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_travel_code_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_24"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_15" />
+
+            <RelativeLayout
+                android:id="@+id/v_zytf_code_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="可显示健康状态并进行预约核销"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:drawableRight="@mipmap/venue_details_activity_arrow"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:text="了解详情"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_11" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_10">
+
+                <ImageView
+                    android:id="@+id/img_health_code_status"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/venue_book_condition_icon_low" />
+
+                <TextView
+                    android:id="@+id/tv_health_code_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_toRightOf="@+id/img_health_code_status"
+                    android:text="已注册"
+                    android:textColor="@color/c_36cd64"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

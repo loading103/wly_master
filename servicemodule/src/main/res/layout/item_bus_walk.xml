@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_bus_walk"
+        android:singleLine="true"
+        android:background="@color/color_fafafa"
+        android:layout_centerVertical="true"
+        android:paddingStart="@dimen/dp_83"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_20"
+        android:textColor="@color/color_666"
+        android:paddingTop="@dimen/dp_18"
+        android:paddingBottom="@dimen/dp_18"
+        android:textSize="@dimen/sp_13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.daqsoft.servicemodule.view.LoadingPointView
+        android:id="@+id/load_point_view"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_57"
+        android:layout_width="@dimen/dp_10"
+        android:layout_height="93dp"   />
+</RelativeLayout>

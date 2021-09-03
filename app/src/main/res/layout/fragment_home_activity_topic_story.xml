@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_home_topic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/ll_home_topic_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_20"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_topic"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_24"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:text="@string/home_topic_info"
+                        android:textColor="@color/txt_gray"
+                        android:textSize="@dimen/sp_12"
+                        />
+                </LinearLayout>
+
+                <com.daqsoft.baselib.widgets.CenterDrawableTextView
+                    android:layout_width="@dimen/dp_47"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/shape_f5_15"
+                    android:drawableRight="@mipmap/activity_details_more"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:gravity="center"
+                    android:text="@string/user_more"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_10" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20" />
+        </LinearLayout>
+
+
+        <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+            android:id="@+id/banner_center_adv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_90"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_home_story_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_20"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tv_title_story"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_story"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_24"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:text="@string/home_story_info"
+                        android:textColor="@color/txt_gray"
+                        android:textSize="@dimen/sp_12"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title_story" />
+                </LinearLayout>
+
+                <com.daqsoft.baselib.widgets.CenterDrawableTextView
+                    android:layout_width="@dimen/dp_47"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/shape_f5_15"
+                    android:drawableRight="@mipmap/activity_details_more"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:gravity="center"
+                    android:text="@string/user_more"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_10" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_story_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dp_20" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_story"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_20"
+                android:visibility="gone"
+                android:paddingTop="@dimen/dp_20" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

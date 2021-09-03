@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_34"
+        android:layout_marginTop="@dimen/dp_14">
+
+        <TextView
+            android:id="@+id/tv_recommend_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_fff5e6_r2"
+            android:paddingLeft="@dimen/dp_4"
+            android:paddingTop="@dimen/dp_2_5"
+            android:paddingRight="@dimen/dp_4"
+            android:paddingBottom="@dimen/dp_2_5"
+            android:text="推荐"
+            android:textColor="@color/color_ff9e05"
+            android:textSize="@dimen/sp_10" />
+
+        <TextView
+            android:id="@+id/tv_exhall_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_toLeftOf="@+id/img_is_select"
+            android:layout_toRightOf="@+id/tv_recommend_status"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{name}"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_15"
+            tools:text="画室401" />
+
+        <ImageView
+            android:id="@+id/img_is_select"
+            android:layout_width="@dimen/dp_16"
+            android:layout_height="@dimen/dp_16"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@mipmap/venue_book_jieshuo_button_choose_normal" />
+
+        <View
+            android:id="@+id/line_commentator_exhall"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:layout_alignParentBottom="true"
+            android:background="@color/d4d4d4" />
+    </RelativeLayout>
+</layout>

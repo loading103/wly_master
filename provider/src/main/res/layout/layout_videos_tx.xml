@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daqsoft.provider.view.cardview.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/dp_10"
+    android:layout_marginRight="@dimen/dp_10"
+    android:background="@color/white"
+    app:cardCornerRadius="@dimen/dp_5">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.dueeeke.videoplayer.player.VideoView
+            android:id="@+id/video_player_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_36cd64"
+            android:visibility="gone" />
+
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/img_video_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:visibility="gone"
+            app:corner_radius="@dimen/dp_5" />
+        <RelativeLayout
+            android:id="@+id/rl_zb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_190">
+                <ImageView
+                    android:id="@+id/iv_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY" />
+                <ImageView
+                    android:id="@+id/iv_play"
+                    android:layout_width="@dimen/dp_35"
+                    android:layout_height="@dimen/dp_35"
+                    android:layout_gravity="center"
+                    android:src="@drawable/slow_live_video_list_icon_play" />
+            </FrameLayout>
+        </RelativeLayout>
+
+        <com.flyco.roundview.RoundLinearLayout
+            android:id="@+id/ll_root"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            app:rv_backgroundColor="@color/slow_live_color_85000000"
+            app:rv_cornerRadius="@dimen/dp_3"
+            android:paddingRight="@dimen/dp_5"
+            android:paddingLeft="@dimen/dp_5"
+            app:rv_strokeColor="@color/white"
+            app:rv_strokeWidth="@dimen/dp_1">
+
+            <ImageView
+                android:id="@+id/iv_live"
+                android:layout_width="@dimen/dp_10"
+                android:layout_height="@dimen/dp_10"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/slow_live_playing_anim"
+                android:src="@drawable/slow_live_video_detail_gif_live_1" />
+
+            <TextView
+                android:id="@+id/tv_state"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_4"
+                android:text="Live直播中"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_11" />
+
+        </com.flyco.roundview.RoundLinearLayout>
+
+    </FrameLayout>
+</com.daqsoft.provider.view.cardview.CardView>

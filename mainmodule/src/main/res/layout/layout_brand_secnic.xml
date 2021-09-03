@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="secnicnum"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_brand_jqwl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_48"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/tv_brand_bpjs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="品牌资源"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_19"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="@dimen/dp_73"
+                    android:layout_height="@dimen/dp_4"
+                    android:layout_alignBottom="@+id/tv_brand_bpjs"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/dp_4"
+                    android:background="#80ffffff" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_brand_allnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="right"
+                android:text='@{"全部("+secnicnum+")"}'
+                android:textColor="#80ffffff"
+                android:textSize="@dimen/sp_12" />
+
+        </LinearLayout>
+
+        <com.daqsoft.travelCultureModule.branches.MyGrideView
+            android:id="@+id/gv_scenic_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            android:horizontalSpacing="10dp"
+            android:verticalSpacing="10dp" />
+    </LinearLayout>
+</layout>

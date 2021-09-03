@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+ <LinearLayout
+     android:orientation="vertical"
+     android:layout_width="match_parent"
+     android:gravity="center"
+     android:paddingVertical="@dimen/dp_12"
+     android:background="@drawable/volunteer_sign_date_bg_selector"
+     android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_time"
+        tools:text="2020-06-06"
+        android:textSize="@dimen/sp_12"
+        android:textColor="@color/volunteer_sign_day_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+ </LinearLayout>
+</layout>

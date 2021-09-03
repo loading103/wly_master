@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+    </data>
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
+       <com.daqsoft.baselib.widgets.ArcImageView
+           android:id="@+id/aiv_image"
+           url="@{url}"
+           android:layout_width="@dimen/dp_32"
+           android:layout_height="@dimen/dp_32"
+           android:scaleType="fitXY"
+           android:src="@mipmap/mine_profile_photo_default"
+           app:border_color="@color/white"
+           app:corner_top_left_radius="@dimen/dp_6"
+           app:corner_top_right_radius="@dimen/dp_6"
+           app:is_circle="true"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+       <ImageView
+           android:id="@+id/iv_heart"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@mipmap/volunteer_activity_details_heart"
+           app:layout_constraintTop_toTopOf="@id/aiv_image"
+           app:layout_constraintRight_toRightOf="@id/aiv_image"/>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

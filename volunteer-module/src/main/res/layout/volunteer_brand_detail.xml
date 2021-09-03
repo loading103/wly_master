@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+
+            <RelativeLayout
+                android:id="@+id/rv_banner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_210"
+                app:layout_collapseMode="parallax"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+                    android:id="@+id/vp_brand"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_210"
+                    android:background="@color/white"
+                    app:autoTurningTime="2000" />
+
+                <RelativeLayout
+                    android:id="@+id/v_hot_activity_index"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_30"
+                    android:background="@drawable/volunteer_shape_black_a40_r11"
+                    android:paddingLeft="@dimen/dp_12"
+                    android:paddingTop="@dimen/dp_2"
+                    android:paddingRight="@dimen/dp_12"
+                    android:paddingBottom="@dimen/dp_2">
+
+                    <TextView
+                        android:id="@+id/tv_pic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="画册"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_12" />
+                    <TextView
+                        android:id="@+id/txt_current_index"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_pic"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:id="@+id/txt_total_size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/txt_current_index"
+                        android:layout_toRightOf="@+id/txt_current_index"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dp_9" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:layout_marginTop="-20dp"
+                android:background="@drawable/shape_provider_fff_5"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_banner">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="测试了圣诞节福利款式大方理论上打开冯老师记录圣诞节分类" />
+
+                <TextView
+                    android:id="@+id/tv_declaration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_13"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                    tools:text="顺我者昌逆我者亡" />
+
+                <TextView
+                    android:id="@+id/tv_brand_intro_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_60"
+                    android:drawableLeft="@mipmap/whcgxq_bt_bq"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:text="志愿品牌介绍"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_19"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_declaration"
+                    tools:text="志愿品牌介绍" />
+
+                <TextView
+                    android:id="@+id/tv_unit_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:text="创建单位"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_brand_intro_title" />
+                <TextView
+                    android:id="@+id/tv_unit"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_unit_label"
+                    app:layout_constraintTop_toTopOf="@id/tv_unit_label"
+                    android:layout_marginLeft="@dimen/dp_13"
+                    tools:text="测试测试"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/tv_address_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:text="所属地区"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_unit_label" />
+                <TextView
+                    android:id="@+id/tv_address"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_address_label"
+                    app:layout_constraintTop_toTopOf="@id/tv_address_label"
+                    android:layout_marginLeft="@dimen/dp_13"
+                    tools:text="测试测试"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/tv_content"
+                    app:layout_constraintTop_toBottomOf="@id/tv_address"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/color_333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/tv_service_activity_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_60"
+                    android:drawableLeft="@mipmap/whcgxq_bt_bq"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:text="志愿服务活动"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_19"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_content"
+                    tools:text="志愿服务活动" />
+                <TextView
+                    android:id="@+id/tv_num"
+                    tools:text="(22)"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_service_activity_title"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_service_activity_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/tv_year"
+                    tools:text="2020"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_service_activity_title"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:drawableRight="@mipmap/provider_arrow_down"
+                    android:textColor="@color/color_333"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_activities"
+                    app:layout_constraintTop_toBottomOf="@id/tv_service_activity_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

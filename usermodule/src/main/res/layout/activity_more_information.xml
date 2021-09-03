@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="vm"
+            type="com.daqsoft.usermodule.ui.userInoformation.MoreInformationViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/mArea"
+                onClickCommand="@{vm.updateAddress}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_20"
+                app:leftLabel="@string/user_more_f_address"
+                app:rightContent='@{vm.userBean.address ?? @string/user_non_fix}'
+                app:showArrow="true" />
+
+            <com.daqsoft.provider.view.ItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="updateConstellation"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_20"
+                app:leftLabel="@string/user_more_star"
+                app:rightContent='@{vm.userBean.constellation ?? @string/user_non_fix}'
+                app:showArrow="true" />
+
+            <com.daqsoft.provider.view.ItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="updateBirthday"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_20"
+                app:leftLabel="@string/user_birthday"
+                app:rightContent='@{vm.userBean.birthday ?? @string/user_non_fix}'
+                app:showArrow="true" />
+
+            <com.daqsoft.provider.view.ItemView
+
+                onClickCommand="@{vm.updateSchool}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_20"
+                app:leftLabel="@string/user_more_school"
+                app:rightContent='@{vm.userBean.school ?? @string/user_non_fix}'
+                app:showArrow="true" />
+
+            <com.daqsoft.provider.view.ItemView
+                onClickCommand="@{vm.updateCompany}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_20"
+                app:leftLabel="@string/user_more_company"
+                app:rightContent='@{vm.userBean.workplace ?? @string/user_non_fix}'
+                app:showArrow="true" />
+
+            <com.daqsoft.provider.view.ItemView
+                onClickCommand="@{vm.updateEmail}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_20"
+                android:paddingBottom="@dimen/dp_16"
+                app:leftLabel="@string/user_more_email"
+                app:rightContent='@{vm.userBean.email ?? @string/user_non_fix}'
+                app:showArrow="true"
+                app:showDivider="false" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

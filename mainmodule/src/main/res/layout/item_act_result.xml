@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:layout_marginRight="@dimen/dp_4">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/img_act_result"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_act_result_video"
+            android:layout_width="@dimen/dp_36"
+            android:layout_height="@dimen/dp_36"
+            android:layout_gravity="center"
+            android:src="@mipmap/activity_detail_normal_memory_video_play_small"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/img_act_result"
+            app:layout_constraintLeft_toLeftOf="@+id/img_act_result"
+            app:layout_constraintRight_toRightOf="@+id/img_act_result"
+            app:layout_constraintTop_toTopOf="@+id/img_act_result" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

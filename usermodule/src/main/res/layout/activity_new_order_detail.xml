@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="urlcover"
+            type="String" />
+        <variable
+            name="price"
+            type="String" />
+
+        <variable
+            name="urlqrcode"
+            type="String" />
+
+        <variable
+            name="detail"
+            type="com.daqsoft.provider.bean.OrderDetail" />
+
+        <variable
+            name="helath"
+            type="com.daqsoft.provider.bean.HelathInfoBean" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                tools:text="完成"
+                style="@style/ViewWrap"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_18"
+                android:id="@+id/order_state_view"
+                android:layout_marginTop="@dimen/dp_20"
+                android:textColor="@color/color_36cd64"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                style="@style/ViewWrap"
+                tools:text="2020年7月7日"
+                android:id="@+id/order_date_view"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textColor="@color/color_999"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/order_state_view" />
+
+            <TextView
+                style="@style/ViewWrap"
+                android:text="我要评价"
+                android:id="@+id/appraise_view"
+                android:textColor="@color/ff9e05"
+                android:padding="@dimen/dp_8"
+                android:textSize="@dimen/sp_13"
+                android:layout_marginTop="@dimen/dp_5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/shape_rectangle_orange"
+                app:layout_constraintTop_toBottomOf="@id/order_date_view"/>
+
+            <View
+                android:id="@+id/line_view"
+                style="@style/HeightWrap"
+                android:background="#f1f6f7"
+                tools:ignore="MissingConstraints"
+                android:layout_height="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                app:layout_constraintTop_toBottomOf="@id/appraise_view"/>
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/cover_view"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="@dimen/dp_80"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_20"
+                url="@{urlcover}"
+                android:src="@drawable/placeholder_img_fail_240_180"
+                placeholder="@{@drawable/placeholder_img_fail_240_180}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line_view"/>
+
+            <TextView
+                tools:text="标题"
+                style="@style/ViewWrap"
+                android:id="@+id/title_view"
+                android:textColor="@color/color_333"
+                android:layout_marginStart="@dimen/dp_15"
+                android:text="@{detail.orderName}"
+                app:layout_constraintTop_toTopOf="@id/cover_view"
+                app:layout_constraintStart_toEndOf="@id/cover_view"/>
+
+            <TextView
+                tools:text="免费"
+                style="@style/ViewWrap"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:id="@+id/cost_type_view"
+                android:text="@{price}"
+                android:textColor="@color/color_36cd64"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_view" />
+
+            <TextView
+                style="@style/ViewWrap"
+                android:id="@+id/cost_view"
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/color_999"
+                android:layout_marginTop="@dimen/dp_15"
+                app:layout_constraintTop_toBottomOf="@id/title_view"
+                app:layout_constraintStart_toStartOf="@id/title_view"/>
+
+            <TextView
+                style="@style/ViewWrap"
+                tools:text="X1"
+                android:id="@+id/number_view"
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/color_999"
+                android:layout_marginTop="@dimen/dp_15"
+                android:text="@{'X'+detail.useNum}"
+                app:layout_constraintEnd_toEndOf="@id/cost_type_view"
+                app:layout_constraintTop_toBottomOf="@id/cost_type_view"/>
+
+            <View
+                android:id="@+id/line_view2"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/e8e8e8"
+                android:layout_marginTop="@dimen/dp_20"
+                app:layout_constraintTop_toBottomOf="@id/cover_view"
+                app:layout_constraintStart_toStartOf="@id/cover_view"
+                app:layout_constraintEnd_toEndOf="@id/cost_type_view"/>
+
+            <TextView
+                style="@style/ViewWrap"
+                android:text="预约信息"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_16"
+                android:layout_marginTop="@dimen/dp_15"
+                android:textColor="@color/color_333"
+                app:layout_constraintStart_toStartOf="@id/cover_view"
+                app:layout_constraintTop_toBottomOf="@id/line_view2"/>
+
+            <LinearLayout
+                android:id="@+id/yuyue_layout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                app:layout_constraintTop_toBottomOf="@id/title_view2">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="预约类型"
+                        style="@style/OrderDetailLabel" />
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:id="@+id/appoint_type"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="预订时间"
+                        style="@style/OrderDetailLabel" />
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:text="@{detail.createTime}"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="订单数量"
+                        style="@style/OrderDetailLabel" />
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:text="@{detail.orderNum}"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="景区电话"
+                        style="@style/OrderDetailLabel" />
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="景区地址"
+                        style="@style/OrderDetailLabel" />
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:text="@{detail.address}"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/ViewWrap"
+                android:text=" "
+                android:textStyle="bold"
+                android:id="@+id/title_view2"
+                android:textSize="@dimen/sp_16"
+                android:layout_marginTop="@dimen/dp_15"
+                android:textColor="@color/color_333"
+                app:layout_constraintStart_toStartOf="@id/cover_view"
+                app:layout_constraintTop_toBottomOf="@id/line_view2"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/qrcode_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints"
+                android:layout_marginTop="@dimen/dp_10"
+                app:layout_constraintTop_toBottomOf="@id/yuyue_layout">
+
+                <View
+                    android:id="@+id/line_view5"
+                    style="@style/HeightWrap"
+                    android:background="#f1f6f7"
+                    tools:ignore="MissingConstraints"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_20"/>
+
+                <TextView
+                    android:id="@+id/title_view3"
+                    style="@style/NewOrderDetailTitle"
+                    android:text="二维码与电子码"
+                    android:layout_marginTop="@dimen/dp_10"
+                    app:layout_constraintTop_toBottomOf="@id/line_view5"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    url="@{urlqrcode}"
+                    android:id="@+id/qrcode_view"
+                    android:layout_width="@dimen/dp_130"
+                    android:layout_height="@dimen/dp_130"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:src="@drawable/placeholder_img_fail_240_180"
+                    placeholder="@{@drawable/placeholder_img_fail_240_180}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title_view3"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/dp_59"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:visibility="gone"
+                    android:layout_height="@dimen/dp_59"
+                    android:src="@mipmap/order_detail_completed"
+                    app:layout_constraintTop_toTopOf="@id/qrcode_view"
+                    app:layout_constraintEnd_toEndOf="@id/qrcode_view"
+                    app:layout_constraintBottom_toBottomOf="@id/qrcode_view"
+                    app:layout_constraintStart_toStartOf="@id/qrcode_view"/>
+
+                <TextView
+                    tools:text="1张票"
+                    style="@style/ViewWrap"
+                    android:textStyle="bold"
+                    android:id="@+id/ticket_num_view"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/color_999"
+                    android:layout_marginTop="@dimen/dp_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/qrcode_view"/>
+
+                <TextView
+                    style="@style/ViewWrap"
+                    android:id="@+id/label_view"
+                    android:text="长按保存二维码"
+                    android:textSize="@dimen/sp_12"
+                    android:textColor="@color/color_999"
+                    android:layout_marginTop="@dimen/dp_5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ticket_num_view"/>
+
+                <TextView
+                    style="@style/ViewWrap"
+                    android:id="@+id/consu_code"
+                    android:text="电子码"
+                    android:textSize="@dimen/sp_13"
+                    android:textColor="@color/color_999"
+                    android:layout_marginTop="@dimen/dp_5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:padding="@dimen/dp_10"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:background="@drawable/shape_order_list_btn"
+                    app:layout_constraintTop_toBottomOf="@id/label_view"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/line_view3"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/e8e8e8"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/qrcode_layout"/>
+
+            <!--核销-->
+            <LinearLayout
+                android:id="@+id/hexiao_layout"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/line_view3">
+
+                <TextView
+                    android:text="核销信息"
+                    style="@style/NewOrderDetailTitle"/>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="核销数量"
+                        style="@style/OrderDetailLabel" />
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:text="@{detail.recordList[0].num}"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="核销时间"
+                        style="@style/OrderDetailLabel" />
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:text="@{detail.recordList[0].createTime}"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="核销人"
+                        style="@style/OrderDetailLabel" />
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:text="@{detail.recordList[0].operateUser}"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="@dimen/dp_10"
+                android:id="@+id/title_view4"
+                style="@style/NewOrderDetailTitle"
+                android:text="二维码与电子码"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintTop_toBottomOf="@id/hexiao_layout"/>
+
+            <!--健康码-->
+            <LinearLayout
+                android:id="@+id/jiankang_view"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/title_view4">
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="注   册   地"
+                        style="@style/OrderDetailLabel" />
+
+                    <TextView
+                        android:id="@+id/regist_addres"
+                        style="@style/OrderDetailLabel"
+                        android:text="@{helath.regionName}"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="健 康 状 况"
+                        style="@style/OrderDetailLabel" />
+
+                    <TextView
+                        android:id="@+id/health_state"
+                        style="@style/OrderDetailLabel"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="旅游码状况"
+                        style="@style/OrderDetailLabel" />
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:id="@+id/travel_code_state"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--其他订单信息-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/jiankang_view">
+
+                <LinearLayout
+                    android:paddingEnd="@dimen/dp_15"
+                    android:paddingStart="@dimen/dp_15"
+                    android:id="@+id/order_code_layout"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/ViewWrap"
+                        android:text="订单编号"
+                        android:textSize="@dimen/sp_13"
+                        android:textColor="@color/color_999"/>
+
+                    <TextView
+                        style="@style/ViewWrap"
+                        android:layout_weight="1"
+                        android:paddingStart="@dimen/dp_32"
+                        tools:text="2050 2489 6014 5870"
+                        android:textSize="@dimen/sp_13"
+                        android:text="@{detail.orderCode}"
+                        android:textColor="@color/color_333"/>
+
+                    <TextView
+                        style="@style/ViewWrap"
+                        android:text="复制"
+                        android:padding="@dimen/dp_6"
+                        android:textSize="@dimen/sp_13"
+                        android:id="@+id/copy_view"
+                        android:textColor="@color/color_999"
+                        android:background="@drawable/shape_order_list_btn"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="下单时间"
+                        style="@style/OrderDetailLabel" />
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:text="@{detail.createTime}"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="预   约  人"
+                        style="@style/OrderDetailLabel" />
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:text="@{detail.userName}"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="联系电话"
+                        style="@style/OrderDetailLabel" />
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:text="@{detail.userPhone}"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

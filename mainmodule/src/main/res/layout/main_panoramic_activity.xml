@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:background="@color/white"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_scine"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="景区"
+                    android:textColor="@color/story_label_txt"
+                    android:textSize="@dimen/sp_15"
+                    android:gravity="center"/>
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="@dimen/dp_35"
+                    android:layout_height="2.5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/colorPrimary"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/e8e8e8"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_venar"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="场馆"
+                    android:textColor="@color/story_label_txt"
+                    android:textSize="@dimen/sp_15"
+                    android:gravity="center"/>
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="40dp"
+                    android:visibility="gone"
+                    android:layout_height="2.5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/colorPrimary"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_sort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:drawableRight="@mipmap/activity_details_down"
+                android:drawablePadding="@dimen/dp_6"
+                android:ellipsize="end"
+                android:maxEms="5"
+                android:maxLines="1"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:text="地区"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:drawableRight="@mipmap/activity_details_down"
+                android:drawablePadding="@dimen/dp_6"
+                android:ellipsize="end"
+                android:maxEms="5"
+                android:maxLines="1"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:text="类型"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/tv_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:drawableRight="@mipmap/activity_details_down"
+                android:drawablePadding="@dimen/dp_6"
+                android:ellipsize="end"
+                android:maxEms="5"
+                android:maxLines="1"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_10"
+                android:text="距离"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+
+
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/srl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.daqsoft.baselib.widgets.PandaRefreshHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.daqsoft.baselib.widgets.PandaRefreshHeader>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    </LinearLayout>
+
+</layout>

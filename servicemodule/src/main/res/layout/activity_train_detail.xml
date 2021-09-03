@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.daqsoft.servicemodule.ui.TrainDetailActivity">
+
+    <data />
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recy_train_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader
+            android:id="@+id/recy_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include
+                android:id="@+id/train_detail_header"
+                layout="@layout/train_detail_header"/>
+        </com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader>
+    </RelativeLayout>
+
+
+
+
+</layout>

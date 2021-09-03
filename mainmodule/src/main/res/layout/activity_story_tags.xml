@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="avatar"
+            type="String" />
+
+        <variable
+            name="likeNumber"
+            type="String" />
+
+        <variable
+            name="commentNumber"
+            type="String" />
+
+        <variable
+            name="content"
+            type="String" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_m_20"
+        android:background="@drawable/main_shape_white_back_5_radius">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_32"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20"
+                android:text="@string/story_hot_tags"
+                android:textColorHint="@color/color_333"
+                android:textSize="@dimen/sp_19"
+                android:textStyle="bold" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_pager"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_200"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20" />
+
+            <com.daqsoft.provider.view.ViewPagerIndicatorView
+                android:id="@+id/vp_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20"
+                android:text="@string/story_all_tag"
+                android:textColorHint="@color/txt_black"
+                android:textSize="@dimen/sp_19"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <com.daqsoft.provider.view.LabelsView
+                android:id="@+id/lv_labels"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/dp_20"
+                android:minHeight="25dp"
+                android:padding="5dp"
+                app:labelTextColor="@color/txt_black"
+                app:labelTextHeight="wrap_content"
+                app:labelTextPaddingBottom="5dp"
+                app:labelTextPaddingLeft="10dp"
+                app:labelTextPaddingRight="10dp"
+                app:labelTextPaddingTop="5dp"
+                app:labelTextSize="14sp"
+                app:labelTextWidth="wrap_content"
+                app:lineMargin="10dp"
+                app:maxSelect="0"
+                app:minSelect="1"
+                app:selectType="MULTI"
+                app:wordMargin="10dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

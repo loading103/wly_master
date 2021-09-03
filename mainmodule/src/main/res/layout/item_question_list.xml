@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="datas"
+            type="com.daqsoft.provider.bean.QuestionListBean" />
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils"/>
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/shape_white_5"
+        android:paddingBottom="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_17"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_170"
+            tools:ignore="MissingConstraints">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:scaleType="centerCrop"
+                android:id="@+id/iv_bg"
+                android:layout_width="match_parent"
+                imageUrl="@{datas.getRealImages()}"
+                raduis='@{"6"}'
+                android:layout_height="@dimen/dp_170" />
+
+            <TextView
+                android:id="@+id/tv_state_1"
+                android:layout_width="@dimen/dp_44"
+                android:layout_height="@dimen/dp_55"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:text="进行中"
+                android:gravity="center"
+                android:alpha="0.9"
+                android:paddingRight="@dimen/dp_5"
+                android:paddingLeft="@dimen/dp_5"
+                android:textSize="@dimen/sp_11"
+                android:visibility='@{datas.getState().equals("1")?View.VISIBLE:View.GONE}'
+                android:textColor="@color/white"
+                android:background="@mipmap/service_wenjuan_list_tag_normal"/>
+
+            <TextView
+                android:layout_width="@dimen/dp_44"
+                android:layout_height="@dimen/dp_55"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:text="已结束"
+                android:gravity="center"
+                android:alpha="0.6"
+                android:visibility='@{datas.getState().equals("2") ?View.VISIBLE:View.GONE}'
+                android:paddingRight="@dimen/dp_5"
+                android:paddingLeft="@dimen/dp_5"
+                android:textSize="@dimen/sp_11"
+                android:textColor="@color/white"
+                android:background="@mipmap/service_wenjuan_list_tag_disabled"/>
+
+            <TextView
+                android:layout_width="@dimen/dp_44"
+                android:layout_height="@dimen/dp_55"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:text="未开始"
+                android:gravity="center"
+                android:alpha="0.6"
+                android:visibility='@{datas.getState().equals("0") ?View.VISIBLE:View.GONE}'
+                android:paddingRight="@dimen/dp_5"
+                android:paddingLeft="@dimen/dp_5"
+                android:textSize="@dimen/sp_11"
+                android:textColor="@color/white"
+                android:background="@mipmap/service_wenjuan_list_tag_disabled"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/dp_16"
+            android:textSize="@dimen/sp_16"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16"
+            android:textStyle="bold"
+            android:text="@{datas.title}"
+            tools:text="校园星计划丨智游天府校园推广大使问卷调查天府校园推广大使问卷调查天府校园推广大使问卷调查天府校园推广大使问卷调查天府校园推广大使问卷调查天府校园推广大使问卷调查"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16"
+            android:visibility='@{ TextUtils.isEmpty(datas.getJoinNumber()) ? View.GONE:View.VISIBLE}'
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_people"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text='@{String.format(@string/iv_capacity,datas.joinCount??"")}'
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                android:visibility='@{ datas.getState().equals("0")? View.GONE:View.VISIBLE}'
+                tools:text="23人" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="参与"
+                android:visibility='@{datas.getState().equals("0") ? View.GONE:View.VISIBLE}'
+                android:textColor="@color/color_999"
+                android:layout_marginTop="@dimen/dp_12"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16"
+            android:text= '@{String.format(@string/quest_start_time,datas.getStartTime1()??"")}'
+            android:textColor="@color/color_666"
+            android:drawableLeft="@drawable/shape_circle_cb2b2b"
+            android:drawablePadding="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"
+            tools:text="开始：2020-08-02 08:00"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_end_time"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_height="wrap_content"
+            android:text= '@{String.format(@string/quest_end_time,datas.getEndTime1()??"")}'
+            android:visibility='@{ TextUtils.isEmpty(datas.getEndTime1()) ? View.GONE:View.VISIBLE}'
+            android:textColor="@color/color_666"
+            android:drawableLeft="@drawable/shape_circle_e88e00"
+            android:drawablePadding="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"
+            tools:text="结束：2020-08-04 18:00 "
+            android:textSize="@dimen/sp_12" />
+    </LinearLayout>
+</layout>

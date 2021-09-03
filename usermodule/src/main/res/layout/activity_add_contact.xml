@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="vm"
+            type="com.daqsoft.usermodule.ui.userInoformation.AddContactActivityViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/submit"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_20"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_add_contact"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_23"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/user_contact_notice"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:drawableRight="@mipmap/tianbao_xingxing"
+                    android:text="@string/user_str_your_name"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16" />
+
+                <EditText
+                    android:id="@+id/receiver"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="@string/user_str_hint_your_name"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_16" />
+
+                <include layout="@layout/include_space_one" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:drawableRight="@mipmap/tianbao_xingxing"
+                    android:text="@string/user_address_phone"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16" />
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="@string/user_str_your_phone"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_16" />
+
+                <include layout="@layout/include_space_one" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:text="@string/user_str_id_type"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:id="@+id/certType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawableRight="@mipmap/story_add_arrow"
+                    android:hint="请选择"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_16" />
+
+                <include layout="@layout/include_space_one" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:text="@string/user_str_id_card"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16" />
+
+                <EditText
+                    android:id="@+id/certNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="@string/user_str_your_cert_number"
+                    android:maxLength="18"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_16" />
+
+                <include layout="@layout/include_space_one" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/user_selector_login_btn"
+            android:gravity="center"
+            android:paddingTop="@dimen/dp_12"
+            android:paddingBottom="@dimen/dp_12"
+            android:text="@string/user_str_conform"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16" />
+    </RelativeLayout>
+
+</layout>

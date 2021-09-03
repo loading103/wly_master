@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tag"
+            type="com.daqsoft.legacyModule.bean.LegacyStoryTagListBean" />
+
+    </data>
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_70">
+
+        <com.daqsoft.widget.RoundImageView
+            android:id="@+id/iv"
+            url="@{tag.cover}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:corner_radius="@dimen/dp_3"
+            app:type="round" />
+
+        <com.flyco.roundview.RoundFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:rv_backgroundColor="@color/legacy_module_color_85000000"
+            app:rv_cornerRadius="@dimen/dp_3" />
+
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:padding="@dimen/dp_8"
+            android:text="@{@string/legacy_module_story_tag_name_format(tag.name)}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            tools:text="#非遗传承人#" />
+
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="@dimen/dp_8"
+            android:text="@{@string/legacy_module_story_tag_num_format(tag.storyNum)}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10"
+            tools:text="324个好故事" />
+
+
+    </RelativeLayout>
+
+</layout>

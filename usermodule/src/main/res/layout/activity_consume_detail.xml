@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="view"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="content"
+            type="String" />
+
+        <variable
+            name="qrCode"
+            type="String" />
+
+        <variable
+            name="code"
+            type="String" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/main_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:background="@color/dividing_line" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingBottom="@dimen/dp_16">
+
+                    <TextView
+                        android:id="@+id/tv_guide_tip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_label_primary_color_bg_2"
+                        android:padding="@dimen/dp_20"
+                        android:visibility="gone"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_12"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/image"
+                        cornerRadius="@{10}"
+                        placeholder="@{@drawable/placeholder_img_fail_h300}"
+                        url="@{qrCode}"
+                        android:layout_width="@dimen/dp_130"
+                        android:layout_height="@dimen/dp_130"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:layout_marginBottom="@dimen/dp_20"
+                        android:scaleType="fitXY"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_guide_tip" />
+
+                    <com.daqsoft.baselib.widgets.ArcImageView
+                        android:id="@+id/status"
+                        android:layout_width="@dimen/dp_65"
+                        android:layout_height="@dimen/dp_65"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/mine_code_detail_tag_big_yihexiao"
+                        android:visibility="gone"
+                        app:back_color="@color/white"
+                        app:is_circle="true"
+                        app:is_cover_src="false"
+                        app:layout_constraintBottom_toBottomOf="@id/image"
+                        app:layout_constraintLeft_toLeftOf="@id/image"
+                        app:layout_constraintRight_toRightOf="@id/image"
+                        app:layout_constraintTop_toTopOf="@id/image" />
+
+                    <TextView
+                        android:id="@+id/tv_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:text="@{code}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/image" />
+
+                    <com.daqsoft.provider.view.ItemView
+                        android:id="@+id/booking_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_16"
+                        app:contentGravity="left"
+                        app:labelPadding="@dimen/dp_0"
+                        app:labelSize="@dimen/sp_12"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_code"
+                        app:leftLabelColor="@color/txt_gray"
+                        app:rightContent='@{content}'
+                        app:rightContentColor="@color/txt_gray"
+                        app:rightContentSize="@dimen/sp_12"
+                        app:showArrow="false"
+                        app:showDivider="false" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <FrameLayout
+                    android:id="@+id/fragment_information"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8" />
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/tv_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="查看入园须知"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16"
+            android:visibility="gone" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.daqsoft.provider.bean.HotelBean" />
+
+        <variable
+            name="status"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_12">
+
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/ai_image"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_120"
+            android:scaleType="center"
+            app:border_color="@color/white"
+            app:corner_bottom_left_radius="@dimen/dp_5"
+            app:corner_bottom_right_radius="@dimen/dp_5"
+            app:corner_top_left_radius="@dimen/dp_5"
+            app:corner_top_right_radius="@dimen/dp_5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:is_circle="false"
+            url="@{item.images}"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_12"
+            android:src="@mipmap/activity_collect_normal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_item_venues_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{item.name}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/ai_image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="成都市成华区历史博物馆" />
+
+        <TextView
+            android:id="@+id/tv_item_venues_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:ellipsize="end"
+            android:maxLines="1"
+
+            android:textColor="@color/txt_blue"
+            android:textSize="@dimen/sp_10"
+            app:layout_constraintLeft_toLeftOf="@id/tv_item_venues_name"
+
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_venues_name"
+            tools:text="西南地区最大的综合性博物馆" />
+
+        <TextView
+            android:id="@+id/tv_item_venues_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@{status}"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_11"
+            app:layout_constraintLeft_toLeftOf="@id/tv_item_venues_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_venues_info"
+            tools:text="地址：成都市.高新区.天府软件园C区" />
+
+        <LinearLayout
+            android:id="@+id/ll_item_venues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="@id/tv_item_venues_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_venues_address">
+
+            <TextView
+                android:id="@+id/tv_item_venues_type"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/dp_18"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_4"
+                android:background="@drawable/shape_venues_type_bg_2"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_6"
+                android:paddingRight="@dimen/dp_6"
+                android:text="@{item.hotelLevel}"
+                android:textColor="@color/txt_green"
+                android:textSize="@dimen/sp_10"
+                android:visibility="@{item.hotelLevel.equals(``)?View.GONE:View.VISIBLE}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_venues_open_time"
+                tools:text="博物馆" />
+
+
+
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cl_book"
+            app:layout_constraintBottom_toBottomOf="@id/ll_item_venues"
+            app:layout_constraintRight_toRightOf="parent"
+            >
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/ff9e05"
+                android:textSize="@dimen/sp_16"
+                android:text="@{item.floorPrice}"
+                tools:text="186"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_10"
+                android:textColor="@color/ff9e05"
+                app:layout_constraintBottom_toBottomOf="@id/tv_price"
+                app:layout_constraintRight_toLeftOf="@id/tv_price"
+                android:text="￥"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_9"
+                android:textColor="@color/txt_gray_black"
+                app:layout_constraintBottom_toBottomOf="@id/tv_price"
+                app:layout_constraintLeft_toRightOf="@id/tv_price"
+                android:text="起"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_32"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@drawable/shape_venues_activity_info_3"
+            android:visibility="@{item.activity!=null ? View.VISIBLE:View.GONE}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_item_venues">
+
+            <TextView
+                android:id="@+id/tv_item_venues_activity_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_12"
+                android:text="@string/activity_name"
+                android:textColor="@color/txt_orange"
+                android:textSize="@dimen/sp_12"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_item_venues_activity_info"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/dp_4"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintLeft_toRightOf="@+id/tv_item_venues_activity_name"
+                tools:text="清凉一夏，到画稿溪过夏天..." />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

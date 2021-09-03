@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="bean"
+            type="com.daqsoft.provider.bean.ResearchDetailBean" />
+
+        <variable
+            name="scenicHealthCode"
+            type="String" />
+
+        <variable
+            name="scenicHealthLevel"
+            type="String" />
+    </data>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/v_scenic_detaill_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_scenic_detail_info"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_187"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_18"
+                android:layout_marginRight="@dimen/dp_16"
+                android:clipChildren="false"
+                android:overScrollMode="never" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_marginRight="@dimen/dp_40"
+                android:layout_marginBottom="@dimen/dp_12"
+                android:minHeight="@dimen/dp_21"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/v_scenic_detail_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_main_black_10"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dp_7"
+                    android:paddingTop="@dimen/dp_4"
+                    android:paddingRight="@dimen/dp_7"
+                    android:paddingBottom="@dimen/dp_4"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/img_scenic_detail_play_status"
+                        android:layout_width="@dimen/dp_7"
+                        android:layout_height="@dimen/dp_8"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/venue_details_banner_pause" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_3"
+                        android:includeFontPadding="false"
+                        android:text="视频"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/v_scenic_detail_720"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:background="@drawable/shape_main_black_10"
+                    android:minHeight="@dimen/dp_21"
+                    android:paddingLeft="@dimen/dp_7"
+                    android:paddingTop="@dimen/dp_4"
+                    android:paddingRight="@dimen/dp_7"
+                    android:paddingBottom="@dimen/dp_4"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:includeFontPadding="false"
+                        android:text="全景漫游"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/v_scenic_detail_images"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:background="@drawable/shape_main_black_10"
+                    android:minHeight="@dimen/dp_21"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dp_7"
+                    android:paddingTop="@dimen/dp_4"
+                    android:paddingRight="@dimen/dp_7"
+                    android:paddingBottom="@dimen/dp_4"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:includeFontPadding="false"
+                        android:text="画册"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                    <TextView
+                        android:id="@+id/txt_scenic_detail_top_img_index"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="@dimen/dp_3"
+                        android:includeFontPadding="false"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingTop="@dimen/dp_18"
+            android:paddingRight="@dimen/dp_20">
+
+            <TextView
+                android:id="@+id/tv_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="center"
+                android:lines="2"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_10"
+                app:layout_constraintBottom_toBottomOf="@id/fly_scenic_tags"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_name"
+                tools:text="&#8451;" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_16"
+                android:text="@{bean.name}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_23"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/tv_weather"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.daqsoft.travelCultureModule.search.view.FlowLayout
+                android:id="@+id/fly_scenic_tags"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:minHeight="@dimen/dp_25"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="@id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_hotel_list_item"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:paddingTop="@dimen/dp_2"
+                    android:paddingRight="@dimen/dp_4"
+                    android:paddingBottom="@dimen/dp_2"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_10"></TextView>
+
+            </com.daqsoft.travelCultureModule.search.view.FlowLayout>
+            <!--            <com.daqsoft.provider.scrollview.DqRecylerView-->
+            <!--                android:id="@+id/recycler_secnic_details_label"-->
+            <!--                android:layout_width="@dimen/dp_0"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="@dimen/dp_4"-->
+            <!--                android:minHeight="25dp"-->
+            <!--                app:layout_constraintHorizontal_weight="1"-->
+            <!--                app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--                app:layout_constraintRight_toRightOf="@id/tv_name"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/tv_name" />-->
+
+            <View
+                android:layout_width="@dimen/dp_0_5"
+                android:layout_height="@dimen/dp_0"
+                android:background="@color/divider_e2"
+                app:layout_constraintBottom_toBottomOf="@id/fly_scenic_tags"
+                app:layout_constraintRight_toRightOf="@id/tv_name"
+                app:layout_constraintTop_toTopOf="@id/tv_name" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:lineSpacingExtra="@dimen/dp_8"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintTop_toBottomOf="@+id/fly_scenic_tags" />
+
+            <TextView
+                android:id="@+id/tv_status_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@color/white"
+                android:drawableRight="@mipmap/more_right_arrow"
+                android:drawablePadding="@dimen/dp_6"
+                android:lineSpacingExtra="@dimen/dp_8"
+                android:lines="1"
+                android:text="更多信息"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_11"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tv_status"
+                app:layout_constraintRight_toRightOf="@id/tv_status" />
+
+            <TextView
+                android:id="@+id/tv_scenic_details_scenic_health_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="景区氧生度"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                android:visibility="@{scenicHealthCode!=null&amp;&amp;!scenicHealthCode.empty}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_status" />
+
+            <TextView
+                android:id="@+id/tv_scenic_details_scenic_health_code_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:gravity="center_vertical"
+                android:text="@{scenicHealthCode}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{scenicHealthCode!=null&amp;&amp;!scenicHealthCode.empty}"
+                app:layout_constraintLeft_toRightOf="@+id/tv_scenic_details_scenic_health_code"
+                app:layout_constraintTop_toTopOf="@+id/tv_scenic_details_scenic_health_code"
+                tools:text="蓝田街道ss" />
+
+            <TextView
+                android:id="@+id/tv_scenic_details_scenic_health_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:text="@{scenicHealthLevel}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                android:visibility="@{scenicHealthCode!=null&amp;&amp;!scenicHealthCode.empty}"
+                app:layout_constraintLeft_toRightOf="@+id/tv_scenic_details_scenic_health_code_value"
+                app:layout_constraintTop_toTopOf="@+id/tv_scenic_details_scenic_health_code" />
+
+            <TextView
+                android:id="@+id/tv_scenic_details_scenic_cmfort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="景区舒适度"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_scenic_details_scenic_health_code"
+                app:layout_constraintTop_toBottomOf="@+id/tv_scenic_details_scenic_health_code" />
+
+            <TextView
+                android:id="@+id/tv_scenic_details_scenic_cmfort_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:gravity="center_vertical"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_scenic_details_scenic_cmfort"
+                app:layout_constraintLeft_toRightOf="@+id/tv_scenic_details_scenic_cmfort"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_scenic_details_scenic_cmfort"
+                tools:text="二段景山小区对面天府五街软件园杀杀杀杀杀杀杀杀杀C1" />
+
+            <TextView
+                android:id="@+id/tv_scenic_details_address_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="景区地址"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                android:visibility="@{bean.regionName.equals(``)?View.GONE:View.VISIBLE}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_scenic_details_scenic_cmfort_value" />
+
+            <TextView
+                android:id="@+id/tv_scenic_details_address_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:drawableRight="@mipmap/whcgxq_lcdz_dt"
+                android:gravity="center_vertical"
+                android:text="@{bean.regionName}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{bean.regionName.equals(``)?View.GONE:View.VISIBLE}"
+                app:layout_constraintLeft_toRightOf="@+id/tv_scenic_details_address_title"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_scenic_details_address_title"
+                tools:text="蓝田街道蓝安路二段景山小区对面天府五街软件园C1" />
+
+            <TextView
+                android:id="@+id/tv_venues_details_phone_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/details_phone"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                android:visibility="@{bean.phone.equals(``)?View.GONE:View.VISIBLE}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_scenic_details_address_value" />
+
+            <TextView
+                android:id="@+id/tv_scenic_details_phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:drawableRight="@mipmap/whcgxq_lxdh"
+                android:text="@{bean.phone}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{bean.phone.equals(``)?View.GONE:View.VISIBLE}"
+                app:layout_constraintLeft_toRightOf="@+id/tv_venues_details_phone_title"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_venues_details_phone_title"
+                tools:text="10:00-18:00" />
+
+            <TextView
+                android:id="@+id/tv_scenic_website"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/website"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                android:visibility="@{(bean.websiteUrl.equals(``) || bean.websiteUrl==null) ?View.GONE:View.VISIBLE}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_venues_details_phone_title" />
+
+            <TextView
+                android:id="@+id/tv_scenic_website_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:drawableRight="@mipmap/main_details_link"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{bean.websiteUrl}"
+                android:textColor="@color/txt_black"
+                android:visibility="@{(bean.websiteUrl.equals(``) || bean.websiteUrl==null) ?View.GONE:View.VISIBLE}"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toRightOf="@+id/tv_scenic_website"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_scenic_website"
+                tools:text="10:00-18:00" />
+
+            <TextView
+                android:id="@+id/tv_scenic_wexin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/wexin_number"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                android:visibility="@{(bean.officialUrl.equals(``) || bean.officialUrl==null) ?View.GONE:View.VISIBLE}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_scenic_website" />
+
+            <TextView
+                android:id="@+id/tv_scenic_wex_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:ellipsize="end"
+                android:maxEms="9"
+                android:maxLines="1"
+                android:text="@{bean.officialName}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{(bean.officialUrl.equals(``) || bean.officialUrl==null) ?View.GONE:View.VISIBLE}"
+                app:layout_constraintLeft_toRightOf="@+id/tv_scenic_wexin"
+                app:layout_constraintTop_toTopOf="@+id/tv_scenic_wexin"
+                tools:text="10:00-18:00" />
+
+            <TextView
+                android:id="@+id/tv_scenic_wex_qrcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="@string/qr_code_info"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_14"
+                android:visibility="@{(bean.officialUrl.equals(``) || bean.officialUrl==null) ?View.GONE:View.VISIBLE}"
+                app:layout_constraintLeft_toRightOf="@+id/tv_scenic_wex_name"
+                app:layout_constraintTop_toTopOf="@+id/tv_scenic_wex_name"
+                tools:text="10:00-18:00" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

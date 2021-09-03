@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/mLoadingLl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/dp_4"
+                android:id="@+id/mLoadingPb"
+                android:layout_width="@dimen/dp_21"
+                android:layout_height="@dimen/dp_32"
+                app:lottie_autoPlay="true"
+                app:lottie_imageAssetsFolder="refresh"
+                app:lottie_fileName="lottie_animation_refresh_header_panda.json"
+                app:lottie_loop="true" />
+            <TextView
+                android:id="@+id/mLoadingTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:text="@string/adapter_loading"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/mLoadingEnd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:gravity="center"
+            android:text="@string/adapter_no_more"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_14"
+            android:paddingBottom="10dp"
+             android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/mLoadingEnd1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:gravity="center"
+            android:text="@string/adapter_no_more"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_14"
+            android:paddingBottom="90dp"
+            android:visibility="gone"/>
+    </FrameLayout>
+</layout>

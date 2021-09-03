@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--性别筛选 性别 1：男 2：女 0：未知-->
+    <string-array name="gender">
+        <item>保密</item>
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+    <!--性别筛选 性别 1：男 2：女 0：未知-->
+    <string-array name="gender_volunteer">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+    <!--投诉类型筛选-->
+    <string-array name="complaint_type_name">
+        <item>人员</item>
+        <item>服务</item>
+        <item>环境</item>
+    </string-array>
+
+    <!--投诉类型筛选-->
+    <string-array name="complaint_type">
+        <item>personnel</item>
+        <item>service</item>
+        <item>environment</item>
+    </string-array>
+    <!--投诉是否允许公开-->
+    <string-array name="complaint_public">
+        <item>公开</item>
+        <item>不公开</item>
+    </string-array>
+    <!--被投诉方的对象类型-->
+    <string-array name="complaint_resource">
+        <item>景区</item>
+        <item>酒店</item>
+        <item>场馆</item>
+        <item>餐饮</item>
+        <item>农家乐</item>
+        <item>研学基地</item>
+    </string-array>
+    <!--房间人数选择-->
+    <string-array name="hotel_room">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+</resources>

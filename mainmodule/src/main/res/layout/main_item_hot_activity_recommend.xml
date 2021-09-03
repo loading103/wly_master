@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="type"
+            type="String" />
+
+        <variable
+            name="price"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_20">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/iv_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_98"
+            android:scaleType="center"
+            app:border_color="@color/white"
+            app:corner_bottom_left_radius="@dimen/dp_6"
+            app:corner_bottom_right_radius="@dimen/dp_6"
+            app:corner_top_left_radius="@dimen/dp_6"
+            app:corner_top_right_radius="@dimen/dp_6"
+            app:is_circle="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_honety"
+            android:layout_width="@dimen/dp_54"
+            android:layout_height="@dimen/dp_20"
+            android:background="@mipmap/activity_details_recommend_activity_tag_youxiang"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@+id/iv_image"
+            app:layout_constraintTop_toTopOf="@+id/iv_image" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_18"
+            android:layout_margin="@dimen/dp_12"
+            android:background="@drawable/main_shape_00_back_2_5_radius"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dp_6"
+            android:paddingRight="@dimen/dp_6"
+            android:text="@{type}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10"
+            app:layout_constraintBottom_toBottomOf="@id/iv_image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tool:text="气你" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{name}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_image"
+            tool:text="aadf" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="@{price}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tool:text="adf" />
+
+        <TextView
+            android:id="@+id/tv_integral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_integral"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_10"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_price"
+            app:layout_constraintLeft_toRightOf="@id/tv_price" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

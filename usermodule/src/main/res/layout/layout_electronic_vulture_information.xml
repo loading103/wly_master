@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="pohone"
+            type="String" />
+        <variable
+            name="idCard"
+            type="String" />
+        <variable
+            name="url"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/main_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp_16"
+            android:paddingBottom="@dimen/dp_10"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="" />
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/booking_contact_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/booking_contact"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:leftLabel="@string/order_contact_phone"
+                app:rightContent='@{pohone}'
+                android:layout_marginTop="@dimen/dp_8"
+                app:showArrow="false"
+                app:contentGravity="left"
+                app:rightContentSize="@dimen/sp_12"
+                app:labelSize="@dimen/sp_12"
+                app:labelPadding="@dimen/dp_0"
+                app:leftLabelColor="@color/txt_gray"
+                app:showDivider="false"
+                app:rightContentColor="@color/txt_gray"
+                app:labelWidth="@dimen/dp_20"/>
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/booking_remark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/booking_contact_phone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:leftLabel="@string/order_id_card"
+                app:rightContent='@{idCard}'
+                android:layout_marginTop="@dimen/dp_8"
+                app:showArrow="false"
+                app:contentGravity="left"
+                app:rightContentSize="@dimen/sp_12"
+                app:labelSize="@dimen/sp_12"
+                app:labelPadding="@dimen/dp_0"
+                app:leftLabelColor="@color/txt_gray"
+                app:showDivider="false"
+                app:rightContentColor="@color/txt_gray"
+                app:labelWidth="@dimen/dp_20"/>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10">
+
+            <ImageView
+                cornerRadius="@{10}"
+                placeholder="@{@drawable/placeholder_img_fail_h158}"
+                url="@{url}"
+                android:id="@+id/mCoverIv"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="@dimen/dp_80"
+                android:scaleType="fitXY"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/mShopNameTv"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toRightOf="@id/mCoverIv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="超值新鲜汶川车厘子一箱包邮，10斤礼盒装" />
+
+            <TextView
+                android:id="@+id/mStandardTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_8"
+                android:text="@string/order_standard"
+                app:layout_constraintLeft_toRightOf="@id/mCoverIv"
+                app:layout_constraintTop_toBottomOf="@id/mShopNameTv" />
+
+            <TextView
+                android:id="@+id/mStandardNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/mStandardTv"
+                app:layout_constraintTop_toTopOf="@id/mStandardTv"
+                tools:text="礼物盒" />
+
+            <TextView
+                android:id="@+id/mNumberTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:text="@string/order_number"
+                app:layout_constraintLeft_toRightOf="@id/mStandardNameTv"
+                app:layout_constraintTop_toTopOf="@id/mStandardTv" />
+
+            <TextView
+                android:id="@+id/mNumberValueTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/mNumberTv"
+                app:layout_constraintTop_toTopOf="@id/mNumberTv"
+                tools:text="2" />
+
+            <TextView
+                android:id="@+id/mTagTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                app:layout_constraintLeft_toRightOf="@id/mNumberValueTv"
+                app:layout_constraintTop_toTopOf="@id/mStandardTv"
+                android:background="@drawable/user_back_pink_round_5"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_10"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingBottom="@dimen/dp_2"
+                android:paddingRight="@dimen/dp_4"
+                android:paddingLeft="@dimen/dp_4"
+                tools:text="已申退1"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/mPriceTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_8"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintLeft_toRightOf="@id/mCoverIv"
+                app:layout_goneMarginTop="@dimen/dp_20"
+                app:layout_constraintTop_toBottomOf="@id/mNumberTv"
+                tools:text="￥240" />
+
+            <View
+                android:id="@+id/mDivideLine"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@color/dividing_line"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mPriceTv" />
+
+            <TextView
+                android:id="@+id/mTotalPriceTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/order_toatal_price"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mDivideLine" />
+
+            <TextView
+                android:id="@+id/mTotalPriceValueTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/txt_black"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/mTotalPriceTv"
+                tools:text="￥240" />
+
+
+
+            <TextView
+                android:id="@+id/mRealPayTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:text="@string/order_real_pay"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mTotalPriceTv" />
+
+            <TextView
+                android:id="@+id/mRealPayValueTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/mRealPayTv"
+                tools:text="￥258" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <include
+            android:id="@+id/layout_service"
+            layout="@layout/layout_service_provider_information"/>
+
+        <include
+            android:id="@+id/layout_order_information"
+            layout="@layout/layout_electronic_order_information"/>
+    </LinearLayout>
+
+</layout>

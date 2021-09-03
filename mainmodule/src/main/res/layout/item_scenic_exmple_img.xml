@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:orientation="vertical">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/img_scenic_exmple"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_90"
+            app:corner_radius="@dimen/dp_5" />
+
+        <TextView
+            android:id="@+id/txt_scenic_exmple_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="拍照示例"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_11" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_happy_smart_trip">智能行程</string>
+    <string name="home_next_station">下一站，出发</string>
+    <string name="home_boot">我要定制</string>
+    <string name="home_topic">焦点话题</string>
+    <string name="home_story_type_strategy">游记攻略</string>
+
+
+
+
+    <string name="home_city_introduce">新疆是个好地方</string>
+    <string name="home_city_introduce_info">九大资源 十足风情</string>
+    <string name="home_hot_activity">热门活动</string>
+    <string name="home_hot_activity_info">贵在参与 乐享其中</string>
+    <string name="home_city_name">目的地城市</string>
+    <string name="home_city_info">山河大地 魅力无限</string>
+    <string name="home_branch_name">印象新疆</string>
+    <string name="home_branch_label">让选择变得更简单</string>
+    <string name="home_line_name">精品主题线路</string>
+    <string name="home_line_info">偶遇 酝酿已久的邂逅</string>
+    <string name="home_story_info">踏进时光回廊 倾听西游故事</string>
+    <string name="home_story">时光故事</string>
+
+
+    <string name="home_get_score">领积分</string>
+    <string name="home_change">换一批</string>
+
+    <string name="home_menu_show">看演出</string>
+    <string name="home_menu_fei_yi">品非遗</string>
+    <string name="home_menu_volunteer">志愿者</string>
+    <string name="home_menu_go_school">上学堂</string>
+    <string name="home_menu_service">享服务</string>
+
+
+    <string name="home_topic_content_number">%1$s条内容</string>
+    <string name="home_story_number">%1$s个好故事</string>
+    <string name="home_story_tag">好故事由你来讲</string>
+    <string name="home_story_image_number">%1$s图</string>
+
+</resources>

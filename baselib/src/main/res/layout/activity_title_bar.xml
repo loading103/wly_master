@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.daqsoft.baselib.widgets.ImmerseGroup
+            android:id="@+id/mTitleBarIg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
+
+            <com.daqsoft.baselib.widgets.TitleBar
+                android:id="@+id/mTitleBar"
+                style="@style/TitleBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:titleTextColor="@color/txt_black"
+                app:titleTextSize="@dimen/sp_19" />
+        </com.daqsoft.baselib.widgets.ImmerseGroup>
+
+        <com.daqsoft.baselib.widgets.MultipleStatusView
+            android:layout_gravity="center"
+            android:id="@+id/mContentView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</layout>

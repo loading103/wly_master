@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.daqsoft.travelCultureModule.story.vm.WriteStoryFragmentViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom_layout"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="@string/home_story_write_title_hint"
+                    android:padding="@dimen/dp_20"
+                    android:text="@={vm.title}"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_15" />
+
+                <EditText
+                    android:id="@+id/et_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="left|top"
+                    android:hint="@string/home_story_write_hint"
+                    android:minLines="3"
+                    android:padding="@dimen/dp_20"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_add_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:background="@drawable/home_back_white_stroke_e2_round_large"
+                    android:text="@string/home_story_tag_hint"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <me.nereo.multi_image_selector.view.UploadRecyclerView
+                    android:id="@+id/rv_images"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_20" />
+
+                <TextView
+                    android:id="@+id/tv_image_notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:text="@string/home_story_image_limit_hint"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rv_images" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_20"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_location_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/story_add_position"
+                        android:drawablePadding="@dimen/dp_6"
+                        android:text="@string/home_story_add_location_label"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@mipmap/story_add_arrow"
+                        android:drawablePadding="@dimen/dp_6"
+                        android:maxLines="1"
+                        android:text="@={vm.address.name}"
+                        android:textColor="@color/txt_black"
+                        android:textColorHint="@color/color_999"
+                        android:textSize="@dimen/sp_15"
+
+                        />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_story_link_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/ic_story_link"
+                        android:drawablePadding="@dimen/dp_6"
+                        android:text="@string/story_link_tip"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/edt_story_link"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_15"
+                        android:layout_toRightOf="@+id/tv_story_link_label"
+                        android:background="@null"
+                        android:drawablePadding="@dimen/dp_6"
+                        android:hint="@string/input_other_part_link"
+                        android:textColor="@color/txt_black"
+                        android:textColorHint="@color/color_999"
+                        android:textSize="@dimen/sp_15"
+
+                        />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_topic_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:paddingLeft="@dimen/dp_16"
+                    android:text="@string/home_story_topic_label"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <com.daqsoft.provider.view.LabelsView
+                    android:id="@+id/lv_labels"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:minHeight="25dp"
+                    android:padding="5dp"
+                    app:labelBackground="@drawable/story_label_bg"
+                    app:labelTextColor="@color/story_label_txt"
+                    app:labelTextHeight="wrap_content"
+                    app:labelTextPaddingBottom="5dp"
+                    app:labelTextPaddingLeft="10dp"
+                    app:labelTextPaddingRight="10dp"
+                    app:labelTextPaddingTop="5dp"
+                    app:labelTextSize="14sp"
+                    app:labelTextWidth="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tv_topic_label"
+                    app:lineMargin="10dp"
+                    app:minSelect="0"
+                    app:selectType="MULTI"
+                    app:wordMargin="10dp" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/btn_bg1"
+                android:padding="@dimen/dp_12"
+                android:text="@string/home_story_save"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_publish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:padding="@dimen/dp_12"
+                android:text="@string/home_story_publish"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</layout>

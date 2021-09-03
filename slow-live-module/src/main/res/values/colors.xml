@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="slow_live_yellow_ff9e05">#ff9e05</color>
+    <color name="slow_live_red_ff6b53">#ff6b53</color>
+    <color name="slow_live_white_fff5e6">#fff5e6</color>
+    <color name="slow_live_white_f7f7f7">#f7f7f7</color>
+    <color name="slow_live_green_6ac302">#6ac302</color>
+    <color name="slow_live_divide">#F5FBFE</color>
+    <color name="slow_live_gray_f0">#f0f0f0</color>
+    <color name="slow_live_f5">#f5f5f5</color>
+    <color name="slow_live_c2bf">#c2bfba</color>
+    <color name="slow_live_fedb9c">#fedb9c</color>
+    <color name="slow_live_ff9e05">#ff9e05</color>
+    <color name="slow_live_ff4e4e">#ff4e4e</color>
+    <color name="slow_live_f3ae09">#f3ae09</color>
+    <color name="slow_live_alpha_60">#69333333</color>
+    <color name="slow_live_alpha_00_50">#80000000</color>
+    <color name="slow_live_fff5e6">#fff5e6</color>
+    <color name="slow_live_e2fce9">#e2fce9</color>
+    <color name="slow_live_color_666">#666666</color>
+    <color name="slow_live_color_333">#333333</color>
+    <color name="slow_live_color_999">#999999</color>
+    <color name="slow_live_color_f5f5f5">#f5f5f5</color>
+    <color name="slow_live_color_2ECD4D">#2ECD4D</color>
+    <color name="slow_live_e0e0e0">#e0e0e0</color>
+    <color name="slow_live_color_222">#222222</color>
+    <color name="slow_live_color_alpha_00">#00ffffff</color>
+    <color name="slow_live_color_alpha_50">#50000000</color>
+    <color name="slow_live_color_e8e8e8">#e8e8e8</color>
+    <color name="slow_live_color_d4d4d4">#d4d4d4</color>
+    <color name="slow_live_color_333333">#333333</color>
+    <color name="slow_live_color_alpha_80">#80000000</color>
+    <color name="slow_live_916112">#916112</color>
+    <color name="slow_live_color_red_ff6b53">#ff6b53</color>
+    <color name="slow_live_color_bdbdbd">#bdbdbd</color>
+    <color name="slow_live_color_85000000">#85000000</color>
+</resources>

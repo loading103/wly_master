@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="location"
+            type="String" />
+
+        <variable
+            name="avatar"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="likeNumber"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@mipmap/home_ht_bg"
+        android:padding="@dimen/dp_2"
+        android:paddingBottom="@dimen/dp_10">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/image"
+            waterMarkerUrl="@{url}"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_162"
+            app:border_color="@color/white"
+            app:corner_top_left_radius="@dimen/dp_6"
+            app:corner_top_right_radius="@dimen/dp_6"
+            app:is_circle="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/location_name_cl"
+            android:visibility="gone"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            app:layout_constraintRight_toLeftOf="@+id/iv_video"
+            app:layout_constraintBottom_toBottomOf="@id/image"
+            app:layout_constraintLeft_toLeftOf="@id/image"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginRight="@dimen/dp_10"
+                android:id="@+id/location_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_black_localtaion"
+                android:drawableLeft="@mipmap/home_story_icon_location"
+                android:drawablePadding="@dimen/dp_6"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:paddingVertical="@dimen/dp_6"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_8"
+                app:layout_constraintHorizontal_bias="0"
+                tools:text="城市类型" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_video"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_4"
+            android:src="@mipmap/home_gs_video"
+            app:layout_constraintBottom_toBottomOf="@id/tv_image_number"
+            app:layout_constraintRight_toLeftOf="@+id/tv_image_number"
+            app:layout_goneMarginBottom="@dimen/dp_10"
+            app:layout_goneMarginRight="@dimen/dp_10" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_image_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@mipmap/home_gs_tmb"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_8"
+            app:layout_constraintBottom_toBottomOf="@id/image"
+            app:layout_constraintRight_toRightOf="@+id/image" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_5"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image"
+            tools:text="城市类型" />
+
+        <RelativeLayout
+            android:id="@+id/v_reprint_info"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_content">
+
+            <TextView
+                android:id="@+id/reprint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_6"
+                android:background="@drawable/shape_reprint"
+                android:paddingHorizontal="@dimen/dp_5"
+                android:paddingVertical="@dimen/dp_2"
+                android:text="@string/main_reprint"
+                android:textColor="@color/ff9e05"
+                android:textSize="@dimen/sp_10"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_city_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_toRightOf="@+id/reprint"
+                android:textColor="@color/ff4e4e"
+                android:textSize="@dimen/sp_11"
+                android:visibility="visible"
+                app:layout_goneMarginLeft="@dimen/dp_18"
+                tools:text="游记攻略" />
+        </RelativeLayout>
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/iv_user"
+            android:layout_width="@dimen/dp_18"
+            android:layout_height="@dimen/dp_18"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:scaleType="center"
+            android:src="@mipmap/mine_profile_photo_default"
+            app:is_circle="true"
+            android:layout_marginBottom="@dimen/dp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_reprint_info"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_goneMarginLeft="@dimen/dp_6" />
+
+        <TextView
+            android:id="@+id/tv_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_3"
+            android:text="@{name}"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_11"
+            app:layout_constraintEnd_toStartOf="@id/tv_like"
+            app:layout_constraintLeft_toRightOf="@id/iv_user"
+            app:layout_constraintStart_toEndOf="@id/iv_user"
+            app:layout_constraintTop_toTopOf="@id/iv_user" />
+
+        <TextView
+            android:id="@+id/tv_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_18"
+            android:drawableLeft="@mipmap/home_gs_like"
+            android:drawablePadding="@dimen/dp_3"
+            android:text="@{likeNumber}"
+            android:textSize="@dimen/sp_11"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_user" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

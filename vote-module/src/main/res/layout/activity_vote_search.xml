@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/v_top_search_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_66">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_14"
+                android:layout_toLeftOf="@+id/tv_cance_search"
+                android:background="@drawable/shape_vote_search_r16"
+                android:minHeight="@dimen/dp_30">
+
+                <ImageView
+                    android:id="@+id/img_search_vote"
+                    android:layout_width="@dimen/dp_13"
+                    android:layout_height="@dimen/dp_13"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:src="@mipmap/vote_details_icon_search" />
+
+                <EditText
+                    android:id="@+id/edt_search_vote"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_12"
+                    android:layout_toRightOf="@+id/img_search_vote"
+                    android:background="@null"
+                    android:hint="搜索选项编号、名称或作者名称"
+                    android:imeOptions="actionSearch"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:textColor="@color/color_666"
+                    android:textColorHint="@color/color_999"
+                    android:textSize="@dimen/sp_13" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_cance_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_20"
+                android:gravity="center"
+                android:minWidth="@dimen/dp_40"
+                android:minHeight="@dimen/dp_40"
+                android:text="取消"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_15"
+                tools:text="取消" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_vote_sub_types"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/v_top_search_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:background="@color/white"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_vote_child_types"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rv_vote_sub_types"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/white"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rv_vote_child_types">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_search_contents"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/tv_vote_no_more"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_10" />
+
+            <LinearLayout
+                android:id="@+id/v_vote_empty"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_300"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/empty_image"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="@dimen/dp_120"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:src="@mipmap/placeholder_img_fail_h158" />
+
+                <TextView
+                    android:id="@+id/empty_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/adatper_data_empty"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_vote_no_more"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:text="没有更多了"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_14"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

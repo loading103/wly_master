@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clip"
+            type="com.daqsoft.provider.rxCommand.ReplyCommand" />
+        <variable
+            name="detail"
+            type="com.daqsoft.provider.bean.OrderDetail" />
+
+    </data>
+
+
+
+        <LinearLayout
+            android:background="@color/white"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8">
+
+
+                <TextView
+                    android:id="@+id/label"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="@dimen/dp_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/user_back_wite_strok_d4_round_5"
+                    android:text="@string/order_copy"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    onClickCommand="@{clip}"/>
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/booking_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_2"
+                    app:labelSize="@dimen/sp_12"
+                    app:layout_constraintRight_toLeftOf="@id/label"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:leftLabel="@string/order_code"
+                    app:leftLabelColor="@color/txt_gray"
+                    app:rightContent='@{detail.orderCode}'
+                    app:rightContentColor="@color/txt_gray"
+                    app:rightContentSize="@dimen/sp_12"
+                    app:showArrow="false"
+                    app:showDivider="false"
+                    app:labelWidth="@dimen/dp_20"/>
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/booking_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/booking_number"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:leftLabel="@string/order_booking_time"
+                    app:rightContent='@{detail.createTime}'
+                    android:layout_marginTop="@dimen/dp_8"
+                    app:showArrow="false"
+                    app:contentGravity="left"
+                    app:rightContentSize="@dimen/sp_12"
+                    app:labelSize="@dimen/sp_12"
+                    app:labelPadding="@dimen/dp_0"
+                    app:leftLabelColor="@color/txt_gray"
+                    app:showDivider="false"
+                    app:rightContentColor="@color/txt_gray"
+                    app:labelWidth="@dimen/dp_20"/>
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/booking_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/booking_time"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:leftLabel="@string/order_contact"
+                    app:rightContent='@{detail.userName}'
+                    android:layout_marginTop="@dimen/dp_8"
+                    app:showArrow="false"
+                    app:contentGravity="left"
+                    app:rightContentSize="@dimen/sp_12"
+                    app:labelSize="@dimen/sp_12"
+                    app:labelPadding="@dimen/dp_0"
+                    app:leftLabelColor="@color/txt_gray"
+                    app:showDivider="false"
+                    app:rightContentColor="@color/txt_gray"
+                    app:labelWidth="@dimen/dp_20"/>
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/booking_contact_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/booking_contact"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:leftLabel="@string/order_contact_phone"
+                    app:rightContent='@{detail.userPhone}'
+                    android:layout_marginTop="@dimen/dp_8"
+                    app:showArrow="false"
+                    app:contentGravity="left"
+                    app:rightContentSize="@dimen/sp_12"
+                    app:labelSize="@dimen/sp_12"
+                    app:labelPadding="@dimen/dp_0"
+                    app:leftLabelColor="@color/txt_gray"
+                    app:showDivider="false"
+                    app:rightContentColor="@color/txt_gray"
+                    app:labelWidth="@dimen/dp_20"/>
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/booking_contact_idcard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/booking_contact_phone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:leftLabel="@string/order_contact_idcard"
+                    android:layout_marginTop="@dimen/dp_8"
+                    app:showArrow="false"
+                    app:contentGravity="left"
+                    app:rightContentSize="@dimen/sp_12"
+                    app:labelSize="@dimen/sp_12"
+                    app:labelPadding="@dimen/dp_0"
+                    app:leftLabelColor="@color/txt_gray"
+                    app:showDivider="false"
+                    app:rightContentColor="@color/txt_gray"
+                    app:labelWidth="@dimen/dp_20"/>
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/booking_remark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/booking_contact_idcard"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:leftLabel="@string/order_remark"
+                    app:rightContent='@{detail.remark}'
+                    android:layout_marginTop="@dimen/dp_8"
+                    app:showArrow="false"
+                    app:contentGravity="left"
+                    app:rightContentSize="@dimen/sp_12"
+                    app:labelSize="@dimen/sp_12"
+                    app:labelPadding="@dimen/dp_0"
+                    app:leftLabelColor="@color/txt_gray"
+                    app:showDivider="false"
+                    app:rightContentColor="@color/txt_gray"
+                    app:labelWidth="@dimen/dp_20"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+</layout>

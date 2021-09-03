@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--性别筛选 性别 1：男 2：女 -->
+    <string-array name="service_gender">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+
+    <!--  服务分类-->
+    <string-array name="service_type">
+        <item>旅游服务</item>
+        <item>游玩查询</item>
+        <item>交通查询</item>
+        <item>公众服务</item>
+    </string-array>
+    <!--  服务子分类  旅游分类 -->
+    <string-array name="service_travel_type">
+        <item>投诉</item>
+        <item>求助</item>
+    </string-array>
+    <array name="service_travel_icon">
+        <item>@mipmap/service_icon_complaint</item>
+        <item>@mipmap/service_icon_sos</item>
+    </array>
+    <!--  服务子分类  游玩查询 -->
+    <string-array name="service_play_type">
+        <item>厕所</item>   v
+        <item>导游</item>
+        <item>旅行社</item>
+        <item>天气查询</item>
+<!--        <item>拍照识花</item>-->
+    </string-array>
+    <array name="service_play_icon">
+        <item>@mipmap/service_icon_toilet</item>
+        <item>@mipmap/service_icon_guide</item>
+        <item>@mipmap/service_icon_agency</item>
+        <item>@mipmap/service_icon_weather</item>
+<!--        <item>@mipmap/service_icon_flower</item>-->
+    </array>
+    <!--  服务子分类  交通查询 -->
+    <string-array name="service_traffic_type">
+        <item>停车场</item>
+        <item>公交查询</item>
+        <item>火车票</item>
+        <item>汽车票</item>
+        <item>机票</item>
+    </string-array>
+    <array name="service_traffic_icon">
+        <item>@mipmap/service_icon_park</item>
+        <item>@mipmap/service_icon_bus</item>
+        <item>@mipmap/service_icon_train</item>
+        <item>@mipmap/service_icon_car</item>
+        <item>@mipmap/service_icon_airplane</item>
+    </array>
+    <!--  服务子分类  公众服务 -->
+    <string-array name="service_public_type">
+        <item>健康码</item>
+<!--        <item>查艺考</item>-->
+        <item>艺术基金</item>
+    </string-array>
+    <array name="service_public_icon">
+        <item>@mipmap/service_icon_code</item>
+<!--        <item>@mipmap/service_icon_exam</item>-->
+        <item>@mipmap/service_icon_fund</item>
+    </array>
+
+
+</resources>

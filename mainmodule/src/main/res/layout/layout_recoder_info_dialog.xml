@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_120"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_recorder_info_dialog"
+    android:minHeight="@dimen/dp_120"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dp_15">
+
+    <ImageView
+        android:id="@+id/img_robot_recoder"
+        android:layout_width="@dimen/dp_28"
+        android:layout_height="@dimen/dp_28"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_12"
+        android:scaleType="fitXY"
+        android:src="@mipmap/icon_roboto_recoder" />
+
+    <ImageView
+        android:id="@+id/img_robot_gif"
+        android:layout_width="@dimen/dp_15"
+        android:scaleType="fitXY"
+        android:layout_height="@dimen/dp_14"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_12"
+        android:background="@drawable/main_recoder_playing_anim"
+        android:src="@mipmap/main_video_detail_gif_live_1" />
+
+    <TextView
+        android:id="@+id/tv_robot_staus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_12"
+        android:text="录制中..."
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12" />
+
+</LinearLayout>

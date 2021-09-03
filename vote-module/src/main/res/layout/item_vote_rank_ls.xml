@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.daqsoft.provider.bean.VoteWorkBean" />
+
+        <variable
+            name="index"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/v_vote_rank_ls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_12">
+
+        <TextView
+            android:id="@+id/tv_vote_rank_pos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_13"
+            android:text="@{index}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold"
+            tools:text="1" />
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/img_rank_resource"
+            imageUrls="@{data.images}"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_toRightOf="@+id/tv_vote_rank_pos"
+            app:corner_radius="@dimen/dp_5" />
+
+        <TextView
+            android:id="@+id/tv_rank_resource_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_13"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_toLeftOf="@+id/v_rank_vote_num"
+            android:layout_toRightOf="@+id/img_rank_resource"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="2"
+            android:text="@{data.name}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_rank_resource_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_rank_resource_name"
+            android:layout_marginLeft="@dimen/dp_13"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_toLeftOf="@+id/v_rank_vote_num"
+            android:layout_toRightOf="@+id/img_rank_resource"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_10" />
+
+        <RelativeLayout
+            android:id="@+id/v_rank_vote_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="@{data.resourceCount.ticketCount!=null}"
+            android:layout_marginRight="@dimen/dp_16">
+
+            <TextView
+                android:id="@+id/tv_rank_vote_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.resourceCount.ticketCount}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                tools:text="520" />
+
+            <TextView
+                android:id="@+id/tv_ranks_num_lable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_rank_vote_num"
+                android:layout_toRightOf="@+id/tv_rank_vote_num"
+                android:text="票"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_9" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

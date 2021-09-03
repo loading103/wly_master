@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="topAd"
+            type="String" />
+
+        <variable
+            name="happyUrl"
+            type="String" />
+
+        <variable
+            name="happyName"
+            type="String" />
+
+        <variable
+            name="vm"
+            type="com.daqsoft.thetravelcloudwithculture.ws.WSHomeBannerAndHappyFragmentViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+            android:id="@+id/banner_top_adv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_90"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_12"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:visibility="gone" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_home_found"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/ll_found_around_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_title_found_around"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/dp_6"
+                        android:src="@mipmap/index_icon_point"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_title_found_around"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_title_found_around"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@string/home_found_around"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@id/iv_title_found_around"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24">
+                <!--                    <ImageView-->
+                <!--                        android:id="@+id/iv_bg"-->
+                <!--                        app:layout_constraintTop_toTopOf="parent"-->
+                <!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--                        app:layout_constraintRight_toRightOf="parent"-->
+                <!--                        android:src="@mipmap/home_nearby_bg"-->
+                <!--                        android:layout_width="@dimen/dp_335"-->
+                <!--                        android:layout_height="@dimen/dp_160"/>-->
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/iv_bg"
+                    android:layout_width="@dimen/dp_335"
+                    android:layout_height="@dimen/dp_160"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="lottie_animation_radar.json"
+                    app:lottie_imageAssetsFolder="radar"
+                    app:lottie_loop="true" />
+
+                <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+                    android:id="@+id/banner_found"
+                    android:layout_width="@dimen/dp_295"
+                    android:layout_height="@dimen/dp_120"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_bg"
+                    app:layout_constraintLeft_toLeftOf="@+id/iv_bg"
+                    app:layout_constraintRight_toRightOf="@+id/iv_bg"
+                    app:layout_constraintTop_toTopOf="@+id/iv_bg" />
+
+                <com.daqsoft.provider.view.ViewPagerIndicatorView
+                    android:id="@+id/circleIndicator"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="@dimen/dp_30"
+                    app:circle_flag="true"
+                    app:layout_constraintBottom_toBottomOf="@+id/banner_found"
+                    app:layout_constraintLeft_toLeftOf="@+id/banner_found"
+                    app:loadingcolor="@color/colorPrimary" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_home_happy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/ll_home_happy_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_title_icon_happy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/dp_6"
+                        android:src="@mipmap/index_icon_point"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_title_happy"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_title_happy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@string/home_city_introduce"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@id/iv_title_icon_happy"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:includeFontPadding="false"
+                        android:text="@string/home_city_introduce_info"
+                        android:textColor="@color/txt_gray"
+                        android:textSize="@dimen/sp_12"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toRightOf="@id/iv_title_icon_happy"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title_happy" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <com.daqsoft.baselib.widgets.CenterDrawableTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:drawableRight="@mipmap/common_button_arrow_more_small"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:gravity="center"
+                    android:text="@string/user_more"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.56">
+
+                    <com.daqsoft.baselib.widgets.ArcImageView
+                        android:id="@+id/iv_home_happy"
+                        url="@{happyUrl}"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_236"
+                        app:corner_bottom_left_radius="@dimen/dp_5"
+                        app:corner_bottom_right_radius="@dimen/dp_5"
+                        app:corner_top_left_radius="@dimen/dp_5"
+                        app:corner_top_right_radius="@dimen/dp_5"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp_16"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_home_happy"
+                        app:layout_constraintLeft_toLeftOf="@+id/iv_home_happy"
+                        app:layout_constraintRight_toRightOf="@id/iv_home_happy">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:alpha="0.9"
+                            android:background="@drawable/shpae_b_white_r5_t90"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:minHeight="@dimen/dp_28"
+                            android:paddingLeft="@dimen/dp_12"
+                            android:paddingTop="@dimen/dp_4"
+                            android:paddingRight="@dimen/dp_12"
+                            android:paddingBottom="@dimen/dp_4"
+                            android:text="@{happyName}"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_15"
+                            android:textStyle="bold"
+                            tools:text="皮影戏" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.daqsoft.provider.scrollview.DqRecylerView
+                    android:id="@+id/recycler_home_happy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_weight="1"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_happy_change"
+                onClickCommand="@{vm.changeContent}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_change"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_14" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_13"
+                    android:layout_height="@dimen/dp_13"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:src="@mipmap/home_hyp_sx" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@color/white">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/banner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="乌鲁木齐市"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="@id/banner"
+                app:layout_constraintRight_toRightOf="@id/banner"
+                app:layout_constraintTop_toBottomOf="@+id/banner" />
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="爱上新疆，从乌鲁木齐开始"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_13"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="@id/title"
+                app:layout_constraintRight_toRightOf="@id/title"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_home_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:id="@+id/ll_home_activity_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_2"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_title_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/dp_6"
+                        android:src="@mipmap/index_icon_point"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@string/home_hot_activity"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@id/iv_title_icon"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:includeFontPadding="false"
+                        android:text="Activity"
+                        android:textColor="@color/txt_gray"
+                        android:textSize="@dimen/sp_12"
+                        app:layout_constraintLeft_toRightOf="@id/iv_title_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.daqsoft.baselib.widgets.CenterDrawableTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:drawableRight="@mipmap/rmhd_more"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:gravity="center"
+                    android:text="@string/user_more"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/view_pager_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:visibility="gone"
+                    android:layout_marginEnd="@dimen/dp_26"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_bar" />
+
+                <include
+                    android:id="@+id/ll_home_activity_style_five"
+                    layout="@layout/item_home_popular_activity_five_ws"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_bar" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

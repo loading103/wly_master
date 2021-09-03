@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_found_template_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_18"
+            android:layout_marginRight="@dimen/dp_20">
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/iv_bg"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent"-->
+            <!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--                        app:layout_constraintRight_toRightOf="parent"-->
+            <!--                        android:src="@mipmap/home_nearby_bg"-->
+            <!--                        android:layout_width="@dimen/dp_335"-->
+            <!--                        android:layout_height="@dimen/dp_160"/>-->
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/iv_bg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_160"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="lottie_animation_radar.json"
+                app:lottie_imageAssetsFolder="radar"
+                app:lottie_loop="true"></com.airbnb.lottie.LottieAnimationView>
+
+            <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+                android:id="@+id/banner_found"
+                android:layout_width="@dimen/dp_295"
+                android:layout_height="@dimen/dp_120"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_bg"
+                app:layout_constraintLeft_toLeftOf="@+id/iv_bg"
+                app:layout_constraintRight_toRightOf="@+id/iv_bg"
+                app:layout_constraintTop_toTopOf="@+id/iv_bg" />
+
+            <com.daqsoft.provider.view.ViewPagerIndicatorView
+                android:id="@+id/circleIndicator"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_30"
+                app:circle_flag="true"
+                app:layout_constraintBottom_toBottomOf="@+id/banner_found"
+                app:layout_constraintLeft_toLeftOf="@+id/banner_found"
+                app:loadingcolor="@color/colorPrimary" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

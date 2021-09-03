@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.daqsoft.provider.bean.CultureDetailBean" />
+
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/toolbar_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        app:layout_collapseMode="parallax"
+                        app:layout_collapseParallaxMultiplier="0.9">
+
+                        <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+                            android:id="@+id/cbanner_story_detail"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_270"
+                            android:background="@color/white"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <RelativeLayout
+                            android:id="@+id/v_story_detail_index"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dp_20"
+                            android:layout_marginBottom="@dimen/dp_20"
+                            android:background="@drawable/volunteer_shape_white"
+                            android:paddingHorizontal="@dimen/dp_12"
+                            android:paddingVertical="@dimen/dp_2"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@+id/cbanner_story_detail"
+                            app:layout_constraintRight_toRightOf="@+id/cbanner_story_detail">
+
+                            <TextView
+                                android:id="@+id/txt_current_index"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_12" />
+
+                            <TextView
+                                android:id="@+id/txt_total_size"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBaseline="@+id/txt_current_index"
+                                android:layout_toRightOf="@+id/txt_current_index"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/dp_9" />
+                        </RelativeLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_m_12"
+                android:background="@drawable/shape_hotel_detail_top"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/dp_20">
+                        <TextView
+                            android:id="@+id/tv_food_detail_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{data.name}"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_23"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_tag1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:layout_marginTop="@dimen/dp_7"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_food_detail_name"/>
+
+
+                        <TextView
+                            android:id="@+id/tv_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:text="@{data.brief}"
+                            android:visibility="@{TextUtils.isEmpty(data.brief)?View.GONE:View.VISIBLE}"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            app:layout_constraintTop_toBottomOf="@id/rv_tag1" />
+                        <RelativeLayout
+                            android:id="@+id/rl_3d"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="@dimen/dp_30"
+                            android:visibility="@{TextUtils.isEmpty(data.threeDimensionalUrl)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_content"
+                            tools:ignore="WebViewLayout">
+                            <include
+                                android:id="@+id/tv_3d"
+                                layout="@layout/include_detail_title"
+                                app:hide="@{false}"
+                                app:hideRight="@{true}"
+                                app:leftLabel="@{`3D看文物`}" />
+
+                            <RelativeLayout
+                                android:id="@+id/ll_root"
+                                android:layout_below="@+id/tv_3d"
+                                android:layout_width="match_parent"
+                                android:layout_marginTop="@dimen/dp_30"
+                                android:layout_height="wrap_content">
+                                <com.daqsoft.baselib.widgets.ArcImageView
+                                    android:id="@+id/iv_content"
+                                    android:layout_width="match_parent"
+                                    imageUrl="@{data.threeDimensionalImage}"
+                                    android:layout_height="@dimen/dp_175"
+                                    android:scaleType="centerCrop"
+                                    app:corner_radius="@dimen/dp_5" />
+
+                                <com.daqsoft.baselib.widgets.ArcImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dp_175"
+                                    app:corner_radius="@dimen/dp_5"
+                                    android:scaleType="centerCrop"
+                                    android:src="@mipmap/rank_area_list_img_mask" />
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_marginLeft="@dimen/dp_10"
+                                    android:layout_marginRight="@dimen/dp_10"
+                                    android:layout_height="@dimen/dp_148"
+                                    android:src="@mipmap/object_detail_3d_cover"
+                                    android:layout_centerInParent="true"/>
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                        <!--听解说-->
+                        <com.daqsoft.provider.businessview.view.ListenerAudioView
+                            android:id="@+id/v_detail_audios"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="@{TextUtils.isEmpty(data.audio)?View.GONE:View.VISIBLE}"
+                            android:layout_marginTop="@dimen/dp_10"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/rl_3d" />
+
+                        <LinearLayout
+                            android:id="@+id/rl_introduce"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="@dimen/dp_10"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/v_detail_audios">
+                            <include
+                                android:id="@+id/tv_introduce"
+                                layout="@layout/include_detail_title"
+                                app:hide="@{false}"
+                                app:hideRight="@{true}"
+                                app:leftLabel="@{`文物介绍`}" />
+                            <LinearLayout
+                                android:id="@+id/ll_year"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_28"
+                                android:visibility="@{TextUtils.isEmpty(data.years)?View.GONE:View.VISIBLE}"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="所属年代"
+                                    android:textColor="@color/color_333"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/dp_14"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{data.years}"
+                                    android:layout_marginLeft="@dimen/dp_14"
+                                    android:textColor="@color/color_333"
+                                    android:textSize="@dimen/dp_14"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/ll_author"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_25"
+                                android:visibility="@{TextUtils.isEmpty(data.author)?View.GONE:View.VISIBLE}"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="创作者"
+                                    android:textColor="@color/color_333"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/dp_14"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{data.author}"
+                                    android:layout_marginLeft="@dimen/dp_14"
+                                    android:textColor="@color/color_333"
+                                    android:textSize="@dimen/dp_14"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/ll_size"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_25"
+                                android:visibility="@{TextUtils.isEmpty(data.size)?View.GONE:View.VISIBLE}"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="尺寸描述"
+                                    android:textColor="@color/color_333"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/dp_14"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/dp_14"
+                                    android:text="@{data.size}"
+                                    android:textColor="@color/color_333"
+                                    android:textSize="@dimen/dp_14"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/ll_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="@{TextUtils.isEmpty(data.unearthedTime)?View.GONE:View.VISIBLE}"
+                                android:layout_marginTop="@dimen/dp_25"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="出土时间"
+                                    android:textColor="@color/color_333"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/dp_14"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{data.unearthedTime}"
+                                    android:layout_marginLeft="@dimen/dp_14"
+                                    android:textColor="@color/color_333"
+                                    android:textSize="@dimen/dp_14"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/ll_adress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_25"
+                                android:visibility="@{TextUtils.isEmpty(data.unearthedAddress)?View.GONE:View.VISIBLE}"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="出土地点"
+                                    android:textColor="@color/color_333"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/dp_14"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{data.unearthedAddress}"
+                                    android:layout_marginLeft="@dimen/dp_14"
+                                    android:textColor="@color/color_333"
+                                    android:textSize="@dimen/dp_14"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/ll_collect"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_25"
+                                android:visibility="@{TextUtils.isEmpty(data.collectionInfo)?View.GONE:View.VISIBLE}"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="收藏信息"
+                                    android:textColor="@color/color_333"
+                                    android:textStyle="bold"
+                                    android:textSize="@dimen/dp_14"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@{data.collectionInfo}"
+                                    android:layout_marginLeft="@dimen/dp_14"
+                                    android:textColor="@color/color_333"
+                                    android:textSize="@dimen/dp_14"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.daqsoft.provider.view.web.ContentWebView
+                        android:id="@+id/tv_web"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{TextUtils.isEmpty(data.introduce)?View.GONE:View.VISIBLE}"
+                        android:layout_marginHorizontal="@dimen/dp_20" />
+                    <!--推荐-->
+                    <com.daqsoft.provider.businessview.view.ProviderRecommendCulture
+                        android:id="@+id/pro_xg_tj"
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toBottomOf="@id/rl_introduce"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </LinearLayout>
+
+</layout>

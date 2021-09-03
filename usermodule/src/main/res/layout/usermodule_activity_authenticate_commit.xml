@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.daqsoft.usermodule.ui.userInoformation.AuthenticateCommitActivityVm" />
+
+        <variable
+            name="view"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/dp_20"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_real_name"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_23"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:text="@string/user_input_honesty"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_32"
+                android:drawableRight="@mipmap/tianbao_xingxing"
+                android:drawablePadding="@dimen/dp_4"
+                android:text="@string/user_str_id_type"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:id="@+id/mTypeTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/user_please_select"
+                android:onClick="@{view::onClick}"
+                android:paddingTop="@dimen/dp_16"
+                android:paddingBottom="@dimen/dp_16"
+                android:text="身份证"
+                android:textColor="@color/color_666"
+                android:textColorHint="@color/txt_gray"
+                android:textSize="@dimen/sp_16" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:background="@color/dividing_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/tianbao_xingxing"
+                android:drawablePadding="@dimen/dp_4"
+                android:paddingTop="@dimen/dp_16"
+                android:text="@string/user_real_name_2"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_16" />
+
+            <EditText
+                android:id="@+id/mRealNameEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="@string/user_input_real_name"
+                android:paddingTop="@dimen/dp_16"
+                android:paddingBottom="@dimen/dp_16"
+                android:text="@={vm.name}"
+                android:textColor="@color/color_666"
+                android:textColorHint="@color/txt_gray"
+                android:textSize="@dimen/sp_16" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:background="@color/dividing_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/tianbao_xingxing"
+                android:drawablePadding="@dimen/dp_4"
+                android:paddingTop="@dimen/dp_16"
+                android:text="@string/user_str_id_card"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_16" />
+
+            <EditText
+                android:id="@+id/mIDCardNumEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="@string/user_str_your_cert_number_2"
+                android:paddingTop="@dimen/dp_16"
+                android:paddingBottom="@dimen/dp_16"
+                android:text="@={vm.idCard}"
+                android:textColor="@color/color_666"
+                android:textColorHint="@color/txt_gray"
+                android:textSize="@dimen/sp_16" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:background="@color/dividing_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/tianbao_xingxing"
+                android:drawablePadding="@dimen/dp_4"
+                android:paddingTop="@dimen/dp_16"
+                android:text="@string/user_upload_id_card_photo"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_16" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dp_16">
+
+                <ImageView
+                    android:id="@+id/mIdCardNegativeIv"
+                    placeholder="@{@drawable/mine_profile_realname_id_face}"
+                    url="@{vm.idCardDownLocal}"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_100"
+                    android:layout_marginEnd="@dimen/dp_4"
+                    android:layout_weight="1"
+                    android:onClick="@{view::onClick}"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:id="@+id/mIdCardPositiveIv"
+                    placeholder="@{@drawable/mine_profile_realname_id_back}"
+                    url="@{vm.idCardUpLocal}"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_100"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:layout_weight="1"
+                    android:onClick="@{view::onClick}"
+                    android:scaleType="fitXY" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@color/dividing_line" />
+
+            <TextView
+                android:id="@+id/mCommitTv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_42"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@drawable/user_selector_login_btn"
+                android:gravity="center"
+                android:onClick="@{view::onClick}"
+                android:text="@string/user_commit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/user_real_name_hint"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

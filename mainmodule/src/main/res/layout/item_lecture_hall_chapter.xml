@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_30"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_main_target"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:drawableLeft="@mipmap/whcgxq_bt_bq"
+            android:drawablePadding="@dimen/dp_12"
+            android:includeFontPadding="false"
+            android:text="课程目标"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_19"
+            android:textStyle="bold" />
+
+        <com.daqsoft.provider.scrollview.DqRecylerView
+            android:id="@+id/rv_chapter_ls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</layout>

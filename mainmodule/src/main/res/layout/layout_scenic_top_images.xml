@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_180"
+        app:cardCornerRadius="@dimen/dp_5">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/v_scenic_images"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ai_image_1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_180"
+                android:scaleType="fitXY"
+                app:border_color="@color/white"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/ai_image_2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_panor"
+                android:layout_width="@dimen/dp_36"
+                android:layout_height="@dimen/dp_36"
+                android:src="@mipmap/scenic_details_spot_720"
+                app:layout_constraintBottom_toBottomOf="@id/ai_image_1"
+                app:layout_constraintLeft_toLeftOf="@id/ai_image_1"
+                app:layout_constraintRight_toRightOf="@id/ai_image_1"
+                app:layout_constraintTop_toTopOf="@id/ai_image_1" />
+
+            <ImageView
+                android:id="@+id/ai_image_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@id/ai_image_3"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/ai_image_1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_weight="1" />
+            <ImageView
+                android:id="@+id/ai_image_cover_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:alpha="0.4"
+                android:background="#000000"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="@id/ai_image_2"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/ai_image_1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_weight="1" />
+            <TextView
+                android:id="@+id/tv_live"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="实景直播"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toBottomOf="@id/ai_image_2"
+                app:layout_constraintLeft_toLeftOf="@id/ai_image_2"
+                app:layout_constraintRight_toRightOf="@id/ai_image_2"
+                app:layout_constraintTop_toTopOf="@id/ai_image_2" />
+
+            <TextView
+                android:id="@+id/tv_live_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.3"
+                android:visibility="gone"
+                android:drawableRight="@mipmap/activity_details_right"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10"
+                app:layout_constraintBottom_toBottomOf="@id/ai_image_2"
+                app:layout_constraintLeft_toLeftOf="@id/ai_image_2"
+                app:layout_constraintRight_toRightOf="@id/ai_image_2"
+                app:layout_constraintTop_toBottomOf="@id/tv_live" />
+
+
+
+            <ImageView
+                android:id="@+id/ai_image_3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_8"
+                android:scaleType="fitXY"
+                app:border_color="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/ai_image_1"
+                app:layout_constraintLeft_toRightOf="@id/ai_image_1"
+                app:layout_constraintRight_toRightOf="@id/ai_image_2"
+                app:layout_constraintTop_toBottomOf="@id/ai_image_2"
+                app:layout_constraintVertical_weight="1" />
+
+            <ImageView
+                android:id="@+id/ai_image_cover_3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_8"
+                android:alpha="0.4"
+                android:background="#000000"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="@id/ai_image_1"
+                app:layout_constraintLeft_toRightOf="@id/ai_image_1"
+                app:layout_constraintRight_toRightOf="@id/ai_image_2"
+                app:layout_constraintTop_toBottomOf="@id/ai_image_2"
+                app:layout_constraintVertical_weight="1" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/ai_image_3"
+                app:layout_constraintLeft_toLeftOf="@+id/ai_image_3"
+                app:layout_constraintRight_toRightOf="@+id/ai_image_3"
+                app:layout_constraintTop_toTopOf="@+id/ai_image_3">
+
+                <TextView
+                    android:id="@+id/tv_banner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="景点画册"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/tv_banner"
+                    android:id="@+id/tv_live_banner_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:alpha="0.7"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:drawableRight="@mipmap/scenic_details_spot_arrow"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_10" />
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/v_images_two"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_180"
+            android:visibility="gone">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_two_images"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.daqsoft.provider.view.ViewPagerIndicatorView
+                android:id="@+id/vpindicator_iamges"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.daqsoft.provider.bean.VoteBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_14"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_14"
+        android:background="@drawable/shape_vote_white_r5"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp_20">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="@dimen/dp_5"
+                app:cardElevation="@dimen/dp_0"
+                android:layout_height="@dimen/dp_172">
+                <ImageView
+                    android:scaleType="centerCrop"
+                    imageUrl="@{data.coverImage}"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_172" />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/tv_vote_status"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_55"
+                android:layout_marginLeft="@dimen/dp_14"
+                android:background="@mipmap/vote_list_tag_yugao"
+                android:gravity="center"
+                android:minWidth="@dimen/dp_44"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_11"
+                tools:text="投票中" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_14"
+            android:layout_marginRight="@dimen/dp_14"
+            android:text="@{data.title}"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            tools:text="测水水水水水水水水水水水水水水水水水水时时处处" />
+
+        <RelativeLayout
+            android:id="@+id/lv_input_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_14"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_input_person_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.resourceCount.joinCount}"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_input_person_name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:layout_toRightOf="@+id/tv_input_person_num"
+                android:text="个作品"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_12" />
+
+            <View
+                android:id="@+id/v_point_person_work_num"
+                android:layout_width="@dimen/dp_3"
+                android:layout_height="@dimen/dp_3"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/tv_input_person_name_label"
+                android:background="@drawable/shape_vote_divide_3" />
+
+            <TextView
+                android:id="@+id/tv_vote_person_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_toRightOf="@+id/v_point_person_work_num"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_vote_person_num_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:layout_toRightOf="@+id/tv_vote_person_num"
+                android:text="投票"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_vote_first_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/v_vote_start_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_14">
+
+            <View
+                android:id="@+id/v_vote_start_time_tip"
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_5"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shape_vote_36cd64_5" />
+
+            <TextView
+                android:id="@+id/tv_vote_start_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:layout_toRightOf="@+id/v_vote_start_time_tip"
+                android:drawablePadding="@dimen/dp_10"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_vote_end_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_14">
+
+            <View
+                android:id="@+id/v_vote_end_time_tip"
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_5"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shape_vote_ff9e05_5" />
+
+            <TextView
+                android:id="@+id/tv_vote_end_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:layout_toRightOf="@+id/v_vote_end_time_tip"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

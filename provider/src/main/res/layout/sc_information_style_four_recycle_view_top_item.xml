@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.ruffian.library.widget.RImageView
+            android:scaleType="centerCrop"
+            app:corner_radius="@dimen/dp_5"
+            android:id="@+id/image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_106">
+        </com.ruffian.library.widget.RImageView>
+
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/title"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="asdasdasdasdasdasd"
+            android:paddingHorizontal="@dimen/dp_8"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:background_normal="@color/black_000000_translucent_60"
+            app:layout_constraintRight_toRightOf="@id/image"
+            app:layout_constraintLeft_toLeftOf="@id/image"
+            app:corner_radius_bottom_right="@dimen/dp_5"
+            app:corner_radius_bottom_left="@dimen/dp_5"
+            app:layout_constraintBottom_toBottomOf="@id/image"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_36">
+        </com.ruffian.library.widget.RTextView>
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/tag"
+            android:translationY="@dimen/dp_5"
+            android:layout_marginStart="@dimen/dp_8"
+            app:layout_constraintLeft_toLeftOf="@id/image"
+            app:layout_constraintBottom_toTopOf="@+id/title"
+            android:padding="@dimen/dp_5"
+            android:text="HOT"
+            android:textSize="@dimen/sp_9"
+            android:textColor="@color/white"
+            app:corner_radius="@dimen/dp_3"
+            app:background_normal="@color/green_36cd64"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </com.ruffian.library.widget.RTextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

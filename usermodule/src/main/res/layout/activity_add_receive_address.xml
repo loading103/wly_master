@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="vm"
+            type="com.daqsoft.usermodule.ui.userInoformation.AddReceiverAddressViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+           >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_20"
+                android:paddingBottom="@dimen/dp_40"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_add_address"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_23"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/user_address_notice"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:drawableRight="@mipmap/tianbao_xingxing"
+                    android:text="收货人"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16" />
+
+                <EditText
+                    android:id="@+id/receiver"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="请输入收货人姓名"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_16" />
+
+                <include layout="@layout/include_space_one" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:drawableRight="@mipmap/tianbao_xingxing"
+                    android:text="手机号码"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16" />
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="用于收货联系"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:maxLength="11"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_16" />
+
+                <include layout="@layout/include_space_one" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:drawableRight="@mipmap/tianbao_xingxing"
+                    android:text="收货地址"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:id="@+id/area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:drawableRight="@mipmap/story_add_arrow"
+                    android:hint="请选择"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_16" />
+
+                <include layout="@layout/include_space_one" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:text="@string/user_address_detail"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16" />
+
+
+                <EditText
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="街道门牌信息等"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_16" />
+
+                <include layout="@layout/include_space_one" />
+
+
+                <TextView
+                    android:id="@+id/check"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/selector_refund_application"
+                    android:paddingTop="@dimen/dp_16"
+                    android:text="@string/user_set_default_address"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/address" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/dp_10"
+            android:background="@drawable/user_selector_login_btn"
+            android:gravity="center"
+            android:text="@string/user_str_conform"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+    </LinearLayout>
+</layout>

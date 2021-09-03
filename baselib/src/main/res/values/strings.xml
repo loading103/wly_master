@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">baselib</string>
+
+    <!--net-->
+    <string name="net_work_unavailable">当前网络不可用，请检查网络连接</string>
+    <string name="net_connect_out_time">网络连接超时</string>
+    <string name="net_error">网络请求错误</string>
+
+    <!--adapter-->
+    <string name="adatper_no_data">暂无数据，请稍后刷新重试</string>
+    <string name="adapter_loading">正在加载中&#8230;</string>
+    <string name="adapter_loading_end">没有更多数据</string>
+    <string name="adatper_data_empty">暂时还没有数据呢~</string>
+    <string name="adapter_no_more">没有更多了</string>
+
+
+    <string name="please_input_key_words">请输入搜索关键字...</string>
+    <string name="qrcode_tip">长按保存图中二维码</string>
+    <string name="theme_dark">Theme.Dark</string>
+    <string name="theme_light">Theme.Light</string>
+    <string name="confirm_dialog">知道了</string>
+    <string name="login_or_register">登录/注册</string>
+    <string name="mine_welcome_to_zytf">欢迎来到智游天府</string>
+    <string name="unlogin_tip">该操作需要登录，请先登录</string>
+    <string name="in_progress">功能正在开发中，敬请期待</string>
+    <string name="base_fix_appbar_beahiver">com.daqsoft.baselib.widgets.corderlayout.FixAppBarLayoutBehavior</string>
+</resources>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="countWords"
+            type="String" />
+
+        <variable
+            name="like"
+            type="android.graphics.drawable.Drawable" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/add_comment_btn"
+            android:layout_marginBottom="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_activity_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/dp_12"
+                    android:text="活动印象"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <RatingBar
+                    android:id="@+id/rbar_activity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                    android:isIndicator="false"
+                    android:numStars="5"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_gravity="center_horizontal"
+                    android:stepSize="1"
+                    android:rating="5"
+                    android:visibility="gone"
+                    android:theme="@style/RatingBarGry"/>
+
+                <TextView
+                    android:id="@+id/tv_activity_level_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:textColor="@color/app_main_color"
+                    android:textSize="@dimen/sp_14"
+                    android:visibility="gone"
+                    tools:text="一般" />
+
+                <View
+                    android:id="@+id/line_activity_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:background="@color/e8e8e8"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:padding="@dimen/dp_12"
+                        android:text="评论内容"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        android:id="@+id/tv_word_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@color/white"
+                        android:padding="@dimen/dp_12"
+                        android:text="@{countWords}"
+                        android:textColor="@color/txt_gray"
+                        tools:text="10/200" />
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/et_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_150"
+                    android:background="@color/white"
+                    android:gravity="left|top"
+                    android:hint="@string/home_activity_comment_hint"
+                    android:maxLength="200"
+                    android:padding="@dimen/dp_20"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintTop_toBottomOf="@id/tv_label"
+
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_emoticons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_10" />
+
+                <me.nereo.multi_image_selector.view.UploadRecyclerView
+                    android:id="@+id/rv_comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/dp_20"
+                    app:layout_constraintTop_toBottomOf="@id/et_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_56"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dp_20">
+
+                    <ImageView
+                        android:id="@+id/img_add_images"
+                        android:layout_width="@dimen/dp_56"
+                        android:layout_height="@dimen/dp_56"
+                        android:src="@drawable/story_add_pic" />
+
+                    <ImageView
+                        android:id="@+id/img_add_emoticons"
+                        android:layout_width="@dimen/dp_56"
+                        android:layout_height="@dimen/dp_56"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:src="@mipmap/comment_write_icon_emotion" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_image_notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:background="@color/white"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:text="@string/home_activity_comment_image_tip"
+                    android:textSize="@dimen/sp_11" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/add_comment_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="@dimen/dp_12"
+            android:text="发表评论"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_16" />
+    </RelativeLayout>
+
+</layout>

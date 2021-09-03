@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="found"
+            type="com.daqsoft.provider.bean.FoundAroundBean" />
+    </data>
+
+    <com.daqsoft.provider.view.cardview.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_114">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                imageUrl="@{found.image}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_tansport_bg_r4" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_found_disatance"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{found.name}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15"
+                tools:text="热门景区" />
+
+            <TextView
+                android:id="@+id/tv_found_disatance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10"
+                tools:text="怎么玩" />
+        </RelativeLayout>
+
+    </com.daqsoft.provider.view.cardview.CardView>
+</layout>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20">
+
+            <TextView
+                android:id="@+id/tv_item_tiket_product_act"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_color_ff9e05_2_0_5"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_3"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingRight="@dimen/dp_3"
+                android:paddingBottom="@dimen/dp_2"
+                android:text="@string/ticket_activity"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_item_tiket_product_name"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_10"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_item_tiket_product_act"
+                app:layout_constraintLeft_toRightOf="@+id/tv_item_tiket_product_act"
+                app:layout_constraintRight_toLeftOf="@+id/v_scenic_product_info"
+                app:layout_constraintTop_toTopOf="@+id/tv_item_tiket_product_act" />
+
+            <com.daqsoft.provider.scrollview.DqRecylerView
+                android:id="@+id/lbv_scenic_product_tags"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_12"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/v_scenic_product_info"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_tiket_product_name" />
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/v_scenic_product_count_down_time"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/v_scenic_product_info"
+                app:layout_constraintTop_toBottomOf="@+id/lbv_scenic_product_tags">
+
+                <TextView
+                    android:id="@+id/tv_scenic_product_coundown_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/food_product_count_time"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_12" />
+
+                <com.daqsoft.baselib.widgets.downview.DownView
+                    android:id="@+id/dv_time_scenic_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_toRightOf="@+id/tv_scenic_product_coundown_time"
+                    app:isConvertDaysToHours="true"
+                    app:isHideTimeBackground="false"
+                    app:isShowDay="false"
+                    app:isShowHour="true"
+                    app:isShowMillisecond="false"
+                    app:isShowMinute="true"
+                    app:isShowSecond="true"
+                    app:isShowTimeBgDivisionLine="false"
+                    app:isTimeTextBold="true"
+                    app:suffixGravity="center"
+                    app:suffixLRMargin="@dimen/dp_6"
+                    app:suffixTextColor="#000000"
+                    app:suffixTextSize="@dimen/sp_10"
+                    app:timeBgBorderColor="@color/d4d4d4"
+                    app:timeBgBorderRadius="@dimen/dp_2_5"
+                    app:timeBgBorderSize="@dimen/dp_0_5"
+                    app:timeBgColor="@color/white"
+                    app:timeBgRadius="@dimen/dp_2_5"
+                    app:timeBgSize="@dimen/dp_20"
+                    app:timeTextColor="@color/black"
+                    app:timeTextSize="@dimen/sp_10" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_item_scenic_tiket_tip"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:drawableRight="@mipmap/activity_details_right"
+                android:drawablePadding="@dimen/dp_6"
+                android:includeFontPadding="false"
+                android:text="预订须知"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/v_scenic_product_count_down_time" />
+
+            <RelativeLayout
+                android:id="@+id/v_scenic_product_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/v_scenic_product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+
+                    <TextView
+                        android:id="@+id/tv_scenic_product_rmb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/tv_scenic_product_price"
+                        android:includeFontPadding="false"
+                        android:text="@string/rmb"
+                        android:textColor="@color/color_ff9e05"
+                        android:textSize="@dimen/sp_10" />
+
+                    <TextView
+                        android:id="@+id/tv_scenic_product_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_scenic_product_rmb"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/color_ff9e05"
+                        android:textSize="@dimen/sp_16"
+                        tools:text="288" />
+
+                    <TextView
+                        android:id="@+id/tv_scenic_product_qi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/tv_scenic_product_price"
+                        android:layout_toRightOf="@+id/tv_scenic_product_price"
+                        android:includeFontPadding="false"
+                        android:text="@string/qi"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_10"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_scenic_product_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v_scenic_product_price"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:background="@drawable/shape_3cd64_13"
+                    android:minHeight="@dimen/dp_26"
+                    android:paddingLeft="@dimen/dp_17"
+                    android:paddingTop="@dimen/dp_7"
+                    android:paddingRight="@dimen/dp_17"
+                    android:paddingBottom="@dimen/dp_7"
+                    android:text="@string/food_product_confirm"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_11" />
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/v_item_scenic_tiket_product_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@color/e8e8e8"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="imageUrl"
+            type="String" />
+        <variable
+            name="placeHolder"
+            type="android.graphics.drawable.Drawable" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_8"
+        >
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/img_recy"
+            url="@{imageUrl}"
+            android:scaleType="fitXY"
+            android:layout_marginRight="@dimen/dp_8"
+            placeholder="@{placeHolder}"
+            android:layout_width="@dimen/dp_78"
+            android:layout_height="@dimen/dp_58"
+            app:corner_radius="@dimen/dp_3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

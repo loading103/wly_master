@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="mine_divide">#F5FBFE</color>
+    <color name="gray_f0">#f0f0f0</color>
+    <color name="f5">#f5f5f5</color>
+    <color name="c2bf">#c2bfba</color>
+    <color name="fedb9c">#fedb9c</color>
+    <color name="ff9e05">#ff9e05</color>
+    <color name="ff4e4e">#ff4e4e</color>
+    <color name="f3ae09">#f3ae09</color>
+    <color name="alph_60">#69333333</color>
+    <color name="alpha_00_50">#80000000</color>
+    <color name="alpha_00_60">#60000000</color>
+    <color name="alpha_00_4d">#4d000000</color>
+
+    <color name="fff5e6">#fff5e6</color>
+    <color name="e2fce9">#e2fce9</color>
+    <color name="color_666">#666666</color>
+    <color name="color_333">#333333</color>
+    <color name="color_999">#999999</color>
+    <color name="color_tab_1">#e2fce9</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
+    <color name="color_2ECD4D">#2ECD4D</color>
+    <color name="e0e0e0">#e0e0e0</color>
+    <color name="color_222">#222222</color>
+    <color name="color_alpha_00">#00ffffff</color>
+    <color name="color_alpha_50">#50000000</color>
+    <color name="color_e8e8e8">#e8e8e8</color>
+    <color name="color_d4d4d4">#d4d4d4</color>
+    <color name="color_444444">#444444</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_alpha_80">#80000000</color>
+    <color name="blue_app">#22abea</color>
+    <color name="base_title_color">#464a4d</color>
+    <color name="material_text_color_47">#333333</color>
+    <color name="divider_color_c7">#d3d3d3</color>
+    <color name="drop_down_selected">#7B1FA2</color>
+    <color name="drop_down_unselected">#111111</color>
+
+    <color name="mask_color">#51000000</color>
+    <color name="check_bg">#f2f2f2</color>
+    <color name="un_press_color">#9C27B0</color>
+
+    <color name="main">#36cd64</color>
+    <color name="hotel_floor_price_orange">#ff9e05</color>
+    <color name="trans_bg_detail">#bb000000</color>
+
+    <color name="trans_popwindow_bg">#99000000</color>
+    <color name="color_ff6b53">#ff6b53</color>
+    <color name="color_1995ff">#1995ff</color>
+
+    <color name="green_09b671">#09b671</color>
+    <color name="green_87ce74">#87ce74</color>
+    <color name="green_36cd64">#36cd64</color>
+    <color name="green_eef8f3">#eef8f3</color>
+
+    <color name="blue_1995ff">#1995ff</color>
+    <color name="color_330c7b">#330c7b</color>
+    <color name="color_cb2b2b">#cb2b2b</color>
+    <color name="color_e88e00">#e88e00</color>
+</resources>

@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="detail"
+            type="com.daqsoft.provider.bean.OrderDetail" />
+
+        <variable
+            name="numUnit"
+            type="String" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_15">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:background="@color/white">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/image"
+                cornerRadius="@{10}"
+                placeholder="@{@drawable/placeholder_img_fail_240_180}"
+                url="@{detail.image.split(`,`)[0]}"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="@dimen/dp_80"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:background="@mipmap/placeholder_img_fail_240_180"
+                android:scaleType="centerCrop"
+                app:corner_radius="@dimen/dp_5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_cxyx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/mine_credit_xyqy_enjoy"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="@id/image"
+                app:layout_constraintTop_toTopOf="@id/image" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toRightOf="@id/image"
+                app:layout_constraintRight_toLeftOf="@id/tvPrice"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_0"
+                app:labelSize="@dimen/sp_12"
+                app:layout_constraintLeft_toRightOf="@id/image"
+                app:layout_constraintStart_toStartOf="@id/name"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContentColor="@color/txt_gray"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_16"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/iv_total_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_12"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_0"
+                app:labelSize="@dimen/sp_12"
+                android:visibility="invisible"
+                app:layout_constraintLeft_toRightOf="@id/image"
+                app:layout_constraintStart_toStartOf="@id/time"
+                app:layout_constraintTop_toBottomOf="@id/time"
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContentColor="@color/txt_gray"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+
+            <TextView
+                android:id="@+id/tv_total_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_12"
+
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_total_pay"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_total_pay" />
+
+            <TextView
+                android:id="@+id/tv_total_cance_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:textColor="@color/ff4e4e"
+                android:textSize="@dimen/sp_12"
+                android:visibility="gone"
+                app:layout_constraintLeft_toRightOf="@+id/image"
+                app:layout_constraintTop_toBottomOf="@+id/iv_total_pay" />
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/iv_seat"
+                android:layout_width="@dimen/dp_220"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_20"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_0"
+                app:labelSize="@dimen/sp_12"
+                app:layout_constraintLeft_toRightOf="@id/image"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="@id/time"
+                app:layout_constraintTop_toBottomOf="@+id/iv_total_pay"
+                app:leftLabel="座位："
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContentColor="@color/txt_gray"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/order_consume_booking_info"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_activity_shi_info"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label">
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/validity_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_0"
+                    app:labelSize="@dimen/sp_12"
+                    app:labelWidth="@dimen/dp_20"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:leftLabel="预约时间"
+                    app:leftLabelColor="@color/txt_gray"
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_12"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <TextView
+                    android:id="@+id/label_notice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:drawableLeft="@mipmap/mine_book_logo_cxms"
+                    android:drawablePadding="@dimen/dp_20"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/validity_view" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/booking_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:visibility="gone"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_0"
+                    app:labelSize="@dimen/sp_12"
+                    app:labelWidth="@dimen/dp_20"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_notice"
+                    app:leftLabel="活动时间"
+                    app:leftLabelColor="@color/txt_gray"
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_12"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/booking_people"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_0"
+                    app:labelSize="@dimen/sp_12"
+                    app:labelWidth="@dimen/dp_20"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/booking_time"
+                    app:leftLabel="@string/order_str_people"
+                    app:leftLabelColor="@color/txt_gray"
+                    app:rightContent="@{detail.useNum+`人`}"
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_12"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_book_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{detail.servicePhone!=null&amp;&amp;!detail.servicePhone.empty}"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/booking_people">
+
+                    <com.daqsoft.provider.view.ItemView
+                        android:id="@+id/booking_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/v_chooses_phone"
+                        android:paddingTop="@dimen/dp_8"
+                        app:contentGravity="left"
+                        app:labelPadding="@dimen/dp_0"
+                        app:labelSize="@dimen/sp_12"
+                        app:labelWidth="@dimen/dp_20"
+                        app:leftLabel="联系电话"
+                        app:leftLabelColor="@color/txt_gray"
+                        app:rightContent="@{detail.servicePhone}"
+                        app:rightContentColor="@color/txt_black"
+                        app:rightContentSize="@dimen/sp_12"
+                        app:showArrow="false"
+                        app:showDivider="false" />
+
+                    <ImageView
+                        android:id="@+id/v_chooses_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:paddingTop="@dimen/dp_8"
+                        android:src="@mipmap/choose" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_book_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rl_book_phone">
+
+                    <com.daqsoft.provider.view.ItemView
+                        android:id="@+id/booking_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@+id/chooses"
+                        android:paddingTop="@dimen/dp_8"
+                        app:contentGravity="left"
+                        app:labelPadding="@dimen/dp_0"
+                        app:labelSize="@dimen/sp_12"
+                        app:labelWidth="@dimen/dp_20"
+                        app:leftLabel="@string/order_contact_address"
+                        app:leftLabelColor="@color/txt_gray"
+                        app:rightContent='@{detail.address}'
+                        app:rightContentColor="@color/txt_black"
+                        app:rightContentSize="@dimen/sp_12"
+                        app:showArrow="false"
+                        app:showDivider="false" />
+
+                    <ImageView
+                        android:id="@+id/chooses"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:paddingTop="@dimen/dp_8"
+                        android:src="@mipmap/choose" />
+                </RelativeLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/v_in_venues"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rl_book_address">
+
+                    <TextView
+                        android:id="@+id/booking_venue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/dp_8"
+                        android:text="@string/order_belong_venue"
+                        android:textColor="@color/txt_gray"
+                        android:textSize="@dimen/sp_12"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:paddingStart="@dimen/dp_8"
+                        app:layoutManager="LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/booking_venue"
+                        app:layout_constraintTop_toTopOf="@id/booking_venue" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_venue_yuyue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/label">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:text="预约类型" />
+
+                    <TextView
+                        android:id="@+id/appoint_type"
+                        style="@style/OrderDetailLabel"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_order_time_label"
+                        style="@style/OrderDetailLabel"
+                        android:text="预订时间" />
+
+                    <TextView
+                        android:id="@+id/tv_order_time_value"
+                        style="@style/OrderDetailLabel"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_label_order_num"
+                        style="@style/OrderDetailLabel"
+                        android:text="预订数量" />
+
+                    <TextView
+                        android:id="@+id/tv_order_num_value"
+                        style="@style/OrderDetailLabel"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:text="@{detail.venueInfo.useNum+numUnit}"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:text="单位名称" />
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:text="@{detail.venueInfo.companyName}"
+                        android:textColor="@color/color_333" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rv_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_label_contact"
+                        style="@style/OrderDetailLabel"
+                        android:text="景区电话" />
+
+                    <TextView
+                        android:id="@+id/tv_value_contact"
+                        style="@style/OrderDetailLabel"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:layout_toLeftOf="@+id/img_arrow_contact"
+                        android:layout_toRightOf="@+id/tv_label_contact"
+                        android:text="@{detail.venueInfo.phone}"
+                        android:textColor="@color/color_333" />
+
+                    <ImageView
+                        android:id="@+id/img_arrow_contact"
+                        android:layout_width="@dimen/dp_6"
+                        android:layout_height="@dimen/dp_10"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/choose" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_label_address"
+                        style="@style/OrderDetailLabel"
+                        android:layout_centerVertical="true"
+                        android:text="景区地址" />
+
+                    <TextView
+                        style="@style/OrderDetailLabel"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:layout_toLeftOf="@+id/img_arrow_address"
+                        android:layout_toRightOf="@+id/tv_label_address"
+                        android:text="@{detail.venueInfo.address}"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_13" />
+
+                    <ImageView
+                        android:id="@+id/img_arrow_address"
+                        android:layout_width="@dimen/dp_6"
+                        android:layout_height="@dimen/dp_10"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/choose" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/ll_order_commentator_info"
+            layout="@layout/item_order_commentator_reservation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</layout>

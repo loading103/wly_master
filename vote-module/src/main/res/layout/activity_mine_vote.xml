@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/f5"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lv_top_mine_vote"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/v_mine_inpart_work"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_inpart_vote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="我上传的作品"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/v_mine_inpart"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_3"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/app_main_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/v_mine_vote_ls"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_mine_vote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="我投票的活动"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_14" />
+
+                <View
+                    android:id="@+id/v_mine_vote"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_3"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/app_main_color"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_mine_vote"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/lv_top_mine_vote" />
+    </RelativeLayout>
+</layout>

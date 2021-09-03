@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red">#ff6d6b</color>
+    <color name="d4">#d4d4d4</color>
+
+    <color name="green">#08ca4c</color>
+    <color name="enabled_false">#c2f0d0</color>
+
+    <color name="fff0f0">#fff0f0</color>
+    <color name="color_title_line">#08ca4c</color>
+    <color name="credit_activity_score">#fa8a06</color>
+    <color name="color_lost_core">#607c6a</color>
+    <color name="color_f45631">#f45631</color>
+    <color name="color_aa3400">#aa3400</color>
+    <color name="color_ffedcb">#ffedcb</color>
+    <color name="color_b2835a">#b2835a</color>
+    <color name="color_834100">#834100</color>
+    <color name="color_e1c190">#e1c190</color>
+    <color name="color_f35128">#f35128</color>
+    <color name="color_f24b25">#f24b25</color>
+    <color name="color_c9a088">#c9a088</color>
+    <color name="color_f5d8bb">#f5d8bb</color>
+    <color name="color_504747">#504747</color>
+    <color name="color_ffe3af">#ffe3af</color>
+    <color name="color_db9a4e">#db9a4e</color>
+    <color name="color_e8d5b1">#e8d5b1</color>
+    <color name="color_ad9b79">#ad9b79</color>
+    <color name="color_ffdcc7">#ffdcc7</color>
+    <color name="color_ffedcc">#ffedcc</color>
+    <color name="color_ffc539">#ffc539</color>
+</resources>

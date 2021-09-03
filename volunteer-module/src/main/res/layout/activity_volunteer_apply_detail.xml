@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_apply_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/volunteer_module_level_2"
+                android:drawableLeft="@mipmap/volunteer_personal_apply_history_details_icon_warning"
+                android:drawablePadding="@dimen/dp_6"
+                android:paddingVertical="@dimen/dp_17"
+                android:paddingLeft="@dimen/dp_20"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                android:visibility="gone"
+                android:text="审核中" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_status"
+                android:visibility="gone"
+                android:background="@color/ff4e4e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/iv_icon"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:src="@mipmap/volunteer_personal_apply_history_details_icon_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:includeFontPadding="false"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    app:layout_constraintTop_toTopOf="@id/iv_icon"
+                    app:layout_constraintLeft_toRightOf="@id/iv_icon"
+                    android:text="审核不通过"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/tv_time"
+                    app:layout_constraintTop_toTopOf="@id/iv_icon"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginRight="@dimen/dp_20"
+                    tools:text="2019-08-25 15:43:23"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/tv_apply_result"
+                    app:layout_constraintTop_toBottomOf="@id/iv_icon"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_status"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_16"
+                    tools:text="您上传的资料真实度存疑，请重新上传"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/volunteer_module_register_label_name"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="张三" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/volunteer_module_register_label_sex"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_sex"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="男" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/volunteer_module_register_label_national"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_national"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="汉" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/volunteer_module_register_label_idcard"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_idcard"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="23423423423324234" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/volunteer_module_register_label_phone"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="23423423423324234" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/volunteer_module_register_label_service_region"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_service_region"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="23423423423324234" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/volunteer_module_register_label_volunteer_region"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_volunteer_region"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="23423423423324234" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:id="@+id/ll_education"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/volunteer_module_register_label_education"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_education"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="23423423423324234" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:id="@+id/ll_school"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/volunteer_module_register_label_school"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_school"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="23423423423324234" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/volunteer_module_register_label_job_status"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_job_status"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="23423423423324234" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_16"
+                    android:text="@string/volunteer_module_upload_id_card_photo"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/ll_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_20">
+
+                    <ImageView
+                        android:id="@+id/mIdCardNegativeIv"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="@dimen/dp_100"
+                        android:layout_marginEnd="@dimen/dp_4"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:scaleType="fitXY" />
+
+                    <ImageView
+                        android:id="@+id/mIdCardPositiveIv"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_height="@dimen/dp_100"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:layout_weight="1"
+                        android:scaleType="fitXY" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:background="@color/dividing_line" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_16"
+                    android:text="@string/volunteer_module_register_contact"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_contact_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/color_999"
+                    android:textSize="@dimen/sp_16" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:background="@color/dividing_line" />
+
+                <TextView
+                    android:id="@+id/tv_contact_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/color_999"
+                    android:textSize="@dimen/sp_16" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:background="@color/dividing_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_17">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/volunteer_module_register_skill"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_skill"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_15"
+                        tools:text="23423423423324234" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:background="@color/dividing_line" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_health"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_17">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/volunteer_module_register_health"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_health"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_15"
+                        tools:text="23423423423324234" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:background="@color/dividing_line" />
+                <LinearLayout
+                    android:id="@+id/ll_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_17">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/volunteer_module_register_language"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_language"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_15"
+                        tools:text="23423423423324234" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:background="@color/dividing_line" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_17">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/volunteer_module_register_service_time"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_service_time"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_15"
+                        tools:text="23423423423324234" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:background="@color/dividing_line" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_17">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/volunteer_module_register_service_type"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_service_type"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_15"
+                        tools:text="23423423423324234" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/volunteer_module_register_email"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="23423423423324234" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:id="@+id/ll_qq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/volunteer_module_register_qq"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_qq"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="23423423423324234" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:id="@+id/ll_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_17">
+
+                <TextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/volunteer_module_register_address"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="23423423423324234" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@color/dividing_line" />
+
+            <TextView
+                android:id="@+id/tv_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp_30"
+                android:background="@color/text"
+                android:gravity="center"
+                android:paddingVertical="@dimen/dp_12"
+                android:text="撤回申请"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
+</ScrollView></layout>

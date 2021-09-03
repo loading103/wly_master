@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="@style/ViewWrap"
+            tools:text="成都经典1日游"
+            android:textSize="@dimen/sp_24"
+            android:id="@+id/itinerary_name"
+            android:layout_marginStart="@dimen/dp_18"
+            android:layout_marginEnd="@dimen/dp_18"
+            android:textColor="@color/color_333333"/>
+
+        <TextView
+            style="@style/ViewWrap"
+            android:text="长按拖拽可以排序"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginStart="@dimen/dp_18"
+            android:textColor="@color/color_666666"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginStart="@dimen/dp_18"
+            android:layout_marginEnd="@dimen/dp_18"
+            android:id="@+id/recycler_view"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            app:layoutManager="LinearLayoutManager"/>
+
+        <Button
+            android:text="确认修改"
+            style="@style/HeightWrap"
+            android:id="@id/confirm_view"
+            android:layout_height="@dimen/dp_45"
+            android:textSize="@dimen/sp_16"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/color_FF9E05"/>
+
+    </LinearLayout>
+
+</layout>

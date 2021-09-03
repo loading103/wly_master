@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_zb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#333">
+        <com.tencent.rtmp.ui.TXCloudVideoView
+            android:id="@+id/mPlayerView"
+            android:layout_width="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:id="@+id/ll_root"
+            android:layout_width="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter" />
+            <ImageView
+                android:id="@+id/iv_play"
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35"
+                android:layout_gravity="center"
+                android:src="@drawable/slow_live_video_list_icon_play" />
+        </FrameLayout>
+    </RelativeLayout>
+
+
+</layout>

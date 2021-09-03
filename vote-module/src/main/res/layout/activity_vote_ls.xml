@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/f5">
+
+        <RelativeLayout
+            android:id="@+id/v_top_vote_ls"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_64"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:background="@drawable/shape_vote_f5_3"
+                android:minHeight="@dimen/dp_32">
+
+                <EditText
+                    android:id="@+id/edt_input_vote_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:drawableLeft="@mipmap/provider_search"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:hint="请输入投票活动关键字进行搜索"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLength="20"
+                    android:singleLine="true"
+                    android:textColor="@color/color_666"
+                    android:textColorHint="@color/color_999"
+                    android:textSize="@dimen/sp_13"
+                    tools:text="请输入投票活动关键字进行搜索" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/rfl_vote_ls"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/v_top_vote_ls"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/dp_20">
+
+            <com.daqsoft.baselib.widgets.PandaRefreshHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_vote_ls"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        <ImageView
+            android:id="@+id/img_mine_vote"
+            android:layout_width="@dimen/dp_54"
+            android:layout_height="@dimen/dp_54"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="@dimen/dp_23"
+            android:layout_marginBottom="@dimen/dp_42"
+            android:src="@mipmap/vote_list_button_myvote_normal" />
+    </RelativeLayout>
+</layout>

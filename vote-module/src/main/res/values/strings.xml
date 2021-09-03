@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="vote_ls">在线投票</string>
+    <string name="vote_detail">投票详情</string>
+
+    <string name="vote_end">已结束</string>
+    <string name="vote_proceing">活动中</string>
+    <string name="vote_un_start">预告</string>
+    <string name="vote_down_time_start">距离投票开始还剩</string>
+    <string name="vote_down_time_end">距离投票结束还剩</string>
+    <string name="updata_down_time_start">距离上传开始还剩</string>
+    <string name="updata_down_time_end">距离上传结束还剩</string>
+    <string name="vote_bottom_inpart">我要上传</string>
+    <string name="vote_bottom_mine_inpart">我的上传</string>
+    <string name="vote_bottom_mine_end">参与时间已结束</string>
+    <string name="vote_status_str">当前状态：%1$s</string>
+    <string name="vote_status_un_inpart">未参与</string>
+    <string name="vote_status_wait_pass">审核中，仅自己可见</string>
+    <string name="vote_status_back">已撤回</string>
+    <string name="vote_status_un_pass">审核不通过</string>
+
+    <string name="vote_tip_back">撤回后需要重新参与，确认撤回？</string>
+    <string name="vote_tip_back_title">撤回作品</string>
+    <string name="vote_tip_delete">删除后不可恢复，确认删除？</string>
+    <string name="vote_tip_delete_title">删除作品</string>
+    <string name="vote_tip_image_count">图片不能超过%1$s张</string>
+</resources>

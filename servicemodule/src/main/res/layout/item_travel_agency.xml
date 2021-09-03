@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data/>
+
+    <RelativeLayout
+        android:layout_marginBottom="@dimen/dp_8"
+        android:paddingTop="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/yellow_vertical_radius"
+                android:layout_centerVertical="true"
+                android:background="@drawable/yellow_vertical_radius"
+                android:layout_width="@dimen/dp_3"
+                android:layout_height="@dimen/dp_14"/>
+
+            <TextView
+                android:layout_toEndOf="@+id/yellow_vertical_radius"
+                android:textSize="@dimen/sp_16"
+                android:layout_marginStart="@dimen/dp_10"
+                android:singleLine="true"
+                android:textColor="@color/color_333"
+                android:textStyle="bold"
+                android:includeFontPadding="false"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/dividing_line"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:background="@color/dividing_line"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/rv_name"
+            android:layout_height="@dimen/dp_0_5"/>
+<!--        <TextView-->
+<!--            android:layout_below="@+id/tv_address"-->
+<!--            android:id="@+id/tv_leave_to_country"-->
+<!--            android:text="出境旅行社"-->
+<!--            android:layout_marginTop="@dimen/dp_12"-->
+<!--            android:textColor="@color/color_ff9e05"-->
+<!--            android:textSize="@dimen/sp_10"-->
+<!--            android:paddingTop="@dimen/dp_3"-->
+<!--            android:paddingBottom="@dimen/dp_3"-->
+<!--            android:paddingLeft="@dimen/dp_5"-->
+<!--            android:paddingRight="@dimen/dp_5"-->
+<!--            android:includeFontPadding="false"-->
+<!--            android:background="@drawable/opcation_yellow_radius"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dividing_line"
+            android:layout_marginBottom="@dimen/dp_13"
+            android:drawableEnd="@mipmap/service_agency_button_phone_highlighted"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_13" />
+        <RelativeLayout
+            android:id="@+id/rv_guide"
+            android:layout_below="@id/tv_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_contact_address"
+                android:textSize="@dimen/sp_13"
+                android:includeFontPadding="false"
+                android:layout_toStartOf="@+id/img_guide"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:textColor="@color/color_333"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/img_guide"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_2"
+                android:src="@mipmap/service_agency_button_guide_highlighted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

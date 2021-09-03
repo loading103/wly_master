@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="volunteer_module_menus">
+        <item>活动招募</item>
+        <item>加入团队</item>
+        <item>志愿榜单</item>
+        <item>积分兑换</item>
+        <item>志愿签到</item>
+        <item>志愿风采</item>
+        <item>志愿品牌</item>
+        <item>志愿资讯</item>
+    </string-array>
+    <string-array name="volunteer_module_menus_key">
+        <item>hdzm</item>
+        <item>jrtd</item>
+        <item>zybd</item>
+        <item>jfdh</item>
+        <item>zyqd</item>
+        <item>zyfc</item>
+        <item>zypp</item>
+        <item>zyzx</item>
+    </string-array>
+    <array name="volunteer_module_menus_icons">
+        <item>@mipmap/volunteer_index_entrance_zhaomu</item>
+        <item>@mipmap/volunteer_index_entrance_add</item>
+        <item>@mipmap/volunteer_index_entrance_rank</item>
+        <item>@mipmap/volunteer_index_entrance_point</item>
+        <item>@mipmap/volunteer_index_entrance_signin</item>
+        <item>@mipmap/volunteer_index_entrance_fengcai</item>
+        <item>@mipmap/volunteer_index_entrance_brand</item>
+        <item>@mipmap/volunteer_index_entrance_news</item>
+    </array>
+
+    <array name="volunteer_module_level_bg">
+        <item>@drawable/volunteer_module_level_bg_1</item>
+        <item>@drawable/volunteer_module_level_bg_2</item>
+        <item>@drawable/volunteer_module_level_bg_3</item>
+        <item>@drawable/volunteer_module_level_bg_4</item>
+        <item>@drawable/volunteer_module_level_bg_5</item>
+    </array>
+    <integer-array name="volunteer_module_level_color">
+        <item>@color/volunteer_module_level_1</item>
+        <item>@color/volunteer_module_level_2</item>
+        <item>@color/volunteer_module_level_3</item>
+        <item>@color/volunteer_module_level_4</item>
+        <item>@color/volunteer_module_level_5</item>
+    </integer-array>
+    <integer-array name="volunteer_module_level_bg_color">
+        <item>@color/volunteer_module_level_bg_1</item>
+        <item>@color/volunteer_module_level_bg_2</item>
+        <item>@color/volunteer_module_level_bg_3</item>
+        <item>@color/volunteer_module_level_bg_4</item>
+        <item>@color/volunteer_module_level_bg_5</item>
+    </integer-array>
+
+    <array name="volunteer_module_level_volunteer_bg">
+        <item>@drawable/volunteer_module_level_1</item>
+        <item>@drawable/volunteer_module_level_2</item>
+        <item>@drawable/volunteer_module_level_3</item>
+        <item>@drawable/volunteer_module_level_4</item>
+        <item>@drawable/volunteer_module_level_5</item>
+    </array>
+
+    <array name="volunteer_module_level_logo">
+        <item>@mipmap/volunteer_single_list_icon_level_1</item>
+        <item>@mipmap/volunteer_single_list_icon_level_2</item>
+        <item>@mipmap/volunteer_single_list_icon_level_3</item>
+        <item>@mipmap/volunteer_single_list_icon_level_4</item>
+        <item>@mipmap/volunteer_single_list_icon_level_5</item>
+    </array>
+    <string-array name="volunteer_module_level_title">
+        <item>一星志愿者</item>
+        <item>二星志愿者</item>
+        <item>三星志愿者</item>
+        <item>四星志愿者</item>
+        <item>五星志愿者</item>
+    </string-array>
+
+    <string-array name="volunteer_module_center_mine_menus">
+        <item>基本资料</item>
+        <item>我的活动</item>
+        <item>签到申请</item>
+        <item>志愿签到</item>
+        <item>已签到活动</item>
+        <item>签到记录</item>
+        <item>我的团队</item>
+        <item>我的关注</item>
+        <item>公益积分</item>
+        <item>消息中心</item>
+        <item>补录申请</item>
+    </string-array>
+    <string-array name="volunteer_module_center_mine_menus_key">
+        <item>jbzl</item>
+        <item>wdhd</item>
+        <item>qdsq</item>
+        <item>zyqd</item>
+        <item>yqdhd</item>
+        <item>qdjl</item>
+        <item>wdtd</item>
+        <item>wdgz</item>
+        <item>gyjf</item>
+        <item>xxzx</item>
+        <item>blsq</item>
+    </string-array>
+    <array name="volunteer_module_center_mine_menus_icon">
+        <item>@mipmap/volunteer_personal_home_single_service_profile</item>
+        <item>@mipmap/volunteer_personal_home_single_service_activity</item>
+        <item>@mipmap/volunteer_personal_home_single_service_apply</item>
+        <item>@mipmap/volunteer_personal_home_single_service_sighin</item>
+        <item>@mipmap/volunteer_personal_home_single_service_checked</item>
+        <item>@mipmap/volunteer_personal_home_single_service_history</item>
+        <item>@mipmap/volunteer_personal_home_single_service_team</item>
+        <item>@mipmap/volunteer_personal_home_single_service_follow</item>
+        <item>@mipmap/volunteer_personal_home_single_service_point</item>
+        <item>@mipmap/volunteer_personal_home_single_service_message</item>
+        <item>@mipmap/volunteer_personal_home_single_service_bulu</item>
+    </array>
+    <string-array name="volunteer_module_center_team_menus">
+        <item>团队管理</item>
+        <item>志愿招募</item>
+        <item>我的审核</item>
+        <item>志愿者邀请</item>
+        <item>服务记录</item>
+        <item>签到记录</item>
+        <item>团队积分</item>
+        <item>补录记录</item>
+    </string-array>
+    <string-array name="volunteer_module_center_team_menus_key">
+        <item>tdgl</item>
+        <item>zyzm</item>
+        <item>wdsh</item>
+        <item>zyzyq</item>
+        <item>fwjl</item>
+        <item>qdjlt</item>
+        <item>tdjf</item>
+        <item>bljl</item>
+    </string-array>
+    <array name="volunteer_module_center_team_menus_icon">
+        <item>@mipmap/volunteer_personal_home_team_service_manage</item>
+        <item>@mipmap/volunteer_personal_home_team_service_zhaomu</item>
+        <item>@mipmap/volunteer_personal_home_team_service_exam</item>
+        <item>@mipmap/volunteer_personal_home_team_service_invite</item>
+        <item>@mipmap/volunteer_personal_home_team_service_history_servive</item>
+        <item>@mipmap/volunteer_personal_home_team_service_history_signin</item>
+        <item>@mipmap/volunteer_personal_home_team_service_point</item>
+        <item>@mipmap/volunteer_personal_home_team_service_bulu</item>
+    </array>
+</resources>

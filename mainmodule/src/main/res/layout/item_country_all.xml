@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="info"
+            type="String" />
+
+        <variable
+            name="address"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="@dimen/dp_160"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:orientation="vertical">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            placeholder="@mipmap/common_image_screen_no_data"
+            url="@{url}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:src="@mipmap/common_image_screen_no_data"
+            app:corner_bottom_left_radius="@dimen/dp_3"
+            app:corner_bottom_right_radius="@dimen/dp_3"
+            app:corner_top_left_radius="@dimen/dp_3"
+            app:corner_top_right_radius="@dimen/dp_3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@{name}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            tools:text="黄龙溪" />
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@{info}"
+            android:textColor="@color/color_36cd64"
+            android:textSize="@dimen/sp_12"
+            tools:text="寻梦千年古蜀，心泊浪漫水城" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:text="@{address}"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_11"
+            tools:text="地址" />
+    </LinearLayout>
+</layout>

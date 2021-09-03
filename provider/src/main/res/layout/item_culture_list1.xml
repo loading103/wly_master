@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="url"
+            type="String" />
+        <variable
+            name="threeDimensionalUrl"
+            type="String" />
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils"/>
+
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="@dimen/dp_174"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_140">
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/iv_content"
+                android:layout_width="match_parent"
+                imageUrl="@{url}"
+                android:layout_gravity="center"
+                android:layout_height="@dimen/dp_140"
+                app:corner_radius="@dimen/dp_5" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/object_list_icon_video"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:visibility="@{TextUtils.isEmpty(threeDimensionalUrl)?View.GONE:View.VISIBLE}"
+                android:layout_marginRight="@dimen/dp_15"
+                android:layout_marginBottom="@dimen/dp_15"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:maxLines="2"
+            android:layout_marginTop="@dimen/dp_16"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            android:text="日落九曲十日落九曲十八弯日落九曲十八弯日落九曲十八弯日落九曲十八弯八弯" />
+        <TextView
+            android:id="@+id/tv_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="图画"
+            android:textColor="@color/colorPrimary"
+            android:gravity="start"
+            android:layout_marginTop="@dimen/dp_12"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textSize="@dimen/sp_12" />
+    </LinearLayout>
+</layout>

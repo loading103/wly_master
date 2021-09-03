@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="time"
+            type="String" />
+
+        <variable
+            name="status"
+            type="String" />
+
+        <variable
+            name="integral"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/img_header"
+            imageUrl="@{imageUrl}"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_24"
+            app:is_circle="true" />
+
+        <TextView
+            android:id="@+id/tv_invite_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_22"
+            android:layout_toRightOf="@+id/img_header"
+            android:text="@{name}"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_16"
+            tools:text="非脑壳" />
+
+        <TextView
+            android:id="@+id/tv_invite_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_invite_name"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_toRightOf="@+id/img_header"
+            android:text="@{status}"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_12"
+            tools:text="邀请成功" />
+
+        <TextView
+            android:id="@+id/tv_invite_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_invite_status"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_toRightOf="@+id/img_header"
+            android:text="@{time}"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_12"
+            tools:text="2020-06-15 12:21:11" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_invite_name"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_marginRight="@dimen/dp_20"
+            android:text="@{integral}"
+            android:textColor="@color/color_db9a4e"
+            android:textSize="@dimen/sp_15"
+            tools:text="+100积分" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:background="@color/d4d4d4"
+            android:layout_below="@+id/tv_invite_time"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_16" />
+    </RelativeLayout>
+</layout>

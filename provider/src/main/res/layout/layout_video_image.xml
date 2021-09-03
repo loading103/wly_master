@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daqsoft.provider.view.cardview.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/dp_20"
+    android:layout_marginRight="@dimen/dp_20"
+    android:background="@color/white"
+    app:cardCornerRadius="@dimen/dp_5">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.dueeeke.videoplayer.player.VideoView
+            android:id="@+id/video_player_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_36cd64"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/img_video_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:corner_radius="@dimen/dp_5"
+            tools:ignore="MissingPrefix" />
+        <ImageView
+            android:id="@+id/img_720_tip"
+            android:visibility="gone"
+            android:layout_width="@dimen/dp_52"
+            android:layout_height="@dimen/dp_52"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@mipmap/scenic_details_720" />
+    </FrameLayout>
+</com.daqsoft.provider.view.cardview.CardView>

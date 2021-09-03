@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="venueName"
+            type="String" />
+
+        <variable
+            name="effectTime"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="standard"
+            type="String" />
+
+        <variable
+            name="number"
+            type="String" />
+    </data>
+
+
+   <com.daqsoft.provider.view.web.ProgressWebView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/web"/>
+</layout>

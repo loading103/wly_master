@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="logo"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_217"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/home_banner01"
+            app:border_color="@color/white"
+            app:corner_bottom_left_radius="@dimen/dp_5"
+            app:corner_bottom_right_radius="@dimen/dp_5"
+            app:corner_top_left_radius="@dimen/dp_5"
+            app:corner_top_right_radius="@dimen/dp_5"
+            app:is_circle="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/time"
+            android:textColor="@color/white_ffffff_alpha70"
+            android:text="2020.11.30 - 2020.12.15"
+            android:drawablePadding="@dimen/dp_6"
+            android:drawableLeft="@mipmap/mode_activity_icon_time"
+            android:layout_marginBottom="@dimen/dp_17"
+            android:layout_marginLeft="@dimen/dp_35"
+            app:layout_constraintLeft_toLeftOf="@id/image"
+            app:layout_constraintBottom_toBottomOf="@id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_marginBottom="@dimen/dp_13"
+            android:singleLine="true"
+            app:layout_constraintRight_toRightOf="@id/image"
+            android:text="分享你在阿拉善吃过最喜欢美食"
+            android:drawablePadding="9dp"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="@id/image"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/time"
+            android:drawableLeft="@mipmap/mode_activity_icon_hot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

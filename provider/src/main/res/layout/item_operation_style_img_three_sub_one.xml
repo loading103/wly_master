@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.daqsoft.provider.bean.CommonTemlate" />
+
+        <variable
+            name="template"
+            type="CommonTemlate" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_178"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20"
+        >
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            clickData="@{template.getOperation(0)}"
+            imageUrl="@{template.getOperationImageUrl(0)}"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_158"
+            android:layout_marginRight="@dimen/dp_6"
+            android:layout_weight="22"
+            android:scaleType="centerCrop"
+            app:corner_radius="@dimen/dp_5" />
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_158"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:layout_weight="25"
+            android:orientation="vertical">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                clickData="@{template.getOperation(1)}"
+                imageUrl="@{template.getOperationImageUrl(1)}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_73"
+                android:scaleType="centerCrop"
+                app:corner_radius="@dimen/dp_5" />
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                clickData="@{template.getOperation(2)}"
+                imageUrl="@{template.getOperationImageUrl(2)}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_73"
+                android:layout_marginTop="@dimen/dp_12"
+                android:scaleType="centerCrop"
+                app:corner_radius="@dimen/dp_5" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

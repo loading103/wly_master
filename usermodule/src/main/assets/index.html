@@ -1,0 +1,286 @@
+<html lang="zh-cn" data-dpr="2" style="font-size: 60px;" data-theme="site918371">
+<head>
+    <style type="text/css" class="AMap.Geolocation">
+        .amap-geolocation-con .amap-geo{background:#fff url(https://webapi.amap.com/theme/v1.3/markers/b/loc_gray.png) 50% 50% no-repeat;width:35px;height:35px;border:1px solid #ccc;border-radius:3px;right:4px}.amap-locate-loading .amap-geo{background-image:url(https://webapi.amap.com/theme/v1.3/loading.gif)}.amap-locate{position:absolute;width:18px;height:18px;background:url(https://webapi.amap.com/theme/v1.3/map_view.png);_background:url(https://webapi.amap.com/theme/v1.3/map_view.gif);background-position:-130px -185px;cursor:pointer}
+
+
+
+    </style>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=0.8333333333333334, maximum-scale=0.8333333333333334, minimum-scale=0.8333333333333334, user-scalable=no">
+    <style type="text/css" class="AMap.style">
+        .vml{behavior:url(#default#VML);display:inline-block;position:absolute}.amap-custom{top:0;left:0;position:absolute}.amap-container img{max-width:none!important;max-height:none!important}.amap-container{touch-action:none;position:relative;overflow:hidden;background:#fcf9f2 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0AgMAAAC2uDcZAAAADFBMVEX////////////////1pQ5zAAAABHRSTlMAgP/AWuZC2AAAAVhJREFUeAFiYGAQYGDEQjAB2rcDC4BiGIqiU7abdKlO2QkeIClyPsDHweMKtOPHIJ1Op6/w7Y4fdqfT6VpndzqdrnV2p9PpWmd3Oj3qWndSoKp+2J1Op7vr7E6n07XO7nQ6XevsTqfTtc7udPo4/f787E6n0911dqfT6VpndzqdrnV2p9PpWmd3Ot27Ce8m6HS6u85dR6fTtU7r6HS61mkdnU7XOrvT6XTvJuxOp9PddXan0+laZ3c6na51dDpd67SOTqd7N+HdBJ1Od9e56+h0utZpHZ1O1zq70+l0rbM7nU73bsLudDrdXWd3Ol3rtI5Op2ud1tHpdK3TOjqd7t2EdxN0Ot1dZ3c6na51dqfT6VpndzqdrnV2p9Pp3k3Q6XR3nbuOTqdrndbR6XSt0zo6na51Wken072bsDudTnfX2Z1Op2ud3el0utbZnU7XOq2j0+t0uncTD1gO4zoT5doZAAAAAElFTkSuQmCC);-ms-touch-action:none}.amap-drags,.amap-layers{width:100%;height:100%;position:absolute;overflow:hidden}.amap-layers canvas{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.amap-layer img{pointer-events:none}.amap-e,.amap-maps{width:100%;height:100%}.amap-maps,.amap-e,.amap-layers,.amap-tile,.amap-tile-container{position:absolute;left:0;top:0;overflow:hidden}.amap-context{position:absolute;left:0;top:0}.amap-overlays,.amap-markers,.amap-marker{position:absolute;left:0;top:0}.amap-layers{z-index:0}.amap-overlays{z-index:110;cursor:default}.amap-markers{z-index:120}.amap-controls{z-index:150}.amap-copyright{position:absolute;display:block!important;left:77px;height:16px;bottom:0;padding-bottom:3px;font-size:11px;font-family:Arial,sans-serif;z-index:160}.amap-logo{position:absolute;bottom:1px;left:1px;z-index:160;height:20px}.amap-logo img{width:73px!important;height:20px!important;border:0;vertical-align:baseline!important}.amap-icon{position:relative;z-index:1}.amap-icon img{position:absolute;z-index:-1}.amap-marker-label{position:absolute;z-index:2;border:1px solid blue;background-color:white;white-space:nowrap;cursor:default;padding:3px;font-size:12px;line-height:14px}.amap-info{position:absolute;left:0;z-index:140;width:320px}.amap-menu{position:absolute;z-index:140;_width:100px}.amap-info-close{position:absolute;right:5px;_right:12px;+right:11px;top:5px;_top:2px;+top:2px;color:#c3c3c3;text-decoration:none;font:bold 16px/14px Tahoma,Verdana,sans-serif;width:14px;height:14px}.amap-info-outer,.amap-menu-outer{box-shadow:0 1px 2px rgba(0,0,0,0.1);background:none repeat scroll 0 0 white;border-radius:2px;padding:1px;text-align:left}.amap-menu-outer:hover{box-shadow:0 1px 2px rgba(0,0,0,0.3)}.amap-info-contentContainer:hover .amap-info-outer{box-shadow:0 1px 2px rgba(0,0,0,0.3)}.amap-info-content{position:relative;background:#fff;padding:10px 18px 10px 10px;line-height:1.4;overflow:auto}.amap-marker-content{position:relative}.amap-info{_width:320px}.amap-menu{_width:100px}.amap-info-sharp-old{overflow:hidden;position:absolute;background-image:url(http://webapi.amap.com/images/arrows.png)}.bottom-center .amap-info-sharp-old{height:12px;margin:0 auto;width:20px;background-position:center 12px;top:100%;margin-top:-9px;left:50%;margin-left:-10px}.bottom-left .amap-info-sharp-old{height:12px;width:13px;background-position:-16px -46px;top:100%;margin-top:-9px}.bottom-right .amap-info-sharp-old{height:12px;width:13px;top:-1px;background-position:-56px -46px;left:100%;margin-left:-13px;top:100%;margin-top:-9px}.middle-left .amap-info-sharp-old{height:20px;width:12px;background-position:left;top:50%;margin-top:-10px;margin-left:-11px}.center .amap-info-sharp-old{display:none}.middle-right .amap-info-sharp-old{height:20px;margin-right:0;width:12px;background-position:right;left:100%;margin-left:-9px;top:50%;margin-top:-10px}.top-center .amap-info-sharp-old{height:12px;margin:0 auto;width:20px;background-position:top;top:0;margin-top:-3px;left:50%;margin-left:-10px}.top-left .amap-info-sharp-old{height:12px;width:13px;background-position:-16px -3px;top:0;margin-top:-3px}.top-right .amap-info-sharp-old{height:12px;width:13px;background-position:-56px -3px;left:100%;margin-left:-13px;top:0;margin-top:-3px}.amap-info-sharp{position:absolute}.bottom-center .amap-info-sharp{bottom:0;left:50%;margin-left:-8px;border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #fff}.bottom-center .amap-info-sharp:after{position:absolute;content:"";margin-left:-8px;margin-top:-7px;border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid rgba(0,0,0,0.3);filter:blur(2px);z-index:-1}.amap-info-contentContainer:hover.bottom-center .amap-info-sharp:after{border-top:8px solid rgba(0,0,0,0.5)}.bottom-left .amap-info-sharp{border-color:transparent #fff;border-width:0 0 10px 10px;border-style:solid}.bottom-left .amap-info-sharp:after{position:absolute;content:"";margin-left:-10px;border-color:transparent rgba(0,0,0,0.3);border-width:0 0 10px 10px;border-style:solid;filter:blur(1px);z-index:-1}.amap-info-contentContainer:hover.bottom-left .amap-info-sharp:after{border-color:transparent rgba(0,0,0,0.5)}.bottom-left .amap-info-content{border-radius:2px 2px 2px 0}.bottom-right .amap-info-sharp{right:0;border-top:10px solid #fff;border-left:10px solid transparent}.bottom-right .amap-info-sharp:after{position:absolute;margin-top:-9px;margin-left:-10px;content:"";border-top:10px solid rgba(0,0,0,0.3);border-left:10px solid transparent;filter:blur(1px);z-index:-1}.amap-info-contentContainer:hover.bottom-right .amap-info-sharp:after{border-top:10px solid rgba(0,0,0,0.5)}.bottom-right .amap-info-content{border-radius:2px 2px 0 2px}.top-center .amap-info-sharp{top:0;left:50%;margin-left:-8px;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:8px solid #fff}.top-center .amap-info-sharp:after{position:absolute;content:"";margin-top:0;margin-left:-8px;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:8px solid rgba(0,0,0,0.3);filter:blur(1px);z-index:-1}.top-left .amap-info-sharp{left:0;top:0;border-bottom:10px solid #fff;border-right:10px solid transparent}.top-left .amap-info-sharp:after{position:absolute;content:"";margin-top:0;margin-left:0;border-bottom:10px solid rgba(0,0,0,0.3);border-right:10px solid transparent;filter:blur(1px);z-index:-1}.top-right .amap-info-sharp{right:0;top:0;border-bottom:10px solid #fff;border-left:10px solid transparent}.top-right .amap-info-sharp:after{position:absolute;content:"";margin-top:0;margin-left:-10px;border-bottom:10px solid rgba(0,0,0,0.3);border-left:10px solid transparent;filter:blur(1px);z-index:-1}.middle-right .amap-info-sharp{right:0;top:50%;margin-top:-8px;border-top:8px solid transparent;border-left:8px solid #fff;border-bottom:8px solid transparent}.middle-right .amap-info-sharp:after{position:absolute;content:"";margin-top:-8px;margin-left:-8px;border-top:8px solid transparent;border-left:8px solid rgba(0,0,0,0.3);border-bottom:8px solid transparent;filter:blur(1px);z-index:-1}.amap-info-contentContainer:hover.middle-right .amap-info-sharp:after{border-left:8px solid rgba(0,0,0,0.5)}.middle-left .amap-info-sharp{left:0;top:50%;margin-top:-8px;border-top:8px solid transparent;border-right:8px solid #fff;border-bottom:8px solid transparent}.middle-left .amap-info-sharp:after{position:absolute;content:"";margin-top:-8px;margin-left:0;border-top:8px solid transparent;border-right:8px solid rgba(0,0,0,0.3);border-bottom:8px solid transparent;filter:blur(1px);z-index:-1}.amap-info-contentContainer:hover.middle-left .amap-info-sharp:after{border-right:8px solid rgba(0,0,0,0.5)}.amap-info-contentContainer.top-left,.amap-info-contentContainer.top-center,.amap-info-contentContainer.top-right{padding-top:8px}.amap-info-contentContainer.bottom-left,.amap-info-contentContainer.bottom-center,.amap-info-contentContainer.bottom-right{padding-bottom:8px}.amap-info-contentContainer.middle-right{padding-right:8px}.amap-info-contentContainer.middle-left{padding-left:8px}.amap-menu-outer{margin:0;padding:0;list-style-type:none}ul.amap-menu-outer li{cursor:pointer;height:35px;line-height:35px;word-break:break-all;padding:0 10px;font-size:12px;white-space:nowrap}ul.amap-menu-outer li a{text-decoration:none;font-size:13px;margin:0 5px;color:#000;padding:5px 5px}ul.amap-menu-outer li:hover{background-color:#f3f3ee}.amap-overlay-text-container{display:block;width:auto;word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:#fff;padding:2px 3px;border:1px solid #ccc;border-radius:3px}.amap-overlay-text-container.amap-overlay-text-empty{display:none}.amap-info-content-ie8{border:1px solid #9c9c9c}
+
+
+
+    </style>
+    <style type="text/css">
+        .amap-logo {display: block !important;}.amap-logo2,.amap-content{font-family: PingFangSC-Regular, -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, "Helvetica Neue", Helvetica, "PingFang SC","Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;}/* .amap-copyright {visibility: hidden !important;} */.amap-logo2{display: block!important;color: #0093FD;height: 25px!important;border-radius: 12px;bottom: 4px!important;left: 4px!important;background: white;box-shadow: 0px 0px 3px rgba(0,0,0,.22);text-decoration: none;}.amap-logo2 img{border-radius: 50%;margin: 4px 5px;}.amap-about {position: absolute;bottom: 5px;right: 5px;font-size: 10px;color: rgba(0, 0, 0, 0.54);border-bottom:1px solid rgba(0, 0, 0, 0.54);/* transform: scale(0.83333333); */}.amap-cal{font-size: 12px;display: inline;padding: 0 10px 0 0;}.amap-state{z-index: 99999;text-align:center;position: fixed;bottom: 0px;height: 0px;width: 100%;background-color: #fff;box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.10);border-top-left-radius:10px;border-top-right-radius:10px;transition: height .3s;-moz-transition: height .3s;	/* Firefox 4 */-webkit-transition: height .3s;	/* Safari 和 Chrome */-o-transition: height .3s;	/* Opera */}.amap-state-title{padding-top: 15px;padding-left: 20px;color: rgba(0,0,0,.87);font-size: 20px;text-align: left;}.amap-state-close{position:absolute;right: 19px;top: 15px;width: 40px;height: 28px;}.amap-state-icon{margin-top: 60px;width: 100px;height: 100px;}.amap-state-content{margin-top: 50px;line-height: 20px;font-size: 12px;color: rgba(0,0,0,0.35);}.amap-state-mianze{margin-top: 40px;font-size: 14px;color: #0093FD;text-decoration: none;}.amap-state-mianze a{display: block;margin: 5px;}.amap-conform{position: fixed;z-index: 99998;width: 260px;height: 120px;font-size: 16px;top: 50%;left: 50%;background-color: white;color: rgba(0,0,0,.6);border-radius: 8px;margin-left: -130px;margin-top: -85px;box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.30);}.amap-conform-content{height: 60px;text-align: center;padding: 18px 22px 7px 22px;border-bottom: 1px solid rgba(0,0,0,0.1);line-height: 25px;text-size-adjust: none;}.amap-conform-bt{display: inline-block;height: 35px;width: 130px;text-align: center;line-height: 35px;text-decoration: none;font-weight: 500;}
+
+
+
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="成都中科大旗软件有限公司">
+    <title>会员规则</title>
+    <link href="css/chunk-vendors.a885e0c6.css" rel="stylesheet">
+    <link href="css/app.feaaf354.css" rel="stylesheet">
+    <style type="text/css">
+        .amap-container{cursor:url(https://webapi.amap.com/theme/v1.3/openhand.cur),default;}.amap-drag{cursor:url(https://webapi.amap.com/theme/v1.3/closedhand.cur),default;}
+
+
+
+    </style>
+    <script charset="utf-8" src="js/chunk-2d0b344e.c4f9c352.js"></script>
+    <script charset="utf-8" src="js/chunk-2d21da53.e5371f65.js"></script>
+    <script charset="utf-8" src="js/chunk-218c9962.4faf0011.js"></script>
+    <script charset="utf-8" src="js/chunk-2d20efc3.8c8a83a3.js"></script>
+    <script charset="utf-8" src="js/chunk-68c88e66.d1df05dd.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/chunk-3177bb4b.241de1a9.css">
+    <script charset="utf-8" src="js/chunk-3177bb4b.e064b2f4.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/chunk-7469e534.9b2834d2.css">
+    <script charset="utf-8" src="js/chunk-7469e534.6d077ef2.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/chunk-7458d405.a1909d46.css">
+    <script charset="utf-8" src="js/chunk-7458d405.c0f7964c.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/chunk-5e21042f.9a206cac.css">
+    <script charset="utf-8" src="js/chunk-5e21042f.f4f7465e.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/chunk-6f3894e4.a4d940a2.css">
+    <script charset="utf-8" src="js/chunk-6f3894e4.1b564f4c.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/chunk-0ac2b907.4405aaa8.css">
+    <script charset="utf-8" src="js/chunk-0ac2b907.20272c86.js"></script>
+</head>
+<body>
+<div data-v-6bcc361a="" id="app" class="site918371 app-page">
+    <div data-v-042b36e4="" data-v-6bcc361a="" class="content Router"><p
+            style="line-height: 2em; text-align: center;"><strong><span
+            style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.36rem;">会员服务规则</span></strong>
+    </p>
+        <p style="line-height: 2em; text-align: center;"><span
+                style="font-size: 0.32rem;"><strong><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">第一章&nbsp; 总则</span></strong></span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">第一条&nbsp; 基于保障智游天府平稳运行，规范网络交易行为，维护会员合法权益，确保会员享有对智游天府监督管理的权利，营造优良的网络交易环境，打造本地文化旅游生活服务平台，特制定本规则。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">第二条&nbsp; 为保障会员的权益，请会员于注册和使用智游天府之前，仔细阅读本规则，并接受本规则的各项条款约束，除非该等条款违反国家强制性规定，否则始终有效。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">第三条&nbsp; 会员在下订单的行为，即代表会员拥有购买这些产品的权利能力和行为能力，并且须将对订单中提供的所有信息的真实性、合法性、有效性负责。</span>
+        </p>
+        <p style="line-height: 2em; text-align: center;"><span
+                style="font-size: 0.32rem;"><strong><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">第二章&nbsp; 会员申请</span></strong></span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">第四条&nbsp; 个人、公司、企业及其他组织可以申请成为智游天府会员。但是，申请成为智游天府会员的个人，必须是依据法律具有完全民事行为能力的自然人。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">第五条&nbsp; 智游天府对不具有完全民事行为能力的自然人或被临时中止或无限期中止的会员不提供服务；如会员不符合前述要求的，请不要注册成智游天府的会员,智游天府也不提供相关服务。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">第六条&nbsp; 资料填写：为确保交易的正常进行，会员须向智游天府提供真实、有效的个人资料，如个人资料有任何变动，须及时在智游天府个人中心变更，如未及时更新而引起的损失等与智游天府无关。基于智游天府所提供的网络服务的重要性，会员应同意：</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（1）提供详尽、准确的个人资料。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（2）不断更新注册资料，符合及时、详尽、准确的要求。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">第七条&nbsp; 如果会员提供的资料包含有不正确的信息，智游天府保留临时中止或无限期中止会员使用智游天府服务的权利。</span>
+        </p>
+        <p style="line-height: 2em; text-align: center;"><span
+                style="font-size: 0.32rem;"><strong><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">第三章&nbsp; 会员帐户使用</span></strong></span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">第八条&nbsp; 会员帐户使用</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（1）会员一旦注册成功（含第三方帐户信息登录授权），成为智游天府的会员，每个会员都要对该帐户在智游天府上的所有活动和事件负全部责任。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（2）会员若发现任何非法使用会员帐户号或存在安全漏洞的情况，请立即通知智游天府。</span>
+        </p>
+        <p style="line-height: 2em; text-align: center;"><span
+                style="font-size: 0.32rem;"><strong><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">第四章&nbsp; 会员的权利和义务</span></strong></span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">第九条&nbsp; 会员的权利和义务：</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（1）会员有权根据智游天府发布的相关规则，利用智游天府上交易平台查询物品信息、购买物品、在智游天府上发帖、参加智游天府发布的有关活动及有权享受智游天府提供的其他的有关资讯及信息服务。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（2）会员应妥善保管帐户信息，仅限个人使用，会员应对该会员帐户进行的所有活动和事件负全部责任。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（3）会员有对智游天府建议权和监督权。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（4）会员有义务确保向智游天府提供的任何资料、注册信息真实准确，包括但不限于真实姓名、身份证号、联系电话、地址等。保证智游天府可以通过上述联系方式进行联系。同时，会员也有义务在相关资料实际变更时更新有关注册资料。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（5）会员不得以任何形式擅自转让或授权他人使用自己在智游天府的会员帐户，否则因此产生的全部责任均由会员本人自行承担。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（6）会员有义务确保在智游天府发布的信息真实、准确，无误导性。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（7）会员不得在智游天府上交易平台买卖国家禁止销售的或限制销售的物品、不得买卖侵犯他人知识产权或其他合法权益的物品，也不得买卖违背社会公共利益或公共道德的物品。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（8）会员不得在智游天府发布各类违法或违规信息，包括但不限于物品信息、交易信息、社区帖子、物品留言，店铺留言，评价内容等</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（9）会员在智游天府交易中应当遵守诚实信用原则，不得以干预或操纵物品价格等不正当竞争方式扰乱网上交易秩序，不得从事与网上交易无关的不当行为，不得在交易平台上发布任何违法信息。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（10）会员不应采取不正当手段（包括但不限于虚假交易、互换好评等方式）提高自身或他人信用度，或采用不正当手段恶意评价其他会员，降低其他会员信用度。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（11）会员承诺自己在使用智游天府上交易平台实施的所有行为遵守国家法律、法规和智游天府的相关规定以及各种社会公共利益或公共道德。对于任何法律后果的发生，会员将以自己的名义独立承担所有相应的法律责任。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（12）会员如发现其他会员有违法或违反本规则的行为，可以向智游天府举报。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（13）会员应自行承担因交易产生的相关费用，并依法纳税。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（14）未经智游天府书面允许，会员不得将智游天府资料以及在交易平台上所展示的任何信息以复制、修改、翻译等形式制作衍生作品、发布或公开展示。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（15）会员同意接收来自智游天府的信息，包括但不限于活动信息、交易信息、促销信息等。</span>
+        </p>
+        <p style="line-height: 2em; text-align: center;"><span
+                style="font-size: 0.32rem;"><strong><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">第五章&nbsp; 会员管理</span></strong></span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">第十条&nbsp; 会员管理</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（一）会员必须遵循：</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（1）从中国境内向外传输技术性资料时必须符合中国有关法律规定。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（2）使用网络服务不作非法用途。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（3）不干扰或混乱网络服务。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（4）遵守所有使用网络服务的网络协议、规定、程序和惯例。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（二）会员单独承担发布内容的责任。会员对服务的使用是根据所有适用于智游天府的国家法律、地方法律和国际法律标准。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（三）会员须承诺不传输任何非法的、骚扰性的、中伤他人的、辱骂性的、恐吓性的、伤害性的、庸俗的，淫秽等信息资料。另外，会员也不能传输任何教唆他人构成犯罪行为的资料；不能传输助长国内不利条件和涉及国家安全的资料；不能传输任何不符合当地法规、国家法律和国际法律的资料。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（四）未经许可而非法进入其他电脑系统是禁止的。若会员的行为不符合以上提到的服务条款，智游天府将作出独立判断立即无限期中止会员服务帐户。会员需对自己在网上的行为承担法律责任。会员若在智游天府上散布和传播反动、色情或其他违反国家法律的信息，智游天府的系统记录将有可能作为会员违反法律的证据。</span>
+        </p>
+        <p style="line-height: 2em; text-align: center;"><span
+                style="font-size: 0.32rem;"><strong><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">第六章&nbsp; 会员隐私制度</span></strong></span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">第十一条&nbsp; 智游天府不会在未经合法用户授权时公开、编辑或透露其注册资料及保存在智游天府中的非公开内容，除非有法律许可要求或智游天府在诚信的基础上认为透露这些信息在以下五种情况是必要的：</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（1）遵守有关法律规定，遵从智游天府合法服务程序。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（2）保持维护智游天府的商标所有权和平台的知识产权。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（3）在紧急情况下竭力维护会员个人和社会大众的隐私安全。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（4）依法维护国家和社会公共利益需要。</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">（5）符合其它相关的要求。</span>
+        </p>
+        <p style="line-height: 2em; text-align: center;"><span
+                style="font-size: 0.32rem;"><strong><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">第七章&nbsp; 评价规则</span></strong></span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">第十二条&nbsp; 评论、意见、消息和其它内容</span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">访问者可以张贴评论、意见及其它内容，以及提出建议、主意、意见、问题或其他信息，只要内容不是非法、淫秽、威胁、诽谤、侵犯隐私、侵犯知识产权或以其他形式对第三者构成伤害或侵犯或令公众讨厌，也不包含软件病毒、政治宣传、商业招揽、连锁信、大宗邮件或任何形式的“垃圾邮件”。不可以使用虚假的电子邮件地址、冒充任何他人或实体或以其他方式对卡片或其他内容的来源进行误导。智游天府保留清除或编辑这些内容的权利（但非义务），但不对所张贴的内容进行经常性的审查。</span>
+        </p>
+        <p style="line-height: 2em; text-align: center;"><span
+                style="font-size: 0.32rem;"><strong><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">第八章&nbsp; 附则</span></strong></span>
+        </p>
+        <p style="line-height: 2em;"><span
+                style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 0.28rem;">第十三条&nbsp; 本制度解释归智游天府所有。</span>
+        </p>
+        <p><br></p></div><!---->
+    <div data-v-6bcc361a=""><!---->
+        <div data-v-6bcc361a="" class="share-story-right"><span data-v-6bcc361a=""
+                                                                class="cloud-icon"></span></div>
+    </div>
+    <div data-v-47e254b8="" data-v-6bcc361a="" class="video" style="display: none;">
+        <div data-v-47e254b8="" class="mask"></div>
+        <video data-v-47e254b8="" autoplay="autoplay" webkit-playsinline="webkit-playsinline"
+               playsinline="playsinline" src=""></video>
+        <span data-v-47e254b8="" class="cloud-icon video-close"></span></div>
+</div>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="https://webapi.amap.com/maps?v=1.4.13&amp;key=e8496e8ac4b0f01100b98da5bde96597&amp;plugin=AMap.Geocoder"></script>
+<script crossorigin="anonymous" id="amap_plus_js"
+        src="https://webapi.amap.com/maps/modules?v=1.4.13&amp;key=e8496e8ac4b0f01100b98da5bde96597&amp;vrs=1559206836107&amp;m=touch,vectorlayer,overlay,wgl,AMap.Geocoder,logo,sync"
+        type="text/javascript"></script>
+<script src="js/chunk-vendors.f5d4fd94.js"></script>
+<script src="js/app.63de4410.js"></script>
+<div tabindex="-1" role="dialog" aria-hidden="true" class="pswp">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button title="Close (Esc)" class="pswp__button pswp__button--close"></button>
+                <button title="Share" class="pswp__button pswp__button--share"></button>
+                <button title="Toggle fullscreen" class="pswp__button pswp__button--fs"></button>
+                <button title="Zoom in/out" class="pswp__button pswp__button--zoom"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button title="Previous (arrow left)"
+                    class="pswp__button pswp__button--arrow--left"></button>
+            <button title="Next (arrow right)"
+                    class="pswp__button pswp__button--arrow--right"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div><!----></body>
+</html>

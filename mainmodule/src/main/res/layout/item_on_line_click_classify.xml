@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="urls"
+            type="String" />
+    </data>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_15"
+            app:cardCornerRadius="@dimen/dp_5"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:orientation="vertical">
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/img_online_click_classify"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:border_color="@color/white"
+                app:corner_bottom_left_radius="@dimen/dp_5"
+                app:corner_bottom_right_radius="@dimen/dp_5"
+                app:corner_top_left_radius="@dimen/dp_5"
+                app:corner_top_right_radius="@dimen/dp_5"
+                app:is_circle="false"
+                />
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</layout>

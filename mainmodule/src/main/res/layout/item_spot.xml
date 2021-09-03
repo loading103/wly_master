@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="spots"
+            type="com.daqsoft.provider.bean.Spots" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/iv_cover"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_91"
+                android:scaleType="fitXY"
+                app:corner_radius="@dimen/dp_5"
+                app:is_circle="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_best"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/scenic_details_label"
+                android:includeFontPadding="false"
+                android:paddingLeft="@dimen/dp_6"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingRight="@dimen/dp_6"
+                android:paddingBottom="@dimen/dp_2"
+                android:text="最佳拍摄点"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_9"
+                app:layout_constraintLeft_toLeftOf="@id/iv_cover"
+                app:layout_constraintTop_toTopOf="@id/iv_cover" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:text="@{spots.name}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toLeftOf="@id/iv_cover"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_cover" />
+
+            <TextView
+                android:id="@+id/tv_city_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:layout_marginTop="@dimen/dp_4"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/tv_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</layout>

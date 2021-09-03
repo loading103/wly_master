@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.daqsoft.provider.bean.CollectionBean" />
+        <variable
+            name="imageUrl"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:orientation="horizontal">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/iv_img"
+                android:layout_width="@dimen/dp_72"
+                android:layout_height="@dimen/dp_72"
+                android:layout_marginRight="@dimen/dp_20"
+                android:scaleType="center"
+                imageUrl="@{imageUrl}"
+                app:border_color="@color/white"
+                app:corner_bottom_left_radius="@dimen/dp_6"
+                app:corner_bottom_right_radius="@dimen/dp_6"
+                app:corner_top_left_radius="@dimen/dp_6"
+                app:corner_top_right_radius="@dimen/dp_6"
+                app:is_circle="false" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.resourceName}"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    tools:text="w武侯祠" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:textColor="@color/txt_gray"
+                    android:textSize="@dimen/sp_12"
+                    tools:text="@{item.time}" />
+
+                <TextView
+                    android:id="@+id/tv_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:background="@drawable/shape_rectangle_orange"
+                    android:paddingLeft="@dimen/dp_6"
+                    android:paddingTop="@dimen/dp_3"
+                    android:paddingRight="@dimen/dp_6"
+                    android:paddingBottom="@dimen/dp_3"
+                    android:textColor="@color/ff9e05"
+                    android:textSize="@dimen/sp_10"
+                    tools:text="场所" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_del_collect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:paddingStart="@dimen/dp_10"
+                android:paddingTop="10dp"
+                android:src="@mipmap/mine_book_icon_cancel" />
+        </LinearLayout>
+
+        <include layout="@layout/include_space_one" />
+    </LinearLayout>
+</layout>

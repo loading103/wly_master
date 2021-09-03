@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="price"
+            type="String" />
+
+        <variable
+            name="left"
+            type="String" />
+
+        <variable
+            name="totalTime"
+            type="String" />
+
+        <variable
+            name="address"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_20">
+  
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/image"
+            url="@{url}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_168"
+            android:scaleType="center"
+            app:border_color="@color/white"
+            app:corner_bottom_left_radius="@dimen/dp_6"
+            app:corner_bottom_right_radius="@dimen/dp_6"
+            app:corner_radius="@dimen/dp_5"
+            app:corner_top_left_radius="@dimen/dp_6"
+            app:corner_top_right_radius="@dimen/dp_6"
+            app:is_circle="false"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_is_over"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_168"
+            android:layout_gravity="center"
+            android:background="@color/alph_60"
+            android:gravity="center"
+            android:text="- 已结束 -"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_12"
+            android:visibility="gone"
+            android:src="@drawable/seleted_venues_collect"
+            app:layout_constraintRight_toRightOf="@id/image"
+            app:layout_constraintTop_toTopOf="@id/image" />
+
+        <TextView
+            android:id="@+id/tv_integral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/venue_integral"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_11"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_price"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{price}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_name"
+            app:layout_constraintRight_toLeftOf="@id/tv_integral" />
+
+        <TextView
+            android:id="@+id/tv_money_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_11"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_price"
+            app:layout_constraintBottom_toBottomOf="@id/tv_price"
+            app:layout_constraintRight_toLeftOf="@id/tv_price"
+            app:layout_constraintTop_toBottomOf="@id/image" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_12"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{name}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tv_money_unit"
+            app:layout_constraintTop_toBottomOf="@id/image" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_numbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="@{totalTime}"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_tags"
+            tool:text="adfafd" />
+
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="@{address}"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_numbers" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

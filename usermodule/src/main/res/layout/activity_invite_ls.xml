@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_invites"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tv_to_invite" />
+
+        <RelativeLayout
+            android:id="@+id/v_empty_inviteLs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tv_to_invite"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_150"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_150"
+                    android:layout_height="@dimen/dp_100"
+                    android:src="@mipmap/mine_member_invitemine_emptystate" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/mine_invite_empty_ls"
+                    android:textColor="@color/color_999"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_to_invite"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_504747"
+            android:gravity="center"
+            android:text="立即邀请"
+            android:textColor="@color/color_ffe3af"
+            android:textSize="@dimen/sp_16" />
+    </RelativeLayout>
+</layout>

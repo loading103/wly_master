@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_act_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/whcgxq_bt_bq"
+            android:drawablePadding="@dimen/dp_12"
+            android:text="活动回顾"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_19"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/v_activity_result_img_one"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_168"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:visibility="gone">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/img_act_result_one"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:corner_radius="@dimen/dp_5" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_44"
+                android:layout_height="@dimen/dp_44"
+                android:layout_gravity="center"
+                android:src="@mipmap/activity_detail_normal_memory_video_play_big" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/v_activity_result_img_two"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_168"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <FrameLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_weight="2">
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    android:id="@+id/img_act_two_first"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    app:corner_bottom_left_radius="@dimen/dp_5"
+                    app:corner_radius="@dimen/dp_5"
+                    app:corner_top_left_radius="@dimen/dp_5" />
+
+                <ImageView
+                    android:id="@+id/img_act_two_video"
+                    android:layout_width="@dimen/dp_44"
+                    android:layout_height="@dimen/dp_44"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/activity_detail_normal_memory_video_play_big"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_weight="1">
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    android:id="@+id/img_act_two_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:corner_bottom_right_radius="@dimen/dp_5"
+                    app:corner_top_right_radius="@dimen/dp_5" />
+
+                <ImageView
+                    android:id="@+id/img_act_two_two_video"
+                    android:layout_width="@dimen/dp_44"
+                    android:layout_height="@dimen/dp_44"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/activity_detail_normal_memory_video_play_big"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/v_activity_result_img_three"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_151"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <FrameLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_weight="22">
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    android:id="@+id/img_act_three_one"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    app:corner_bottom_left_radius="@dimen/dp_5"
+                    app:corner_radius="@dimen/dp_5"
+                    app:corner_top_left_radius="@dimen/dp_5" />
+
+                <ImageView
+                    android:id="@+id/img_act_three_video_one"
+                    android:layout_width="@dimen/dp_44"
+                    android:layout_height="@dimen/dp_44"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/activity_detail_normal_memory_video_play_big"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_weight="13"
+                android:orientation="vertical"
+                app:corner_bottom_right_radius="@dimen/dp_5"
+                app:corner_radius="@dimen/dp_5"
+                app:corner_top_right_radius="@dimen/dp_5">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_73">
+
+                    <com.daqsoft.baselib.widgets.ArcImageView
+                        android:id="@+id/img_act_three_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_73"
+                        app:corner_top_right_radius="@dimen/dp_5" />
+
+                    <ImageView
+                        android:id="@+id/img_act_three_two_video"
+                        android:layout_width="@dimen/dp_36"
+                        android:layout_height="@dimen/dp_36"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/activity_detail_normal_memory_video_play_small"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_73"
+                    android:layout_marginTop="@dimen/dp_5">
+
+                    <com.daqsoft.baselib.widgets.ArcImageView
+                        android:id="@+id/img_act_three_three"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_73"
+                        app:corner_bottom_right_radius="@dimen/dp_5" />
+
+                    <ImageView
+                        android:id="@+id/img_act_three_three_video"
+                        android:layout_width="@dimen/dp_36"
+                        android:layout_height="@dimen/dp_36"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/activity_detail_normal_memory_video_play_small"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/v_act_result_more_images"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_16"
+            android:elevation="@dimen/dp_4"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/dp_5">
+
+            <com.daqsoft.provider.scrollview.DqRecylerView
+                android:id="@+id/rv_act_result_more_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:id="@+id/v_more_act_images"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_28"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/dp_12"
+                android:layout_height="@dimen/dp_6"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/activity_detail_normal_memory_button_more" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</layout>

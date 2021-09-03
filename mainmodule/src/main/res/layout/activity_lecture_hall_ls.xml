@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sw_lecture_hall_ls"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/edt_search_lecture_hall_ls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_20"
+                android:background="@drawable/home_b_f5_stroke_null_round_5"
+                android:drawableLeft="@mipmap/activity_search"
+                android:drawablePadding="@dimen/dp_8"
+                android:minHeight="@dimen/dp_32"
+                android:paddingLeft="@dimen/dp_12"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_8"
+                android:text="搜索"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_13" />
+
+            <com.daqsoft.provider.scrollview.DqRecylerView
+                android:id="@+id/rv_leture_ls_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:layout_marginRight="@dimen/dp_4" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_8"
+                android:background="@color/f5" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_18">
+
+                <TextView
+                    android:id="@+id/tv_sort_orders"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:drawableRight="@mipmap/main_arrow_down"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:text="最新"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:id="@+id/tv_only_show_unstudy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:layout_toLeftOf="@+id/swh_lecture_hall_study_status"
+                    android:text="仅显示未学"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_12" />
+
+                <Switch
+                    android:id="@+id/swh_lecture_hall_study_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/dp_14"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:thumb="@drawable/lecture_ctr_19_thumb_selector"
+                    android:track="@drawable/lecture_ctr_12_selector" />
+            </RelativeLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recy_lecture_hall_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_15"
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

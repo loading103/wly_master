@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.daqsoft.provider.bean.HomeBranchBean" />
+    </data>
+
+    <com.daqsoft.provider.view.cardview.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/dp_5"
+        app:cardElevation="@dimen/dp_0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_cultrue_bg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:textColor="@color/app_main_color"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="@+id/img_cultrue_bg"
+                app:layout_constraintTop_toTopOf="@+id/img_cultrue_bg"
+                tools:text="大漠文化" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_20"
+                android:paddingLeft="@dimen/dp_6"
+                android:paddingRight="@dimen/dp_6"
+                app:layout_constraintTop_toBottomOf="@+id/img_cultrue_bg">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:layout_weight="1">
+
+                    <com.daqsoft.provider.view.cardview.CardView
+                        android:id="@+id/cv_tourism_four_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_75"
+                        app:cardCornerRadius="@dimen/dp_5"
+                        app:cardElevation="@dimen/dp_0">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_75" />
+                    </com.daqsoft.provider.view.cardview.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cv_tourism_four_one"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_10" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:layout_weight="1">
+
+                    <com.daqsoft.provider.view.cardview.CardView
+                        android:id="@+id/cv_tourism_four_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_75"
+                        app:cardCornerRadius="@dimen/dp_5"
+                        app:cardElevation="@dimen/dp_0">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_75" />
+                    </com.daqsoft.provider.view.cardview.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cv_tourism_four_two"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_10" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:layout_weight="1">
+
+                    <com.daqsoft.provider.view.cardview.CardView
+                        android:id="@+id/cv_tourism_four_three"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_75"
+                        app:cardCornerRadius="@dimen/dp_5"
+                        app:cardElevation="@dimen/dp_0">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_75" />
+                    </com.daqsoft.provider.view.cardview.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cv_tourism_four_three"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_10" />
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.daqsoft.provider.view.cardview.CardView>
+</layout>

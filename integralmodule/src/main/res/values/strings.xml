@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">积分模块</string>
+
+    <string name="integralmodule_integral_rule">会员规则</string>
+    <string name="integralmodule_integral_shop">积分商城</string>
+    <string name="integralmodule_integral_available">可用积分</string>
+    <string name="integralmodule_integral_detail">积分明细</string>
+    <string name="integralmodule_do_tasks">做任务赚积分</string>
+    <string name="integralmodule_integral_exchange">积分兑换</string>
+    <string name="integralmodule_see_all_shops">查看所有商品</string>
+    <string name="integralmodule_no_rule">暂无会员规则</string>
+    <string name="integralmodule_rule">会员规则</string>
+
+
+    <string name="integralmodule_recent_30_get">最近30天获得</string>
+    <string name="integralmodule_recent_30_cost">最近30天消耗</string>
+    <string name="integralmodule_get_record">获得记录</string>
+    <string name="integralmodule_cost_record">消耗记录</string>
+    <string name="integralmodule_calendar">日历</string>
+    <string name="integralmodule_member">会员</string>
+
+    <string name="integralmodule_unaccalimed">领取任务</string>
+    <string name="integralmodule_pending">去完成</string>
+    <string name="integralmodule_completed_not_reveived">领取积分</string>
+    <string name="integralmodule_expired">已过期</string>
+    <string name="integralmodule_completed_received">已完成</string>
+    <string name="integralmodule_useabled">可用积分</string>
+
+
+    <string name="integralmodule_congratulations_1">恭喜</string>
+    <string name="integralmodule_congratulations_2">完成任务</string>
+    <string name="integralmodule_congratulations_3">获得奖励啦！</string>
+
+    <string name="integralmodule_see_integral">查看积分</string>
+
+
+</resources>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_28">
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    android:id="@+id/img_lecture_head"
+                    android:layout_width="@dimen/dp_64"
+                    android:layout_height="@dimen/dp_64"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    app:is_circle="true" />
+
+                <TextView
+                    android:id="@+id/tv_lecture_teac_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/img_lecture_hall"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:layout_toRightOf="@+id/img_lecture_head"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_18"
+                    tools:text="李讲师" />
+
+                <TextView
+                    android:id="@+id/tv_lecture_teac_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_lecture_teac_name"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_toRightOf="@+id/img_lecture_head"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    tools:text="金牌讲师，三年线上教育经验，课程生动活泼" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_lecture_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_40"
+                android:drawableLeft="@mipmap/whcgxq_bt_bq"
+                android:drawablePadding="@dimen/dp_12"
+                android:includeFontPadding="false"
+                android:text="课程简介"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_19"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_lecture_detail_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginRight="@dimen/dp_20"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_14"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_main_target"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_40"
+                android:drawableLeft="@mipmap/whcgxq_bt_bq"
+                android:drawablePadding="@dimen/dp_12"
+                android:includeFontPadding="false"
+                android:text="课程目标"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_19"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_main_target_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginRight="@dimen/dp_20"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_14"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_main_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_40"
+                android:drawableLeft="@mipmap/whcgxq_bt_bq"
+                android:drawablePadding="@dimen/dp_12"
+                android:includeFontPadding="false"
+                android:text="主要内容"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_19"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_main_detail_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginRight="@dimen/dp_20"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_14"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_think_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_40"
+                android:drawableLeft="@mipmap/whcgxq_bt_bq"
+                android:drawablePadding="@dimen/dp_12"
+                android:includeFontPadding="false"
+                android:text="思考问题"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_19"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_think_detail_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginRight="@dimen/dp_20"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_14"
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

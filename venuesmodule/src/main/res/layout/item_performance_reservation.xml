@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="80dp">
+        </ImageView>
+
+
+        <TextView
+            android:id="@+id/title"
+            app:layout_constraintBottom_toBottomOf="@id/image"
+            android:textStyle="bold"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@color/color_333"
+            android:layout_marginRight="@dimen/dp_21"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginVertical="@dimen/dp_2"
+            app:layout_constraintRight_toLeftOf="@id/booking"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            app:layout_constraintTop_toTopOf="@id/image"
+            android:layout_width="0dp"
+            android:layout_height="0dp">
+        </TextView>
+
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12"
+            android:background="@drawable/shape_venues_booking_bg"
+            android:text="@string/venue_booking"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/image"
+            app:layout_constraintTop_toTopOf="@+id/image"
+            android:id="@+id/booking"
+            android:layout_width="@dimen/dp_55"
+            android:layout_height="@dimen/dp_30">
+        </TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

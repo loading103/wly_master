@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	>
+
+	<data>
+
+		<variable
+			name="item"
+			type="com.daqsoft.volunteer.bean.VolunteerTeamSignInBean"
+			/>
+	</data>
+
+	<androidx.cardview.widget.CardView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:cardCornerRadius="@dimen/dp_10"
+		app:cardElevation="@dimen/dp_3"
+		app:cardMaxElevation="@dimen/dp_6"
+		android:layout_marginTop="@dimen/dp_20"
+		app:cardShadowColorEnd="@color/white"
+		app:cardShadowColorStart="@color/f5"
+		>
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="@dimen/dp_20"
+			>
+
+			<com.daqsoft.widget.RoundImageView
+				android:id="@+id/iv_header"
+				android:layout_width="@dimen/dp_44"
+				android:layout_height="@dimen/dp_44"
+				android:scaleType="fitXY"
+				app:corner_radius="@dimen/dp_5"
+				app:layout_constraintLeft_toLeftOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:type="round"
+				/>
+
+			<TextView
+				android:id="@+id/tv_name"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="@dimen/dp_12"
+				android:layout_marginRight="@dimen/dp_20"
+				android:ellipsize="end"
+				android:singleLine="true"
+				android:text="@{item.teamName}"
+				android:textColor="@color/color_333"
+				android:textSize="@dimen/sp_16"
+				app:layout_constraintLeft_toRightOf="@+id/iv_header"
+				app:layout_constraintRight_toRightOf="parent"
+				app:layout_constraintTop_toTopOf="@+id/iv_header"
+				tools:text="方三三"
+				/>
+
+
+			<TextView
+				android:id="@+id/tv_address"
+				android:layout_width="@dimen/dp_0"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/dp_12"
+				android:ellipsize="end"
+				android:includeFontPadding="false"
+				android:maxLines="1"
+				android:text="@{item.teamAddress}"
+				android:textColor="@color/color_999"
+				android:textSize="@dimen/sp_13"
+				app:layout_constraintLeft_toLeftOf="@id/tv_name"
+				app:layout_constraintRight_toRightOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/tv_name"
+				tools:text="火锅、串串的前世今生"
+				/>
+
+
+			<View
+				android:id="@+id/v_line"
+				android:layout_width="@dimen/dp_0"
+				android:layout_height="@dimen/dp_1"
+				android:layout_marginTop="@dimen/dp_16"
+				android:background="@color/line"
+				app:layout_constraintLeft_toLeftOf="parent"
+				app:layout_constraintRight_toRightOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/tv_address"
+				/>
+
+			<LinearLayout
+                android:id="@+id/ll_service_time"
+				android:layout_width="@dimen/dp_0"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/dp_16"
+				android:orientation="vertical"
+				app:layout_constraintLeft_toLeftOf="parent"
+				app:layout_constraintRight_toRightOf="parent"
+				app:layout_constraintTop_toBottomOf="@id/v_line"
+                android:background="@color/white"
+				>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_13"
+                    android:textColor="@color/color_666"
+                    android:text="需要服务的时间:"
+                    />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_service_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:padding="@dimen/dp_10"
+                    android:background="@drawable/volunteer_shape_f5_5"
+                    />
+			</LinearLayout>
+		</androidx.constraintlayout.widget.ConstraintLayout>
+	</androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="@dimen/dp_40"
+        android:paddingEnd="@dimen/dp_40">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:text="自驾游"
+            android:checked="true"
+            android:id="@+id/view_driving"
+            android:paddingTop="@dimen/dp_26"
+            style="@style/ItineraryCustomRadio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp_48"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:drawableTop="@drawable/itinerary_icon_driving" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/ViewWrap"
+            android:text="默认为你推荐自驾游路线"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:textSize="@dimen/sp_11"
+            app:layout_constraintEnd_toEndOf="@id/view_driving"
+            app:layout_constraintStart_toStartOf="@id/view_driving"
+            app:layout_constraintBottom_toBottomOf="@id/view_driving"/>
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:text="公共交通"
+            android:id="@+id/view_bus"
+            android:layout_marginTop="@dimen/dp_25"
+            android:paddingTop="@dimen/dp_26"
+            style="@style/ItineraryCustomRadio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp_48"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_driving"
+            android:drawableTop="@drawable/itinerary_icon_bus"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/ViewWrap"
+            android:textSize="@dimen/sp_11"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:text="飞机、高铁、大巴等一系列公共交通"
+            app:layout_constraintEnd_toEndOf="@id/view_bus"
+            app:layout_constraintStart_toStartOf="@id/view_bus"
+            app:layout_constraintBottom_toBottomOf="@id/view_bus"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

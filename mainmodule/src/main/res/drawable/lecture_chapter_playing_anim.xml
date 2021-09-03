@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item
+        android:drawable="@mipmap/chapter_01"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_02"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_03"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_04"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_05"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_06"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_07"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_08"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_09"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_10"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_11"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_12"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_13"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_14"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_15"
+        android:duration="100" />
+    <item
+        android:drawable="@mipmap/chapter_16"
+        android:duration="100" />
+
+</animation-list>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="time"
+            type="String" />
+
+        <variable
+            name="content"
+            type="String" />
+
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp_5">
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_13"
+            tool:text="智游天府 回复 落叶飘零：" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_emoticons"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dp_7"
+            android:paddingBottom="@dimen/dp_3"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</layout>

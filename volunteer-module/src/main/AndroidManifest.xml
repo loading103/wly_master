@@ -1,0 +1,35 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.daqsoft.volunteer" >
+
+    <application>
+        <activity android:name=".main.VolunteerMainActivity"/>
+        <activity android:name=".volunteer.VolunteerRegisterActivity" android:windowSoftInputMode="adjustResize|stateAlwaysHidden"/>
+        <activity android:name=".volunteer.VolunteerListActivity"/>
+        <activity android:name=".volunteer.VolunteerRegisterSuccessActivity"/>
+        <activity android:name=".team.VolunteerTeamListActivity"/>
+        <activity android:name=".volunteer.VolunteerTeamRegisterActivity" android:windowSoftInputMode="adjustResize|stateAlwaysHidden"/>
+        <activity android:name=".volunteer.VolunteerActivityListActivity"/>
+        <activity android:name=".volunteer.VolunteerDetailActivity"/>
+        <activity android:name=".team.VolunteerServiceRecordListActivity"/>
+        <activity android:name=".volunteer.VolunteerFengCaiListActivity"/>
+        <activity android:name=".brand.VolunteerBrandListActivity"/>
+        <activity android:name=".brand.VolunteerBrandDetailActivity"/>
+        <activity android:name=".volunteer.VolunteerFocusListActivity"/>
+        <activity android:name=".team.VolunteerTeamMemberActivity"/>
+        <activity android:name=".volunteer.VolunteerRankListActivity"/>
+        <activity android:name=".team.VolunteerTeamDetailActivity"/>
+        <activity android:name=".team.VolunteerTeamSignListActivity"/>
+        <activity android:name=".volunteer.AddressActivity"/>
+        <activity android:name=".volunteer.VolunteerApplyDetailActivity"/>
+        <activity android:name=".volunteer.VolunteerTeamApplyDetailActivity"/>
+        <activity android:name=".team.VolunteerTeamSignActivity"/>
+        <activity android:name=".volunteer.VolunteerCenterActivity"/>
+        <activity android:name=".volunteer.VolunteerInformationActivity"/>
+        <activity android:name=".volunteer.VolunteerUpdateContactActivity"/>
+        <activity android:name=".volunteer.VolunteerUpdateInformationActivity"/>
+        <activity android:name=".volunteer.VolunteerCardActivity"/>
+        <activity android:name=".services.VolunteerServicesInActivity"/>
+        <activity android:name=".services.VolunteerAuditLogActivity"/>
+        <activity android:name=".volunteer.VolunteerServiceRecordDetail" />
+    </application>
+</manifest>

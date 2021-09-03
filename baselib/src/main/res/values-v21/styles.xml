@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--<item name="android:statusBarColor">@color/main</item>-->
+        <!--<item name="colorAccent">@color/main</item>-->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+    <!--TitleBar Style-->
+    <style name="TitleBarStyle">
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="titleTextSize">16dp</item>
+        <item name="titleTextRightSize">14dp</item>
+    </style>
+</resources>

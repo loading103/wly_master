@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/time_label_bg"
+        android:paddingHorizontal="@dimen/dp_18"
+        android:layout_marginHorizontal="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:paddingVertical="@dimen/dp_10"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2020-04-20"
+            android:textSize="@dimen/sp_11"
+            android:textColor="@color/time_label_selector"
+            />
+        <TextView
+            android:id="@+id/tv_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="周一"
+            android:layout_marginTop="@dimen/dp_3"
+            android:textSize="@dimen/sp_12"
+            android:textColor="@color/time_label_selector"
+            />
+    </LinearLayout>
+</layout>

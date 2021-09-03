@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_club_imgge_item"
+            android:layout_width="110dp"
+            android:layout_height="80dp"
+            android:scaleType="fitXY"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_130">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_69"
+                        android:background="@mipmap/community_top_bg"></RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/tv_ci_pi_head"
+                        android:layout_width="@dimen/dp_64"
+                        android:layout_height="@dimen/dp_64"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/club_audio_cicle_white"
+                        android:padding="2dp"
+                        android:scaleType="fitXY" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_ci_pi_head"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:gravity="bottom">
+
+                        <TextView
+                            android:id="@+id/tv_ci_pi_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="张富贵"
+                            android:textColor="@color/color_333"
+                            android:textSize="@dimen/sp_18" />
+
+                        <TextView
+                            android:id="@+id/tv_ci_pi_duty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@id/tv_ci_pi_name"
+                            android:text="团长"
+                            android:textColor="@color/color_666"
+                            android:textSize="@dimen/sp_14" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <WebView
+                    android:id="@+id/web_ci_pi_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_21"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:layout_marginRight="@dimen/dp_21" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

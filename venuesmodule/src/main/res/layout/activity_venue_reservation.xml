@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linv_venue_reservation_tab"
+            android:layout_width="0dip"
+            android:layout_height="@dimen/dp_48"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/v_venue_person_reservation"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_venue_person_reservation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/venue_reservation_person"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_15"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/v_venue_person_slide"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_3"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/shape_color_primary_3_1_5" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/v_venue_team_reservation"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_venue_team_reservation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/venue_reservation_team"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_15" />
+
+                <View
+                    android:id="@+id/v_venue_team_slide"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_3"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/shape_color_primary_3_1_5"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_venue_reservation_tab"
+            android:layout_width="0dip"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/color_eeeeee"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linv_venue_reservation_tab" />
+
+        <FrameLayout
+            android:id="@+id/flv_venue_select_time"
+            android:layout_width="0dip"
+            android:layout_height="0dip"
+            app:layout_constraintBottom_toTopOf="@+id/v_venue_reservation_bottom"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_venue_reservation_tab" />
+        <LinearLayout
+            android:id="@+id/v_venue_reservation_bottom"
+            android:layout_width="0dip"
+            android:layout_height="@dimen/dp_48"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:id="@+id/tv_venue_reservation_record"
+                android:layout_width="@dimen/dp_125"
+                android:layout_height="match_parent"
+                android:background="@color/color_dbfae4"
+                android:gravity="center"
+                android:text="@string/venue_reservation_record"
+                android:visibility="gone"
+                android:textColor="@color/colorPrimary_45"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:id="@+id/tv_venue_reservation_right"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@string/venue_reservation_right"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:fitsSystemWindows="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+                    android:id="@+id/cbr_splash_ads"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:visibility="gone" />
+                <com.daqsoft.baselib.widgets.MyVideoView
+                    android:id="@+id/video_view"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rl_root"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    android:visibility="gone"
+                    android:layout_gravity="center">
+                    <com.daqsoft.baselib.widgets.MyVideoView
+                        android:id="@+id/video_view_h"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintDimensionRatio="H,16:9"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/iv_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/splash"/>
+
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/v_skip_splsh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_48"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/shape_splash_skip"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_4"
+                android:paddingRight="@dimen/dp_10"
+                android:visibility="gone"
+                android:paddingBottom="@dimen/dp_4"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_skip_splash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="跳过"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_13" />
+
+                <TextView
+                    android:id="@+id/tv_skip_splash_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_3"
+                    android:layout_toRightOf="@+id/tv_skip_splash"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_13"
+                    android:visibility="gone"
+                    tools:text="5s" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/ll_root"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingRight="@dimen/dp_16"
+                android:visibility="gone"
+                android:paddingLeft="@dimen/dp_20"
+                android:background="@color/white">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/dp_80"
+                            android:text="@string/splash_allow"
+                            android:textColor="@color/color_333"
+                            android:textSize="@dimen/sp_24"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="为向您提供更好的服务，可能使用以下权限："
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/color_333"
+                            android:textSize="@dimen/sp_15" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="50dp"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_18"
+                                android:layout_height="@dimen/dp_18"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/shape_comment_normal_cir2">
+                                <View
+                                    android:layout_width="@dimen/dp_10"
+                                    android:layout_height="@dimen/dp_10"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/shape_comment_normal_cir1"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="位置权限"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_16" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="允许本应用访问访问大致位置信息(使用网络进行定位)和访问确切位置信息(使用GPS和网络进行定位)，如果您拒绝我们将无法根据你的位置为您提供实时导航等服务。"
+                            android:textColor="#333333"
+                            android:lineSpacingExtra="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_18"
+                            android:textSize="14sp"
+                            android:gravity="left"
+                            />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_18"
+                                android:layout_height="@dimen/dp_18"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/shape_comment_normal_cir2">
+                                <View
+                                    android:layout_width="@dimen/dp_10"
+                                    android:layout_height="@dimen/dp_10"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/shape_comment_normal_cir1"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="储存权限"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_16" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="允许本应用访问和写入您设备上的照片、媒体内容和文件，如果您拒绝我们将无法保存用户信息和内容。"
+                            android:textColor="#333333"
+                            android:lineSpacingExtra="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_18"
+                            android:textSize="14sp"
+                            android:gravity="left"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:visibility="gone"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="@dimen/dp_18"
+                                android:layout_height="@dimen/dp_18"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/shape_comment_normal_cir2">
+                                <View
+                                    android:layout_width="@dimen/dp_10"
+                                    android:layout_height="@dimen/dp_10"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/shape_comment_normal_cir1"/>
+                            </RelativeLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="录音权限"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_16" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="允许本应用获取您的录音功能用于机器问答的语音识别，如果您拒绝我们将无法为您提供语音识别功能。"
+                            android:textColor="#333333"
+                            android:lineSpacingExtra="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_18"
+                            android:textSize="14sp"
+                            android:gravity="left"
+                            />
+                    </LinearLayout>
+
+
+                </ScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/dp_40"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_no"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:text="跳过"
+                        android:textStyle="bold"
+                        android:background="@drawable/shape_bg_skip"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        android:id="@+id/tv_allow"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:text="允许"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:background="@drawable/shape_bg_allow"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="@dimen/sp_16" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

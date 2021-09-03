@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+
+        <variable
+            name="detail"
+            type="com.daqsoft.slowLiveModule.bean.LiveDetailBean" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/srl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1">
+
+            <com.daqsoft.baselib.widgets.PandaRefreshHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></com.daqsoft.baselib.widgets.PandaRefreshHeader>
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/food_coor_tool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_m_12"
+                    android:overScrollMode="never"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_190"
+                            android:visibility="gone">
+
+
+                            <ImageView
+                                android:id="@+id/iv_detail"
+                                url="@{detail.images}"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY" />
+
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_35"
+                                android:layout_height="@dimen/dp_35"
+                                android:layout_gravity="center"
+                                android:src="@drawable/slow_live_video_list_icon_play" />
+
+
+                        </FrameLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_187"
+                            app:layout_collapseMode="parallax"
+                            app:layout_collapseParallaxMultiplier="0.5">
+
+                            <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+                                android:id="@+id/cbr_food_detail"
+                                android:layout_width="0dip"
+                                android:layout_height="match_parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/txt_food_detail_images"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dp_20"
+                                android:background="@drawable/shape_trans_gray_10"
+                                android:paddingLeft="@dimen/dp_10"
+                                android:paddingTop="@dimen/dp_3"
+                                android:paddingRight="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_3"
+                                android:textColor="@color/white"
+                                android:visibility="gone"
+                                android:textSize="@dimen/sp_10"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                android:layout_marginRight="@dimen/dp_25"/>
+
+                            <TextView
+                                android:id="@+id/txt_food_detail_video"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/dp_5"
+                                android:layout_marginBottom="@dimen/dp_26"
+                                android:background="@drawable/shape_trans_gray_10"
+                                android:drawableLeft="@mipmap/activity_details_video"
+                                android:drawablePadding="@dimen/dp_5"
+                                android:paddingLeft="@dimen/dp_10"
+                                android:paddingTop="@dimen/dp_3"
+                                android:paddingRight="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_3"
+                                android:text="视频"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintRight_toLeftOf="@+id/txt_food_detail_images" />
+
+                            <TextView
+                                android:id="@+id/txt_food_detail_pannaor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_5"
+                                android:layout_marginBottom="@dimen/dp_26"
+                                android:background="@drawable/shape_trans_gray_10"
+                                android:paddingLeft="@dimen/dp_10"
+                                android:paddingTop="@dimen/dp_3"
+                                android:paddingRight="@dimen/dp_10"
+                                android:paddingBottom="@dimen/dp_3"
+                                android:text="全景漫游"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/txt_food_detail_images" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/dp_20"
+                            android:paddingTop="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_20"
+                            android:paddingBottom="@dimen/dp_5"
+                            android:text="@{detail.scenicSpotsName}"
+                            android:textColor="@color/color_333"
+                            android:textSize="@dimen/sp_22"
+                            tools:text="喀纳斯风景区" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_30"
+                            android:orientation="horizontal">
+
+                            <com.flyco.roundview.RoundLinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/dp_20"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/dp_20"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:visibility="gone"
+                                android:paddingRight="@dimen/dp_5"
+                                app:rv_backgroundColor="@color/slow_live_color_red_ff6b53"
+                                app:rv_cornerRadius="@dimen/dp_3">
+
+                                <ImageView
+                                    android:id="@+id/iv_live"
+                                    android:layout_width="@dimen/dp_10"
+                                    android:layout_height="@dimen/dp_10"
+                                    android:layout_gravity="center_vertical"
+                                    android:background="@drawable/slow_live_playing_anim"
+                                    android:src="@drawable/slow_live_video_detail_gif_live_1" />
+
+                                <TextView
+                                    android:id="@+id/tv_live"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/dp_4"
+                                    android:text="Live"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_12" />
+
+                            </com.flyco.roundview.RoundLinearLayout>
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_tag"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="@dimen/dp_20"
+                                android:layout_marginLeft="@dimen/dp_20"
+                                android:paddingRight="@dimen/dp_10" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_25"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/dp_20"
+                            android:paddingRight="@dimen/dp_20">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/dp_20"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_13"
+                                    android:layout_height="@dimen/dp_13"
+                                    android:layout_gravity="center"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/slow_live_video_list_play_pic"
+                                    android:tint="@color/slow_live_color_bdbdbd" />
+
+                                <TextView
+                                    android:id="@+id/tv_play_num"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/dp_4"
+                                    android:text="@{String.valueOf(detail.showNum)}"
+                                    android:textColor="@color/color_999"
+                                    android:textSize="@dimen/sp_12"
+                                    tools:text="6431964761" />
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/dp_20"
+                                android:layout_marginLeft="@dimen/dp_20"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_13"
+                                    android:layout_height="@dimen/dp_13"
+                                    android:layout_gravity="center"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/slow_live_video_detail_icon_like"
+                                    android:tint="@color/slow_live_color_bdbdbd" />
+
+                                <TextView
+                                    android:id="@+id/tv_like_num"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/dp_4"
+                                    android:text="@{String.valueOf(detail.likeNum)}"
+                                    android:textColor="@color/color_999"
+                                    android:textSize="@dimen/sp_12"
+                                    tools:text="38959465" />
+
+                            </LinearLayout>
+
+
+                            <View
+                                android:layout_width="@dimen/dp_0"
+                                android:layout_height="@dimen/dp_0"
+                                android:layout_weight="1" />
+
+
+                            <TextView
+                                android:id="@+id/tv_scenic_introduce"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:drawableRight="@drawable/slow_live_video_detail_icon_introduce"
+                                android:drawablePadding="@dimen/dp_5"
+                                android:gravity="center"
+                                android:text="了解景区"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_11" />
+                        </LinearLayout>
+
+                        <com.daqsoft.baselib.widgets.ExpandableTextView
+                            android:id="@+id/tv_summary"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:paddingLeft="@dimen/dp_20"
+                            android:paddingTop="@dimen/dp_10"
+                            android:paddingRight="@dimen/dp_20"
+                            android:paddingBottom="@dimen/dp_10"
+                            android:textColor="@color/color_333"
+                            android:textSize="@dimen/sp_15"
+                            android:visibility="@{detail.summary.empty ? View.GONE : View.VISIBLE}"
+                            tools:text="喀纳斯风景区位于新疆阿尔泰山中段，地处中国与哈萨克斯
+坦、俄罗斯、蒙古国接壤地带。景区面积10030平方公里" />
+
+                        <ImageView
+                            android:id="@+id/iv_summary"
+                            android:layout_width="@dimen/dp_15"
+                            android:layout_height="@dimen/dp_15"
+                            android:layout_gravity="center"
+                            android:src="@drawable/slow_live_video_detail_button_more"
+                            android:visibility="gone" />
+
+                        <!--周边推荐-->
+
+                        <LinearLayout
+                            android:id="@+id/ll_around"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:paddingLeft="@dimen/dp_20"
+                            android:paddingRight="@dimen/dp_20"
+                            android:visibility="gone">
+
+                            <com.flyco.roundview.RoundFrameLayout
+                                android:layout_width="@dimen/dp_5"
+                                android:layout_height="@dimen/dp_18"
+                                android:layout_gravity="center"
+                                app:rv_backgroundColor="@color/slow_live_color_red_ff6b53"
+                                app:rv_cornerRadius="@dimen/dp_3" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:paddingLeft="@dimen/dp_10"
+                                android:text="周边推荐"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_19" />
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_around"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/dp_20"
+                            android:paddingTop="@dimen/dp_10"
+                            android:visibility="gone" />
+
+
+                        <!--用户评论-->
+
+                        <LinearLayout
+                            android:id="@+id/ll_comment"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:paddingLeft="@dimen/dp_20"
+                            android:paddingRight="@dimen/dp_20"
+                            android:visibility="gone">
+
+                            <com.flyco.roundview.RoundFrameLayout
+                                android:layout_width="@dimen/dp_5"
+                                android:layout_height="@dimen/dp_18"
+                                android:layout_gravity="center"
+                                app:rv_backgroundColor="@color/slow_live_color_red_ff6b53"
+                                app:rv_cornerRadius="@dimen/dp_3" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:paddingLeft="@dimen/dp_10"
+                                android:text="用户评论"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_19" />
+
+                            <View
+                                android:layout_width="@dimen/dp_0"
+                                android:layout_height="@dimen/dp_0"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/tv_comment_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:drawableRight="@mipmap/common_button_arrow_more_small"
+                                android:drawablePadding="@dimen/dp_5"
+                                android:gravity="center"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/sp_12"
+                                tools:text="共7,987条评论" />
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_comment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/dp_10"
+                            android:paddingBottom="@dimen/dp_15"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/divide_e8" />
+
+        <LinearLayout
+            android:id="@+id/ll_menu_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_55"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_like"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/slow_live_bottom_icon_like_normal"
+                android:drawablePadding="@dimen/dp_5"
+                android:gravity="center"
+                android:text="@{String.valueOf(detail.likeNum)}"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_11"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/tv_collect"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/slow_live_bottom_icon_collect_normal"
+                android:drawablePadding="@dimen/dp_5"
+                android:gravity="center"
+                android:text="@{String.valueOf(detail.collectionNum)}"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_11" />
+
+            <TextView
+                android:id="@+id/tv_comment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/slow_live_bottom_icon_comment"
+                android:drawablePadding="@dimen/dp_5"
+                android:gravity="center"
+                android:text="写评论"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_11" />
+
+            <TextView
+                android:id="@+id/tv_share"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/slow_live_bottom_icon_share"
+                android:drawablePadding="@dimen/dp_5"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="转发"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_11" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

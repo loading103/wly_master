@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.daqsoft.provider.bean.MineVoteWorkBean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_14"
+        android:background="@drawable/shape_white_5">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fl_img_vote_work"
+            android:layout_width="@dimen/dp_72"
+            android:layout_height="@dimen/dp_72"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginBottom="@dimen/dp_12"
+            app:cardCornerRadius="@dimen/dp_5">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img_mine_vote"
+                    imageUrls="@{data.images}"
+                    android:scaleType="fitXY"
+                    android:layout_width="@dimen/dp_72"
+                    android:layout_height="@dimen/dp_72" />
+
+                <TextView
+                    android:id="@+id/tv_mine_vote_work_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_6"
+                    android:paddingTop="@dimen/dp_3"
+                    android:paddingRight="@dimen/dp_6"
+                    android:paddingBottom="@dimen/dp_3"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_9" />
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_vote_work_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_14"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_toLeftOf="@+id/img_del_vote"
+            android:layout_toRightOf="@+id/fl_img_vote_work"
+            android:maxLines="1"
+            android:text="@{data.name}"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            tools:text="水水水水水水水水" />
+
+        <TextView
+            android:id="@+id/tv_vote_work_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_vote_work_time"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_toRightOf="@+id/fl_img_vote_work"
+            android:includeFontPadding="false"
+            android:text="已通过"
+            android:textColor="@color/c_36cd64"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_vote_work_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_vote_work_name"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_toRightOf="@+id/fl_img_vote_work"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_12"
+            tools:text="2020-08-04 18：00 参与" />
+
+        <ImageView
+            android:id="@+id/img_del_vote"
+            android:layout_width="@dimen/dp_14"
+            android:layout_height="@dimen/dp_14"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16"
+            android:src="@mipmap/vote_mine_list_button_delete" />
+    </RelativeLayout>
+</layout>

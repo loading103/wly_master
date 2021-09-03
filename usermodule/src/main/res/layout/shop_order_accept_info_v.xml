@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="pohone"
+            type="String" />
+        <variable
+            name="idCard"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp_16"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="" />
+
+        <com.daqsoft.provider.view.ItemView
+            android:id="@+id/booking_contact_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/booking_contact"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:leftLabel="@string/order_contact_phone"
+            app:rightContent='@{pohone}'
+            android:layout_marginTop="@dimen/dp_8"
+            app:showArrow="false"
+            app:contentGravity="left"
+            app:rightContentSize="@dimen/sp_12"
+            app:labelSize="@dimen/sp_12"
+            app:labelPadding="@dimen/dp_0"
+            app:leftLabelColor="@color/txt_gray"
+            app:showDivider="false"
+            app:rightContentColor="@color/txt_gray"
+            app:labelWidth="@dimen/dp_20"/>
+        <com.daqsoft.provider.view.ItemView
+            android:id="@+id/booking_remark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/booking_contact_phone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:leftLabel="@string/order_id_card"
+            app:rightContent='@{idCard}'
+            android:layout_marginTop="@dimen/dp_8"
+            app:showArrow="false"
+            app:contentGravity="left"
+            app:rightContentSize="@dimen/sp_12"
+            app:labelSize="@dimen/sp_12"
+            app:labelPadding="@dimen/dp_0"
+            app:leftLabelColor="@color/txt_gray"
+            app:showDivider="false"
+            app:rightContentColor="@color/txt_gray"
+            app:labelWidth="@dimen/dp_20"/>
+
+    </LinearLayout>
+</layout>

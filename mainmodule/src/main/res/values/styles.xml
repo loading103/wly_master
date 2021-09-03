@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BottomSheetEdit" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item> <!--不浮现在活动上-->
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+    <!--便捷服务 TextView-->
+    <style name="tv_main_details_server">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/dp_12</item>
+        <item name="android:layout_marginTop">@dimen/dp_12</item>
+        <item name="android:textColor">@color/txt_black</item>
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!--便捷服务 ImageView-->
+    <style name="iv_main_details_server">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginRight">@dimen/dp_8</item>
+        <item name="android:gravity">bottom</item>
+        <item name="android:layout_gravity">right|bottom</item>
+    </style>
+    <!--便捷服务 LinearLayout-->
+    <style name="ll_main_details_server">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/dp_60</item>
+        <item name="android:background">@drawable/shape_edit_search_3</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!--城市名片，找场馆，旅游线路，住酒店等等，标题-->
+    <style name="CityCardMoreTitle" parent="ViewWrap">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/sp_19</item>
+        <item name="android:textColor">@color/txt_black</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+    </style>
+
+    <!--城市名片，找场馆，旅游线路，住酒店等等，查看更多-->
+    <style name="CityCardViewMore" parent="ViewWrap">
+        <item name="android:onClick">onClick</item>
+        <item name="android:drawablePadding">@dimen/dp_10</item>
+        <item name="android:drawableEnd">@mipmap/home_more</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+    </style>
+
+    <declare-styleable name="CountDownTimeTextView">
+        <attr name="border" format="boolean" />
+    </declare-styleable>
+
+    <style name="rating_bar_custom" parent="Widget.AppCompat.RatingBar.Indicator">
+        <item name="android:progressDrawable">@drawable/custom_rating_bar</item>
+        <item name="minHeight">@dimen/dp_22</item>
+        <item name="maxHeight">@dimen/dp_22</item>
+    </style>
+
+    <style name="RatingBarRed" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/orange</item>
+    </style>
+    <style name="RatingBarGry" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#bdbdbd</item>
+        <item name="colorControlActivated">@color/orange</item>
+    </style>
+</resources>

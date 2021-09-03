@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="view_avatar" type="id"/>
+    <item name="user_name" type="id"/>
+    <item name="create_time" type="id"/>
+    <item name="start_date" type="id"/>
+    <item name="end_date" type="id"/>
+    <!--海报/封面-->
+    <item name="view_poster" type="id"/>
+    <!--标题-->
+    <item name="title_view" type="id"/>
+    <item name="view_postertwo" type="id"/>
+
+    <item name="empty_layout" type="id"/>
+    <!--确认-->
+    <item name="confirm_view" type="id"/>
+
+    <item name="pager_view" type="id"/>
+    <!--景区名称-->
+    <item name="scenic_name" type="id"/>
+</resources>

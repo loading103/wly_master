@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_type_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:text="活动方式"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_types"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="@id/tv_type_label"
+            app:layout_constraintRight_toRightOf="@id/tv_type_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_type_label" />
+
+        <TextView
+            android:id="@+id/tv_time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="活动时间"
+            android:visibility="gone"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintLeft_toLeftOf="@id/tv_type_label"
+            app:layout_constraintTop_toBottomOf="@id/rv_types" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_month"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="@id/tv_type_label"
+            app:layout_constraintRight_toRightOf="@id/tv_type_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_time_label" />
+
+        <TextView
+            android:id="@+id/tv_reset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/dp_16"
+            android:text="重置"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tv_sure"
+            app:layout_constraintTop_toBottomOf="@id/rv_month" />
+
+        <TextView
+            android:id="@+id/tv_sure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/dp_16"
+            android:text="确定"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/tv_reset"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_month" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

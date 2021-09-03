@@ -1,0 +1,83 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+android {
+    compileSdkVersion rootProject.compile_sdk_version
+
+    dataBinding {
+        enabled = true
+    }
+    defaultConfig {
+        minSdkVersion rootProject.min_sdk_version
+        targetSdkVersion rootProject.target_sdk_version
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api 'androidx.viewpager2:viewpager2:1.0.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.core:core-ktx:1.0.2'
+    api project(path: ':com.heytap.msp-push-2.1.0')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation project(':baselib')
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    api files('libs/AMap3DMap_7.2.1_AMapNavi_7.2.0_AMapSearch_7.1.0_AMapLocation_4.9.0_20200302.jar')
+    api files('libs/jcore-android-2.6.0.jar')
+    api files('libs/jpush-android-3.8.6.jar')
+    api files('libs/MiPush_SDK_Client_3_7_5.jar')
+    api files('libs/push_sdk_v2.9.0.jar')
+    api files('libs/Msc.jar')
+    kapt "com.alibaba:arouter-compiler:$arouter_compiler"
+    implementation project(':image-selector')
+    // 科大讯飞语言
+    api 'androidx.viewpager2:viewpager2:1.0.0'
+
+    api 'com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar'
+    
+    implementation('com.alibaba.android:vlayout:1.2.8@aar') {
+        transitive = true
+    }
+    implementation 'com.ruffian.library:RWidgetHelper-AndroidX:0.0.6'
+    implementation project(path: ':jcvideoplayer-lib')
+
+
+    //华为请按照厂商文档配置主 gradle 华为镜像依赖和添加 agconnect-services.json 后再打开此依赖
+    api 'com.huawei.hms:push:5.0.2.300'
+    //oppo_dependencies
+    compileOnly(name: 'com.heytap.msp-push-2.1.0', ext: 'aar')
+}

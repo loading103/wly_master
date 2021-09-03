@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="traffic"
+            type="com.daqsoft.itinerary.bean.TrafficItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="@dimen/dp_15"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/itinerary_shape_solid_grey">
+
+        <TextView
+            android:text="公共交通"
+            style="@style/TextStyleH"
+            android:layout_marginTop="0dp"
+            android:id="@+id/label_traffic"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            style="@style/TextStyleA"
+            tools:text="杜甫草堂"
+            android:textStyle="bold"
+            android:id="@+id/start_name"
+            android:textSize="@dimen/sp_18"
+            android:text="@{traffic.startName}"
+            android:layout_marginTop="@dimen/dp_15"
+            android:textColor="@color/color_333333"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_traffic"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/start_name"
+            app:layout_constraintEnd_toStartOf="@id/end_name"
+            app:layout_constraintTop_toTopOf="@id/start_name"
+            android:src="@drawable/itinerary_line_dotted"
+            app:layout_constraintBottom_toBottomOf="@id/start_name" />
+
+        <TextView
+            style="@style/TextStyleA"
+            tools:text="大熊猫繁育研究基地"
+            android:textStyle="bold"
+            android:id="@+id/end_name"
+            android:textSize="@dimen/sp_18"
+            android:text="@{traffic.endName}"
+            android:layout_marginTop="@dimen/dp_15"
+            android:textColor="@color/color_333333"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_traffic"/>
+
+        <TextView
+            tools:text="13:45"
+            android:id="@+id/start_time"
+            android:text="@{traffic.startTime}"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_666666"
+            app:layout_constraintStart_toStartOf="@id/start_name"
+            app:layout_constraintTop_toBottomOf="@id/start_name"/>
+
+        <TextView
+            tools:text="13:45"
+            android:id="@+id/end_time"
+            android:text="@{traffic.endTime}"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_666666"
+            app:layout_constraintEnd_toEndOf="@id/end_name"
+            app:layout_constraintTop_toBottomOf="@id/end_name"/>
+
+        <TextView
+            tools:text="耗时6小时30分"
+            android:id="@+id/consumi_time"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_666666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/start_time"/>
+
+        <TextView
+            android:text="预订"
+            android:id="@+id/booking_view"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:padding="@dimen/dp_5"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10"
+            android:textSize="@dimen/sp_12"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/end_time"
+            app:layout_constraintTop_toBottomOf="@id/start_time"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <data/>
+    <RelativeLayout
+        android:paddingTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_start_train_time"
+            android:paddingStart="@dimen/dp_40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_24"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_start_train_name"
+            android:paddingStart="@dimen/dp_40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_start_train_time"
+            android:layout_marginTop="@dimen/dp_11"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_13" />
+
+        <TextView
+            android:id="@+id/tv_train_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_11" />
+
+        <ImageView
+            android:id="@+id/img_train"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_train_code"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_marginEnd="@dimen/dp_24"
+            android:layout_marginBottom="@dimen/dp_4"
+            android:src="@mipmap/service_train_result_strat_to_half" />
+
+        <TextView
+            android:id="@+id/tv_run_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_train"
+            android:layout_centerHorizontal="true"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_11" />
+
+        <TextView
+            android:id="@+id/tv_end_train_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:includeFontPadding="false"
+            android:paddingEnd="@dimen/dp_40"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_end_train_name"
+            android:paddingEnd="@dimen/dp_40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_end_train_time"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/dp_11"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_13" />
+
+        <View
+            android:id="@+id/gray_bg_first"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_8"
+            android:layout_below="@+id/tv_end_train_name"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@color/color_f5f5f5" />
+
+        <TextView
+            android:paddingStart="@dimen/dp_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gray_bg_first"
+            android:paddingTop="@dimen/dp_16"
+            android:text="类别"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gray_bg_first"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="@dimen/dp_16"
+            android:text="余票"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/price_title"
+            android:paddingEnd="@dimen/dp_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gray_bg_first"
+            android:layout_alignParentEnd="true"
+            android:paddingTop="@dimen/dp_16"
+            android:text="价格"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_14" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recy_rest_train"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:layout_below="@+id/price_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <View
+            android:id="@+id/gray_bg_second"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_8"
+            android:layout_below="@+id/recy_rest_train"
+            android:background="@color/color_f5f5f5" />
+        <TextView
+            android:id="@+id/tv_type"
+            android:paddingStart="@dimen/dp_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gray_bg_second"
+            android:paddingTop="@dimen/dp_14"
+            android:paddingBottom="@dimen/dp_15"
+            android:text="类别"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_16" />
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:layout_below="@+id/tv_type"
+            android:background="@color/divider_e2" />
+        <include
+            android:layout_below="@+id/view_line"
+            layout="@layout/service_timer_header"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+    </RelativeLayout>
+
+
+</layout>

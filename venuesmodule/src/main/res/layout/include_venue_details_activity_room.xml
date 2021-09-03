@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <!--活动室-->
+    <LinearLayout
+        android:id="@+id/cl_venues_details_room"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_40"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20">
+
+        <TextView
+            android:id="@+id/tv_venues_details_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/whcgxq_bt_bq"
+            android:drawablePadding="@dimen/dp_12"
+            android:text="@string/venue_theme_exhibition_hall"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_19"
+            android:textStyle="bold"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.daqsoft.provider.scrollview.DqRecylerView
+                android:id="@+id/recycler_venues_details_room"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/v_activity_room_show_more"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_32"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/txt_activity_room_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:drawableRight="@mipmap/venue_down"
+                android:drawablePadding="@dimen/dp_4"
+                android:text="查看全部主题展馆"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_13" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

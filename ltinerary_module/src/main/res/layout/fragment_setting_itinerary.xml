@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LabelCustomStyle"
+            android:text="出发城市" />
+
+
+        <LinearLayout
+            style="@style/HeightWrap"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/itinerary_shape_r5_ce8"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dp_30"
+            android:paddingBottom="@dimen/dp_30">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/LabelTitleStyle"
+                android:layout_marginStart="@dimen/dp_6"
+                android:text="出发"
+                android:textSize="@dimen/sp_13" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_city"
+                style="@style/LabelValuetyle"
+                android:layout_marginStart="@dimen/dp_20"
+                android:drawableEnd="@drawable/itinerary_vector_arrow_right"
+                android:drawablePadding="@dimen/dp_50"
+                android:hint="请选择"
+                android:textSize="@dimen/sp_15" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LabelCustomStyle"
+            android:layout_marginTop="@dimen/dp_40"
+            android:text="您计划的出行日期" />
+
+        <LinearLayout
+            style="@style/HeightWrap"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/itinerary_shape_r5_ce8"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dp_30"
+            android:paddingBottom="@dimen/dp_30">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/LabelTitleStyle"
+                android:layout_marginStart="@dimen/dp_6"
+                android:text="出发"
+                android:textSize="@dimen/sp_13" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@id/start_date"
+                style="@style/LabelValuetyle"
+                android:layout_marginStart="@dimen/dp_15"
+                android:drawableEnd="@drawable/itinerary_vector_arrow_right"
+                android:drawablePadding="@dimen/dp_10"
+                android:hint="请选择"
+                android:textSize="@dimen/sp_15" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/LabelTitleStyle"
+                android:layout_marginStart="@dimen/dp_20"
+                android:text="返回"
+                android:textSize="@dimen/sp_13" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@id/end_date"
+                style="@style/LabelValuetyle"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_weight="1"
+                android:drawableEnd="@drawable/itinerary_vector_arrow_right"
+                android:drawablePadding="@dimen/dp_10"
+                android:hint="请选择"
+                android:textSize="@dimen/sp_15" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

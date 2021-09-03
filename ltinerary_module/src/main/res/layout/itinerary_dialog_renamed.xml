@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_20"
+    style="@style/HeightWrap">
+
+    <TextView
+        android:text="编辑名称"
+        android:layout_marginTop="@dimen/dp_20"
+        android:textSize="@dimen/sp_18"
+        style="@style/ViewWrap"
+        android:textColor="@color/color_333333"/>
+
+    <EditText
+        android:id="@+id/name_view"
+        style="@style/HeightWrap"
+        android:paddingStart="@dimen/dp_5"
+        android:singleLine="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:textSize="@dimen/sp_16"
+        tools:text="吃+耍+住，1天打卡国宝大熊猫路"
+        android:layout_height="@dimen/dp_36"
+        android:textColor="@color/color_333333"
+        android:background="@drawable/itinerary_shape_filter_norm"/>
+    
+    <Button
+        android:text="确定"
+        android:id="@+id/sure_view"
+        style="@style/HeightWrap"
+        android:layout_marginTop="@dimen/dp_20"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_18"
+        android:background="@drawable/itinerary_shape_solid_green"/>
+
+</LinearLayout>

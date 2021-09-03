@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rv_banner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_168"
+            android:clipChildren="false">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_legacy_smriti"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_168"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_18"
+                android:layout_marginRight="@dimen/dp_16"
+                android:clipChildren="false"
+                android:overScrollMode="never" />
+
+            <TextView
+                android:id="@+id/tv_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/dp_4"
+                android:layout_marginBottom="@dimen/dp_12"
+                android:layout_toStartOf="@+id/tv_pic"
+                android:background="@drawable/legacy_shape_translate_black_11_radius"
+                android:gravity="center"
+                android:minWidth="@dimen/dp_46"
+                android:text="@string/legacy_module_legacy_smiri_video"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/dp_32"
+                android:layout_marginBottom="@dimen/dp_12"
+                android:background="@drawable/legacy_shape_translate_black_11_radius"
+                android:gravity="center"
+                android:minWidth="@dimen/dp_46"
+                android:text="@string/legacy_module_legacy_pic_abum"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rv_banner"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_333"
+            android:layout_toLeftOf="@id/tv_watch"
+            android:textSize="@dimen/sp_24"
+            android:textStyle="bold"
+            tools:text="名字" />
+        <TextView
+            android:gravity="center"
+            android:minWidth="@dimen/dp_65"
+            android:id="@+id/tv_watch"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/rv_banner"
+            android:text="关注"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/legacy_module_detail_watch_btn"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_12"
+            android:textColor="@color/legacy_module_minor_color"
+            android:layout_below="@+id/tv_title"
+            tools:text="代表性传承人"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_8"
+            android:src="@mipmap/legacy_people_details_lable"
+            />
+
+        <TextView
+            android:id="@+id/tv_header_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_type"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_13"
+            tools:text="testsesddfsdfsd"
+           />
+
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_header_hint"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_13"
+             />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="location"
+            type="String" />
+
+        <variable
+            name="avatar"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="likeNumber"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_6"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@mipmap/home_ht_bg"
+        android:paddingBottom="@dimen/dp_10">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/image"
+            url="@{url}"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_162"
+            app:border_color="@color/white"
+            app:corner_top_left_radius="@dimen/dp_6"
+            app:corner_top_right_radius="@dimen/dp_6"
+            app:is_circle="false"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+           app:layout_constraintRight_toRightOf="@id/image"
+           app:layout_constraintLeft_toLeftOf="@id/image"
+           app:layout_constraintBottom_toBottomOf="@id/image"
+           android:layout_width="@dimen/dp_0"
+           android:layout_marginBottom="@dimen/dp_10"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/tv_location_name"
+               android:layout_width="@dimen/dp_100"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="@dimen/dp_18"
+               android:drawableLeft="@mipmap/volunteer_location"
+               android:drawablePadding="@dimen/dp_6"
+               android:ellipsize="end"
+               android:singleLine="true"
+               android:text="@{location}"
+               android:layout_alignParentLeft="true"
+               android:textColor="@color/white"
+               android:textSize="@dimen/sp_10"
+               android:paddingVertical="@dimen/dp_4"
+               android:paddingHorizontal="@dimen/dp_6"
+               android:background="@drawable/volunteer_shape_black_5"
+               tools:text="地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址" />
+
+           <ImageView
+               android:id="@+id/iv_video"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@mipmap/home_gs_video"
+               android:layout_marginLeft="@dimen/dp_6"
+               android:layout_toRightOf="@id/location_name"
+               />
+
+           <TextView
+               android:id="@+id/tv_image_number"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginRight="@dimen/dp_10"
+               android:background="@mipmap/home_gs_tmb"
+               android:gravity="center"
+               android:textColor="@color/white"
+               android:textSize="@dimen/sp_8"
+               tools:text="8图"
+               android:layout_alignParentRight="true"/>
+       </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_10"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_13"
+            android:layout_marginRight="@dimen/dp_18"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            tools:text="城市类型" />
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/iv_user"
+            android:layout_width="@dimen/dp_18"
+            android:layout_height="@dimen/dp_18"
+            android:layout_marginLeft="@dimen/dp_18"
+            android:layout_marginTop="@dimen/dp_12"
+            android:scaleType="center"
+            app:corner_radius="@dimen/dp_5"
+            android:src="@mipmap/mine_profile_photo_default"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_content"
+            app:layout_goneMarginLeft="@dimen/dp_6" />
+
+        <TextView
+            android:id="@+id/tv_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_3"
+            android:text="@{name}"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_11"
+            tools:text="name"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginRight="@dimen/dp_18"
+            app:layout_constraintEnd_toStartOf="@id/tv_like"
+            app:layout_constraintLeft_toRightOf="@id/iv_user"
+            app:layout_constraintStart_toEndOf="@id/iv_user"
+            app:layout_constraintTop_toTopOf="@id/iv_user" />
+
+        <TextView
+            android:id="@+id/tv_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_18"
+            android:drawableLeft="@mipmap/home_gs_like"
+            android:drawablePadding="@dimen/dp_3"
+            android:text="@{likeNumber}"
+            android:textSize="@dimen/sp_11"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_user" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

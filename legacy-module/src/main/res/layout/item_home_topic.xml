@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="contentNumber"
+            type="String" />
+
+        <variable
+            name="memberNumber"
+            type="String" />
+
+        <variable
+            name="watchNumber"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/dp_290"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp_20"
+        android:background="@mipmap/home_ht_bg"
+        android:paddingTop="@dimen/dp_4"
+        android:paddingBottom="@dimen/dp_12">
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/image"
+            url="@{url}"
+            android:layout_width="@dimen/dp_250"
+            android:layout_height="@dimen/dp_140"
+            android:layout_marginTop="@dimen/dp_12"
+            android:scaleType="center"
+            app:border_color="@color/white"
+            app:corner_bottom_left_radius="@dimen/dp_5"
+            app:corner_bottom_right_radius="@dimen/dp_5"
+            app:corner_top_left_radius="@dimen/dp_5"
+            app:corner_top_right_radius="@dimen/dp_5"
+            app:is_circle="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxWidth="@dimen/dp_228"
+            android:text="@{name}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold"
+            tools:text="猜测二删掉了分时间段"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image" />
+        <TextView
+            android:id="@+id/tv_hot"
+            app:layout_constraintLeft_toLeftOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            tools:text="热门"
+            android:textSize="@dimen/sp_12"
+            android:textColor="@color/color_ff9e05"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_type"
+            app:layout_constraintLeft_toRightOf="@+id/tv_hot"
+            android:layout_marginLeft="@dimen/dp_10"
+            app:layout_goneMarginLeft="@dimen/dp_0"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            tools:text="热门"
+            android:textSize="@dimen/sp_12"
+            android:textColor="@color/color_ff9e05"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_contents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_12"
+            tools:text="11内容"
+            app:layout_goneMarginTop="@dimen/dp_30"
+            app:layout_constraintLeft_toLeftOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_hot" />
+
+        <TextView
+            android:id="@+id/tv_numbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_goneMarginTop="@dimen/dp_30"
+            android:drawablePadding="@dimen/dp_6"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_12"
+            tools:text="11内容"
+            app:layout_constraintLeft_toRightOf="@id/tv_contents"
+            app:layout_constraintTop_toBottomOf="@id/tv_hot" />
+
+        <TextView
+            android:id="@+id/tv_watch_times"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_12"
+            android:layout_marginTop="@dimen/dp_20"
+            tools:text="11内容"
+            app:layout_goneMarginTop="@dimen/dp_30"
+            app:layout_goneMarginLeft="@dimen/dp_0"
+            app:layout_constraintLeft_toRightOf="@id/tv_numbers"
+            app:layout_constraintTop_toBottomOf="@id/tv_hot" />
+        <ImageView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:src="@mipmap/home_topic_icon_lable"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/service_upload_pic_bg">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/service_sos_com">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dp_20">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_24"
+                        android:text="@string/service_sos_content"
+                        android:textColor="@color/service_sos_detail_333"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/service_sos_length"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_24"
+                        android:layout_toStartOf="@+id/service_sos_max"
+                        android:text="@string/service_sos_content_length"
+                        android:textColor="@color/service_sos_detail_999"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintRight_toLeftOf="@id/service_sos_max"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/service_sos_max"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/dp_24"
+                        android:layout_marginEnd="@dimen/dp_20"
+                        android:text="@string/service_sos_content_max_length"
+                        android:textColor="@color/service_sos_detail_999"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/service_lin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_title"
+                        android:layout_marginStart="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:layout_marginEnd="@dimen/dp_20"
+                        android:minHeight="@dimen/dp_120"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@id/service_sos_length">
+
+                        <EditText
+                            android:id="@+id/service_sos_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:gravity="top|left"
+                            android:hint="@string/service_sos_hint_content"
+                            android:includeFontPadding="false"
+                            android:minHeight="@dimen/dp_120"
+                            android:textColor="@color/service_sos_detail_999"
+                            android:textColorHint="@color/service_sos_detail_999"
+                            android:textSize="@dimen/sp_15" />
+                    </LinearLayout>
+
+
+                    <me.nereo.multi_image_selector.view.UploadRecyclerView
+                        android:id="@+id/service_recycler_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/service_lin"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginRight="@dimen/dp_20"
+                        app:layout_constraintTop_toBottomOf="@id/service_lin" />
+
+                    <TextView
+                        android:id="@+id/tv_service_sos_contact_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/service_recycler_img"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:text="@string/service_sos_content_tip"
+                        android:textColor="@color/service_sos_detail_999"
+                        android:textSize="@dimen/sp_10" />
+
+                    <TextView
+                        android:id="@+id/tv_service_sos_conatct_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_service_sos_contact_number"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:text="电话号码"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/dp_14" />
+
+                    <EditText
+                        android:id="@+id/edt_service_sos_contact_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_service_sos_conatct_title"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:background="@null"
+                        android:hint="请输入求助人联系电话"
+                        android:inputType="phone"
+                        android:textColor="@color/color_666"
+                        android:textColorHint="@color/color_999"
+                        android:textSize="@dimen/sp_14" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/service_sos_com"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="@dimen/dp_17"
+            android:text="@string/service_sos_content_com"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16" />
+    </RelativeLayout>
+</layout>
+

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--订单状态常量，更新的时候请同时更新OrderStatusConstant-->
+    <string-array name="order_status">
+        <item>全部,0</item>
+        <item>待审核,4</item>
+        <item>待消费,11</item>
+        <item>已完成,12</item>
+        <item>已取消,14</item>
+    </string-array>
+    <!--消费码状态-->
+    <string-array name="consume_status">
+        <item>全部,0</item>
+        <item>待预约,40</item>
+        <item>待消费,10</item>
+        <item>已完成,2</item>
+    </string-array>
+    <!--我的预约-->
+    <string-array name="mine_appointment_status">
+        <item>全部,-1</item>
+        <item>待使用,0</item>
+        <item>已使用,1</item>
+        <item>已取消,2</item>
+        <item>已失效,3</item>
+    </string-array>
+
+    <!--我的预约 改版-->
+    <string-array name="new_my_orders">
+        <item>全部,0</item>
+        <item>待审核,4</item>
+        <item>待消费,11</item>
+        <item>已完成,12</item>
+        <item>已取消,14</item>
+    </string-array>
+
+    <!--小电商待的状态-->
+    <string-array name="electronic_status">
+        <item>全部,all</item>
+        <item>待支付,unpaid</item>
+        <item>待发货,unshipped</item>
+        <item>待收货,shipped</item>
+        <item>待消费,unconsumed</item>
+    </string-array>
+    <!--收藏的类型-->
+    <string-array name="collection_type">
+        <item>场所,PLACE</item>
+        <item>活动,CONTENT_TYPE_ACTIVITY</item>
+        <item>话题,CONTENT_TYPE_TOPIC</item>
+        <item>社团,CONTENT_TYPE_ASSOCIATION</item>
+        <item>品牌,CONTENT_TYPE_BRAND</item>
+        <item>内容,CONTENT</item>
+        <item>大讲堂,CONTENT_TYPE_COURSE</item>
+        <item>故事,CONTENT_TYPE_STORY</item>
+        <item>志愿团队,CONTENT_TYPE_VOLUNTEER_TEAM</item>
+        <item>乡村,CONTENT_TYPE_RURAL</item>
+        <item>农家乐,CONTENT_TYPE_AGRITAINMENT</item>
+        <item>非遗,HERITAGE</item>
+        <item>娱乐场所,CONTENT_TYPE_ENTERTAINMENT</item>
+        <item>展厅,CONTENT_TYPE_EXHIBITION</item>
+        <item>馆藏,CONTENT_TYPE_COLLECTION</item>
+        <item>展览,CONTENT_TYPE_EXHIBIT_SHOW</item>
+        <item>研学基地,CONTENT_TYPE_RESEARCH_BASE</item>
+        <item>特产,CONTENT_TYPE_SPECIALITY</item>
+    </string-array>
+    <string-array name="feedback_types">
+        <item>体验问题</item>
+        <item>功能建议</item>
+        <item>服务建议</item>
+        <item>其它</item>
+    </string-array>
+    <string-array name="feedback_typecodes">
+        <item>EXPERIENCE</item>
+        <item>FUNCTION</item>
+        <item>SERVICE</item>
+        <item>OTHER</item>
+    </string-array>
+</resources>

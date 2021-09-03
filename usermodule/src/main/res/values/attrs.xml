@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BesselLoadingView">
+        <attr name="loadingradius" format="dimension"/>
+        <attr name="loadingcolor" format="color"/>
+        <attr name="loadingduration" format="integer"/>
+        <attr name="current_step" format="integer"/>
+        <attr name="labels" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="CircleProgress">
+        <!-- 进度背景-->
+        <attr name="themeColor" format="color"/>
+        <!--进度条宽度 -->
+        <attr name="progressWidth" format="integer"/>
+        <!--进度条最大值 -->
+        <attr name="progressMax" format="integer"/>
+        <!--外圈宽度-->
+        <attr name="outCircleWidth" format="integer"/>
+        <!--内圈半径-->
+        <attr name="innerCircleRadius" format="integer"/>
+        <!--外圈半径-->
+        <attr name="outCircleRadius" format="integer"/>
+        <!--进度条颜色 -->
+        <attr name="progressColor" format="color"/>
+        <!--外圈颜色 -->
+        <attr name="outCircleColor" format="color"/>
+        <!--内圈颜色-->
+        <attr name="innerCircleColor" format="color"/>
+        <!--起始角度-->
+        <attr name="startAngle" format="integer"/>
+        <!--进度条角度-->
+        <attr name="sweepAngle" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="LonProgress">
+        <!--进度条宽度-->
+        <attr name="progressWidths" format="integer"/>
+        <!--背景宽度-->
+        <attr name="backgroundWidth" format="integer"/>
+        <!--进度条宽度-->
+        <attr name="progressHeight" format="integer"/>
+        <!--背景宽度-->
+        <attr name="backgroundHeight" format="integer"/>
+        <!--内层背景颜色-->
+        <attr name="innerBgColor" format="color"/>
+        <!--外层背景颜色-->
+        <attr name="outBgColor" format="color"/>
+        <!--刻度文本颜色-->
+        <attr name="scaleTextColor" format="color"/>
+        <!-- 当前文本颜色-->
+        <attr name="currentTextColor" format="color"/>
+        <!--进度条最大值 -->
+        <attr name="progressMaxs" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="SelectorImageView">
+        <attr name="selector_src" format="reference"/>
+        <attr name="checked" format="boolean"/>
+    </declare-styleable>
+
+</resources>

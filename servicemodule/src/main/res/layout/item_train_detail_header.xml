@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <data />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/dividing_line"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:background="@color/divider_e2" />
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_below="@+id/dividing_line"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/color_333"
+            android:layout_height="wrap_content"
+           />
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_below="@+id/dividing_line"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/color_333"
+            android:layout_height="wrap_content"
+             />
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_below="@+id/dividing_line"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:layout_alignParentEnd="true"
+            android:textSize="@dimen/sp_20"
+            android:textColor="@color/color_ff9e05"
+            android:layout_height="wrap_content"
+            />
+    </RelativeLayout>
+</layout>

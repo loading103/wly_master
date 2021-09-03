@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils"/>
+        <import type="org.jsoup.examples.HtmlToPlainText" />
+
+        <variable
+            name="bean"
+            type="com.daqsoft.provider.bean.ResearchDetailBean" />
+
+        <variable
+            name="vm"
+            type="com.daqsoft.travelCultureModule.researchbase.viewmodel.ResearchDetailViewModel" />
+
+        <variable
+            name="suggestTime"
+            type="String" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sc_main_scenic_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_f5f5f5"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                app:cardCornerRadius="@dimen/dp_5"
+                app:layout_constraintTop_toBottomOf="@id/tv_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@{bean.name}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_18"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/tv_summery"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:ellipsize="end"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="@dimen/dp_4"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="@{bean.briefing}"
+                        android:visibility="@{TextUtils.isEmpty(bean.briefing)?View.GONE:View.VISIBLE}"
+                        android:textColor="@color/txt_gray"
+                        android:textSize="@dimen/sp_12"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cdv_map_v"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_14"
+                        android:layout_marginRight="@dimen/dp_20"
+                        app:cardCornerRadius="@dimen/dp_5"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_summery">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.amap.api.maps.MapView
+                                android:id="@+id/map_view"
+                                android:layout_width="0dip"
+                                android:layout_height="0dip"
+                                app:layout_constraintDimensionRatio="3:1.2"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <TextView
+                        android:id="@+id/tv_location"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:includeFontPadding="false"
+                        android:text="@{bean.getadresses()}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_13"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cdv_map_v" />
+
+                    <View
+                        android:id="@+id/v_scenic_more_line"
+                        android:layout_width="0dip"
+                        android:layout_height="@dimen/dp_0_5"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:background="@color/d4d4d4"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_location" />
+
+                    <TextView
+                        android:id="@+id/tv_navigation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:drawableLeft="@mipmap/activity_details_address"
+                        android:drawablePadding="@dimen/dp_8"
+                        android:gravity="center"
+                        android:onClick="goToNavigation"
+                        android:padding="@dimen/dp_12"
+                        android:text="导航"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/tv_phone"
+                        app:layout_constraintTop_toBottomOf="@id/v_scenic_more_line"
+                        app:layout_constraintVertical_weight="1" />
+
+                    <View
+                        android:id="@+id/tv_line"
+                        android:layout_width="@dimen/dp_0_5"
+                        android:layout_height="@dimen/dp_24"
+                        android:background="@color/d4d4d4"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_navigation"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_navigation" />
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:drawableLeft="@mipmap/activity_details_phone"
+                        android:drawablePadding="@dimen/dp_8"
+                        android:gravity="center"
+                        android:padding="@dimen/dp_12"
+                        android:text="联系基地"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@id/tv_navigation"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v_scenic_more_line"
+                        app:layout_constraintVertical_weight="1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_12"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20">
+
+                <include
+                    android:id="@+id/il_voice"
+                    layout="@layout/include_detail_module"
+                    app:hide="@{false}"
+                    app:hideRight="@{true}"
+                    app:leftLabel="@{`基础信息`}" />
+
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_policy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:visibility="@{bean.ticketPolicy.equals(``)?View.GONE:View.VISIBLE}"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="门票政策"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContent='@{bean.ticketPolicy}'
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_open_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="开放时间"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContent='@{bean.openTimeStart+`~`+bean.openEndTime}'
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_scenic_theme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="基地标签"
+                    app:rightContent="@{bean.getTags()}"
+                    android:visibility="@{TextUtils.isEmpty(bean.getTags())?View.GONE:View.VISIBLE}"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_crowd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="适合人群"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_suggest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="游玩时长"
+                    android:visibility="@{TextUtils.isEmpty(suggestTime)?View.GONE:View.VISIBLE}"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContent='@{suggestTime}'
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_suggest_month"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:visibility="@{TextUtils.isEmpty(bean.bestTravelTime)?View.GONE:View.VISIBLE}"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="旅游时间"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContent='@{bean.bestTravelTime}'
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_website"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:visibility="@{TextUtils.isEmpty(bean.websiteUrl)?View.GONE:View.VISIBLE}"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="官网地址"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContent='@{bean.websiteUrl}'
+                    app:rightContentColor="@color/colorPrimary"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_wx_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:visibility="@{(bean.officialName.equals(``)|| bean.officialName==null)?View.GONE:View.VISIBLE}"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="微信公众号"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContent='@{bean.officialName}'
+                    app:rightContentColor="@color/colorPrimary"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="其他信息"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <include
+                    android:id="@+id/il_spots"
+                    layout="@layout/include_detail_module"
+                    app:hide="@{TextUtils.isEmpty(bean.introduce)?true:false}"
+                    app:hideRight="@{true}"
+                    app:leftLabel="@{`基地介绍`}" />
+
+                <WebView
+                    android:id="@+id/tv_introduce"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:lineHeight="@dimen/dp_20"
+                    android:scrollbars="none"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_14"
+                    android:visibility="@{TextUtils.isEmpty(bean.introduce)?View.GONE:View.VISIBLE}" />
+
+                <include
+                    android:id="@+id/il_ticket"
+                    layout="@layout/include_detail_module"
+                    app:hide="@{TextUtils.isEmpty(bean.route)?true:false}"
+                    app:hideRight="@{true}"
+                    app:leftLabel="@{`研学路线`}" />
+
+                <WebView
+                    android:id="@+id/tv_router_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:scrollbars="none"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_14"
+                    android:visibility="@{TextUtils.isEmpty(bean.route)?View.GONE:View.VISIBLE}" />
+
+                <TextView
+                    android:id="@+id/tv_traffic_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_40"
+                    android:drawableLeft="@mipmap/whcgxq_bt_bq"
+                    android:drawablePadding="@dimen/dp_12"
+                    android:text="交通信息"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_19"
+                    android:textStyle="bold"
+                    android:visibility="@{TextUtils.isEmpty(bean.trafficInfo)?View.GONE:View.VISIBLE}"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <WebView
+                    android:id="@+id/tv_trafficinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:scrollbars="none"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_14"
+                    android:visibility="@{TextUtils.isEmpty(bean.trafficInfo)?View.GONE:View.VISIBLE}" />
+
+                <include
+                    android:id="@+id/il_route_center"
+                    layout="@layout/include_detail_module"
+                    app:hide="@{true}"
+                    app:hideRight="@{true}"
+                    app:leftLabel="@{`游客中心`}" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+                        android:id="@+id/img_route_center"
+                        android:layout_width="0dip"
+                        android:layout_height="@dimen/dp_167"
+                        android:layout_marginTop="@dimen/dp_24"
+                        android:visibility="gone"
+                        app:corner_radius="@dimen/dp_5"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_center_phone_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_24"
+                        android:text="电话"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_14"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/img_route_center" />
+
+                    <TextView
+                        android:id="@+id/tv_center_tourst_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_16"
+                        android:drawableEnd="@mipmap/activity_details_phone"
+                        android:drawablePadding="@dimen/dp_32"
+                        android:text="@{bean.phone}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_14"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@+id/tv_center_phone_label"
+                        app:layout_constraintTop_toTopOf="@id/tv_center_phone_label"
+                        tools:text="028-1234567" />
+
+                    <TextView
+                        android:id="@+id/tv_center_address_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_24"
+                        android:text="地址"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_14"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_center_tourst_phone" />
+
+                    <TextView
+                        android:id="@+id/tv_center_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_16"
+                        android:drawableEnd="@mipmap/activity_details_address"
+                        android:drawablePadding="@dimen/dp_32"
+                        android:text="@{bean.centerAddress}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_14"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@+id/tv_center_address_label"
+                        app:layout_constraintTop_toTopOf="@id/tv_center_address_label"
+                        tools:text="蓝天接到心信息路蓝天接到心信息路蓝天接到心信息路" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <include
+                    android:id="@+id/il_geog_culture"
+                    layout="@layout/include_detail_module"
+                    app:hide="@{TextUtils.isEmpty(bean.geogCulture)?true:false}"
+                    app:hideRight="@{true}"
+                    app:leftLabel="@{`地理文化`}" />
+
+                <TextView
+                    android:id="@+id/txt_geo_culture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:lineHeight="@dimen/dp_20"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_14"
+                    android:visibility="@{TextUtils.isEmpty(bean.geogCulture)?View.GONE:View.VISIBLE}" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_30" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

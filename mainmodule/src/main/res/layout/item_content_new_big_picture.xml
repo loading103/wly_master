@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/ll_ci_img"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_168">
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/title"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            android:textColor="@color/color_333333"
+            app:layout_constraintLeft_toLeftOf="@id/ll_ci_img"
+            app:layout_constraintRight_toRightOf="@id/ll_ci_img"
+            app:layout_constraintTop_toBottomOf="@id/ll_ci_img"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintRight_toLeftOf="@id/time"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="@color/gray_999999"
+            android:textSize="@dimen/sp_12"
+            android:id="@+id/author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:gravity="right"
+            android:singleLine="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            app:layout_constraintLeft_toRightOf="@id/author"
+            app:layout_constraintBaseline_toBaselineOf="@id/author"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textColor="@color/gray_999999"
+            android:textSize="@dimen/sp_11"
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

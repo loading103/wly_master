@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.daqsoft.provider.bean.MessageListBean" />
+    </data>
+
+    <com.daqsoft.provider.view.cardview.CardView
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        app:cardCornerRadius="@dimen/dp_10"
+        app:cardElevation="@dimen/dp_0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/aiv_image"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_15"
+                android:scaleType="fitXY"
+                url="@{data.image}"
+                android:src="@mipmap/mine_profile_photo_default"
+                app:border_color="@color/white"
+                app:is_circle="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:orientation="vertical"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/aiv_image"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/aiv_image">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{data.nickName}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_12"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:gravity="start"
+                        tools:text="哈哈哈" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text='代表性传承人'
+                        android:visibility='@{data.isHeritage().equals("1")?View.VISIBLE:View.GONE}'
+                        android:textColor="#b08f69"
+                        android:textSize="@dimen/sp_10"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/dp_2"
+                        android:paddingBottom="@dimen/dp_2"
+                        android:background="@drawable/shape_white_51"
+                        android:layout_marginLeft="@dimen/dp_8" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:text="@{data.getCreatTimes()}"
+                    android:textColor="@color/txt_gray"
+                    android:textSize="@dimen/sp_10"
+                    app:layout_constraintStart_toStartOf="@id/tv_user_name"
+                    app:layout_constraintTop_toBottomOf="@id/tv_user_name"
+                    tools:text="2020-12-23" />
+
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_12"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:layout_marginBottom="@dimen/dp_12"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_12" />
+
+
+                <RelativeLayout
+                    android:id="@+id/v_onle_onImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_180"
+                        android:scaleType="centerCrop" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.daqsoft.provider.view.cardview.CardView>
+</layout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_activity_overview_v1_r3"
+        android:layout_marginRight="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_8"
+        android:minHeight="@dimen/dp_68">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/tv_activity_overview_type_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                tools:text="展览" />
+
+            <TextView
+                android:id="@+id/tv_activity_overview_nums"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_activity_overview_type_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_6"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_12"
+                tools:text="120场" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

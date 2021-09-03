@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="view"
+            type="com.daqsoft.usermodule.interfaces.OrderListItemClickListener" />
+
+        <variable
+            name="item"
+            type="com.daqsoft.provider.bean.OrderListBean.X" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@color/white"
+        android:paddingTop="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_16">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_20"
+            android:drawableLeft="@mipmap/mine_bill_icon_shop"
+            android:drawablePadding="@dimen/dp_4"
+            android:padding="@dimen/dp_4"
+            android:text="@string/order_book"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tvStatus"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!--    <com.daqsoft.provider.view.ItemView
+                android:id="@+id/booking_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="@dimen/dp_4"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_4"
+                app:labelSize="@dimen/sp_13"
+                app:layout_constraintBaseline_toBaselineOf="@id/label"
+                app:layout_constraintLeft_toRightOf="@id/label"
+                app:layout_constraintRight_toLeftOf="@id/tvStatus"
+                app:rightContentSize="@dimen/sp_13"
+                app:showArrow="false"
+                app:showDivider="false"
+                tools:leftLabel="玉龙雪山景区" />-->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:padding="@dimen/dp_4"
+            android:text="@{item.orderStatusName}"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBaseline_toBaselineOf="@id/label"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="待支付" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@color/dividing_line"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label" />
+
+        <ImageView
+            android:id="@+id/image"
+            cornerRadius="@{10}"
+            placeholder="@{@drawable/placeholder_img_fail_h158}"
+            url="@{item.thumbImageUrl}"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:background="@mipmap/placeholder_img_fail_240_180"
+            android:scaleType="fitXY"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@id/label"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <TextView
+            android:id="@+id/mNameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{item.productName}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            tools:text="登玉龙雪山、品风味美食藏民土司宴登玉龙雪山 品风味农家牛肉" />
+
+
+        <com.daqsoft.provider.view.ItemView
+            android:id="@+id/mSpecification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_20"
+            app:contentGravity="left"
+            app:labelPadding="@dimen/dp_0"
+            app:labelSize="@dimen/sp_12"
+            app:layout_constraintLeft_toRightOf="@id/mNameTv"
+            app:layout_constraintStart_toStartOf="@id/mNameTv"
+            app:layout_constraintTop_toBottomOf="@id/mNameTv"
+            app:leftLabelColor="@color/txt_gray"
+            app:rightContentColor="@color/txt_gray"
+            app:rightContentSize="@dimen/sp_12"
+            app:showArrow="false"
+            app:showDivider="false"
+            tools:leftLabel="成人票/人脸识别入园" />
+        <RelativeLayout
+            android:id="@+id/v_orders_total_info"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txt_orders_total_tip"
+                android:textColor="@color/color_999"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/sp_12"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txt_orders_total_price"
+                android:layout_toRightOf="@+id/txt_orders_total_tip"
+                android:layout_alignBaseline="@+id/txt_orders_total_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_16"/>
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/mDetailTv"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/shape_order_list_btn"
+            android:gravity="center"
+            android:onClick="@{(v)->view.click(item,v)}"
+            android:text="@string/order_detail_2"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            app:layout_constraintRight_toLeftOf="@id/mLogisticsTv"
+            app:layout_constraintTop_toBottomOf="@id/v_orders_total_info"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/mLogisticsTv"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/shape_order_list_btn"
+            android:gravity="center"
+            android:onClick="@{(v)->view.click(item,v)}"
+            android:text="@string/order_logistics"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            app:layout_constraintRight_toLeftOf="@+id/mAppointmentCostTv"
+            app:layout_constraintTop_toBottomOf="@id/v_orders_total_info"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/mAppointmentCostTv"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/shape_order_list_red_btn"
+            android:gravity="center"
+            android:onClick="@{(v)->view.click(item,v)}"
+            android:text="@string/order_appointment_cost"
+            android:textColor="@color/red"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            app:layout_constraintRight_toLeftOf="@+id/mReviewsTv"
+            app:layout_constraintTop_toBottomOf="@id/v_orders_total_info"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/mReviewsTv"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/shape_order_list_red_btn"
+            android:gravity="center"
+            android:onClick="@{(v)->view.click(item,v)}"
+            android:text="@string/order_reviews"
+            android:textColor="@color/red"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            app:layout_constraintRight_toLeftOf="@+id/mOrderTv"
+            app:layout_constraintTop_toBottomOf="@id/v_orders_total_info"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/mOrderTv"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:background="@drawable/shape_order_list_red_btn"
+            android:gravity="center"
+            android:onClick="@{(v)->view.click(item,v)}"
+            android:text="@string/order_order"
+            android:textColor="@color/red"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            app:layout_constraintRight_toLeftOf="@+id/mPayTv"
+            app:layout_constraintTop_toBottomOf="@id/v_orders_total_info"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/mPayTv"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/shape_order_list_red_btn"
+            android:gravity="center"
+            android:onClick="@{(v)->view.click(item,v)}"
+            android:text="@string/order_pay_2"
+            android:textColor="@color/red"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_orders_total_info"
+            app:layout_goneMarginRight="@dimen/dp_0"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

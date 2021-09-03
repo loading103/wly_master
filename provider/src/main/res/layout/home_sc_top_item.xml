@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/city_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/tv_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_12"
+        android:drawablePadding="@dimen/dp_4"
+        android:lines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintBottom_toTopOf="@+id/tv_card_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:text="&#8451;" />
+
+    <TextView
+        android:id="@+id/tv_card_name"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_2"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:maxEms="20"
+        android:maxLines="2"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_32"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_card_name_english"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_weather"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="智游天府" />
+
+    <TextView
+        android:id="@+id/tv_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:background="@drawable/shape_top_r_3"
+        android:paddingHorizontal="@dimen/dp_5"
+        android:paddingVertical="@dimen/dp_3"
+        android:text="试运行"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_card_name"
+        app:layout_constraintLeft_toRightOf="@+id/tv_card_name" />
+
+    <TextView
+        android:id="@+id/tv_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:background="@drawable/shape_top_r_3"
+        android:paddingHorizontal="@dimen/dp_5"
+        android:paddingVertical="@dimen/dp_3"
+        android:text="当前定位城市"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_card_name"
+        app:layout_constraintLeft_toRightOf="@+id/tv_test" />
+
+    <TextView
+        android:id="@+id/tv_card_name_english"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toTopOf="@+id/tv_card_summary"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_card_name"
+        tools:text="Smart Sichuan Tours" />
+
+    <TextView
+        android:id="@+id/tv_card_summary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_12"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintBottom_toTopOf="@+id/img_app_index_logo"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_card_name_english"
+        tools:text="天府三九大，安逸走四川" />
+
+    <ImageView
+        android:id="@+id/img_app_index_logo"
+        android:layout_width="@dimen/dp_144"
+        android:layout_height="@dimen/dp_84"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_card"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_92"
+        android:alpha="0.9"
+        android:drawableRight="@mipmap/brand_card_more"
+        android:drawablePadding="@dimen/dp_3"
+        android:text="城市名片"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

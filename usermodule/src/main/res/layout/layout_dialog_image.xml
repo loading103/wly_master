@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp_130"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/image"
+            cornerRadius="@{10}"
+            placeholder="@{@drawable/placeholder_img_fail_h158}"
+            url="@{url}"
+            android:layout_width="@dimen/dp_130"
+            android:layout_height="@dimen/dp_130"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:background="@mipmap/placeholder_img_fail_240_180"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:text="长按保存二维码"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,28 @@
+.privacy-box{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+.privacy-box .name{
+    font-size: 22px;
+    margin-bottom: 50px;
+}
+.privacy-box .tltle{
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 50px;
+}
+.privacy-box .content{
+    font-size: 22px;
+    color: #333;
+    line-height: 1.6;
+}
+.privacy-box .indent{
+    text-indent: 2em;
+}
+.marginTop60{
+    margin-top: 60px;
+}
+.marginTop40{
+    margin-top: 60px;
+}

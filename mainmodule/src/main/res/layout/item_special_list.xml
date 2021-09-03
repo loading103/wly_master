@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils"/>
+        <import type="android.view.View"/>
+        <variable
+            name="item"
+            type="com.daqsoft.provider.bean.SpeaiclBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/v_food_imgs"
+                android:layout_width="@dimen/dp_115"
+                android:layout_height="@dimen/dp_115"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    android:id="@+id/img_foods_ls"
+                    android:layout_width="@dimen/dp_115"
+                    android:layout_height="@dimen/dp_115"
+                    url="@{item.getheadImages()}"
+                    app:corner_radius="@dimen/dp_5" />
+
+                <ImageView
+                    android:id="@+id/img_foods_collect"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:src="@mipmap/activity_collect_normal" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10">
+                    <ImageView
+                        android:id="@+id/img_foods_video"
+                        android:layout_width="@dimen/dp_18"
+                        android:layout_height="@dimen/dp_18"
+                        android:visibility="@{TextUtils.isEmpty(item.video)?View.GONE:View.VISIBLE}"
+                        android:background="@mipmap/food_details_video"  />
+<!--                    <ImageView-->
+<!--                        android:id="@+id/img_foods_gold_store"-->
+<!--                        android:layout_width="@dimen/dp_18"-->
+<!--                        android:layout_height="@dimen/dp_18"-->
+<!--                        android:layout_marginLeft="5dp"-->
+<!--                        android:visibility="@{TextUtils.isEmpty(item.audio)?View.GONE:View.VISIBLE}"-->
+<!--                        android:background="@mipmap/food_details_commentary" />-->
+                    <ImageView
+                        android:id="@+id/img_foods_720"
+                        android:layout_width="@dimen/dp_18"
+                        android:layout_height="@dimen/dp_18"
+                        android:layout_marginRight="@dimen/dp_5"
+                        android:layout_marginLeft="5dp"
+                        android:visibility="@{TextUtils.isEmpty(item.panoramaUrl)?View.GONE:View.VISIBLE}"
+                        android:background="@mipmap/food_details_720" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:id="@+id/ll_title"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/v_food_imgs"
+                app:layout_constraintTop_toTopOf="@+id/v_food_imgs"
+                app:layout_constraintRight_toRightOf="parent">
+                <TextView
+                    android:id="@+id/txt_foods_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    android:text="@{item.name}"
+                    tools:text="金堂羊肚菌" />
+                <ImageView
+                    android:id="@+id/iv_biaozhi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:src="@mipmap/specialty_list_tag_guojiadili"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toRightOf="@+id/v_food_imgs"
+                app:layout_constraintTop_toBottomOf="@+id/ll_title"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    tools:visibility="gone"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:background="@color/white"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
+
+                <TextView
+                    android:id="@+id/txt_foods_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:gravity="left"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:textColor="@color/color_1995ff"
+                    android:textSize="@dimen/sp_12"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="@{item.briefing}"
+                    android:visibility="@{TextUtils.isEmpty(item.briefing)?View.GONE:View.VISIBLE}"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv"
+                    tools:text="金堂羊肚菌" />
+
+                <TextView
+                    android:id="@+id/txt_foods_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:text="@{item.getYchandi()}"
+                    android:visibility="@{TextUtils.isEmpty(item.getYchandi())?View.GONE:View.VISIBLE}"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_foods_info"
+                    tools:text="原产地：梓潼县" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:textColor="@color/color_999"
+                    android:textSize="@dimen/sp_12"
+                    android:layout_marginTop="@dimen/dp_13"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_foods_time"
+                    android:text="@{item.getProTime()}"
+                    android:visibility="@{TextUtils.isEmpty(item.getProTime())?View.GONE:View.VISIBLE}"
+                    tools:text="受保护时间：2013-12-30" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

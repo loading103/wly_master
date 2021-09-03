@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="location"
+            type="String" />
+        <variable
+            name="name"
+            type="String" />
+        <variable
+            name="likeNumber"
+            type="String" />
+        <variable
+            name="commentNumber"
+            type="String" />
+
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_20">
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/iv_user"
+                android:layout_width="@dimen/dp_28"
+                android:layout_height="@dimen/dp_28"
+                android:scaleType="center"
+                app:is_circle="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tv_user"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:text="@{name}"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintLeft_toRightOf="@id/iv_user"
+                app:layout_constraintBottom_toBottomOf="@id/iv_user"
+                app:layout_constraintTop_toTopOf="@id/iv_user"
+                />
+
+
+            <com.daqsoft.provider.view.MuiltImageView
+                android:layout_marginTop="@dimen/dp_12"
+                android:id="@+id/ai_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/iv_user"/>
+
+            <ImageView
+                android:id="@+id/iv_video"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_margin="@dimen/dp_20"
+                android:src="@mipmap/video_play_icon"
+                app:layout_constraintBottom_toBottomOf="@id/ai_image"
+                app:layout_constraintTop_toTopOf="@id/ai_image"
+                app:layout_constraintLeft_toLeftOf="@id/ai_image"
+                app:layout_constraintRight_toRightOf="@id/ai_image"/>
+
+            <TextView
+                android:padding="@dimen/dp_5"
+                android:id="@+id/tv_image_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_20"
+                android:background="@mipmap/home_gs_tmb"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_8"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/ai_image"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/location_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:drawableLeft="@mipmap/time_home_hot_position"
+                android:drawablePadding="@dimen/dp_6"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_13"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ai_image"
+                android:layout_marginEnd="@dimen/dp_18"
+                android:visibility="visible"/>
+
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="@id/location_name"
+                app:layout_constraintEnd_toEndOf="@id/location_name"
+                app:layout_constraintTop_toBottomOf="@id/location_name" />
+
+
+
+            <TextView
+                android:id="@+id/tv_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_18"
+                android:drawableLeft="@mipmap/time_home_list_like"
+                android:drawablePadding="@dimen/dp_3"
+                android:text="@{likeNumber}"
+                android:textSize="@dimen/sp_12"
+                tool:text="ad"
+                app:layout_constraintLeft_toRightOf="@id/tv_comment"
+                app:layout_constraintBottom_toBottomOf="@id/tv_comment"
+                app:layout_constraintTop_toTopOf="@id/tv_comment"
+                android:layout_marginLeft="@dimen/dp_20"/>
+            <TextView
+                android:id="@+id/tv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_18"
+                android:drawableLeft="@mipmap/time_home_list_comment"
+                android:drawablePadding="@dimen/dp_3"
+                android:text="@{commentNumber}"
+                android:textSize="@dimen/sp_12"
+                tool:text="ad"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_content"
+                android:layout_marginTop="@dimen/dp_12"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:background="@color/divider_e2"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </LinearLayout>
+
+
+
+</layout>

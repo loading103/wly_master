@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="item_left_label" type="id"/>
+    <item name="item_right_content" type="id"/>
+    <item name="item_bottom_content" type="id"/>
+    <item name="areas" type="id"/>
+    <item name="time_sort" type="id"/>
+    <item name="time" type="id"/>
+    <item type="id" name="decode"/>
+    <item type="id" name="decode_failed"/>
+    <item type="id" name="decode_succeeded"/>
+    <item type="id" name="quit"/>
+    <item type="id" name="return_scan_result"/>
+
+    <!--海报/封面-->
+    <item name="view_poster" type="id"/>
+    <item name="view_postertwo" type="id"/>
+    <item name="view_posterthree" type="id"/>
+</resources>

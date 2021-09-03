@@ -1,0 +1,228 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="itinerary_layout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginTop">@dimen/dp_20</item>
+        <item name="android:layout_height">@dimen/dp_72</item>
+        <item name="layout_constraintHorizontal_weight">1</item>
+        <item name="layout_constraintTop_toBottomOf">@id/empty_layout</item>
+    </style>
+
+    <style name="ItineraryLabel" parent="ViewWrap">
+        <item name="android:layout_marginStart">@dimen/dp_5</item>
+        <item name="android:paddingEnd">@dimen/dp_5</item>
+        <item name="android:paddingStart">@dimen/dp_5</item>
+        <item name="android:paddingTop">@dimen/dp_2</item>
+        <item name="android:paddingBottom">@dimen/dp_2</item>
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:layout_marginRight">@dimen/dp_3</item>
+        <item name="android:textColor">@color/color_FF9E05</item>
+        <item name="android:background">@color/color_FFF5E6</item>
+    </style>
+
+    <style name="LabelCustomStyle" parent="ViewWrap">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:drawablePadding">@dimen/dp_10</item>
+        <item name="android:textColor">@color/color_333333</item>
+        <item name="android:drawableStart">@drawable/itinerary_icon_label_left</item>
+    </style>
+
+    <style name="LabelTitleStyle" parent="ViewWrap">
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/color_666666</item>
+    </style>
+
+    <style name="LabelValuetyle" parent="ViewWrap">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/color_FF9E05</item>
+    </style>
+
+    <style name="HorizontalLineStyle" parent="HeightWrap">
+        <item name="android:background">#E8E8E8</item>
+        <item name="android:layout_height">@dimen/dp_1</item>
+    </style>
+
+    <style name="ItineraryCustomRadio">
+        <item name="android:paddingTop">@dimen/dp_17</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:paddingBottom">@dimen/dp_17</item>
+        <item name="android:drawablePadding">@dimen/dp_12</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="layout_constraintHorizontal_weight">1</item>
+        <item name="android:textColor">@color/radio_text_color</item>
+        <item name="android:background">@drawable/itinerary_border</item>
+    </style>
+
+    <style name="ItineraryCustomPreview" parent="ViewWrap">
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
+
+
+    <!--
+        label style 太多不知道怎么命名
+        用于行程详情标签【附近住、吃、订票】
+    -->
+    <style name="LabelStyleA" parent="ViewWrap">
+        <item name="android:paddingStart">@dimen/dp_15</item>
+        <item name="android:paddingEnd">@dimen/dp_15</item>
+        <item name="android:paddingTop">@dimen/dp_6</item>
+        <item name="android:paddingBottom">@dimen/dp_6</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginEnd">@dimen/dp_10</item>
+        <item name="android:background">@drawable/itinerary_shape_filter_norm</item>
+    </style>
+
+    <!--
+        label style 太多不知道怎么命名
+        推荐行程标签筛选
+    -->
+    <style name="LabelStyleB">
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">@dimen/dp_75</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:paddingStart">@dimen/dp_3</item>
+        <item name="android:paddingEnd">@dimen/dp_3</item>
+        <item name="android:paddingTop">@dimen/dp_6</item>
+        <item name="android:paddingBottom">@dimen/dp_6</item>
+        <item name="android:textColor">@color/filter_label_color</item>
+        <item name="android:background">@drawable/itinerary_shape_filter_label_bg</item>
+    </style>
+
+    <!--
+        style 太多不知道怎么命名
+        用于行程详情【上个景点->下个景点】
+    -->
+    <style name="TextStyleA" parent="ViewWrap">
+        <item name="android:textColor">@color/color_333333</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_marginTop">@dimen/dp_13</item>
+        <item name="android:layout_width">@dimen/dp_100</item>
+    </style>
+
+    <!--
+        style 太多不知道怎么命名
+        用于行程详情,附近列表的textView
+    -->
+    <style name="TextStyleB" parent="ViewWrap">
+        <item name="android:layout_marginStart">@dimen/dp_10</item>
+        <item name="android:textColor">@color/color_666666</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:layout_marginTop">@dimen/dp_4</item>
+    </style>
+
+
+    <!--
+        style 太多不知道怎么命名
+        用于行程下面的景区详情,banner 右下角text
+    -->
+    <style name="TextStyleC" parent="ViewWrap">
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:paddingStart">@dimen/dp_8</item>
+        <item name="android:paddingEnd">@dimen/dp_8</item>
+        <item name="android:paddingTop">@dimen/dp_6</item>
+        <item name="android:paddingBottom">@dimen/dp_6</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginEnd">@dimen/dp_10</item>
+        <item name="android:layout_marginBottom">@dimen/dp_20</item>
+        <item name="layout_constraintBottom_toBottomOf">@id/pager_view</item>
+        <item name="android:background">@drawable/itinerary_shape_solid_black_circle</item>
+    </style>
+
+    <!--
+        style 太多不知道怎么命名
+        用于行程下面的景区详情,景区等级，得分
+    -->
+    <style name="TextStyleD" parent="ViewWrap">
+        <item name="android:layout_marginTop">@dimen/dp_10</item>
+        <item name="android:paddingStart">@dimen/dp_6</item>
+        <item name="android:paddingEnd">@dimen/dp_6</item>
+        <item name="android:textColor">@color/color_FF9E05</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:background">@drawable/itinerary_shape_stroke_green</item>
+        <item name="layout_constraintTop_toBottomOf">@id/scenic_name</item>
+    </style>
+
+    <!--
+        style 太多不知道怎么命名
+        用于行程下面的景区详情,景区类型标签
+    -->
+    <style name="TextStyleE" parent="ViewWrap">
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">@dimen/dp_10</item>
+        <item name="android:paddingStart">@dimen/dp_6</item>
+        <item name="android:paddingEnd">@dimen/dp_6</item>
+        <item name="android:textColor">@color/color_FF9E05</item>
+        <item name="android:background">@drawable/itinerary_shape_orange</item>
+        <item name="layout_constraintTop_toBottomOf">@id/scenic_name</item>
+    </style>
+
+    <!--
+        style 太多不知道怎么命名
+        用于行程下面的景区详情,地址标题，联系电话等等
+    -->
+    <style name="TextStyleF" parent="ViewWrap">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:layout_marginTop">@dimen/dp_60</item>
+        <item name="android:textColor">@color/color_333333</item>
+    </style>
+
+    <!--用于底部左右两个按钮-->
+    <style name="TextStyleG">
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">@dimen/dp_0</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/color_36CD64</item>
+    </style>
+
+    <!--用于交通类型的textView-->
+    <style name="TextStyleH" parent="ViewWrap">
+        <item name="android:layout_marginTop">@dimen/dp_16</item>
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@color/color_FF9E05</item>
+        <item name="android:paddingBottom">@dimen/dp_3</item>
+        <item name="android:paddingTop">@dimen/dp_3</item>
+        <item name="android:paddingEnd">@dimen/dp_6</item>
+        <item name="android:paddingStart">@dimen/dp_6</item>
+        <item name="android:background">@drawable/itinerary_shape_orange</item>
+    </style>
+
+    <style name="TextStyleI" parent="ViewWrap">
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:layout_marginTop">@dimen/dp_16</item>
+        <item name="android:textColor">@color/color_666666</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+    </style>
+
+    <!--用于景区详情 找厕所，停车场等等-->
+    <style name="LayoutStyleA">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:paddingEnd">@dimen/dp_8</item>
+        <item name="android:paddingBottom">@dimen/dp_8</item>
+        <item name="android:paddingStart">@dimen/dp_12</item>
+        <item name="android:layout_marginStart">@dimen/dp_9</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/itinerary_shape_solid_grey</item>
+    </style>
+
+</resources>

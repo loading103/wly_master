@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">文化旅游云</string>
+
+    <string name="tab_one">首页</string>
+    <string name="tab_two">活动</string>
+    <string name="tab_three">时光</string>
+    <string name="tab_four">商城</string>
+    <string name="tab_five">我的</string>
+    <string name="quit_comfirm">再按一次返回键确认退出</string>
+
+
+    <!--我的-->
+    <string name="welcome">诗和远方，一触即发</string>
+    <string name="login_register">登录/注册</string>
+    <string name="my_order">我的订单</string>
+    <string name="my_book">我的预订</string>
+    <string name="my_activity">我的活动</string>
+    <string name="my_consumption_code">我的消费码</string>
+    <string name="time_story">时光故事</string>
+    <string name="time_story_hint">人与人，人与物之间的故事</string>
+    <string name="mine_share">+ 分享你的故事</string>
+    <string name="more_service">更多服务</string>
+
+
+    <string name="home_search_hint_dis">搜索目的地等</string>
+    <string name="home_back_top">回顶部</string>
+    <string name="welcome_title">欢迎来到文化旅游云</string>
+    <string name="develop_content">正在开发中，敬请期待</string>
+
+    <string name="service_travel_tex">旅游服务</string>
+    <string name="service_play_tex">游玩查询</string>
+    <string name="service_traffic_tex">交通查询</string>
+    <string name="service_public_tex">公众服务</string>
+    <string name="home_topic_info">话题</string>
+    <string name="home_un_login_tip">非常抱歉，你还未登录~</string>
+    <string name="home_found">周边推荐</string>
+    <string name="home_found_around">发现身边</string>
+    <string name="home_found_info">What\'s nearby</string>
+    <string name="home_mine">个人中心</string>
+
+    <string name="home_topic_hot">热门</string>
+    <string name="home_topic_content">内容</string>
+    <string name="home_topic_participate">参与</string>
+    <string name="home_topic_browse">浏览</string>
+
+    <string name="home_branch_label_ws">Brand</string>
+    <string name="home_line_name_ws">精品线路</string>
+    <string name="home_line_info_ws">Fine line</string>
+    <string name="home_story_info_ws">Stories</string>
+    <string name="home_branch_name_ws">印象乌鲁木齐</string>
+</resources>

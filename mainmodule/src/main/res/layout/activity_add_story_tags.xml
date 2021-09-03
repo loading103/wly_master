@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="notFound"
+            type="Boolean" />
+
+        <variable
+            name="noRecord"
+            type="Boolean" />
+        <import type="android.view.View"/>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_shape_white_back_5_radius">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+            <LinearLayout
+                android:id="@+id/cl_search"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/et_search"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginBottom="@dimen/dp_8"
+                    android:background="@drawable/main_shape_search"
+                    android:drawableLeft="@mipmap/add_search"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:imeOptions="actionSearch"
+                    android:singleLine="true"
+                    android:hint="@string/home_story_tag_search"
+                    android:paddingLeft="@dimen/dp_12"
+                    android:paddingRight="@dimen/dp_12"
+                    android:textColor="@color/txt_gray"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:textSize="@dimen/sp_14"
+                    android:padding="@dimen/dp_12"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/txt_black"
+                    />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/ll_hot"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_32"
+                        android:paddingLeft="@dimen/dp_20"
+                        android:paddingTop="@dimen/dp_20"
+                        android:paddingRight="@dimen/dp_20"
+                        android:text="@string/story_useful_Tag"
+                        android:textColorHint="@color/txt_black"
+                        android:textSize="@dimen/sp_19"
+                        android:textStyle="bold"
+                        android:visibility="@{noRecord?View.GONE:View.VISIBLE}"/>
+
+                    <com.daqsoft.provider.view.LabelsView
+                        android:id="@+id/lv_use"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/dp_20"
+                        android:minHeight="25dp"
+                        android:padding="5dp"
+                        app:labelTextColor="@color/txt_black"
+                        app:labelTextHeight="wrap_content"
+                        app:labelTextPaddingBottom="5dp"
+                        app:labelTextPaddingLeft="10dp"
+                        app:labelTextPaddingRight="10dp"
+                        app:labelTextPaddingTop="5dp"
+                        app:labelTextSize="14sp"
+                        app:labelTextWidth="wrap_content"
+                        app:lineMargin="10dp"
+                        app:maxSelect="0"
+                        app:minSelect="1"
+                        app:selectType="MULTI"
+                        app:wordMargin="10dp"
+                        android:visibility="@{noRecord?View.GONE:View.VISIBLE}"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_40"
+                        android:paddingLeft="@dimen/dp_20"
+                        android:paddingTop="@dimen/dp_20"
+                        android:paddingRight="@dimen/dp_20"
+                        android:text="@string/story_hot_tags"
+                        android:textColorHint="@color/txt_black"
+                        android:textSize="@dimen/sp_19"
+                        android:textStyle="bold" />
+
+                    <com.daqsoft.provider.view.LabelsView
+                        android:id="@+id/lv_labels"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/dp_20"
+                        android:minHeight="25dp"
+                        android:padding="5dp"
+                        app:labelTextColor="@color/txt_black"
+                        app:labelTextHeight="wrap_content"
+                        app:labelTextPaddingBottom="5dp"
+                        app:labelTextPaddingLeft="10dp"
+                        app:labelTextPaddingRight="10dp"
+                        app:labelTextPaddingTop="5dp"
+                        app:labelTextSize="14sp"
+                        app:labelTextWidth="wrap_content"
+                        app:lineMargin="10dp"
+                        app:maxSelect="0"
+                        app:minSelect="1"
+                        app:selectType="MULTI"
+                        app:wordMargin="10dp" />
+                </LinearLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_search_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:visibility="gone">
+                    <TextView
+                        android:id="@+id/tv_search_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/txt_black"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:textSize="@dimen/sp_15"
+                        android:text="#文化#"
+                        android:visibility="@{notFound?View.VISIBLE:View.GONE}"
+                        android:layout_marginLeft="@dimen/dp_20"/>
+                    <ImageView
+                        android:id="@+id/iv_add_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/stroke_add"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_margin="@dimen/dp_20"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:visibility="@{notFound?View.VISIBLE:View.GONE}"/>
+                    <TextView
+                        android:id="@+id/tv_search_notice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sp_11"
+                        android:textColor="@color/txt_gray"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_tag"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_search_tag"
+                        android:text="@string/home_tag_notice_hint"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:visibility="@{notFound?View.VISIBLE:View.GONE}"/>
+
+                    <View
+                        android:id="@+id/v_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_0_5"
+                        android:background="@color/divider_e2"
+                        app:layout_constraintTop_toBottomOf="@id/tv_search_notice"
+                        android:layout_margin="@dimen/dp_20"
+                        android:visibility="@{notFound?View.VISIBLE:View.GONE}"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_tags"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/v_divider"
+                        android:padding="@dimen/dp_20"
+                        android:visibility="@{notFound?View.GONE:View.VISIBLE}"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

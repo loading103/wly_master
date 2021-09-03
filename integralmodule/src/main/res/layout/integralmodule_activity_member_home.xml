@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.daqsoft.integralmodule.ui.vm.MemberHomeActivityVm" />
+
+        <variable
+            name="view"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/f9f6f1"
+                android:paddingBottom="@dimen/dp_20">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/mInfoCl"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/dp_180"
+                    android:background="@mipmap/mine_member_portal_bg"
+                    android:paddingLeft="@dimen/dp_40"
+                    android:paddingTop="@dimen/dp_40"
+                    android:paddingRight="@dimen/dp_40"
+                    android:paddingBottom="@dimen/dp_20"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/mHeadIv"
+                        circleCrop="@{true}"
+                        placeholder="@{@drawable/mine_profile_photo_default}"
+                        url="@{vm.data.headIcon}"
+                        android:layout_width="@dimen/dp_44"
+                        android:layout_height="@dimen/dp_44"
+                        android:scaleType="fitXY"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@mipmap/placeholder_img_fail_h158" />
+
+                    <TextView
+                        android:id="@+id/mNameTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_12"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="@{vm.data.nickName}"
+                        android:textColor="@color/c_5c3620"
+                        android:textSize="@dimen/sp_16"
+                        app:layout_constraintLeft_toRightOf="@id/mHeadIv"
+                        app:layout_constraintTop_toTopOf="@id/mHeadIv"
+                        tools:text="费脑壳" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_15"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:background="@drawable/shape_white_large"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/dp_4"
+                        android:paddingRight="@dimen/dp_4"
+                        app:layout_constraintBottom_toBottomOf="@id/mNameTv"
+                        app:layout_constraintLeft_toRightOf="@id/mNameTv"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/mNameTv">
+
+                        <ImageView
+                            android:id="@+id/iv_point_icon"
+                            url="@{vm.data.icon}"
+                            android:layout_width="@dimen/dp_11"
+                            android:layout_height="@dimen/dp_9"
+                            android:layout_marginRight="@dimen/dp_4"
+                            android:scaleType="center" />
+
+                        <TextView
+                            android:id="@+id/mLevelTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:maxEms="12"
+                            android:text="@{vm.data.levelName}"
+                            android:textColor="@color/txt_gray_black"
+                            android:textSize="@dimen/sp_9"
+                            tools:text="青铜会员水水水水水水水水水水水水水水水水水水水水水水水水水水水水水" />
+                    </LinearLayout>
+
+
+                    <ProgressBar
+                        android:id="@+id/mLevelPb"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="@dimen/dp_120"
+                        android:layout_height="@dimen/dp_4"
+                        android:layout_marginTop="@dimen/dp_4"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/user_member_progress"
+                        app:layout_constraintLeft_toLeftOf="@id/mNameTv"
+                        app:layout_constraintTop_toBottomOf="@id/mNameTv" />
+
+
+                    <TextView
+                        android:id="@+id/mLevelProgressTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_4"
+                        android:text="@{vm.progress}"
+                        android:textColor="@color/c_916d2e"
+                        android:textSize="@dimen/sp_10"
+                        app:layout_constraintLeft_toLeftOf="@id/mLevelPb"
+                        app:layout_constraintTop_toBottomOf="@id/mLevelPb"
+                        tools:text="316/400" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sp_11"
+                        app:layout_constraintRight_toRightOf="@id/mLevelPb"
+                        app:layout_constraintTop_toBottomOf="@id/mLevelPb"
+                        tools:text="升级" />
+
+                    <TextView
+                        android:id="@+id/mIntegralAvailableTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_24"
+                        android:text="@{String.valueOf(vm.data.currPoint)}"
+                        android:textColor="@color/c_5c3620"
+                        android:textSize="@dimen/dp_26"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mHeadIv"
+                        tools:text="2365" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_4"
+                        android:text="@string/integralmodule_useabled"
+                        android:textSize="@dimen/sp_11"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mIntegralAvailableTv" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/mRuleTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:drawableTop="@mipmap/mine_member_portal_entrance_rules"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:gravity="center"
+                    android:onClick="@{view::onClick}"
+                    android:text="@string/integralmodule_integral_rule"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/mShopTv"
+                    app:layout_constraintTop_toBottomOf="@id/mInfoCl" />
+
+                <TextView
+                    android:id="@+id/mShopTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:drawableTop="@mipmap/mine_member_portal_entrance_shop"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:gravity="center"
+                    android:onClick="@{view::onClick}"
+                    android:text="@string/integralmodule_integral_shop"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_13"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toRightOf="@id/mRuleTv"
+                    app:layout_constraintRight_toLeftOf="@id/mDetailTv"
+                    app:layout_constraintTop_toBottomOf="@id/mInfoCl" />
+
+                <TextView
+                    android:id="@+id/mDetailTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:drawableTop="@mipmap/mine_member_portal_entrance_detail"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:gravity="center"
+                    android:onClick="@{view::onClick}"
+                    android:text="@string/integralmodule_integral_detail"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintLeft_toRightOf="@id/mShopTv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mInfoCl" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:text="@string/integralmodule_do_tasks"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_19"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mTaskRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/integralmodule_item_task" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_shopping"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_200"
+                    android:background="@mipmap/mine_member_portal_goods_bg"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mIntegralExchangeTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="@string/integralmodule_integral_exchange"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_19"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mAllShopTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:drawableEnd="@mipmap/choose"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:onClick="@{view::onClick}"
+                    android:text="@string/integralmodule_see_all_shops"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintBottom_toBottomOf="@id/mIntegralExchangeTv"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mShopRv"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mIntegralExchangeTv" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

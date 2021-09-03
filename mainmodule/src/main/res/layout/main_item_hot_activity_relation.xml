@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="content"
+            type="String" />
+
+        <variable
+            name="honesty"
+            type="String" />
+
+        <variable
+            name="location"
+            type="String" />
+
+        <variable
+            name="palceHolder"
+            type="android.graphics.drawable.Drawable" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_16">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/iv_image"
+            android:layout_width="@dimen/dp_98"
+            android:layout_height="@dimen/dp_98"
+            android:scaleType="center"
+            app:border_color="@color/white"
+            app:corner_bottom_left_radius="@dimen/dp_6"
+            app:corner_bottom_right_radius="@dimen/dp_6"
+            app:corner_top_left_radius="@dimen/dp_6"
+            app:corner_top_right_radius="@dimen/dp_6"
+            app:is_circle="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_8"
+            app:layout_constraintBottom_toBottomOf="@id/iv_image"
+            app:layout_constraintEnd_toEndOf="@id/iv_image"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/iv_image">
+
+            <ImageView
+                android:id="@+id/iv_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_4"
+                android:src="@mipmap/activity_details_video"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/iv_gold_flag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_4"
+                android:src="@mipmap/activity_details_commentary" />
+
+            <ImageView
+                android:id="@+id/iv_720"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_4"
+                android:src="@mipmap/activity_details_720"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{name}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_17"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tool:text="adsfasdfasdfasdf" />
+
+        <com.daqsoft.provider.view.LabelsView
+            android:id="@+id/rv_tags"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:minHeight="25dp"
+            android:padding="5dp"
+            app:labelBackground="@drawable/shape_colorprimary_2_0_5_white"
+            app:labelTextColor="@color/colorPrimary"
+            app:labelTextHeight="wrap_content"
+            app:labelTextPaddingBottom="@dimen/dp_2_5"
+            app:labelTextPaddingLeft="@dimen/dp_6"
+            app:labelTextPaddingRight="@dimen/dp_6"
+            app:labelTextPaddingTop="@dimen/dp_2_5"
+            app:labelTextSize="@dimen/sp_10"
+            app:labelTextWidth="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            app:lineMargin="@dimen/dp_6"
+            app:maxSelect="0"
+            app:minSelect="1"
+            app:selectType="SINGLE"
+            app:wordMargin="@dimen/dp_4"/>
+
+        <TextView
+            android:id="@+id/rv_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:text="@{content}"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintTop_toBottomOf="@+id/rv_tags"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            tool:text="9.6分" />
+
+        <TextView
+            android:id="@+id/rv_honesty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{honesty}"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/sp_12"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/rv_content"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            tool:text="9.6分" />
+
+        <TextView
+            android:id="@+id/rv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{location}"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintTop_toTopOf="@+id/rv_honesty"
+            app:layout_constraintStart_toEndOf="@id/rv_honesty"
+            tool:text="9.6分" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

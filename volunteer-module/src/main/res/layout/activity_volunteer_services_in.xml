@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_volunteer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_20"
+            android:paddingBottom="@dimen/dp_22"
+            android:background="@drawable/shape_white_5">
+
+            <ImageView
+                android:id="@+id/iv_volunteer"
+                android:layout_width="@dimen/dp_36"
+                android:layout_height="@dimen/dp_36"
+                android:layout_marginVertical="@dimen/dp_22"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:src="@mipmap/volunteer_personal_register_entrance_single"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_reg_volunteer_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:includeFontPadding="false"
+                android:text="@string/volunteer_reg_label"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintLeft_toRightOf="@+id/iv_volunteer"
+                app:layout_constraintTop_toTopOf="@+id/iv_volunteer" />
+
+            <TextView
+                android:id="@+id/tv_tip_volunteer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:includeFontPadding="false"
+                android:text="@string/volunteer_reg_declar"
+                app:layout_constraintLeft_toLeftOf="@id/tv_reg_volunteer_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_reg_volunteer_title" />
+
+            <TextView
+                android:id="@+id/tv_check_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_20"
+                android:background="@drawable/volunteer_shape_check_status_2"
+                android:padding="@dimen/dp_4"
+                android:text="@string/volunteer_reg_check_status"
+                android:textColor="@color/volunteer_module_level_2"
+                android:textSize="@dimen/sp_10"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_reg_volunteer_title" />
+
+            <LinearLayout
+                android:id="@+id/ll_check"
+                android:visibility="gone"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_37"
+                android:orientation="vertical"
+                android:layout_marginRight="@dimen/dp_20"
+                app:layout_constraintLeft_toLeftOf="@id/iv_volunteer"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tip_volunteer">
+
+                <TextView
+                    android:id="@+id/tv_check_no_suc_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/volunteer_check_no_suc_label"
+                    android:textColor="@color/ff4e4e"
+                    android:textSize="@dimen/sp_13" />
+
+                <TextView
+                    android:id="@+id/tv_check_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_13"
+                    tools:text="这里展示未通过的原因这里展示未通过的原因这里展
+示未通过的原因这里展示未通过的原因，这里展示未
+通过的原因这里展示未通过的原因。" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="@color/divider_e2"
+                    android:layout_marginTop="@dimen/dp_16"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_bottom"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/ll_check"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_goneMarginTop="@dimen/dp_38"
+                android:layout_marginTop="@dimen/dp_17"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_show_apply"
+                android:layout_weight="1"
+                android:text="@string/volunteer_show_apply_label"
+                android:gravity="center"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_13"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="match_parent"
+                    android:background="@color/divide_e8"
+                    />
+                <TextView
+                    android:id="@+id/tv_cancel_apply"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_13"
+                    android:layout_width="@dimen/dp_0"
+                    android:text="@string/volunteer_cancel_apply_label"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_volunteer_team"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_16"
+            android:paddingBottom="@dimen/dp_22"
+            android:background="@drawable/shape_white_5">
+
+            <ImageView
+                android:id="@+id/iv_volunteer_team"
+                android:layout_width="@dimen/dp_36"
+                android:layout_height="@dimen/dp_36"
+                android:layout_marginVertical="@dimen/dp_22"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:src="@mipmap/volunteer_personal_register_entrance_team"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_reg_volunteer_title_team"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:includeFontPadding="false"
+                android:text="@string/volunteer_team_reg_label"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintLeft_toRightOf="@+id/iv_volunteer_team"
+                app:layout_constraintTop_toTopOf="@+id/iv_volunteer_team" />
+
+            <TextView
+                android:id="@+id/tv_tip_volunteer_team"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:includeFontPadding="false"
+                android:text="@string/volunteer_reg_declar"
+                app:layout_constraintLeft_toLeftOf="@id/tv_reg_volunteer_title_team"
+                app:layout_constraintTop_toBottomOf="@+id/tv_reg_volunteer_title_team" />
+
+            <TextView
+                android:id="@+id/tv_check_status_team"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_20"
+                android:background="@drawable/volunteer_shape_check_status_2"
+                android:padding="@dimen/dp_4"
+                android:text="@string/volunteer_reg_check_status"
+                android:textColor="@color/volunteer_module_level_2"
+                android:textSize="@dimen/sp_10"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_reg_volunteer_title_team" />
+
+            <LinearLayout
+                android:id="@+id/ll_check_team"
+                android:visibility="gone"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_37"
+                android:orientation="vertical"
+                android:layout_marginRight="@dimen/dp_20"
+                app:layout_constraintLeft_toLeftOf="@id/iv_volunteer_team"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tip_volunteer_team">
+
+                <TextView
+                    android:id="@+id/tv_check_no_suc_label_team"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@string/volunteer_check_no_suc_label"
+                    android:textColor="@color/ff4e4e"
+                    android:textSize="@dimen/sp_13" />
+
+                <TextView
+                    android:id="@+id/tv_check_conten_teamt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_13"
+                    tools:text="这里展示未通过的原因这里展示未通过的原因这里展
+示未通过的原因这里展示未通过的原因，这里展示未
+通过的原因这里展示未通过的原因。" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="@color/divider_e2"
+                    android:layout_marginTop="@dimen/dp_16"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_bottom_team"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/ll_check_team"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_goneMarginTop="@dimen/dp_38"
+                android:layout_marginTop="@dimen/dp_17"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_show_apply_team"
+                    android:layout_weight="1"
+                    android:text="@string/volunteer_show_apply_label"
+                    android:gravity="center"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_13"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="match_parent"
+                    android:background="@color/divide_e8"
+                    />
+                <TextView
+                    android:id="@+id/tv_cancel_apply_team"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_13"
+                    android:layout_width="@dimen/dp_0"
+                    android:text="@string/volunteer_cancel_apply_label"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_apply_record"
+            android:background="@drawable/shape_btn_primary_boder_14"
+            android:text="@string/volunteer_apply_record"
+            android:textSize="@dimen/sp_12"
+            android:textColor="@color/colorPrimary"
+            android:paddingHorizontal="@dimen/dp_14"
+            android:paddingVertical="@dimen/dp_6"
+            android:layout_marginTop="@dimen/dp_32"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</layout>

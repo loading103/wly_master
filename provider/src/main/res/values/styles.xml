@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="EditText_Common">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_17</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/txt_black</item>
+        <item name="android:textColorHint">@color/txt_gray</item>
+    </style>
+    <!--baseDialog动画的样式-->
+    <style name="dialog_zoom">
+        <item name="android:windowEnterAnimation">@anim/dialog_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_scale_out</item>
+    </style>
+
+    <style name="dialog_anim_bottom">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_out</item>
+    </style>
+
+    <style name="dialog_anim_top">
+        <item name="android:windowEnterAnimation">@anim/dialog_top_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_top_out</item>
+    </style>
+
+    <style name="dialog_anim_right">
+        <item name="android:windowEnterAnimation">@anim/dialog_right_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_right_out</item>
+    </style>
+
+    <style name="dialog_anim_left">
+        <item name="android:windowEnterAnimation">@anim/dialog_left_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_left_out</item>
+    </style>
+
+    <style name="DarkAnimation">
+        <item name="android:windowEnterAnimation">@anim/dark_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/dark_fade_out</item>
+    </style>
+
+    <style name="RecoderInfoDialog" parent="@style/LightDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <declare-styleable name="styleable">
+        <attr name="seat_checked" format="reference" />
+        <attr name="seat_sold" format="reference" />
+        <attr name="seat_available" format="reference" />
+        <attr name="overview_checked" format="color" />
+        <attr name="overview_sold" format="color" />
+        <attr name="txt_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="editSearchViewStyle">
+        <attr name="txt_hint" format="string" />
+    </declare-styleable>
+
+    <style name="PrivacyStatementDialog" parent="@style/LightDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <!--便捷服务 TextView-->
+    <style name="tv_provider_details_server">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/dp_12</item>
+        <item name="android:layout_marginTop">@dimen/dp_12</item>
+        <item name="android:textColor">@color/txt_black</item>
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!--便捷服务 ImageView-->
+    <style name="iv_provider_details_server">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginRight">@dimen/dp_8</item>
+        <item name="android:gravity">bottom</item>
+        <item name="android:layout_gravity">right|bottom</item>
+    </style>
+    <!--便捷服务 LinearLayout-->
+    <style name="ll_provider_details_server">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/dp_60</item>
+        <item name="android:background">@drawable/shape_edit_search_3</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="rating_bar_activity" parent="Widget.AppCompat.RatingBar.Indicator">
+        <item name="android:progressDrawable">@drawable/comment_act_rating_bar</item>
+        <item name="minHeight">@dimen/dp_10</item>
+        <item name="maxHeight">@dimen/dp_10</item>
+    </style>
+    <declare-styleable name="MaxRecyclerView">
+        <attr name="maxHeight" format="dimension" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<data/>
+    <TextView
+        android:id="@+id/tv_city"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:gravity="center"
+        android:paddingTop="@dimen/dp_9"
+        android:textSize="@dimen/sp_15"
+        android:paddingBottom="@dimen/dp_9"
+        android:background="@drawable/service_green_selector_gridient"
+        android:textColor="@drawable/service_text_gray_selector"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="wrap_content"/>
+</layout>

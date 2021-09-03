@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_10"
+            android:background="@color/f5" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/dp_42">
+
+            <TextView
+                android:id="@+id/tv_order_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_14"
+                tools:text="订单编号：67343" />
+
+            <TextView
+                android:id="@+id/tv_oder_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_20"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_15"
+                tools:text="已退款" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:background="@color/d4d4d4" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:paddingTop="@dimen/dp_18">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/img_order"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="@dimen/dp_80"
+                app:corner_radius="@dimen/dp_5" />
+
+            <TextView
+                android:id="@+id/tv_order_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/img_order"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_14"
+                tools:text="成华区艺术交流中心" />
+
+            <TextView
+                android:id="@+id/tv_order_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_14"
+                tools:text="免费" />
+
+            <TextView
+                android:id="@+id/tv_order_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_order_name"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_4"
+                android:layout_toRightOf="@+id/img_order"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_12"
+                tools:text="时间：2020.06.18-2020.08.15" />
+
+            <TextView
+                android:id="@+id/tv_order_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_order_time"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_4"
+                android:layout_toRightOf="@+id/img_order"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_12"
+                tools:text="数量：22" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/dp_20">
+
+            <TextView
+                android:id="@+id/tv_total_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="总支付："
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_12"
+                tools:text="总支付：" />
+
+            <TextView
+                android:id="@+id/tv_total_pay_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_total_pay"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_12"
+                tools:text="免费" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/user_back_wite_strok_d4_round_5"
+            android:text="@string/order_cancel_order"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_15" />
+    </LinearLayout>
+</layout>

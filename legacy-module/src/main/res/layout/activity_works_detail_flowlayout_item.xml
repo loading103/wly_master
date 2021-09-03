@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp_4"
+        android:paddingRight="@dimen/dp_4">
+
+        <TextView
+            android:text="asdasda"
+            android:id="@+id/tv_resource_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:layout_marginTop="@dimen/dp_4"
+            android:background="@drawable/legacy_label_bg"
+            android:textColor="@color/legacy_module_primary_color"
+            android:textSize="@dimen/sp_11"
+            app:layout_constraintLeft_toRightOf="@id/tv_city"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+    </LinearLayout>
+
+</layout>

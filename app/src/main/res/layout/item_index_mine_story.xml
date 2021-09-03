@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/dp_40">
+
+        <RelativeLayout
+            android:id="@+id/v_mine_story"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16"
+            android:background="@drawable/shape_white_5"
+            android:paddingBottom="@dimen/dp_20"
+            android:visibility="gone">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/img_time_cover"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_170"
+                app:corner_top_left_radius="@dimen/dp_5"
+                app:corner_top_right_radius="@dimen/dp_5" />
+
+            <TextView
+                android:id="@+id/tv_address_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_time_cover"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_16"
+                android:background="@drawable/shape_f5_bg_r9"
+                android:drawableLeft="@mipmap/time_home_hot_position"
+                android:drawablePadding="@dimen/dp_4"
+                android:ellipsize="end"
+                android:paddingLeft="@dimen/dp_8"
+                android:paddingTop="@dimen/dp_3"
+                android:paddingRight="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_3"
+                android:singleLine="true"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_11"
+                tools:text="成都~文化场馆~成都市博物馆" />
+
+            <TextView
+                android:id="@+id/tv_story_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_address_tag"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_16"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_story_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_14"
+                android:drawableLeft="@mipmap/time_home_list_time"
+                android:drawablePadding="@dimen/dp_3"
+                android:gravity="center"
+                android:textSize="@dimen/sp_12"
+                tools:text="ad" />
+
+            <TextView
+                android:id="@+id/tv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_story_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_14"
+                android:layout_marginRight="@dimen/dp_18"
+                android:layout_toLeftOf="@+id/tv_like"
+                android:drawableLeft="@mipmap/time_home_list_comment"
+                android:drawablePadding="@dimen/dp_3"
+                android:gravity="center"
+                android:textSize="@dimen/sp_12"
+                tools:text="587" />
+
+            <TextView
+                android:id="@+id/tv_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_story_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_14"
+                android:layout_marginRight="@dimen/dp_16"
+                android:drawableLeft="@mipmap/time_home_list_like"
+                android:drawablePadding="@dimen/dp_3"
+                android:gravity="center"
+                android:textSize="@dimen/sp_12"
+                tools:text="236" />
+
+            <View
+                android:id="@+id/v_mine_line_time"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_below="@+id/tv_time"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
+                android:background="@color/e8e8e8" />
+
+            <TextView
+                android:id="@+id/tv_time_share_story"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_40"
+                android:layout_below="@+id/v_mine_line_time"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_14"
+                android:background="@drawable/shape_r20_appmain"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20"
+                android:text="分享你的故事"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_13" />
+
+            <TextView
+                android:id="@+id/tv_mine_all_story"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_time_share_story"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_14"
+                android:drawableRight="@mipmap/common_button_arrow_more_small"
+                android:drawablePadding="@dimen/dp_5"
+                android:gravity="center_vertical"
+                android:text="我的全部故事"
+                android:textColor="@color/app_main_color"
+                android:textSize="@dimen/sp_13" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/v_empty_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16"
+            android:background="@drawable/shape_white_5"
+            android:padding="@dimen/dp_20"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/img_empty_time"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_140"
+                android:src="@mipmap/mine_story_default" />
+
+            <TextView
+                android:id="@+id/tv_empty_time_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_empty_time"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="这里空空如也，用故事记录你的美好生活"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:id="@+id/tv_empty_share_story"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_40"
+                android:layout_below="@+id/tv_empty_time_tip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_14"
+                android:background="@drawable/shape_r20_appmain"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20"
+                android:text="分享你的故事"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_13" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

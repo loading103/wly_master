@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/rl_top_message_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_16">
+
+            <RelativeLayout
+                android:id="@+id/rl_tip_message"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_28"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_toLeftOf="@+id/tv_tip_message"
+                android:background="@drawable/shape_msg_f7_r5">
+
+                <ImageView
+                    android:id="@+id/img_close_tip"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:src="@mipmap/mine_message_guanbi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_toRightOf="@+id/img_close_tip"
+                    android:text="@string/mine_message_center_tip"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_11" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_tip_message"
+                android:layout_width="@dimen/dp_58"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/shape_msg_ffc539_r5"
+                android:gravity="center"
+                android:minHeight="@dimen/dp_28"
+                android:text="@string/mine_message_to_open"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_11" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:text="全部已读"
+            android:layout_below="@+id/rl_top_message_center"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@drawable/shape_white_15_stroker"
+            android:paddingRight="@dimen/dp_15"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingBottom="@dimen/dp_5"
+            android:paddingTop="@dimen/dp_5"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/dp_12"/>
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/srl_msg_center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_read"
+            android:layout_marginTop="1dp">
+
+            <com.daqsoft.baselib.widgets.PandaRefreshHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </com.daqsoft.baselib.widgets.PandaRefreshHeader>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recy_msg_centers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+    </RelativeLayout>
+</layout>

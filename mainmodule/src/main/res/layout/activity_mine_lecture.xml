@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_90"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/tv_mine_lecture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:background="@drawable/shape_black50_r14"
+                android:padding="@dimen/dp_9"
+                android:text="我已学习"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_11" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_toRightOf="@+id/tv_mine_lecture"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/img_study_class"
+                            android:layout_width="@dimen/dp_14"
+                            android:layout_height="@dimen/dp_16"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/mine_study_icon_class" />
+
+                        <TextView
+                            android:id="@+id/tv_study_class"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_toRightOf="@+id/img_study_class"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold"
+                            tools:text="16" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/tv_study_class"
+                            android:layout_marginLeft="@dimen/dp_3"
+                            android:layout_toRightOf="@+id/tv_study_class"
+                            android:text=""
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_12" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="@dimen/dp_0_5"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_gravity="center_vertical"
+                    android:alpha="0.7"
+                    android:background="@color/white" />
+
+                <RelativeLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:id="@+id/img_study_hour"
+                            android:layout_width="@dimen/dp_14"
+                            android:layout_height="@dimen/dp_16"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/mine_study_icon_hour" />
+
+                        <TextView
+                            android:id="@+id/tv_study_hour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_toRightOf="@+id/img_study_hour"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold"
+                            tools:text="32" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/tv_study_hour"
+                            android:layout_marginLeft="@dimen/dp_3"
+                            android:layout_toRightOf="@+id/tv_study_hour"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_12" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_25"
+            android:drawableLeft="@mipmap/whcgxq_bt_bq"
+            android:drawablePadding="@dimen/dp_12"
+            android:text="学习历史"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_19"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_study_histories"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_20" />
+    </LinearLayout>
+</layout>

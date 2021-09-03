@@ -1,0 +1,246 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">mainmodule</string>
+    <string name="main_branch">文旅品牌</string>
+    <string name="main_sichuan_branch">四川文旅品牌</string>
+    <string name="main_sichuan_branch_slog">天府三九大 安逸走四川</string>
+
+    <string name="main_hot_activity">热门活动</string>
+    <string name="main_hot_search_text">搜索活动名称</string>
+
+
+    <string name="order_free">免费</string>
+    <string name="order_free_reserve">免费预订</string>
+    <string name="order_on_line">线上报名</string>
+    <string name="order_off_line">线下报名</string>
+    <string name="order_activity_room_time_stamp_">%1$s-%2$s</string>
+    <string name="order_integral">积分</string>
+
+    <string name="main_hot_activity_detail">活动详情</string>
+    <string name="main_activity_order_immediately">免费预订</string>
+    <string name="main_activity_order_intergral">积分预订</string>
+    <string name="main_activity_order_under_line">线下报名\n直接前往</string>
+    <string name="main_activity_sign_immediately">立即报名</string>
+    <string name="main_activity_join_immediately">申请加入\n%1$s人已报名</string>
+    <string name="main_activity_order_empty">活动已订完</string>
+    <string name="main_activity_order_notenough">积分不足</string>
+    <string name="main_activity_order_done">已预订</string>
+    <string name="main_activity_sign_done">已报名</string>
+    <string name="main_activity_order_over">活动预订已结束</string>
+    <string name="main_activity_sign_over">活动预订已结束</string>
+    <string name="main_activity_over">活动结束</string>
+    <string name="main_activity_recruit_over">招募已结束</string>
+    <string name="main_activity_order_apply">申请中</string>
+    <string name="main_activity_order_unstart">未开始</string>
+    <string name="main_activity_order_title">活动预订</string>
+    <string name="main_activity_order_encor_title">活动报名</string>
+    <string name="main_activity_online_select_seat">在线选座</string>
+    <string name="main_activity_order_success">预订成功</string>
+    <!--    <string name="home_activity_limit_numbers">此活动每人限购%1$s张，每次%2$s张</string>-->
+    <string name="home_activity_limit_numbers">此活动每人限购%1$s张</string>
+    <string name="home_honesty">诚信分大于%1$s分可免审核</string>
+    <string name="home_activity_comment_number">共%1$s条评论</string>
+    <string name="home_activity_commnent_too">我也说两句</string>
+    <string name="home_activity_comment_submit">写评论</string>
+    <string name="home_activity_comment">所有评论</string>
+    <string name="home_activity_comment_hint">请写下评论的具体内容</string>
+    <string name="home_activity_comment_image_tip">图片+视频最多9个</string>
+    <string name="home_activity_comment_popup_hint">说点什么吧</string>
+    <string name="home_activity_comment_popup_btn">发送</string>
+
+
+    <string name="home_activity_map_model">地图模式</string>
+    <string name="home_success_notice">电子码已发送至您%1$s手机，请查收！</string>
+    <string name="home_strategy">攻略</string>
+    <string name="home_strategy_detail_title">攻略详情</string>
+    <string name="home_topic">话题</string>
+    <string name="home_topic_detail">话题详情</string>
+    <string name="home_story">故事</string>
+    <string name="time_title">时光</string>
+    <string name="home_all_story">所有故事</string>
+    <string name="story_tag">标签墙</string>
+    <string name="story_add_tag">添加标签</string>
+    <string name="story_hot_tags">热门标签</string>
+    <string name="story_all_tag">全部标签</string>
+    <string name="story_useful_Tag">常用标签</string>
+
+    <string name="home_topic_content_number">%1$s条内容</string>
+    <string name="home_story_show_number">浏览量 %1$s</string>
+    <string name="home_story_number">%1$s个好故事</string>
+    <string name="home_story_tag">好故事由你来讲</string>
+    <string name="home_story_image_number">%1$s图</string>
+    <string name="home_story_type_strategy">游记攻略</string>
+    <string name="home_story_tag_detail">全部故事 Stories</string>
+    <string name="home_story_detail">故事详情</string>
+    <string name="home_mine_story">我的故事</string>
+
+    <string name="search_address_hint" tools:ignore="ExtraTranslation">搜索地点</string>
+    <string name="address_default">未能获取当前位置，请开启定位</string>
+    <string name="no_show_self_address">不显示所在位置</string>
+    <string name="home_story_address_title">添加地点</string>
+    <string name="home_story_write_story_title">我要写故事</string>
+
+    <string name="home_story_write_title_hint">有标题才能被推荐上封面，被更多人看到哟！</string>
+    <string name="home_story_write_hint">#故事标签#写下你的故事...</string>
+    <string name="home_story_tag_hint">+ 标签</string>
+    <string name="home_story_image_limit_hint">最多可添加20张图片或20张图片1个视频</string>
+    <string name="home_story_add_location_label">添加地点</string>
+    <string name="home_story_topic_label">参与话题</string>
+    <string name="home_story_topic_label_end">话题已结束</string>
+
+    <string name="home_story_save">存草稿</string>
+    <string name="home_story_publish">发布</string>
+    <string name="story_link_tip">原文转载</string>
+    <string name="home_story_tag_search">搜索标签</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确定</string>
+    <string name="home_tag_notice_hint">未找到%1$s标签，点击添加并使用</string>
+    <string name="home_story_status_valid">小编正在审核你的故事，目前仅自己可见</string>
+    <string name="home_story_status_valid_machine">很抱歉你的故事未通过审核，查看不通过原因 ></string>
+    <string name="home_story_status_valid_human">很抱歉你的故事未通过审核,不通过的原因：%1$s</string>
+    <string name="home_topic_list_titles">话题列表</string>
+    <string name="home_strategy_title_hint">请输入攻略标题，不超过50字</string>
+    <string name="home_strategy_content_hint">说说你的经历吧</string>
+    <string name="home_strategy_add_image_video">添加图/视频</string>
+    <string name="home_strategy_add_graph">段落标题</string>
+    <string name="home_strategy_graph_title_hint">请输入段落标题名称，不超过20字</string>
+    <string name="main_scenic_search_text">搜索景区名称</string>
+    <string name="main_scenic_title">景区 Lesisure Tour</string>
+    <string name="main_hotel_title">酒店 Comfortable Accommodation</string>
+    <string name="main_food_title">美食 Delicious Food</string>
+    <string name="main_playground_title">娱乐场所</string>
+    <string name="main_scenic_detail">景区详情</string>
+    <string name="main_strategy_find">找攻略</string>
+    <string name="main_resource_hotel_list">住酒店</string>
+    <string name="main_strategy_search_hint">搜索游玩攻略</string>
+
+    <string name="main_spot_detail">景点详情</string>
+    <string name="main_spot_best">最佳拍照点</string>
+    <array name="activity_sort">
+        <item>不限，</item>
+        <item>距离优先，2</item>
+        <item>人气优先，3</item>
+        <item>最新，4</item>
+    </array>
+    <!--异常提示-->
+    <string name="toast_no_location_permisson">非常抱歉，使用定位功能，必须先授权</string>
+    <string name="toast_no_search_info">"非常抱歉，未找到相关信息~"</string>
+    <string name="to_expand_hint">查看全部 ></string>
+    <string name="to_shrink_hint">Shrink</string>
+
+    <string name="side_tour_title">身边游</string>
+    <string name="side_tour_toilent_tip">坑位信息仅供参考，具体以实际为准</string>
+    <string name="side_tour_park_tip">车位信息仅供参考，具体以实际为准</string>
+    <string name="side_tour_park_info">车位信息</string>
+    <string name="side_tour_park_charge">收费标准</string>
+    <string name="side_tour_park_time">营业时间</string>
+    <string name="side_tour_park_phone_number">联系电话</string>
+    <string name="side_tour_park_images">场地图片</string>
+    <string name="topic_search_hint">请输入关键字进行搜索</string>
+
+    <string name="main_hotel_search">搜索酒店名称</string>
+    <string name="hotel_info_more">酒店介绍</string>
+    <string name="hotel_info_tip">是否对该酒店感兴趣？</string>
+    <string name="main_traffic_info">交通信息</string>
+
+    <string name="hotel_detail_room">酒店客房</string>
+    <!--早餐类型-->
+    <string name="breakfast_0">无早</string>
+    <string name="breakfast_1">含早</string>
+    <string name="breakfast_2">含双早</string>
+    <string name="breakfast_3">含三早</string>
+
+    <string name="rmb">¥</string>
+    <string name="qi">起</string>
+    <string name="look_all_hotel_room">查看全部客房</string>
+    <string name="hotel_search_food">搜索美食名称</string>
+    <string name="hotel_search_playground">搜索娱乐场所的名称</string>
+    <string name="food_ls">吃美食</string>
+    <string name="food_ls_price">人均%1$s元</string>
+    <string name="honeysty_integrity_score">诚信分大于%1$s分才能预订</string>
+    <string name="food_ls_opentime">营业时间：%1$s</string>
+    <string name="food_detail">美食详情</string>
+    <string name="playground_detail">娱乐场所详情</string>
+    <string name="food_info">餐厅介绍</string>
+    <string name="food_address_info">餐厅地址</string>
+    <string name="food_contact_shop">联系商家</string>
+    <string name="food_contact_playshop">联系娱乐场所</string>
+    <string name="food_product">美食商品</string>
+    <string name="food_product_look_all">查看全部商品</string>
+    <string name="food_product_confirm">预订</string>
+    <string name="food_product_count_time">距开始还剩</string>
+    <string name="show_all_router">查看全部线路</string>
+    <string name="iv_capacity">%s人</string>
+    <string name="iv_area_m">%s㎡</string>
+    <string name="iv_time_moth">%s月</string>
+    <string name="ticket_activity">活动</string>
+    <string name="ticket_appointment_info">预订说明</string>
+    <string name="ticket_appointment_seting">退款设置</string>
+    <string name="ticket_appointment_cance_oder">订单取消</string>
+    <string name="ticket_appointment_ruyuan_pz">入园凭证</string>
+    <string name="ticket_appointment_ruyuan_action">入园方式</string>
+    <string name="ticket_appointment_runyuan_num">入园人数</string>
+    <string name="ticket_appointment_ruyuan_cishu">入园次数</string>
+    <string name="ticket_appointment_ruyuan_xz">入园限制</string>
+    <string name="ticket_appointment_cash">费用包含</string>
+
+    <string name="router_appointment_info">预订须知</string>
+    <string name="router_appointemnt_out_cash">费用不包含</string>
+
+    <string name="country_introduce">农家乐简介</string>
+    <string name="country_comment">写评论</string>
+    <string name="country_share">转发</string>
+    <string name="Country_tour">乡村游</string>
+    <string name="country_all">全部乡村</string>
+    <string name="country_detail">乡村详情</string>
+    <string name="country_detail_more">乡村介绍</string>
+    <string name="country_spots">乡村景观</string>
+    <string name="country_scenic_spots">景观点详情</string>
+
+    <string name="main_panoramic">720全景漫游</string>
+
+    <string name="country_title">Hi，%s，这里是</string>
+    <string name="country_expand"> </string>
+    <string name="country_collapse"> </string>
+    <string name="it_robot_empty_tip">不好意思主人，%s暂时还没有收录你要查询得信息</string>
+
+    <string name="watch_show_title">看演出</string>
+    <string name="watch_show_art">艺术门类</string>
+    <string name="culture_and_tourism_brand">文旅品牌</string>
+    <string name="culture_content_ls">资讯列表</string>
+    <string name="culture_line_ls">线路列表</string>
+    <string name="culture_fine_ls">精品线路</string>
+    <string name="culture_citycard_ls">下一站，出发</string>
+    <string name="culture_citycard_info">城市名片</string>
+    <string name="culture_brand_ls">品牌展播</string>
+
+    <string name="recomend_activity">推荐活动</string>
+    <string name="activity_daily">活动日历</string>
+    <string name="activity_overview">活动概览</string>
+    <string name="all_province_activity">全部文旅活动</string>
+    <string name="activity_more_types">查看更多分类</string>
+    <string name="activity_wonderful_moment">精彩瞬间</string>
+
+    <string name="main_delimiter_vertical">|</string>
+    <string name="main_already_recruit">已招募</string>
+    <string name="main_reprint">转载</string>
+    <string name="input_other_part_link">请填写微博等第三方平台链接</string>
+    <string name="read_the_original">阅读原文</string>
+    <string name="compot_level_1">&#160;舒适&#160;</string>
+    <string name="compot_level_2">&#160;一般&#160;</string>
+    <string name="compot_level_3">&#160;拥挤&#160;</string>
+    <string name="compot_level_4">&#160;非常拥挤&#160;</string>
+    <string name="main_open_time">营业时间</string>
+    <string name="main_contanct_phone">联系电话</string>
+    <string name="main_address_img">场地图片</string>
+
+    <string name="quest_start_time">开始：%s</string>
+    <string name="canyu_start_time">参与时间：%s</string>
+    <string name="quest_end_time">结束：%s</string>
+
+    <string name="show_list_address">展览地点：%1$s</string>
+    <string name="show_list_time">展览时间：%1$s</string>
+    <string name="show_list_time1">展览时间：%1$s-%2$s</string>
+
+
+
+</resources>

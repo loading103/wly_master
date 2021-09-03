@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
+
+    <data>
+
+        <import type="com.daqsoft.usermodule.view.NumberOperateView" />
+
+        <variable
+            name="view"
+            type="com.daqsoft.usermodule.view.NumberOperateView" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/increase"
+            android:layout_width="@dimen/dp_22"
+            android:layout_height="@dimen/dp_22"
+            android:scaleType="centerCrop"
+            android:src="@drawable/selected_reduse" />
+
+        <EditText
+            android:id="@+id/et_number"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_22"
+            android:background="@color/white"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="#333333" />
+
+        <ImageView
+            android:id="@+id/add"
+            android:layout_width="@dimen/dp_22"
+            android:layout_height="@dimen/dp_22"
+            android:scaleType="centerCrop"
+            android:src="@drawable/selected_add" />
+    </LinearLayout>
+</layout>
+
+

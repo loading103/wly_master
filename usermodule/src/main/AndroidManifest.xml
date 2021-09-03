@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.daqsoft.usermodule">
+
+    <application>
+        <activity
+            android:name=".ui.complaint.MineComplaintDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.complaint.MineComplaintActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.collection.MineFocusActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.collection.CollectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.userInoformation.PersonalInformationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.userInoformation.AuthenticateCommitActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.userInoformation.AuthenticateReviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.userInoformation.AuthenticateNotPassActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.userInoformation.AuthenticateCompleteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.order.ElectronicOrderInKindDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.credit.MineCreditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.credit.MineCreditHistoryActivity"
+            android:screenOrientation="portrait" />
+        <!--我的预约列表-->
+        <activity
+            android:name=".ui.order.MineAppointmentActivity"
+            android:screenOrientation="portrait" />
+        <!--意见反馈-->
+        <activity
+            android:name=".ui.activity.FeedBackActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <!--反馈列表-->
+        <activity
+            android:name=".ui.activity.FeedBackLsActivity"
+            android:screenOrientation="portrait" />
+        <!--四川版我的预约-->
+        <activity
+            android:name=".ui.order.MineAppointmentScActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!--四川版我的预约  改版-->
+        <activity
+            android:name=".ui.order.MyOrdersActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!--四川版我的详情  改版-->
+        <activity
+            android:name=".ui.order.NewOrderDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!--核销详情  改版-->
+        <activity
+            android:name=".ui.order.WriteOffDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!--核销成功界面-->
+        <activity
+            android:name=".ui.order.PartWritterOffSuccessActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!--取消订单-->
+        <activity
+            android:name=".ui.order.AppointCanceOrderActivity"
+            android:screenOrientation="portrait" />
+        <!--邀请有礼详情-->
+        <activity
+            android:name=".ui.invitation.InvitationActivity"
+            android:screenOrientation="portrait" />
+        <!--我的邀请列表-->
+        <activity
+            android:name=".ui.invitation.InviteLsActivity"
+            android:screenOrientation="portrait" />
+        <!--输入邀请码-->
+        <activity
+            android:name=".ui.invitation.InputInviteCodeActivity"
+            android:screenOrientation="portrait" />
+        <!--接收邀请码-->
+        <activity
+            android:name=".ui.invitation.ReceiveInvitationActivity"
+            android:screenOrientation="portrait" />
+        <!--邀请成功-->
+        <activity
+            android:name=".ui.invitation.InviteSuccessActivity"
+            android:screenOrientation="portrait" />
+        <!--购物退款-->
+        <activity
+            android:name=".ui.order.OrderRefundListActivity"
+            android:screenOrientation="portrait" />
+        <!--购物退款-->
+        <activity
+            android:name=".ui.order.OrderRefundDetailActivity"
+            android:screenOrientation="portrait" />
+        <!--消息中心-->
+        <activity
+            android:name=".ui.message.MessageCenterActivity"
+            android:screenOrientation="portrait" />
+        <!--消息中心-->
+        <activity
+            android:name=".ui.message.MessageListActivity"
+            android:screenOrientation="portrait" />
+        <!--互动消息中心-->
+        <activity
+            android:name=".ui.message.MessageHdListActivity"
+            android:screenOrientation="portrait" />
+        <!--互动消息中心-->
+        <activity
+            android:name=".ui.message.MessageOtherListActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.message.NoticeDetailActivity"
+            android:screenOrientation="portrait"/>
+        <!--消息课程详情-->
+        <activity
+            android:name=".ui.message.MessageCourseDetailActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

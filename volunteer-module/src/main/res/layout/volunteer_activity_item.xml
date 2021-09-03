@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="price"
+            type="String" />
+
+        <variable
+            name="left"
+            type="String" />
+
+        <variable
+            name="totalNum"
+            type="String" />
+
+        <variable
+            name="address"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_20">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/image"
+            app:corner_radius="@dimen/dp_5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_168"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_is_over"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_168"
+            android:layout_gravity="center"
+            android:background="@drawable/volunteer_shape_black_a60_r5"
+            android:gravity="center"
+            android:text="- 已结束 -"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_12"
+            android:src="@drawable/provider_selector_collect"
+            app:layout_constraintRight_toRightOf="@id/image"
+            app:layout_constraintTop_toTopOf="@id/image" />
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_12"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{name}"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            tool:text="大标题"
+            app:layout_constraintLeft_toLeftOf="@id/image"
+            app:layout_constraintTop_toBottomOf="@id/image" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_numbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="@{totalNum}"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_tags"
+            tool:text="adfafd" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{address}"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_numbers" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

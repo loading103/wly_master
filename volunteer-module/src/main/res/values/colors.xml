@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="volunteer_module_btn_color">#e36024</color>
+    <color name="volunteer_module_btn_bg">#fd623e</color>
+    <color name="volunteer_module_black_005">#20000000</color>
+    <color name="volunteer_module_tip_bg">#fff5e6</color>
+    <color name="volunteer_module_tip_txt">#ff9e05</color>
+    <color name="volunteer_module_rank_bg">#ff874f</color>
+    <color name="volunteer_module_rank_item_bg">#ffbb4f</color>
+    <color name="volunteer_module_rank_title">#dc5800</color>
+
+    <color name="volunteer_module_rank_tab_title_normal">#e5aea1</color>
+    <color name="volunteer_module_rank_btn_unable_bg">#fbc091</color>
+    <color name="volunteer_module_rank_btn_unable_txt">#c78650</color>
+
+    <color name="volunteer_module_level_1">#36cd64</color>
+    <color name="volunteer_module_level_2">#ff9e05</color>
+    <color name="volunteer_module_level_3">#3ab7e9</color>
+    <color name="volunteer_module_level_4">#5775e6</color>
+    <color name="volunteer_module_level_5">#9f4ee9</color>
+    <color name="volunteer_module_level_bg_1">#e2fce9</color>
+    <color name="volunteer_module_level_bg_2">#fff5e6</color>
+    <color name="volunteer_module_level_bg_3">#ebf8fd</color>
+    <color name="volunteer_module_level_bg_4">#eef1fc</color>
+    <color name="volunteer_module_level_bg_5">#f5edfd</color>
+    <color name="color_a_ff_0_5">#80ffffff</color>
+    <color name="color_a_ff_0_75">#BFffffff</color>
+</resources>

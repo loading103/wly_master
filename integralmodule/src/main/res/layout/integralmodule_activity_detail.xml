@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.daqsoft.integralmodule.ui.vm.IntegralDetailActivityVm" />
+
+        <variable
+            name="view"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:background="@color/c_2a3247"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mTopCl"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_40"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:background="@drawable/shape_white_5"
+            android:padding="@dimen/dp_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/mIntegralAvailableTv"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(vm.integralData.currPoint)}"
+                android:textColor="@color/db9a4e"
+                android:textSize="@dimen/sp_22"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="213,651" />
+
+            <TextView
+                android:id="@+id/mIntegralAvailTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:text="@string/integralmodule_integral_available"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mIntegralAvailableTv" />
+
+            <View
+                android:id="@+id/mDivideLine"
+                android:layout_width="@dimen/dp_0_5"
+                android:layout_height="@dimen/dp_0"
+                android:layout_marginStart="@dimen/dp_16"
+                android:background="@color/e8e8e8"
+                app:layout_constraintBottom_toBottomOf="@id/mIntegralAvailTv"
+                app:layout_constraintLeft_toRightOf="@id/mIntegralAvailableTv"
+                app:layout_constraintTop_toTopOf="@id/mIntegralAvailableTv" />
+
+            <TextView
+                android:id="@+id/mRecentGetTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:text="@{String.valueOf(vm.integralData.getPoint)}"
+                android:textColor="@color/db9a4e"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintBottom_toTopOf="@id/mRecentGetTextTv"
+                app:layout_constraintLeft_toRightOf="@id/mDivideLine"
+                app:layout_constraintTop_toTopOf="@id/mDivideLine"
+                tools:text="22,250" />
+
+            <TextView
+                android:id="@+id/mRecentGetTextTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/integralmodule_recent_30_get"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintBottom_toBottomOf="@id/mDivideLine"
+                app:layout_constraintLeft_toLeftOf="@id/mRecentGetTv"
+                app:layout_constraintTop_toBottomOf="@id/mRecentGetTv" />
+
+            <TextView
+                android:id="@+id/mRecentCostTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(vm.integralData.usePoint)}"
+                android:textColor="@color/c_5b6e9f"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintBottom_toTopOf="@id/mRecentGetTextTv"
+                app:layout_constraintLeft_toLeftOf="@+id/mRecentCostTextTv"
+                app:layout_constraintTop_toTopOf="@id/mDivideLine"
+                tools:text="15,300" />
+
+            <TextView
+                android:id="@+id/mRecentCostTextTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:text="@string/integralmodule_recent_30_cost"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintBottom_toBottomOf="@id/mDivideLine"
+                app:layout_constraintLeft_toRightOf="@+id/mRecentGetTextTv"
+                app:layout_constraintTop_toBottomOf="@id/mRecentGetTv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/mGetRecordTv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginStart="@dimen/dp_20"
+            android:onClick="@{view::onClick}"
+            android:paddingTop="@dimen/dp_16"
+            android:text="@string/integralmodule_get_record"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mTopCl" />
+
+        <View
+            android:id="@+id/mIndictor1"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_2"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@id/mDivideLine2"
+            app:layout_constraintLeft_toLeftOf="@id/mGetRecordTv"
+            app:layout_constraintRight_toRightOf="@id/mGetRecordTv" />
+
+        <TextView
+            android:id="@+id/mCostRecordTv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginStart="@dimen/dp_32"
+            android:onClick="@{view::onClick}"
+            android:paddingTop="@dimen/dp_16"
+            android:text="@string/integralmodule_cost_record"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintLeft_toRightOf="@id/mGetRecordTv"
+            app:layout_constraintTop_toTopOf="@id/mGetRecordTv" />
+
+        <View
+            android:id="@+id/mIndictor2"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_2"
+            android:background="@color/colorPrimary"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/mDivideLine2"
+            app:layout_constraintLeft_toLeftOf="@id/mCostRecordTv"
+            app:layout_constraintRight_toRightOf="@id/mCostRecordTv"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/mCalendarTv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:drawableLeft="@mipmap/mine_member_detail_icon_date"
+            android:drawablePadding="@dimen/dp_8"
+            android:gravity="center_vertical"
+            android:onClick="@{view::onClick}"
+            android:paddingTop="@dimen/dp_16"
+            android:text="@string/integralmodule_calendar"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintBottom_toBottomOf="@id/mCostRecordTv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/mCostRecordTv" />
+
+        <View
+            android:id="@+id/mDivideLine2"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@color/light_blue"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mGetRecordTv" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mRecordRv"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mDivideLine2"
+            tools:itemCount="3"
+            tools:listitem="@layout/integralmodule_item_record" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

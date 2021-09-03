@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="url"
+            type="String" />
+    </data>
+    <RelativeLayout
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/service_white_top_bottom_5_round"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_140">
+        <com.daqsoft.baselib.widgets.ArcImageView
+            url="@{url}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:corner_radius="@dimen/dp_5" />
+        <TextView
+            android:id="@+id/tv_name"
+            android:textStyle="bold"
+            android:shadowColor="@color/color_666"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:layout_marginStart="@dimen/dp_36"
+            android:textSize="@dimen/sp_22"
+            android:includeFontPadding="false"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:textColor="@color/white"
+            android:layout_above="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_content"
+            android:drawableStart="@drawable/service_white_underline"
+            android:drawableEnd="@drawable/service_white_underline"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:shadowColor="@color/color_666"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:layout_marginStart="@dimen/dp_36"
+            android:layout_alignParentBottom="true"
+            android:textSize="@dimen/sp_12"
+            android:paddingBottom="@dimen/dp_17"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+</layout>

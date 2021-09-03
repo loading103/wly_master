@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="java.util.List" />
+
+        <import type="com.daqsoft.thetravelcloudwithculture.home.bean.HomeContentBean" />
+
+        <variable
+            name="datas"
+            type="List&lt;HomeContentBean&gt;" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_home_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/ll_home_city_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_20"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_title_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/dp_6"
+                        android:visibility="gone"
+                        android:src="@mipmap/index_icon_point"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="城市名片"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@id/iv_title_icon"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:includeFontPadding="false"
+                        android:text="City card"
+                        android:textColor="@color/txt_gray"
+                        android:textSize="@dimen/sp_12"
+                        app:layout_constraintLeft_toRightOf="@id/iv_title_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.daqsoft.baselib.widgets.CenterDrawableTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:drawableRight="@mipmap/rmhd_more"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:gravity="center"
+                    android:text="@string/user_more"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/city_card_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_8"
+                android:overScrollMode="never" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_home_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/ll_home_brand_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_20"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_brand_title_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/dp_6"
+                        android:src="@mipmap/index_icon_point"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintLeft_toRightOf="@id/iv_brand_title_icon"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_brand_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="@string/home_branch_name_ws"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_20"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toRightOf="@id/iv_brand_title_icon"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/tv_brand_title_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/home_brand"
+                            android:visibility="gone"
+                            app:layout_constraintLeft_toRightOf="@id/iv_brand_title_icon"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_brand_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_6"
+                            android:includeFontPadding="false"
+                            android:text="@string/home_branch_label_ws"
+                            android:textColor="@color/txt_gray"
+                            android:textSize="@dimen/sp_12"
+                            app:layout_constraintLeft_toRightOf="@id/iv_brand_title_icon"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_brand_title" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <com.daqsoft.baselib.widgets.CenterDrawableTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:drawableRight="@mipmap/rmhd_more"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:gravity="center"
+                    android:text="@string/user_more"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:clipChildren="false"
+                android:visibility="gone">
+
+                <com.daqsoft.provider.view.AutoHeightViewPager
+                    android:id="@+id/pager_home_brand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <com.daqsoft.provider.scrollview.DqRecylerView
+                android:id="@+id/rv_home_brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_home_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_20"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_title_icon_line"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/dp_6"
+                        android:src="@mipmap/index_icon_point"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_title_line"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_title_line"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@string/home_line_name_ws"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@id/iv_title_icon_line"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:includeFontPadding="false"
+                        android:text="@string/home_line_info_ws"
+                        android:textColor="@color/txt_gray"
+                        android:textSize="@dimen/sp_12"
+                        app:layout_constraintLeft_toRightOf="@id/iv_title_icon_line"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title_line" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.daqsoft.baselib.widgets.CenterDrawableTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:drawableRight="@mipmap/rmhd_more"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:gravity="center"
+                    android:text="@string/user_more"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+
+            <!--            精品线路-->
+            <include
+                android:id="@+id/rootView"
+                layout="@layout/item_boutique_route_style_four_ws"
+                app:datas="@{datas}" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

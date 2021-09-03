@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/img_activity"
+            android:layout_width="0dip"
+            android:layout_height="0dip"
+            app:corner_radius="@dimen/dp_5"
+            app:layout_constraintDimensionRatio="5:4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/venue_details_activity_img_mask"
+            app:corner_radius="@dimen/dp_5"
+            app:layout_constraintBottom_toBottomOf="@id/img_activity"
+            app:layout_constraintLeft_toLeftOf="@id/img_activity"
+            app:layout_constraintRight_toRightOf="@id/img_activity"
+            app:layout_constraintTop_toTopOf="@id/img_activity" />
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginLeft="@dimen/dp_20"-->
+        <!--            android:layout_marginRight="@dimen/dp_20"-->
+        <!--            android:orientation="vertical"-->
+        <!--            android:layout_marginBottom="@dimen/dp_20"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintLeft_toLeftOf="@+id/img_activity"-->
+        <!--            app:layout_constraintRight_toRightOf="@+id/img_activity">-->
+
+        <TextView
+            android:id="@+id/tv_activity_name"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_14"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_22"
+            app:layout_constraintBottom_toTopOf="@+id/tv_activity_time"
+            app:layout_constraintLeft_toLeftOf="@+id/img_activity"
+            app:layout_constraintRight_toRightOf="@+id/img_activity"
+            tools:text="第五届《成都印象》画展" />
+
+        <TextView
+            android:id="@+id/tv_activity_time"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_14"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintBottom_toTopOf="@+id/llv_hotel_special_service"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="03.05-04.10 | 643参加" />
+
+        <com.daqsoft.provider.view.LabelsView
+            android:id="@+id/llv_hotel_special_service"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_12"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:minHeight="@dimen/dp_15"
+            app:labelBackground="@drawable/shape_activity_r_2"
+            app:labelTextColor="@color/white"
+            app:labelTextHeight="wrap_content"
+            app:labelTextPaddingBottom="@dimen/dp_1"
+            app:labelTextPaddingLeft="@dimen/dp_5"
+            app:labelTextPaddingRight="@dimen/dp_5"
+            app:labelTextPaddingTop="@dimen/dp_1"
+            app:labelTextSize="@dimen/sp_10"
+            app:labelTextWidth="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/img_activity"
+            app:layout_constraintLeft_toLeftOf="@id/img_activity"
+            app:layout_constraintRight_toLeftOf="@+id/tv_activity_price"
+            app:lineMargin="10dp"
+            app:maxSelect="0"
+            app:minSelect="1"
+            app:selectType="SINGLE"
+            app:wordMargin="10dp" />
+
+        <TextView
+            android:id="@+id/tv_activity_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_14"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_activity"
+            app:layout_constraintRight_toRightOf="@+id/img_activity"
+            app:layout_goneMarginRight="@dimen/dp_20"
+            tools:text="免费" />
+        <!--        </LinearLayout>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

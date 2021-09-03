@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/shape_white_r5"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingTop="@dimen/dp_18"
+        android:paddingRight="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_18">
+
+        <TextView
+            android:id="@+id/tv_reservation_time"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="预约时段：10：00-11：00" />
+
+        <TextView
+            android:id="@+id/tv_reservation_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:padding="@dimen/dp_5"
+            android:textSize="@dimen/sp_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_reservation_time" />
+
+        <View
+            android:id="@+id/line_res"
+            android:layout_width="0dip"
+            android:layout_height="@dimen/dp_0_5"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/d4d4d4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_reservation_status" />
+
+        <LinearLayout
+            android:id="@+id/llv_reservation_pinfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_14"
+            android:layout_marginRight="@dimen/dp_5"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tv_operation_btn"
+            app:layout_constraintTop_toBottomOf="@+id/line_res">
+
+            <TextView
+                android:id="@+id/tv_reservation_pnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_12"
+                tools:text="预约人数：10" />
+
+            <TextView
+                android:id="@+id/tv_reservation_pname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_12"
+                tools:text="预约人：罗老师" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_operation_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_primary_r13"
+            android:gravity="center"
+            android:minHeight="@dimen/dp_20"
+            android:paddingLeft="@dimen/dp_12"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_12"
+            android:paddingBottom="@dimen/dp_8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_11"
+            app:layout_constraintBottom_toBottomOf="@+id/llv_reservation_pinfo"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/llv_reservation_pinfo"
+            tools:text="点击核销" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

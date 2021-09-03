@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.daqsoft.provider.bean.VoteDetailBean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/trans_popwindow_bg">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_pop_rule"
+            android:layout_width="@dimen/dp_300"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shape_vote_white_r10"
+            app:cardCornerRadius="@dimen/dp_10">
+
+            <RelativeLayout
+                android:id="@+id/v_vote_tip_rule"
+                android:layout_width="@dimen/dp_300"
+                android:layout_height="wrap_content">
+
+
+                <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+                    android:id="@+id/banner_top_adv"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_150" />
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_240"
+                    android:layout_below="@+id/banner_top_adv"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_16">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="@{data.mainUnit!=null&amp;&amp;!data.mainUnit.empty}">
+
+                            <TextView
+                                android:id="@+id/tv_vote_main_company"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="主办单位"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_13"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@+id/tv_vote_main_company"
+                                android:layout_marginLeft="@dimen/dp_16"
+                                android:layout_toRightOf="@+id/tv_vote_main_company"
+                                android:text="@{data.mainUnit}"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_13"
+                                tools:text="文化和旅游厅" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:visibility="@{data.undertakeUnit!=null&amp;&amp;!data.undertakeUnit.empty}">
+
+                            <TextView
+                                android:id="@+id/tv_vote_work_company"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="承办单位"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_13"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@+id/tv_vote_work_company"
+                                android:layout_marginLeft="@dimen/dp_16"
+                                android:layout_toRightOf="@+id/tv_vote_work_company"
+                                android:text="@{data.undertakeUnit}"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_13"
+                                tools:text="文化和旅游厅" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:visibility="@{data.jointlyUnit!=null&amp;&amp;!data.jointlyUnit.empty}">
+
+                            <TextView
+                                android:id="@+id/tv_vote_help_company"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="协办单位"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_13"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@+id/tv_vote_help_company"
+                                android:layout_marginLeft="@dimen/dp_16"
+                                android:layout_toRightOf="@+id/tv_vote_help_company"
+                                android:text="@{data.jointlyUnit}"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_13"
+                                tools:text="文化和旅游厅" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:visibility="@{data.teachUnit!=null&amp;&amp;!data.teachUnit.empty}">
+
+                            <TextView
+                                android:id="@+id/tv_vote_zd_company"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="指导单位"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_13"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@+id/tv_vote_zd_company"
+                                android:layout_marginLeft="@dimen/dp_16"
+                                android:layout_toRightOf="@+id/tv_vote_zd_company"
+                                android:text="@{data.teachUnit}"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_13"
+                                tools:text="文化和旅游厅" />
+                        </RelativeLayout>
+
+                        <WebView
+                            android:id="@+id/tv_vote_rule"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_16"
+                            android:textColor="@color/color_333"
+                            android:textSize="@dimen/sp_13"
+                            android:visibility="@{data.voteRule!=null&amp;&amp;!data.voteRule.empty}" />
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/img_close_pop"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_below="@+id/cv_pop_rule"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_20"
+            android:src="@mipmap/volunteer_personal_signin_activity_pop_close" />
+    </RelativeLayout>
+</layout>

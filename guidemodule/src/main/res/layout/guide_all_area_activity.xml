@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.daqsoft.provider.mapview.MyMapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_speak_tip"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_28"
+            android:background="#65000000"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_speak"
+                android:layout_width="@dimen/dp_15"
+                android:layout_height="@dimen/dp_15"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:background="@drawable/guide_speak_anim"
+                android:scaleType="centerInside"
+                android:src="@drawable/guide_map_topbar_icon_playing" />
+
+
+            <com.daqsoft.guidemodule.widget.MarqueeTextView
+                android:textColor="@color/white"
+                android:id="@+id/tv_speak_tip"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingLeft="@dimen/dp_8"
+                android:paddingRight="@dimen/dp_8"
+                tools:text="正在为您播放“新疆维吾尔自治区博物馆”语音导览" />
+
+            <ImageView
+                android:id="@+id/iv_close_speak_tip"
+                android:layout_width="@dimen/dp_15"
+                android:layout_height="@dimen/dp_15"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/dp_10"
+                android:scaleType="centerInside"
+                android:src="@drawable/guide_map_topbar_button_close_highlighted" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_show_all_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/guide_b_white_stroke_e2_round_5"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_5"
+            android:text="@string/guide_all_area_map_two_line"
+            android:textColor="@color/guide_color_333"
+            android:textSize="@dimen/sp_11"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_speak_tip" />
+
+
+        <TextView
+            android:id="@+id/tv_show_scenic_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@drawable/guide_b_white_stroke_e2_round_5"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_5"
+            android:text="@string/guide_scenic_list_two_line"
+            android:textColor="@color/guide_color_333"
+            android:textSize="@dimen/sp_11"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_show_all_area" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_show_type_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/guide_b_white_stroke_e2_round_5"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_speak_tip">
+
+
+            <LinearLayout
+                android:id="@+id/ll_show_type_scenic"
+                android:layout_width="@dimen/dp_41"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_gravity="center"
+                    android:src="@drawable/guide_map_sidebar_icon_scenic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dp_2"
+                    android:text="@string/guide_scenic"
+                    android:textColor="@color/guide_color_333"
+                    android:textSize="@dimen/sp_12" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_margin="@dimen/dp_5"
+                    android:background="@color/guide_color_d4d4d4" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_show_type_spot"
+                android:layout_width="@dimen/dp_41"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_gravity="center"
+                    android:src="@drawable/guide_map_sidebar_icon_spot" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dp_2"
+                    android:text="@string/guide_spot"
+                    android:textColor="@color/guide_color_333"
+                    android:textSize="@dimen/sp_12" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_margin="@dimen/dp_5"
+                    android:background="@color/guide_color_d4d4d4" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_show_type_legacy"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_gravity="center"
+                    android:src="@drawable/guide_map_sidebar_icon_legacy" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dp_2"
+                    android:text="@string/guide_legacy_simple"
+                    android:textColor="@color/guide_color_333"
+                    android:textSize="@dimen/sp_12" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_margin="@dimen/dp_5"
+                    android:background="@color/guide_color_d4d4d4" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_show_type_line"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_gravity="center"
+                    android:src="@drawable/guide_map_sidebar_icon_line" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dp_2"
+                    android:text="@string/guide_map_line"
+                    android:textColor="@color/guide_color_333"
+                    android:textSize="@dimen/sp_12" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_margin="@dimen/dp_5"
+                    android:background="@color/guide_color_d4d4d4" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_show_type_toilet"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_gravity="center"
+                    android:src="@drawable/guide_map_sidebar_icon_toilet" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dp_2"
+                    android:text="@string/guide_toilet"
+                    android:textColor="@color/guide_color_333"
+                    android:textSize="@dimen/sp_12" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:layout_margin="@dimen/dp_5"
+                    android:background="@color/guide_color_d4d4d4" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_show_type_park"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_gravity="center"
+                    android:src="@drawable/guide_map_sidebar_icon_park" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/dp_2"
+                    android:text="@string/guide_park"
+                    android:textColor="@color/guide_color_333"
+                    android:textSize="@dimen/sp_12" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_search"
+            android:layout_width="@dimen/dp_41"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@drawable/guide_b_white_stroke_e2_round_5"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            app:layout_constraintRight_toRightOf="@+id/ll_show_type_menu"
+            app:layout_constraintTop_toBottomOf="@+id/ll_show_type_menu">
+
+            <ImageView
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_gravity="center"
+                android:src="@drawable/guide_map_sidebar_icon_search" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_2"
+                android:text="@string/guide_search"
+                android:textColor="@color/guide_color_333"
+                android:textSize="@dimen/sp_12" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_exit"
+            android:layout_width="@dimen/dp_41"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@drawable/guide_b_white_stroke_e2_round_5"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            app:layout_constraintRight_toRightOf="@+id/ll_search"
+            app:layout_constraintTop_toBottomOf="@+id/ll_search">
+
+            <ImageView
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_gravity="center"
+                android:src="@drawable/guide_map_sidebar_icon_out" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_2"
+                android:text="@string/guide_exit"
+                android:textColor="@color/guide_color_333"
+                android:textSize="@dimen/sp_12" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_map_position"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_32"
+            android:layout_margin="@dimen/dp_15"
+            android:background="@drawable/guide_b_white_stroke_e2_round_5"
+            android:scaleType="center"
+            android:src="@drawable/guide_map_position"
+            app:layout_constraintBottom_toTopOf="@+id/fl_guide_page_info"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+
+        <FrameLayout
+            android:id="@+id/fl_guide_page_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.daqsoft.guidemodule.widget.GuideAutoHeightViewPager
+                android:id="@+id/au_vp_guide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent" />
+
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

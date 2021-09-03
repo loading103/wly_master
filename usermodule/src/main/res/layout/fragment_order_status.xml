@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.daqsoft.provider.bean.OrderStatusConstant" />
+
+        <variable
+            name="vm"
+            type="com.daqsoft.usermodule.ui.order.OrderStatusFragmentViewModel" />
+
+        <variable
+            name="detail"
+            type="com.daqsoft.provider.bean.OrderDetail" />
+
+        <variable
+            name="status"
+            type="String" />
+
+        <variable
+            name="submitText"
+            type="String" />
+
+        <variable
+            name="submit"
+            type="com.daqsoft.provider.rxCommand.ReplyCommand" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/dp_16">
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@{status}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_time_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_14"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_status" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_time_notice">
+
+                <TextView
+                    android:id="@+id/tv_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_6"
+                    android:background="@{detail.orderStatus==OrderStatusConstant.ORDER_STATUS_FINISHED?@drawable/user_back_wite_strok_red_round_5:@drawable/user_back_wite_strok_d4_round_5}"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{submitText}"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_14"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_yuyue_commtator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_6"
+                    android:layout_marginTop="@dimen/dp_13"
+                    android:layout_toRightOf="@+id/tv_submit"
+                    android:background="@drawable/user_back_wite_strok_d4_round_5"
+                    android:text="@string/order_comment_reservation"
+                    android:textColor="@color/color_ff9e05"
+                    android:textSize="@dimen/sp_14"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

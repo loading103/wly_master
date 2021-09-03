@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:url="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="bean"
+            type="com.daqsoft.provider.bean.Spots" />
+
+        <variable
+            name="images"
+            type="java.util.List" />
+
+        <variable
+            name="secnicUrl"
+            type="String" />
+
+        <variable
+            name="secnicName"
+            type="String" />
+
+        <variable
+            name="vm"
+            type="com.daqsoft.travelCultureModule.resource.viewmodel.ScenicSpotViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_scenic_spot"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.daqsoft.travelCultureModule.resource.view.ScenicTopImagesView
+                    android:id="@+id/v_scc_img_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_180"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_tags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/dp_8"
+                    android:maxLines="3"
+                    android:textColor="#8d5600"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:text="@{bean.name}"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_23"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--标签-->
+
+                <TextView
+                    android:id="@+id/tv_scenic_spot_tags"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:background="@drawable/main_shape_storker_color_primary"
+                    android:lineSpacingExtra="@dimen/dp_8"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:paddingTop="@dimen/dp_3"
+                    android:visibility="gone"
+                    android:paddingRight="@dimen/dp_4"
+                    android:paddingBottom="@dimen/dp_3"
+                    android:text="开放中"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_13" />
+
+                <TextView
+                    android:id="@+id/tv_summery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:lineSpacingExtra="@dimen/dp_8"
+                    android:text="@{bean.summary}"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_14"
+                    android:visibility="@{bean.summary.equals(``)?View.GONE:View.VISIBLE}" />
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:lineSpacingExtra="@dimen/dp_8"
+                    android:textSize="@dimen/sp_11" />
+
+                <com.daqsoft.provider.businessview.view.ListenerAudioView
+                    android:id="@+id/v_scenic_spot_detail_audios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:visibility="gone" />
+
+
+                <include
+                    android:id="@+id/il_spots"
+                    layout="@layout/include_detail_module"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_20"
+                    app:hide="@{false}"
+                    app:hideRight="@{true}"
+                    app:leftLabel="@{`查信息`}" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_policy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:visibility="@{bean.ticketPolicy.equals(``)?View.GONE:View.VISIBLE}"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="门票政策"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContent='@{bean.ticketPolicy}'
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_open_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:layout_marginRight="@dimen/dp_20"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="开放时间"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContent='@{bean.openTimeStart+`~`+bean.openTimeEnd}'
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:visibility="gone"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="@string/details_phone"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContentColor="@color/colorPrimary"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:layout_marginRight="@dimen/dp_20"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="其他信息"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_100"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_20"
+                    app:cardCornerRadius="@dimen/dp_5">
+
+                    <com.amap.api.maps.MapView
+                        android:id="@+id/map_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_100"
+                        app:layout_constraintVertical_weight="1" />
+                </androidx.cardview.widget.CardView>
+
+                <include
+                    android:id="@+id/il_ticket"
+                    layout="@layout/include_detail_module"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_20"
+                    app:hide="@{bean.shootPointIntroduce.equals(``)?true:false}"
+                    app:hideRight="@{true}"
+                    app:leftLabel="@{@string/main_spot_best}" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_best_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:visibility="@{bean.shootTime.equals(``)?View.GONE:View.VISIBLE}"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="拍摄时间"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContent="@{bean.shootTime}"
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_best_photo_introduce"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:visibility="@{bean.shootPointIntroduce.equals(``)?View.GONE:View.VISIBLE}"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="拍摄点简介"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentPosition="bottom"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_best_photo_example"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:visibility="@{bean.shootImgExample.equals(``)?View.GONE:View.VISIBLE}"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_label_ticket" />
+
+                <include
+                    android:id="@+id/il_route"
+                    layout="@layout/include_detail_module"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_20"
+                    app:hide="@{bean.introduce.equals(``)?true:false}"
+                    app:hideRight="@{true}"
+                    app:leftLabel="@{`看简介`}" />
+
+                <WebView
+                    android:id="@+id/tv_introduce"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:scrollbars="none"
+                    android:visibility="@{bean.introduce.equals(``)?View.GONE:View.VISIBLE}"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_label_ticket" />
+
+                <com.daqsoft.provider.businessview.view.ProviderStoriesView
+                    android:id="@+id/psv_scenic_spot_stories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_30" />
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/v_scenic_spot_detail_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:background="@color/fff5e6"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:background="#f1e4d0"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/ai_image_secnic"
+                url="@{secnicUrl}"
+                android:layout_width="@dimen/dp_36"
+                android:layout_height="@dimen/dp_36"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:scaleType="fitXY"
+                app:border_color="@color/white"
+                app:corner_radius="@dimen/dp_5"
+                app:is_circle="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_scenic_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:includeFontPadding="false"
+                android:text="@{secnicName}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/ai_image_secnic"
+                app:layout_constraintTop_toTopOf="@id/ai_image_secnic" />
+
+
+            <TextView
+                android:id="@+id/txt_scenic_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_4"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/color_36cd64"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintLeft_toRightOf="@id/ai_image_secnic"
+                app:layout_constraintTop_toBottomOf="@id/tv_scenic_name" />
+
+            <TextView
+                android:id="@+id/txt_scenic_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:includeFontPadding="false"
+                android:text="·"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintLeft_toRightOf="@id/txt_scenic_level"
+                app:layout_constraintTop_toBottomOf="@id/tv_scenic_name" />
+
+            <TextView
+                android:id="@+id/txt_scenic_spot_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_4"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/colorPrimarySecond"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintLeft_toRightOf="@id/txt_scenic_dot"
+                app:layout_constraintTop_toBottomOf="@id/tv_scenic_name" />
+
+            <TextView
+                android:id="@+id/txt_scenic_spot_tags"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_20"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_scenic_spot_num"
+                app:layout_constraintLeft_toRightOf="@+id/txt_scenic_spot_num"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txt_scenic_spot_num" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+
+</layout>

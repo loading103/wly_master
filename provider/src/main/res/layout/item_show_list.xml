@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="datas"
+            type="com.daqsoft.provider.bean.CultureListBean" />
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils"/>
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.daqsoft.baselib.widgets.ArcImageView
+                android:id="@+id/iv_content"
+                android:layout_width="match_parent"
+                android:minHeight="@dimen/dp_120"
+                android:scaleType="centerCrop"
+                android:layout_height="wrap_content"
+                app:corner_radius="@dimen/dp_5" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:paddingBottom="20dp"
+                android:layout_marginRight="@dimen/dp_20">
+                <ImageView
+                    android:id="@+id/img_foods_video"
+                    android:layout_width="wrap_content"
+                    android:visibility='@{TextUtils.isEmpty(datas.video)? View.GONE:View.VISIBLE}'
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/object_list_icon_video"  />
+                <!--                <ImageView-->
+                <!--                    android:id="@+id/img_foods_gold_store"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginLeft="5dp"-->
+                <!--                    android:visibility='@{TextUtils.isEmpty(datas.threeDimensionalUrl)? View.GONE:View.VISIBLE}'-->
+                <!--                    android:background="@mipmap/object_list_icon_3d" />-->
+            </LinearLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/dp_16"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            android:text="日落九曲十日落九曲十八弯日落九曲十八弯日落九曲十八弯日落九曲十八弯八弯" />
+        <TextView
+            android:id="@+id/tv_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="图画"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="@dimen/dp_12"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textSize="@dimen/sp_12" />
+    </LinearLayout>
+</layout>

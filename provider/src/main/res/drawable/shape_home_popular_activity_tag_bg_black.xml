@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="MissingDefaultResource">
+    <item>
+        green
+        <shape>
+            <solid android:color="@color/alph_60" />
+            <corners
+                android:topLeftRadius="@dimen/dp_3"
+                android:topRightRadius="@dimen/dp_12"
+                android:bottomLeftRadius="@dimen/dp_3"
+                android:bottomRightRadius="@dimen/dp_12" />
+            <size android:width="@dimen/dp_55" android:height="@dimen/dp_24"/>
+        </shape>
+    </item>
+</layer-list>

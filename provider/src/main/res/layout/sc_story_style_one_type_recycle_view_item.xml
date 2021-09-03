@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+
+        <ImageView
+            android:translationY="10dp"
+            android:id="@+id/image"
+            android:src="@mipmap/mode_story_recommend_no1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="@dimen/dp_120"
+            app:layout_constraintDimensionRatio="h,1:0.7"
+            android:layout_height="0dp">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/title"
+            android:ellipsize="end"
+            android:maxLines="2"
+            app:layout_constraintRight_toRightOf="@id/image"
+            app:layout_constraintLeft_toLeftOf="@+id/image"
+            app:layout_constraintTop_toTopOf="@id/image"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:text="#姥姥说"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        </TextView>
+
+
+        <TextView
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10"
+            android:text="324个好故事"
+            android:layout_marginBottom="@dimen/dp_10"
+            app:layout_constraintRight_toRightOf="@id/title"
+            app:layout_constraintLeft_toLeftOf="@id/title"
+            app:layout_constraintBottom_toBottomOf="@+id/image"
+            android:id="@+id/amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

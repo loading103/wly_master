@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.daqsoft.provider.bean.CommonTemlate" />
+
+        <import type="com.daqsoft.provider.uiTemplate.titleBar.TitleBarStyle" />
+
+        <variable
+            name="template"
+            type="CommonTemlate" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/ll_title_bar_style_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title_bar_style_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{template.mainTitle}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_24"
+                android:textStyle="bold"
+                android:visibility="@{template.mainTitleType!=null&amp;&amp;template.mainTitleType.equals(TitleBarStyle.TITLE_TYPE_WORD)}"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="主标题" />
+
+            <ImageView
+                imageUrl="@{template.mainTitle}"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_22"
+                android:adjustViewBounds="true"
+                android:scaleType="fitStart"
+                android:visibility="@{template.mainTitleType!=null&amp;&amp;template.mainTitleType.equals(TitleBarStyle.TITLE_TYPE_IMAGE)&amp;&amp;template.mainTitle!=null}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:text="@{template.subTitle}"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_12"
+                android:visibility="@{template.subTitleType!=null&amp;&amp;template.subTitleType.equals(TitleBarStyle.TITLE_TYPE_WORD)&amp;&amp;template.subTitle!=null}"
+                tools:text="这里是副标题" />
+
+            <ImageView
+                imageUrl="@{template.subTitle}"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_14"
+                android:layout_marginTop="@dimen/dp_4"
+                android:adjustViewBounds="true"
+                android:scaleType="fitStart"
+                android:visibility="@{template.subTitleType!=null&amp;&amp;template.subTitleType.equals(TitleBarStyle.TITLE_TYPE_IMAGE)&amp;&amp;template.subTitle!=null}" />
+        </LinearLayout>
+
+        <com.daqsoft.baselib.widgets.CenterDrawableTextView
+            android:id="@+id/ctv_title_bar_style_one_more"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_24"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:drawableRight="@mipmap/more_right_arrow"
+            android:drawablePadding="@dimen/dp_6"
+            android:gravity="center"
+            android:text="@string/user_more"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/f5"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/img_robot_bg"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_above="@+id/llv_robot_bottom"
+            android:layout_height="match_parent"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recy_it_robot_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/llv_robot_bottom"
+            android:paddingBottom="@dimen/dp_15" />
+
+        <LinearLayout
+            android:id="@+id/llv_robot_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recy_it_Robot_keys"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/llv_bottom_input"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/v_to_recoder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="@color/white">
+
+                <EditText
+                    android:id="@+id/edt_input_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:layout_toLeftOf="@+id/v_audio_it_robot"
+                    android:background="@null"
+                    android:hint="输入您任何想问的问题"
+                    android:imeOptions="actionSend"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:textColor="@color/color_333"
+                    android:textColorHint="@color/color_999"
+                    android:textSize="@dimen/sp_16" />
+
+                <RelativeLayout
+                    android:id="@+id/v_audio_it_robot"
+                    android:layout_width="@dimen/dp_35"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_15"
+                        android:layout_height="@dimen/dp_22"
+                        android:layout_centerVertical="true"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/robot_detail_button_recording_normal" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/v_itrobot_recoder_audio"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_to_recoder"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_36"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_toLeftOf="@+id/v_to_input"
+                    android:background="@drawable/shape_robot_recoder_bg"
+                    android:gravity="center"
+                    android:text="按住说两句"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_14" />
+
+                <RelativeLayout
+                    android:id="@+id/v_to_input"
+                    android:layout_width="@dimen/dp_42"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_22"
+                        android:layout_height="@dimen/dp_22"
+                        android:layout_centerVertical="true"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/robot_detail_button_keyboard_normal" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <androidx.core.widget.NestedScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <TextView
+               android:text="游玩天数"
+               style="@style/ViewWrap"
+               android:textSize="@dimen/sp_13"
+               android:layout_marginStart="@dimen/dp_15"
+               android:layout_marginTop="@dimen/dp_15"
+               android:textColor="@color/color_999999"/>
+
+           <com.daqsoft.itinerary.widget.FlexBoxLayout
+               android:id="@+id/day_layout"
+               android:layout_marginTop="@dimen/dp_9"
+               app:horizontalSpace="@dimen/dp_2"
+               app:vertivalSpace="@dimen/dp_2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/view_labels"/>
+
+           <TextView
+               android:text="适合人群"
+               style="@style/ViewWrap"
+               android:layout_marginTop="@dimen/dp_15"
+               android:textSize="@dimen/sp_13"
+               android:layout_marginStart="@dimen/dp_15"
+               android:textColor="@color/color_999999"/>
+
+           <com.daqsoft.itinerary.widget.FlexBoxLayout
+               android:id="@+id/crowd_view_list"
+               android:layout_marginTop="@dimen/dp_9"
+               app:horizontalSpace="@dimen/dp_2"
+               app:vertivalSpace="@dimen/dp_2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/view_labels"/>
+
+           <TextView
+               android:text="游玩类型"
+               style="@style/ViewWrap"
+               android:layout_marginTop="@dimen/dp_15"
+               android:textSize="@dimen/sp_13"
+               android:layout_marginStart="@dimen/dp_15"
+               android:textColor="@color/color_999999"/>
+
+           <com.daqsoft.itinerary.widget.FlexBoxLayout
+               android:id="@+id/play_view_list"
+               android:layout_marginTop="@dimen/dp_9"
+               app:horizontalSpace="@dimen/dp_2"
+               app:vertivalSpace="@dimen/dp_2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/view_labels"/>
+
+           <View
+               android:layout_marginTop="@dimen/dp_18"
+               style="@style/HorizontalLineStyle"/>
+
+           <LinearLayout
+               android:orientation="horizontal"
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/dp_44">
+
+               <Button
+                   android:text="重置"
+                   android:textSize="@dimen/sp_16"
+                   android:textColor="#FF9E05"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:id="@+id/reset_view"
+                   android:background="@color/transparency"
+                   android:layout_height="wrap_content"/>
+
+               <View
+                   android:layout_width="1dp"
+                   android:layout_height="match_parent"
+                   android:background="#E8E8E8"/>
+
+               <Button
+                   android:text="确定"
+                   android:textSize="@dimen/sp_16"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:id="@+id/sure_view"
+                   android:textColor="@color/color_36CD64"
+                   android:background="@color/transparency"
+                   android:layout_height="wrap_content"/>
+
+           </LinearLayout>
+
+           <View style="@style/HorizontalLineStyle"/>
+
+       </LinearLayout>
+
+   </androidx.core.widget.NestedScrollView>
+
+</layout>

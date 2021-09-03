@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_14"
+            android:paddingRight="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_17">
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_search_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_weight="1"
+                    android:paddingBottom="@dimen/dp_2"
+                    android:textColor="@color/guide_color_333"
+                    android:textSize="@dimen/sp_16"
+                    tools:text="全部美食" />
+
+                <TextView
+                    android:id="@+id/tv_search_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/dp_2"
+                    android:textColor="@color/guide_color_999"
+                    android:textSize="@dimen/sp_14"
+                    tools:text="新疆乌鲁木齐板房沟" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_search_dis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:textColor="@color/guide_color_999"
+                android:textSize="@dimen/sp_13"
+                tools:text="距您1.3公里" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:background="@color/guide_color_e8e8e8" />
+
+    </LinearLayout>
+</layout>

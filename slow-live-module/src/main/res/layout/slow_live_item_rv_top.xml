@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="top"
+            type="com.daqsoft.slowLiveModule.bean.LiveTopBean" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_190">
+
+            <ImageView
+                android:id="@+id/iv_live_list_blur"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:clipChildren="true"
+                app:cardCornerRadius="@dimen/dp_5"
+                app:cardElevation="@dimen/dp_2">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/iv_top_live"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_35"
+                        android:layout_height="@dimen/dp_35"
+                        android:layout_gravity="center"
+                        android:src="@drawable/slow_live_video_list_icon_play" />
+
+                </FrameLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <com.flyco.roundview.RoundLinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_20"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_4"
+                android:paddingLeft="@dimen/dp_4"
+                android:gravity="center"
+                app:rv_backgroundColor="@color/slow_live_color_red_ff6b53"
+                app:rv_cornerRadius="@dimen/dp_3">
+
+                <ImageView
+                    android:id="@+id/iv_live"
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/slow_live_playing_anim"
+                    android:src="@drawable/slow_live_video_detail_gif_live_1" />
+
+                <TextView
+                    android:id="@+id/tv_live"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:paddingRight="@dimen/dp_4"
+                    android:text="Live"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_12" />
+
+            </com.flyco.roundview.RoundLinearLayout>
+
+            <com.daqsoft.slowLiveModule.widget.MarqueeTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_20"
+                android:id="@+id/tv_slow_live_name"
+                android:singleLine="true"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_20"
+                tools:text="喀纳斯风景区" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="2"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_20"
+            android:paddingBottom="@dimen/dp_5"
+            android:text="@{top.summary}"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_13"
+            android:visibility="@{top.summary.empty? View.INVISIBLE : View.VISIBLE}"
+            tools:text="喀纳斯风景区位于新疆阿尔泰山中段，地处中国与哈萨克斯
+坦、俄罗斯、蒙古国接壤地带。景区面积10030平方公里" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dp_13"
+                android:layout_height="@dimen/dp_13"
+                android:layout_gravity="center"
+                android:src="@drawable/slow_live_video_list_play_pic"
+                android:tint="@color/slow_live_color_bdbdbd" />
+
+            <TextView
+                android:id="@+id/tv_play_num"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_3"
+                android:text="@{String.valueOf(top.showNum)}"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_12"
+                tools:text="389" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

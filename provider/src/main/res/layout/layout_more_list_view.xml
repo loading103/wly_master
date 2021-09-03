@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <!--听解说-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_provider_details_listener"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_40"
+        app:layout_constraintTop_toBottomOf="@+id/cl_provider_details_card">
+
+        <TextView
+            android:id="@+id/provider_details_listener"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/whcgxq_bt_bq"
+            android:drawablePadding="@dimen/dp_12"
+            android:text="@string/details_listener"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_19"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/provider_details_listener"
+            app:layout_constraintBottom_toBottomOf="@id/provider_details_listener"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:textSize="@dimen/sp_12"
+            android:textColor="@color/color_666"
+            tools:text="(12)"
+            />
+
+        <RelativeLayout
+            android:id="@+id/v_venue_detail_speaking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/provider_details_listener">
+
+            <com.daqsoft.provider.scrollview.DqRecylerView
+                android:id="@+id/rv_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_28" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/v_provider_show_more"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_36"
+            android:layout_marginTop="@dimen/dp_15"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_venue_detail_speaking">
+
+            <TextView
+                android:id="@+id/txt_provider_commentary_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableRight="@mipmap/provider_arrow_down"
+                android:drawablePadding="@dimen/dp_8"
+                android:text="查看更多"
+                android:textColor="@color/txt_gray_black"
+                android:textSize="@dimen/sp_13" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

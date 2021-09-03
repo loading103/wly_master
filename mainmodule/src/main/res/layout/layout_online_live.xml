@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/v_online_live"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@drawable/shape_live_sub_color_r3"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/tv_online_live"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_19"
+            android:text="线上直播"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:layout_toRightOf="@+id/tv_online_live"
+            android:background="@drawable/shape_live_color_primary_r3"
+            android:paddingLeft="@dimen/dp_6"
+            android:paddingTop="@dimen/dp_4"
+            android:paddingRight="@dimen/dp_6"
+            android:paddingBottom="@dimen/dp_4">
+
+            <com.daqsoft.provider.view.imageview.AnimatorImageView
+                android:id="@+id/img_live_anim"
+                android:layout_width="@dimen/dp_7"
+                android:layout_height="@dimen/dp_5"
+                android:layout_centerVertical="true"
+                android:src="@drawable/activity_live_playing_anim" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:layout_toRightOf="@+id/img_live_anim"
+                android:text="Live"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_10" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="@dimen/dp_4"
+            android:layout_height="@dimen/dp_9"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_20"
+            android:src="@mipmap/activity_details_more" />
+    </RelativeLayout>
+</layout>

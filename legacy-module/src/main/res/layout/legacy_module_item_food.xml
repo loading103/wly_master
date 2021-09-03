@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/dp_5"
+        android:orientation="vertical">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/iv_food"
+            imageUrl="@{imageUrl}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_121"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_5"
+            android:scaleType="fitXY"
+            app:corner_radius="@dimen/dp_5"
+            tools:src="@drawable/placeholder_img_fail_h158" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="3"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            android:text="@{name}"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_16"
+            tools:text="张飞牛肉" />
+
+    </LinearLayout>
+</layout>

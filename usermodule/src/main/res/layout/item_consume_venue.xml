@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="item"
+            type="com.daqsoft.provider.bean.Consume" />
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="userTime"
+            type="String" />
+
+        <variable
+            name="orderTime"
+            type="String" />
+
+        <variable
+            name="type"
+            type="String" />
+
+        <variable
+            name="useNum"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginRight="@dimen/dp_12"
+        android:background="@drawable/user_back_white_stroke_e8_round_5_pad_0"
+        android:paddingBottom="@dimen/dp_16">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/image"
+            placeholder="@{@drawable/placeholder_img_fail_h300}"
+            url="@{url}"
+            android:layout_width="0dp"
+            android:layout_height="0dip"
+            android:layout_margin="@dimen/dp_0_5"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:scaleType="centerCrop"
+            app:corner_top_left_radius="@dimen/dp_5"
+            app:corner_top_right_radius="@dimen/dp_5"
+            app:layout_constraintDimensionRatio="100:42"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{name}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image" />
+
+        <ImageView
+            android:id="@+id/iv_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:src="@mipmap/mine_code_tag_yishixiao"
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/dp_12"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_name">
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/iv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_0"
+                app:labelSize="@dimen/sp_12"
+                app:layout_constraintStart_toStartOf="@id/tv_time"
+                app:layout_constraintTop_toBottomOf="@id/tv_time"
+                app:leftLabel="有效期:"
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContent="@{orderTime}"
+                app:rightContentColor="@color/txt_gray"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/iv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_0"
+                app:labelSize="@dimen/sp_12"
+                app:layout_constraintStart_toStartOf="@id/large_name"
+                app:layout_constraintTop_toBottomOf="@id/large_name"
+                app:leftLabel="预约时间:"
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContent="@{userTime}"
+                app:rightContentColor="@color/txt_gray"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/iv_belong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_0"
+                app:labelSize="@dimen/sp_12"
+                app:layout_constraintStart_toStartOf="@id/large_name"
+                app:layout_constraintTop_toBottomOf="@id/large_name"
+                app:leftLabel="预约类型："
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContent="@{type}"
+                app:rightContentColor="@color/txt_gray"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/iv_user_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_0"
+                app:labelSize="@dimen/sp_12"
+                app:layout_constraintStart_toStartOf="@id/large_name"
+                app:layout_constraintTop_toBottomOf="@id/large_name"
+                app:leftLabel="到场人数："
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContent="@{useNum}"
+                app:rightContentColor="@color/txt_gray"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+
+            <TextView
+                android:id="@+id/tv_use"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_12"
+                android:background="@drawable/user_selector_main_btn"
+                android:gravity="center"
+                android:padding="@dimen/dp_12"
+                android:text="@string/order_use_imitation"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_13" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

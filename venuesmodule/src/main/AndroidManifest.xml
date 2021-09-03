@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.daqsoft.venuesmodule">
+
+    <application>
+        <!--场馆详情-->
+        <activity
+            android:name=".activity.VenuesDetailsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"></activity>
+        <!--场馆列表-->
+        <activity
+            android:name=".activity.VenuesActivity"
+            android:screenOrientation="portrait" />
+        <!--场馆相册-->
+        <activity
+            android:name=".activity.VenuesImagesActivity"
+            android:screenOrientation="portrait" />
+        <!--场馆大图展示-->
+        <activity
+            android:name=".activity.VenuesBigImageActivity"
+            android:screenOrientation="portrait" />
+        <!--活动室详情-->
+        <activity
+            android:name=".activity.ActivityRoomDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <!--活动室预订-->
+        <activity
+            android:name=".activity.ActivityRoomOrderActivity"
+            android:screenOrientation="portrait" />
+        <!--场馆预约-->
+        <activity
+            android:name=".activity.VenueReservationActivity"
+            android:screenOrientation="portrait" />
+        <!--场馆预约详情-->
+        <activity
+            android:name=".activity.VenueResevationInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <!--场馆预约-->
+        <activity
+            android:name=".activity.VenueReservationV1Activity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <!--智游天府码详情-->
+        <activity
+            android:name=".activity.VenueZytfCodeInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <!--讲解员详情-->
+        <activity
+            android:name=".activity.CommentatorReservationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <!--选择时间-->
+        <activity
+            android:name=".activity.VenueReSelectTimeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <!--景区选择时间-->
+        <activity
+            android:name=".activity.ScenicReSelectTimeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <!--核销列表-->
+        <activity
+            android:name=".activity.writeroff.VenueWriterOffActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <!--景区预约-->
+        <activity
+            android:name=".activity.ScientReservationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <!--预约人详情-->
+        <activity
+            android:name=".activity.writeroff.AppointUserActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity android:name=".activity.writeroff.NoWriterOffUserActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+    </application>
+
+</manifest>

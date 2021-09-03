@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_8">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/aiv_image"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_60"
+            android:scaleType="center"
+            app:border_color="@color/white"
+            app:corner_radius="@dimen/dp_2"
+            app:is_circle="false" />
+
+        <ImageView
+            android:id="@+id/iv_video_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/activity_details_icon_play"/>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--主题色 -->
+    <color name="colorPrimary">#e9483f</color>
+    <color name="colorPrimary_90">#e9483f</color>
+<!--    <color name="color_ff9e05">#FF6B53</color>-->
+    <!--白色-->
+    <color name="white">#ffffff</color>
+    <!--字体黑色-->
+    <color name="txt_black">#333333</color>
+    <!--字体黑灰色-->
+    <color name="txt_gray_black">#666666</color>
+    <!--字体灰色-->
+    <color name="txt_gray">#999999</color>
+    <color name="black">#000000</color>
+    <!--分割线-->
+    <color name="dividing_line">#e2e2e2</color>
+    <color name="divide_e8">#e8e8e8</color>
+    <color name="e6e6e6">#e6e6e6</color>
+    <color name="color_36cd64">#36cd64</color>
+    <!--进度条-->
+    <color name="color_e2d9bd">#e2d9bd</color>
+    <color name="color_ffaf2f">#ffaf2f</color>
+    <color name="color_ff9e05">#ff9e05</color>
+    <color name="color_805500">#805500</color>
+    <color name="color_7f5400">#7f5400</color>
+    <color name="color_ff_white">#00ffffff</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
+
+    <!--时间选择控件-->
+    <color name="background">#F2F2F2</color>
+    <color name="classify_background">#F3F5F7</color>
+    <color name="white_1">#f2eaea</color>
+    <color name="white_2">#977c7c</color>
+    <color name="line">#e4d8d8</color>
+    <color name="text">#666666</color>
+    <color name="hint">#D2D2D2</color>
+    <color name="title_bg">#F67357</color>
+    <color name="title_bg2">#f49581</color>
+    <color name="tradinfo_bg">#3F000000</color>
+    <color name="transparency">#00000000</color>
+    <color name="transparency_black">#3F000000</color>
+    <color name="yellow">#FFB35E</color>
+    <color name="gray">#F2F2F2</color>
+    <color name="hintText">#dad6d6</color>
+    <color name="stroke_bg">#bab6b6</color>
+    <color name="Popupwindows_bg">#a19e9e</color>
+    <color name="province_line_border">#D0D0D0</color>
+    <color name="scan_corner_color">#0effc2</color>
+    <color name="black_1">#000</color>
+    <color name="pickerview_bg_topbar">#f5f5f5</color>
+    <color name="amount_selected">#f3f2f4</color>
+    <color name="search_text_color">#b9b5b5</color>
+    <color name="split_line">#11112233</color>
+    <color name="text1">#59B29C</color>
+    <color name="text2">#333333</color>
+    <color name="transparent">#00000000</color>
+    <color name="title_transpant">#3F000000</color>
+    <color name="colorTranl">#bd232323</color>
+    <color name="text_enable">#c2b3b3</color>
+    <color name="enabled_false">#FFECCD</color>
+    <color name="color_e2e2e2">#e2e2e2</color>
+    <!-- 景区标签背景1-->
+    <color name="btn_bg1">#FFF5E6</color>
+    <!-- 景区标签背景2-->
+    <color name="btn_bg2">#FFEFEC</color>
+    <!-- 景区标签文本-->
+    <color name="btn_txt">#ff6b53</color>
+    <!--渐变按钮颜色 -->
+    <color name="btn_gradient_start_color">#e9483f</color>
+    <color name="btn_gradient_end_color">#80E9483F</color>
+    <color name="app_main_color">#e9483f</color>
+
+    <!--三端用-->
+    <color name="common_1995ff">#2dacfd</color>
+    <color name="common_ff9e05">#ff6b53</color>
+
+    <color name="color_cb2b2b">#e9483f</color>
+    <color name="color_33cb2b2b">#33e9483f</color>
+    <color name="common_color_e25e49">#e9483f</color>
+</resources>

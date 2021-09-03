@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/main_shape_f5_radius">
+        <ImageView
+            android:id="@+id/iv_ib_mdd_logo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_103"
+            android:scaleType="centerCrop" />
+        <TextView
+            android:id="@+id/tv_ib_mdd_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/color_333"
+            android:background="@color/white"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:paddingLeft="@dimen/dp_11"
+            android:paddingRight="@dimen/dp_11"/>
+
+    </LinearLayout>
+</layout>

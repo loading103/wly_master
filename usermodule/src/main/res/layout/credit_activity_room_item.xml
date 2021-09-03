@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_margin="@dimen/dp_6"
+        android:layout_height="wrap_content">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/mi_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_120"
+            app:corner_radius="@dimen/dp_5"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+        <ImageView
+            android:id="@+id/iv_credit_type"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_22"
+            app:layout_constraintTop_toTopOf="parent"
+            tool:src="@mipmap/mine_credit_xyqy_exempt"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintTop_toBottomOf="@+id/mi_image"
+            app:layout_constraintLeft_toLeftOf="@id/mi_image"
+            tool:text="成都市成的hi史蒂夫史蒂夫"
+            android:ellipsize="end"
+            android:singleLine="true"
+            />
+        <TextView
+            android:id="@+id/tv_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintTop_toBottomOf="@+id/tv_content"
+            app:layout_constraintLeft_toLeftOf="@id/tv_content"
+            tool:text="100分"
+            android:ellipsize="end"
+            android:singleLine="true"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

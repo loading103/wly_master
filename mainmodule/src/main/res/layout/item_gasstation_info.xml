@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="bean"
+            type="com.daqsoft.travelCultureModule.sidetour.bean.GasStationBean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/transparent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="@color/white"
+                android:padding="@dimen/dp_15">
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    app:corner_radius="@dimen/dp_5"
+                    app:imageUrls="@{bean.images}"
+                    android:id="@+id/img_gasstion"
+                    android:layout_width="@dimen/dp_44"
+                    android:layout_height="@dimen/dp_44"
+                    android:visibility="@{bean.images!=null&amp;&amp;!bean.images.empty}"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/v_gasstation_name"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    app:layout_goneMarginLeft="@dimen/dp_0"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_45"
+                    app:layout_constraintLeft_toRightOf="@+id/img_gasstion"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/txt_gasstation_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@{name}"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="水水水水水水水水水水水水水水水水水" />
+
+                    <TextView
+                        android:id="@+id/txt_gasstation_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_3"
+                        android:layout_marginTop="@dimen/dp_3"
+                        android:background="@drawable/shape_appointment_r5_s1_d4d4d4"
+                        android:minLines="1"
+                        android:paddingLeft="@dimen/dp_3"
+                        android:paddingRight="@dimen/dp_3"
+                        android:text="离我最近"
+                        android:textColor="@color/color_999"
+                        android:textSize="@dimen/sp_10"
+                        app:layout_constraintLeft_toRightOf="@id/txt_gasstation_name"
+                        app:layout_constraintTop_toTopOf="@+id/txt_gasstation_name" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/distance_view"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_14"
+                    android:layout_marginRight="@dimen/dp_8"
+                    app:layout_goneMarginLeft="@dimen/dp_0"
+                    android:gravity="left"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textColor="@color/color_999"
+                    app:layout_constraintLeft_toRightOf="@+id/img_gasstion"
+                    app:layout_constraintRight_toLeftOf="@+id/count_view"
+                    app:layout_constraintTop_toBottomOf="@id/v_gasstation_name"
+                    tools:text="距您1.8km | 天山区中山路141号" />
+
+                <TextView
+                    android:id="@+id/count_view"
+                    style="@style/ViewWrap"
+                    android:text="1/10"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/distance_view" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/type_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/distance_view">
+
+                    <View
+                        android:id="@+id/line_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_0_5"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:background="@color/e8e8e8"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/label_view"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:text="92#"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toStartOf="@id/label_view2"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line_view" />
+
+                    <TextView
+                        android:id="@+id/tv_label_three"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:text="95#"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toStartOf="@id/label_view2"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/label_view" />
+
+                    <TextView
+                        android:id="@+id/label_view2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toEndOf="@id/label_view"
+                        app:layout_constraintTop_toTopOf="@id/label_view"
+                        tools:text="92#" />
+
+                    <TextView
+                        android:id="@+id/tv_label_four"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:text="98#"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="gone"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toLeftOf="@id/label_view2"
+                        app:layout_constraintTop_toBottomOf="@id/label_view" />
+
+                    <TextView
+                        android:id="@+id/tv_label_open_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:text="@string/main_open_time"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="@{bean.openTime!=null&amp;&amp;!bean.openTime.empty}"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_label_three" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:text="@{bean.openTime}"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="@{bean.openTime!=null&amp;&amp;!bean.openTime.empty}"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_label_open_time"
+                        app:layout_constraintTop_toTopOf="@+id/tv_label_open_time"
+                        tools:text="06：30-12：00" />
+
+                    <TextView
+                        android:id="@+id/tv_label_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:text="@string/main_contanct_phone"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="@{bean.phone!=null&amp;&amp;!bean.phone.empty}"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_label_open_time" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:text="@{bean.phone}"
+                        android:textColor="@color/color_666"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="@{bean.phone!=null&amp;&amp;!bean.phone.empty}"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_label_phone"
+                        app:layout_constraintTop_toTopOf="@+id/tv_label_phone"
+                        tools:text="028-8999999" />
+
+                    <TextView
+                        android:id="@+id/tv_address_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:text="@string/main_address_img"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="@{bean.images!=null&amp;&amp;!bean.images.empty}"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_label_phone" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_address_img"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_16"
+                        android:layout_marginRight="@dimen/dp_8"
+                        android:visibility="@{bean.images!=null&amp;&amp;!bean.images.empty}"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_address_img"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_address_img" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/img_control_gaasstation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:src="@mipmap/map_arrow_up"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/type_layout" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/navi_view"
+                style="@style/ViewWrap"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/dp_12"
+                android:background="@drawable/shape_circle_36cd64"
+                android:drawableTop="@mipmap/map_guide"
+                android:drawablePadding="-10dp"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_10"
+                android:text="前往"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_11" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

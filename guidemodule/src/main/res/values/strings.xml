@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">guideModule</string>
+
+    <string name="guide_all_area_title">导游导览</string>
+    <string name="guide_scenic_list">景区列表</string>
+    <string name="guide_search">搜索</string>
+    <string name="guide_route">导航</string>
+    <string name="guide_view_detail">查看详情</string>
+    <string name="guide_into_guide">进入导览</string>
+    <string name="guide_spot_speak">讲解</string>
+    <string name="guide_detail">详情</string>
+    <string name="guide_scenic">景区</string>
+    <string name="guide_legacy">非遗</string>
+    <string name="toilet">厕所</string>
+    <string name="guide_park">停车场</string>
+    <string name="guide_cancel">取消</string>
+    <string name="guide_all_area_map_two_line">全域\n地图</string>
+    <string name="guide_scenic_list_two_line">景区\n列表</string>
+    <string name="guide_spot">景点</string>
+    <string name="guide_legacy_simple">非遗</string>
+    <string name="guide_map_line">线路</string>
+    <string name="guide_toilet">厕所</string>
+    <string name="guide_next_stop">下一站</string>
+    <string name="guide_exit">退出</string>
+    <string name="guide_preview">预览</string>
+    <string name="guide_start_tour">开始导览</string>
+    <string name="toast_no_search_info">暂无相关数据</string>
+    <string name="toast_can_not_deal_cause_by_data_error">数据错误，处理失败</string>
+    <string name="toast_function_is_not_ready">功能开发中</string>
+    <string name="guide_no_line_data">没有线路信息</string>
+    <string name="guide_you_are_not_in_scenic_area">你不在景区内</string>
+    <string name="guide_no_speak_info">没有语音讲解信息</string>
+
+</resources>

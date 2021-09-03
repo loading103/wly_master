@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_title"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_50">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="社团成员"
+                android:textSize="@dimen/sp_19"
+                android:textStyle="bold"
+                android:textColor="@color/color_333" />
+            <TextView
+                android:id="@+id/tv_club_person_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="（42）"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_13"
+                android:drawablePadding="@dimen/dp_6"
+                android:gravity="bottom"/>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_club_person"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_25"
+            />
+        <TextView
+            android:id="@+id/tv_club_all_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_13"
+            android:text="查看全部成员"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_10"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.daqsoft.android.scenic.servicemodule">
+
+    <application>
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.XinJiangServiceActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.ServiceActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.ArtFoundDetailActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.ArtFoundActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.ContentSubActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.WeatherQueryActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.PlaneListActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.SubwayListActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.TrainDetailActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.TrainListActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.ChooseCityActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.QueryTrainActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.BusLineDetailActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.BusLineActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.NearBusActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.TravelAgencyListActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.GuideTourListActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.TourGuideActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.ServiceSosActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.ServiceSosDetailActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.servicemodule.ui.QueryBusActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

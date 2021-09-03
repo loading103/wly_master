@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:id="@+id/tv_activity_overview_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/dp_28"
+                android:textStyle="bold"
+                tools:text="08" />
+
+            <TextView
+                android:id="@+id/v_divide_activity_daily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_activity_overview_month"
+                android:layout_toRightOf="@+id/tv_activity_overview_month"
+                android:text="/"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/dp_28"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/tv_activity_overview_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/v_divide_activity_daily"
+                android:layout_toRightOf="@+id/v_divide_activity_daily"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_13"
+                tools:text="2020" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_6"
+                android:layout_toRightOf="@+id/tv_activity_overview_year"
+                android:includeFontPadding="false"
+                android:text="@string/activity_overview"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_24"
+                android:textStyle="bold" />
+
+
+            <com.daqsoft.baselib.widgets.CenterDrawableTextView
+                android:id="@+id/ctv__overview_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:drawableRight="@mipmap/common_button_arrow_more_small"
+                android:drawablePadding="@dimen/dp_6"
+                android:gravity="center"
+                android:text="@string/user_more"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_14" />
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_16">
+
+            <TextView
+                android:id="@+id/tv_all_province_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="@dimen/dp_4"
+                android:includeFontPadding="false"
+                android:text="@string/all_province_activity"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_all_provice_activity_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_all_province_activity"
+                app:layout_constraintLeft_toRightOf="@+id/tv_all_province_activity"
+                app:layout_constraintTop_toTopOf="@+id/tv_all_province_activity"
+                tools:text="520场" />
+
+            <com.daqsoft.provider.scrollview.DqRecylerView
+                android:id="@+id/rv_activity_overviews"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:overScrollMode="never"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_all_province_activity" />
+
+            <TextView
+                android:id="@+id/tv_activity_overviews_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_14"
+                android:drawableRight="@mipmap/activity_index_icon_arrow_more"
+                android:drawablePadding="@dimen/dp_8"
+                android:text="@string/activity_more_types"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_13"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_activity_overviews" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</layout>

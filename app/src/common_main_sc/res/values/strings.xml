@@ -1,0 +1,88 @@
+<resources>
+<!--    &lt;!&ndash;个人中心的更多服务&ndash;&gt;-->
+<!--    <string-array name="mine_service_title">-->
+<!--        <item>投诉举报</item>-->
+<!--        <item>我的信用</item>-->
+<!--        <item>意见反馈</item>-->
+<!--        <item>我的非遗</item>-->
+<!--        <item>志愿服务</item>-->
+<!--    </string-array>-->
+<!--    &lt;!&ndash;个人中心的更多服务的图标&ndash;&gt;-->
+<!--    <array name="mine_service_icon">-->
+<!--        <item>@mipmap/mine_icon_complaint</item>-->
+<!--        <item>@mipmap/mine_icon_credit</item>-->
+<!--        <item>@mipmap/mine_icon_opinion</item>-->
+<!--        <item>@mipmap/mine_center_service_kegacy</item>-->
+<!--        <item>@mipmap/mine_icon_volunteer</item>-->
+<!--    </array>-->
+<!--    &lt;!&ndash;个人中心的更多服务的标识&ndash;&gt;-->
+<!--    <string-array name="mine_service_type">-->
+<!--        <item>complaint</item>-->
+<!--        <item>credit</item>-->
+<!--        <item>feedback</item>-->
+<!--        <item>legacy</item>-->
+<!--        <item>volunteer</item>-->
+<!--    </string-array>-->
+
+
+    <!--个人中心的更多服务-->
+    <string-array name="mine_service_title">
+        <item>我的投诉</item>
+<!--        <item>志愿服务</item>-->
+        <item>我的学习</item>
+        <item>我的问答</item>
+        <item>Ai客服</item>
+        <item>意见反馈</item>
+    </string-array>
+    <!--个人中心的更多服务的图标-->
+    <array name="mine_service_icon">
+        <item>@mipmap/mine_icon_complaint</item>
+<!--        <item>@mipmap/mine_icon_volunteer</item>-->
+        <item>@mipmap/mine_center_service_study</item>
+        <item>@mipmap/mine_center_service_question</item>
+        <item>@mipmap/mine_center_service_robot</item>
+        <item>@mipmap/mine_icon_opinion</item>
+    </array>
+    <!--个人中心的更多服务的标识-->
+    <string-array name="mine_service_type">
+        <item>complaint</item>
+<!--        <item>volunteer</item>-->
+        <item>study</item>
+        <item>requetion</item>
+        <item>aicommpent</item>
+        <item>feedback</item>
+    </string-array>
+
+    <string name="home_topic">焦点话题</string>
+    <string name="home_topic_info">Focus Topics</string>
+    <string name="home_city_introduce">安逸天府</string>
+    <string name="home_city_introduce_info">Leisure Life in Sichuan</string>
+    <string name="home_hot_activity">热门活动</string>
+    <string name="home_hot_activity_info">What\'s On</string>
+    <string name="home_city_name">城市名片</string>
+    <string name="home_city_info">City Logos</string>
+    <string name="home_branch_name">印象天府</string>
+    <string name="home_branch_label">Dynamica Sichuan</string>
+    <string name="home_line_name">精品线路</string>
+    <string name="home_line_info">Excellent Itineraries</string>
+    <string name="home_story_info">Stories</string>
+    <string name="home_story">摆龙门阵</string>
+    <string name="app_name">智游天府</string>
+    <string name="welcome_title">欢迎来到智游天府</string>
+
+    <string name="user_more">查看更多</string>
+    <string name="legacy_module_home">品非遗Intangible Cultural Heritage</string>
+    <string name="default_city">成都市</string>
+    <string name="culture_and_tourism_brand">印象天府 Dynamica Sichuan</string>
+    <string name="culture_content_ls">安逸天府 Leisure Life in Sichuan</string>
+    <string name="culture_citycard_ls">城市名片 City Logo</string>
+    <string name="culture_brand_ls">安逸天府</string>
+    <string name="culture_line_ls">精品线路 Excellent Itineraries</string>
+    <string name="culture_citycard_info">城市名片 City Logo</string>
+    <string name="home_mine">我的智游天府护照 MyAccount</string>
+    <string name="home_topic_list_titles">全部话题 Topics</string>
+    <string name="time_title">时光 Moments</string>
+    <string name="main_strategy_find">攻略 Entertainments</string>
+    <string name="splash_allow">欢迎使用智游天府</string>
+    <string name="tip_out_platform">您即将离开智游天府平台，跳转第三方平台</string>
+</resources>

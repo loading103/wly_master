@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="name"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/cl_provider_details_around"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_40"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_8">
+
+        <TextView
+            android:id="@+id/tv_food_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/whcgxq_bt_bq"
+            android:drawablePadding="@dimen/dp_12"
+            android:text="@string/food_product"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_19"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+          >
+
+            <com.daqsoft.provider.scrollview.DqRecylerView
+                android:id="@+id/recycler_food_products"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/v_foods_product_show_more"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_32">
+
+            <TextView
+                android:id="@+id/txt_looks_all_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:drawableRight="@mipmap/main_arrow_down"
+                android:drawablePadding="@dimen/dp_8"
+                android:text="@string/food_product_look_all"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_13" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_e8e8e8" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

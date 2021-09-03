@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:orientation="vertical">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/img_user_header"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_16"
+            app:is_circle="true" />
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_250"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:layout_toRightOf="@+id/img_user_header"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recy_it_robot_ls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/robot_detail_talk_bg_robot" />
+
+            <TextView
+                android:id="@+id/tv_it_robot_look_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_15"
+                android:background="@drawable/shape_it_robot_look_more"
+                android:gravity="center"
+                android:minWidth="@dimen/dp_120"
+                android:minHeight="@dimen/dp_30"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_8"
+                android:text="查看更多 >"
+                android:textColor="@color/color_333" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tourGuideImg"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_tour_guide_template_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_257"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@drawable/shape_tour_guide_r10"
+            android:orientation="horizontal">
+
+            <com.daqsoft.baselib.widgets.ArcImageView
+                imageUrls="@{tourGuideImg}"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginBottom="@dimen/dp_3"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                app:corner_bottom_left_radius="@dimen/dp_10"
+                app:corner_top_left_radius="@dimen/dp_10" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="@dimen/dp_117"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_smart_tourism"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:text="智慧旅游"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="智慧旅游" />
+
+                <TextView
+                    android:id="@+id/tv_visit_scenic_spots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:drawableLeft="@drawable/shape_w2_h8_r1_c0eb771"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:text="逛景点"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_11"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_smart_tourism"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_smart_tourism" />
+
+                <TextView
+                    android:id="@+id/tv_visit_scenic_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:drawableLeft="@drawable/shape_w2_h8_r1_cff9e05"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:text="玩线路"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_11"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_smart_tourism"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_visit_scenic_spots" />
+
+                <TextView
+                    android:id="@+id/tv_find_toilet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:drawableLeft="@drawable/shape_w2_h8_r1_c4cacfd"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:text="找厕所"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_11"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_smart_tourism"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_visit_scenic_line" />
+
+                <TextView
+                    android:id="@+id/tv_find_park"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:drawableLeft="@drawable/shape_w2_h8_r1_cff7380"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:text="停车场"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_11"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_find_toilet"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_find_toilet" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_80"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/mode_guide_button_enter"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_find_park" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.daqsoft.slowLiveModule.bean.LiveListBean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_190">
+
+        <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:clipChildren="true"
+            app:cardCornerRadius="@dimen/dp_5"
+            app:cardElevation="@dimen/dp_2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:scaleType="centerCrop"
+                    android:id="@+id/iv_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <com.daqsoft.baselib.widgets.RoundAngleImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.4"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/rank_area_list_img_mask1" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_35"
+                    android:layout_height="@dimen/dp_35"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/slow_live_video_list_icon_play" />
+
+
+                <com.flyco.roundview.RoundLinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/dp_20"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    app:rv_backgroundColor="@color/slow_live_color_85000000"
+                    app:rv_cornerRadius="@dimen/dp_3"
+                    android:paddingRight="@dimen/dp_5"
+                    android:paddingLeft="@dimen/dp_5"
+                    app:rv_strokeColor="@color/white"
+                    app:rv_strokeWidth="@dimen/dp_1">
+
+                    <ImageView
+                        android:id="@+id/iv_live"
+                        android:layout_width="@dimen/dp_10"
+                        android:layout_height="@dimen/dp_10"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/slow_live_playing_anim"
+                        android:src="@drawable/slow_live_video_detail_gif_live_1" />
+
+                    <TextView
+                        android:id="@+id/tv_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/dp_4"
+                        android:text="Live直播中"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_11" />
+
+                </com.flyco.roundview.RoundLinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/dp_20"
+                    android:layout_toLeftOf="@+id/ll_play_info"
+                    android:ellipsize="end"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18"
+                    tools:text="日落九曲十八弯" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_play_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_alignTop="@id/tv_name"
+                    android:layout_alignBottom="@id/tv_name"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_13"
+                        android:layout_height="@dimen/dp_13"
+                        android:layout_gravity="center"
+                        android:src="@drawable/slow_live_video_list_play_pic"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_play_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/dp_3"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_12"
+                        tools:text="389" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@color/color_f5f5f5"
+            android:layout_height="wrap_content">
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical"
+              >
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/volunteer_module_register_label_txt"
+                  android:textColor="@color/color_333"
+                  android:textSize="@dimen/sp_23"
+                  android:layout_marginTop="@dimen/dp_20"
+                  android:paddingHorizontal="@dimen/dp_20"
+                  android:textStyle="bold" />
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/dp_12"
+                  android:paddingHorizontal="@dimen/dp_20"
+                  android:text="@string/volunteer_module_register_label_hint_txt"
+                  android:textColor="@color/txt_gray_black"
+                  android:textSize="@dimen/sp_16" />
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/dp_32"
+                  android:paddingHorizontal="@dimen/dp_20"
+                  android:drawableRight="@mipmap/tianbao_xingxing"
+                  android:drawablePadding="@dimen/dp_4"
+                  android:text="@string/volunteer_module_register_label_service_region"
+                  android:textColor="@color/txt_black"
+                  android:textSize="@dimen/sp_16"
+                  android:textStyle="bold" />
+              <TextView
+                  android:id="@+id/tv_service_region"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingHorizontal="@dimen/dp_20"
+                  android:hint="@string/volunteer_module_register_label_hint_service_region"
+                  android:paddingTop="@dimen/dp_16"
+                  android:paddingBottom="@dimen/dp_16"
+                  android:textColor="@color/txt_black"
+                  android:textColorHint="@color/color_999"
+                  android:drawableRight="@mipmap/activity_details_right"
+                  android:textSize="@dimen/sp_16" />
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/dp_0_5"
+                  android:layout_marginLeft="@dimen/dp_20"
+                  android:background="@color/dividing_line" />
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/dp_16"
+                  android:paddingHorizontal="@dimen/dp_20"
+                  android:drawableRight="@mipmap/tianbao_xingxing"
+                  android:drawablePadding="@dimen/dp_4"
+                  android:text="@string/volunteer_module_register_label_volunteer_region"
+                  android:textColor="@color/txt_black"
+                  android:textSize="@dimen/sp_16"
+                  android:textStyle="bold" />
+              <TextView
+                  android:id="@+id/tv_volunteer_region"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:hint="@string/volunteer_module_register_label_hint_volunteer_region"
+                  android:paddingTop="@dimen/dp_16"
+                  android:paddingHorizontal="@dimen/dp_20"
+                  android:paddingBottom="@dimen/dp_16"
+                  android:textColor="@color/txt_black"
+                  android:textColorHint="@color/color_999"
+                  android:drawableRight="@mipmap/activity_details_right"
+                  android:textSize="@dimen/sp_16" />
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_marginLeft="@dimen/dp_20"
+                  android:layout_height="@dimen/dp_0_5"
+                  android:background="@color/dividing_line" />
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/dp_16"
+                  android:drawablePadding="@dimen/dp_4"
+                  android:paddingHorizontal="@dimen/dp_20"
+                  android:text="@string/volunteer_module_register_label_education"
+                  android:textColor="@color/txt_black"
+                  android:textSize="@dimen/sp_16"
+                  android:textStyle="bold" />
+              <TextView
+                  android:id="@+id/tv_education"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:paddingHorizontal="@dimen/dp_20"
+                  android:hint="@string/volunteer_module_register_label_hint_education"
+                  android:paddingTop="@dimen/dp_16"
+                  android:paddingBottom="@dimen/dp_16"
+                  android:textColor="@color/txt_black"
+                  android:textColorHint="@color/color_999"
+                  android:drawableRight="@mipmap/activity_details_right"
+                  android:textSize="@dimen/sp_16" />
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_marginLeft="@dimen/dp_20"
+                  android:layout_height="@dimen/dp_0_5"
+                  android:background="@color/dividing_line" />
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/dp_16"
+                  android:drawablePadding="@dimen/dp_4"
+                  android:paddingHorizontal="@dimen/dp_20"
+                  android:text="@string/volunteer_module_register_label_school"
+                  android:textColor="@color/txt_black"
+                  android:textSize="@dimen/sp_16"
+                  android:textStyle="bold" />
+              <EditText
+                  android:id="@+id/et_school"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@null"
+                  android:hint="@string/volunteer_module_register_label_hint_school"
+                  android:paddingTop="@dimen/dp_16"
+                  android:paddingBottom="@dimen/dp_16"
+                  android:paddingHorizontal="@dimen/dp_20"
+                  android:textColor="@color/txt_black"
+                  android:textColorHint="@color/color_999"
+                  android:textSize="@dimen/sp_16" />
+              <View
+                  android:layout_width="match_parent"
+                  android:layout_marginLeft="@dimen/dp_20"
+                  android:layout_height="@dimen/dp_0_5"
+                  android:background="@color/dividing_line" />
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/dp_16"
+                  android:drawablePadding="@dimen/dp_4"
+                  android:paddingHorizontal="@dimen/dp_20"
+                  android:drawableRight="@mipmap/tianbao_xingxing"
+                  android:text="@string/volunteer_module_register_label_job_status"
+                  android:textColor="@color/txt_black"
+                  android:textSize="@dimen/sp_16"
+                  android:textStyle="bold" />
+              <TextView
+                  android:id="@+id/tv_job_status"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:hint="@string/volunteer_module_register_label_hint_job_status"
+                  android:paddingTop="@dimen/dp_16"
+                  android:paddingBottom="@dimen/dp_16"
+                  android:textColor="@color/txt_black"
+                  android:paddingHorizontal="@dimen/dp_20"
+                  android:textColorHint="@color/color_999"
+                  android:drawableRight="@mipmap/activity_details_right"
+                  android:textSize="@dimen/sp_16" />
+          </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:background="@color/white"
+               android:layout_marginTop="@dimen/dp_8"
+               >
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:drawableRight="@mipmap/tianbao_xingxing"
+                   android:drawablePadding="@dimen/dp_4"
+                   android:paddingTop="@dimen/dp_16"
+                   android:text="@string/volunteer_module_upload_id_card_photo"
+                   android:textColor="@color/txt_black"
+                   android:textSize="@dimen/sp_16"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:textStyle="bold" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textSize="@dimen/sp_12"
+                   android:textColor="@color/color_999"
+                   android:layout_marginTop="@dimen/dp_10"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:text="@string/volunteer_module_upload_id_card_photo_hint"
+                   />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:paddingBottom="@dimen/dp_20"
+                   android:paddingTop="@dimen/dp_16">
+
+                   <ImageView
+                       android:id="@+id/mIdCardNegativeIv"
+                       android:layout_width="@dimen/dp_0"
+                       android:layout_height="@dimen/dp_100"
+                       android:layout_marginEnd="@dimen/dp_4"
+                       android:layout_weight="1"
+                       android:src="@drawable/mine_profile_realname_id_face"
+                       android:scaleType="fitXY" />
+
+                   <ImageView
+                       android:id="@+id/mIdCardPositiveIv"
+                       android:layout_width="@dimen/dp_0"
+                       android:layout_height="@dimen/dp_100"
+                       android:layout_marginLeft="@dimen/dp_4"
+                       android:src="@drawable/mine_profile_realname_id_back"
+                       android:layout_weight="1"
+                       android:scaleType="fitXY" />
+               </LinearLayout>
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_marginLeft="@dimen/dp_20"
+                   android:layout_height="@dimen/dp_0_5"
+                   android:background="@color/dividing_line" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:drawablePadding="@dimen/dp_4"
+                   android:paddingTop="@dimen/dp_16"
+                   android:text="@string/volunteer_module_register_contact"
+                   android:drawableRight="@mipmap/tianbao_xingxing"
+                   android:textColor="@color/txt_black"
+                   android:textSize="@dimen/sp_16"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:textStyle="bold" />
+               <EditText
+                   android:id="@+id/et_contact_name"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:background="@null"
+                   android:hint="@string/volunteer_module_register_contact_name"
+                   android:paddingTop="@dimen/dp_16"
+                   android:paddingBottom="@dimen/dp_16"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:textColor="@color/txt_black"
+                   android:textColorHint="@color/color_999"
+                   android:textSize="@dimen/sp_16" />
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_marginLeft="@dimen/dp_20"
+                   android:layout_height="@dimen/dp_0_5"
+                   android:background="@color/dividing_line" />
+               <EditText
+                   android:id="@+id/et_contact_phone"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:background="@null"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:hint="@string/volunteer_module_register_contact_phone"
+                   android:paddingTop="@dimen/dp_16"
+                   android:paddingBottom="@dimen/dp_16"
+                   android:textColor="@color/txt_black"
+                   android:textColorHint="@color/color_999"
+                   android:textSize="@dimen/sp_16" />
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_marginLeft="@dimen/dp_20"
+                   android:layout_height="@dimen/dp_0_5"
+                   android:background="@color/dividing_line" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="@dimen/dp_16"
+                   android:drawablePadding="@dimen/dp_4"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:drawableRight="@mipmap/tianbao_xingxing"
+                   android:text="@string/volunteer_module_register_skill"
+                   android:textColor="@color/txt_black"
+                   android:textSize="@dimen/sp_16"
+                   android:textStyle="bold" />
+               <TextView
+                   android:id="@+id/tv_skill"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:hint="@string/volunteer_module_register_hint_skill"
+                   android:paddingTop="@dimen/dp_16"
+                   android:paddingBottom="@dimen/dp_16"
+                   android:textColor="@color/txt_black"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:textColorHint="@color/color_999"
+                   android:drawableRight="@mipmap/activity_details_right"
+                   android:textSize="@dimen/sp_16" />
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_marginLeft="@dimen/dp_20"
+                   android:layout_height="@dimen/dp_0_5"
+                   android:background="@color/dividing_line" />
+               <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/dp_16"
+               android:drawablePadding="@dimen/dp_4"
+               android:paddingHorizontal="@dimen/dp_20"
+               android:text="@string/volunteer_module_register_health"
+               android:textColor="@color/txt_black"
+               android:textSize="@dimen/sp_16"
+               android:textStyle="bold" />
+               <TextView
+                   android:id="@+id/tv_health"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:hint="@string/volunteer_module_register_hint_health"
+                   android:paddingTop="@dimen/dp_16"
+                   android:paddingBottom="@dimen/dp_16"
+                   android:textColor="@color/txt_black"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:textColorHint="@color/color_999"
+                   android:drawableRight="@mipmap/activity_details_right"
+                   android:textSize="@dimen/sp_16" />
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_marginLeft="@dimen/dp_20"
+                   android:layout_height="@dimen/dp_0_5"
+                   android:background="@color/dividing_line" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="@dimen/dp_16"
+                   android:drawablePadding="@dimen/dp_4"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:text="@string/volunteer_module_register_language"
+                   android:textColor="@color/txt_black"
+                   android:textSize="@dimen/sp_16"
+                   android:textStyle="bold" />
+               <TextView
+                   android:id="@+id/tv_language"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:hint="@string/volunteer_module_register_hint_language"
+                   android:paddingTop="@dimen/dp_16"
+                   android:paddingBottom="@dimen/dp_16"
+                   android:textColor="@color/txt_black"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:textColorHint="@color/color_999"
+                   android:drawableRight="@mipmap/activity_details_right"
+                   android:textSize="@dimen/sp_16" />
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_marginLeft="@dimen/dp_20"
+                   android:layout_height="@dimen/dp_0_5"
+                   android:background="@color/dividing_line" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="@dimen/dp_16"
+                   android:drawablePadding="@dimen/dp_4"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:drawableRight="@mipmap/tianbao_xingxing"
+                   android:text="@string/volunteer_module_register_service_time"
+                   android:textColor="@color/txt_black"
+                   android:textSize="@dimen/sp_16"
+                   android:textStyle="bold" />
+               <TextView
+                   android:id="@+id/tv_service_time"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:hint="@string/volunteer_module_register_hint_service_time"
+                   android:paddingTop="@dimen/dp_16"
+                   android:paddingBottom="@dimen/dp_16"
+                   android:textColor="@color/txt_black"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:textColorHint="@color/color_999"
+                   android:drawableRight="@mipmap/activity_details_right"
+                   android:textSize="@dimen/sp_16" />
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_marginLeft="@dimen/dp_20"
+                   android:layout_height="@dimen/dp_0_5"
+                   android:background="@color/dividing_line" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="@dimen/dp_16"
+                   android:drawablePadding="@dimen/dp_4"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:drawableRight="@mipmap/tianbao_xingxing"
+                   android:text="@string/volunteer_module_register_service_type"
+                   android:textColor="@color/txt_black"
+                   android:textSize="@dimen/sp_16"
+                   android:textStyle="bold" />
+               <TextView
+                   android:id="@+id/tv_service_type"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:hint="@string/volunteer_module_register_hint_service_type"
+                   android:paddingTop="@dimen/dp_16"
+                   android:paddingBottom="@dimen/dp_16"
+                   android:textColor="@color/txt_black"
+                   android:paddingHorizontal="@dimen/dp_20"
+                   android:textColorHint="@color/color_999"
+                   android:drawableRight="@mipmap/activity_details_right"
+                   android:textSize="@dimen/sp_16" />
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_marginLeft="@dimen/dp_20"
+                   android:layout_height="@dimen/dp_0_5"
+                   android:background="@color/dividing_line" />
+           </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:text="@string/volunteer_module_register_email"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="@string/volunteer_module_register_hint_email"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/color_999"
+                    android:textSize="@dimen/sp_16" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:background="@color/dividing_line" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:text="@string/volunteer_module_register_qq"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/et_qq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:inputType="number"
+                    android:hint="@string/volunteer_module_register_hint_qq"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/color_999"
+                    android:textSize="@dimen/sp_16" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:background="@color/dividing_line" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:drawableRight="@mipmap/tianbao_xingxing"
+                    android:text="@string/volunteer_module_register_address"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/volunteer_module_register_hint_address"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:textColor="@color/txt_black"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:textColorHint="@color/color_999"
+                    android:drawableRight="@mipmap/activity_details_right"
+                    android:textSize="@dimen/sp_16" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:background="@color/dividing_line" />
+                <EditText
+                    android:id="@+id/et_address_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="@string/volunteer_module_register_hint_detail_address"
+                    android:paddingTop="@dimen/dp_16"
+                    android:paddingBottom="@dimen/dp_16"
+                    android:maxLength="100"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:textColor="@color/txt_black"
+                    android:textColorHint="@color/color_999"
+                    android:textSize="@dimen/sp_16" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:background="@color/dividing_line" />
+                <TextView
+                    android:id="@+id/tv_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/white"
+                    android:background="@drawable/shape_btn_primary_5"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:layout_marginVertical="@dimen/dp_30"
+                    android:paddingVertical="@dimen/dp_12"
+                    android:text="提交"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

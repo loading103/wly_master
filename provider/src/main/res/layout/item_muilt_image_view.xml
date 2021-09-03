@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url1"
+            type="String" />
+
+        <variable
+            name="url2"
+            type="String" />
+
+        <variable
+            name="url3"
+            type="String" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/dp_0"
+        app:cardCornerRadius="@dimen/dp_6">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ai_image_one"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_168"
+                android:scaleType="centerCrop"
+                app:border_color="@color/white"
+                app:corner_bottom_left_radius="@dimen/dp_6"
+                app:corner_bottom_right_radius="@dimen/dp_6"
+                app:corner_top_left_radius="@dimen/dp_6"
+                app:corner_top_right_radius="@dimen/dp_6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/v_three_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_151"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ai_image_1"
+                    android:layout_width="@dimen/dp_200"
+                    android:layout_height="@dimen/dp_151"
+                    android:scaleType="centerCrop"
+                    app:corner_bottom_left_radius="@dimen/dp_6"
+                    app:corner_top_left_radius="@dimen/dp_6"
+                    app:layout_constraintHorizontal_weight="2"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/ai_image_2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ai_image_2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    app:border_color="@color/white"
+                    app:corner_top_right_radius="@dimen/dp_6"
+                    app:layout_constraintBottom_toTopOf="@id/ai_image_3"
+                    app:layout_constraintLeft_toRightOf="@id/ai_image_1"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_weight="1" />
+
+                <ImageView
+                    android:id="@+id/ai_image_3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    app:corner_bottom_right_radius="@dimen/dp_6"
+                    app:layout_constraintBottom_toBottomOf="@id/ai_image_1"
+                    app:layout_constraintLeft_toRightOf="@id/ai_image_1"
+                    app:layout_constraintRight_toRightOf="@id/ai_image_2"
+                    app:layout_constraintTop_toBottomOf="@id/ai_image_2"
+                    app:layout_constraintVertical_weight="1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

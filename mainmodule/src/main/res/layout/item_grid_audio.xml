@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#E3FCE9">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/community_audio"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"/>
+            </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#8D978F"
+            android:gravity="center_vertical"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/community_audio_small"
+                android:layout_marginLeft="5dp"/>
+            <TextView
+                android:id="@+id/tv_ag_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:30/02:32"
+                android:textSize="11sp"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"/>
+            <ImageView
+                android:id="@+id/iv_ag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/community_play_small"
+                android:background="@drawable/club_audio_cicle_white"
+                android:padding="0.5dp"
+                android:layout_marginRight="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

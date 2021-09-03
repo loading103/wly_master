@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:paddingBottom="@dimen/dp_4"
+        android:paddingRight="@dimen/dp_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:background="@drawable/shape_home_popular_activity_flowlayout_item_bg_green"
+            android:paddingBottom="@dimen/dp_3"
+            android:paddingTop="@dimen/dp_3"
+            android:paddingRight="@dimen/dp_6"
+            android:paddingLeft="@dimen/dp_6"
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/provider_hot_activity"
+            android:textSize="@dimen/sp_10"
+            android:textColor="@color/green_36cd64"
+            />
+    </LinearLayout>
+
+</layout>

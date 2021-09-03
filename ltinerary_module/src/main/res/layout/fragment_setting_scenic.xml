@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/HeightWrap"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:text="您喜欢热门打卡景点，还是深度探索景点"
+                style="@style/LabelCustomStyle"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                style="@style/HeightWrap"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dp_20">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:text="网红打卡"
+                    android:checked="true"
+                    android:id="@+id/view_hot_daka"
+                    style="@style/ItineraryCustomRadio"
+                    android:layout_marginEnd="@dimen/dp_6"
+                    android:drawableTop="@drawable/itinerary_vector_hot_daka"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:text="深度探索"
+                    android:id="@+id/vector_explore"
+                    style="@style/ItineraryCustomRadio"
+                    android:layout_marginStart="@dimen/dp_6"
+                    android:drawableTop="@drawable/itinerary_vector_explore"/>
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:text="您的旅行团队"
+                android:id="@+id/view_title"
+                style="@style/LabelCustomStyle"
+                android:layout_marginTop="@dimen/dp_40" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:text="单身贵族"
+                    android:checked="true"
+                    android:id="@+id/view_single"
+                    style="@style/ItineraryCustomRadio"
+                    android:layout_marginEnd="@dimen/dp_6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/view_lovers"
+                    android:drawableTop="@drawable/itinerary_vector_single"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:text="情侣"
+                    android:id="@+id/view_lovers"
+                    style="@style/ItineraryCustomRadio"
+                    android:layout_marginStart="@dimen/dp_6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/view_single"
+                    android:drawableTop="@drawable/itinerary_vector_lovers"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:text="亲子"
+                    android:id="@+id/view_parents"
+                    android:layout_marginTop="@dimen/dp_12"
+                    style="@style/ItineraryCustomRadio"
+                    android:layout_marginEnd="@dimen/dp_6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_single"
+                    app:layout_constraintEnd_toStartOf="@id/view_family"
+                    android:drawableTop="@drawable/itinerary_vector_parents"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:text="家庭"
+                    android:id="@+id/view_family"
+                    android:layout_marginTop="@dimen/dp_12"
+                    style="@style/ItineraryCustomRadio"
+                    android:layout_marginStart="@dimen/dp_6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_lovers"
+                    app:layout_constraintStart_toEndOf="@id/view_parents"
+                    android:drawableTop="@drawable/itinerary_vector_family"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:text="以下个性化的标签，您会更喜欢哪些（多选）"
+                style="@style/LabelCustomStyle"
+                android:layout_marginTop="@dimen/dp_40" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginBottom="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:text="自然风光"
+                    android:checked="true"
+                    android:id="@+id/view_landscape"
+                    style="@style/ItineraryCustomRadio"
+                    android:layout_marginEnd="@dimen/dp_6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/view_history"
+                    android:drawableTop="@drawable/itinerary_vector_landscape"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:text="历史人文"
+                    android:id="@+id/view_history"
+                    style="@style/ItineraryCustomRadio"
+                    android:layout_marginStart="@dimen/dp_6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/view_landscape"
+                    android:drawableTop="@drawable/itinerary_vector_history"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:text="小众秘境"
+                    android:id="@+id/view_uncharted"
+                    android:layout_marginTop="@dimen/dp_12"
+                    style="@style/ItineraryCustomRadio"
+                    android:layout_marginEnd="@dimen/dp_6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_landscape"
+                    app:layout_constraintEnd_toStartOf="@id/view_food"
+                    android:drawableTop="@drawable/itinerary_vector_uncharted"/>
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:text="美食体验"
+                    android:id="@+id/view_food"
+                    android:layout_marginTop="@dimen/dp_12"
+                    style="@style/ItineraryCustomRadio"
+                    android:layout_marginStart="@dimen/dp_6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_history"
+                    app:layout_constraintStart_toEndOf="@id/view_uncharted"
+                    android:drawableTop="@drawable/itinerary_vector_food"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

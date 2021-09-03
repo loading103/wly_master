@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@mipmap/service_sos_bg_point" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rv_call"
+                    android:layout_width="@dimen/dp_250"
+                    android:layout_height="@dimen/dp_250"
+                    android:layout_gravity="center_horizontal">
+                    <ImageView
+                        android:id="@+id/img_white_circle"
+                        android:layout_centerInParent="true"
+                        android:layout_width="@dimen/dp_112"
+                        android:layout_height="@dimen/dp_112"
+                        android:background="@drawable/service_point_cir" />
+                    <com.daqsoft.servicemodule.view.WaveView
+                        android:id="@+id/waveView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:spread_center_color="@color/translate_80_white"
+                        app:spread_delay_milliseconds="35"
+                        app:spread_distance="5"
+                        app:spread_max_radius="90"
+                        app:spread_radius="100"
+                        app:spread_spread_color="@color/translate_80_white" />
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@mipmap/service_sos_icon_call" />
+                    <TextView
+                        android:id="@+id/service_sos_call"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/img_white_circle"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dp_30"
+                        android:includeFontPadding="false"
+                        android:text="点击拨打电话"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_16" />
+                </RelativeLayout>
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginStart="@dimen/dp_28"
+                    android:layout_marginEnd="@dimen/dp_28"
+                    android:includeFontPadding="false"
+                    android:text="@string/service_sos_tip"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_12" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_28"
+                    android:layout_marginTop="@dimen/dp_17"
+                    android:layout_marginEnd="@dimen/dp_28"
+                    android:background="@drawable/service_white_k_bg"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_16">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="@string/service_sos_current_location"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_12" />
+                    <TextView
+                        android:id="@+id/service_sos_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:hint="@string/service_sos_load_location"
+                        android:includeFontPadding="false"
+                        android:textColorHint="@color/white"
+                        android:background="@null"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_16" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/service_sos_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_28"
+                    android:layout_marginTop="@dimen/dp_17"
+                    android:padding="@dimen/dp_14"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/service_sos_upload_pic"
+                    android:layout_marginEnd="@dimen/dp_28"
+                    android:background="@drawable/service_white_bg"
+                   >
+
+                </TextView>
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@mipmap/service_sos_bg_wave" />
+    </FrameLayout>
+</layout>
+

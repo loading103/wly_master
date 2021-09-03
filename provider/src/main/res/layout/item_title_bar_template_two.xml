@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.daqsoft.provider.bean.CommonTemlate" />
+
+        <import type="com.daqsoft.provider.uiTemplate.titleBar.TitleBarStyle" />
+
+        <variable
+            name="template"
+            type="CommonTemlate" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_title_bar_style_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_title_bar_style_two"
+                imageUrl="@{template.icon}"
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_18"
+                android:layout_marginRight="@dimen/dp_6"
+                android:visibility="@{template.icon!=null&amp;&amp;!template.icon.empty}"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_title_bar_style_two"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_title_bar_style_two" />
+
+            <TextView
+                android:id="@+id/tv_title_bar_style_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_6"
+                android:includeFontPadding="false"
+                android:text="@{template.mainTitle}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/iv_title_bar_style_two"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="主标题" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:includeFontPadding="false"
+                android:text="@{template.subTitle}"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_11"
+                android:visibility="@{template.subTitle!=null&amp;&amp;!template.subTitle.empty&amp;&amp;template.subTitleType.equals(TitleBarStyle.TITLE_TYPE_WORD)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_bar_style_two"
+                tools:text="副标题" />
+
+            <ImageView
+                imageUrl="@{template.subTitle}"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_6"
+                android:scaleType="fitStart"
+                android:visibility="@{template.subTitle!=null&amp;&amp;!template.subTitle.empty&amp;&amp;template.subTitleType.equals(TitleBarStyle.TITLE_TYPE_IMAGE)}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_bar_style_two" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.daqsoft.baselib.widgets.CenterDrawableTextView
+            android:id="@+id/ctv_title_bar_style_two_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableRight="@mipmap/home_more"
+            android:drawablePadding="@dimen/dp_6"
+            android:gravity="center"
+            android:text="@string/user_more"
+            android:textColor="@color/txt_gray"
+            android:textSize="@dimen/sp_12" />
+    </LinearLayout>
+</layout>

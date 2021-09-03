@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="price"
+            type="String" />
+
+        <variable
+            name="stock"
+            type="String" />
+
+        <variable
+            name="totalNumber"
+            type="String" />
+
+        <variable
+            name="time"
+            type="String" />
+
+        <variable
+            name="address"
+            type="String" />
+
+        <variable
+            name="serviceTime"
+            type="String" />
+
+        <variable
+            name="alreadySignCount"
+            type="String" />
+
+        <variable
+            name="signCount"
+            type="String" />
+
+        <variable
+            name="recruitTime"
+            type="String" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20">
+
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{name}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tool:text="adsfasdfasdfasdf" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_recruit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_154"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@drawable/main_shape_f5_back_5_radius"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/rv_tags">
+
+            <TextView
+                android:id="@+id/tv_service_time_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_18"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center"
+                android:text="服务时长"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/tv_service_recruit_label"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_service_recruit_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center"
+                android:text="已招募人数"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/tv_service_time_label"
+                app:layout_constraintRight_toLeftOf="@id/tv_service_left_label"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_service_left_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center"
+                android:text="剩余名额"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/tv_service_recruit_label"
+                app:layout_constraintRight_toLeftOf="@id/tv_service_apply_label"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_service_apply_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginEnd="@dimen/dp_18"
+                android:gravity="center"
+                android:text="报名人数"
+                android:textColor="@color/txt_gray"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/tv_service_left_label"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_service_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_18"
+                android:layout_marginTop="@dimen/dp_7"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="@{serviceTime}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/tv_service_recruit"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_time_label" />
+
+            <TextView
+                android:id="@+id/tv_service_recruit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{alreadySignCount}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/tv_service_time"
+                app:layout_constraintRight_toLeftOf="@id/tv_service_left"
+                app:layout_constraintTop_toTopOf="@id/tv_service_time" />
+
+            <TextView
+                android:id="@+id/tv_service_left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{stock}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/tv_service_recruit"
+                app:layout_constraintRight_toLeftOf="@id/tv_service_apply"
+                app:layout_constraintTop_toTopOf="@id/tv_service_time" />
+
+            <TextView
+                android:id="@+id/tv_service_apply"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_18"
+                android:gravity="center"
+                android:text="@{signCount}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/tv_service_left"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_service_time" />
+
+            <ProgressBar
+                android:id="@+id/pb_progress"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginRight="15dp"
+                android:max="100"
+                android:progress="10"
+                android:progressDrawable="@drawable/progress_layer"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_time" />
+
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/user_back_main_strok_main_round_large"
+                android:lines="1"
+                android:text="100%"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_9"
+                app:layout_constraintBottom_toBottomOf="@id/pb_progress"
+                app:layout_constraintLeft_toLeftOf="@id/pb_progress"
+                app:layout_constraintTop_toTopOf="@+id/pb_progress" />
+
+            <TextView
+                android:id="@+id/tv_members"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:text="已招募志愿者："
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toBottomOf="@id/rv_members"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/rv_members"
+
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_members"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_32"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_18"
+                android:layout_marginBottom="@dimen/dp_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/tv_members"
+                app:layout_constraintRight_toRightOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_honesty"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_36"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@drawable/home_b_0136cd64_stroke_null_round_2"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/cl_recruit">
+
+            <TextView
+                android:id="@+id/tv_honesty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_12"
+                android:drawableLeft="@mipmap/activity_details_exempt"
+                android:drawablePadding="@dimen/dp_8"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tool:text="诚信分大于550分才能预订" />
+
+            <TextView
+                android:id="@+id/tv_to_honesty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_12"
+                android:drawableRight="@mipmap/activity_details_right"
+                android:drawablePadding="@dimen/dp_5"
+                android:text="我的诚信"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintLeft_toLeftOf="parent" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_40"
+            android:text="报名时间"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_honesty" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:text="@{recruitTime}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toRightOf="@id/tv_time_label"
+            app:layout_constraintTop_toTopOf="@id/tv_time_label"
+            tool:text="2019.05.08 08:00~2019.09.02 08:00" />
+
+        <TextView
+            android:id="@+id/tv_service_time_stamp_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_40"
+            android:text="服务时间"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_time" />
+
+        <TextView
+            android:id="@+id/tv_time_stamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:text="@{time}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toRightOf="@id/tv_service_time_stamp_label"
+            app:layout_constraintTop_toTopOf="@id/tv_service_time_stamp_label"
+            tool:text="2019.05.08 08:00~2019.09.02 08:00" />
+
+        <TextView
+            android:id="@+id/tv_address_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_28"
+            android:text="活动地址"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_time_stamp" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:drawableEnd="@mipmap/activity_details_address"
+            android:drawablePadding="@dimen/dp_32"
+            android:text="@{address}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/tv_address_label"
+            app:layout_constraintTop_toTopOf="@id/tv_address_label"
+            tool:text="蓝天接到心信息路蓝天接到心信息路蓝天接到心信息路" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="detail"
+            type="com.daqsoft.provider.bean.OrderDetail" />
+
+        <variable
+            name="imgageZoom"
+            type="com.daqsoft.provider.rxCommand.ReplyCommand" />
+
+        <variable
+            name="longClick"
+            type="com.daqsoft.provider.rxCommand.ReplyCommand" />
+
+
+    </data>
+
+
+        <LinearLayout
+            android:background="@color/white"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                onLongClickCommand="@{longClick}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/dp_16">
+
+                <TextView
+                    android:id="@+id/label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="@string/order_qr_code"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/image"
+                    onClickCommand="@{imgageZoom}"
+                    android:layout_width="@dimen/dp_140"
+                    android:layout_height="@dimen/dp_140"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:scaleType="fitXY"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label" />
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    android:id="@+id/status"
+                    android:layout_width="@dimen/dp_65"
+                    android:layout_height="@dimen/dp_65"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/mine_code_detail_tag_big_yihexiao"
+                    android:visibility="gone"
+                    app:back_color="@color/white"
+                    app:is_circle="true"
+                    app:is_cover_src="false"
+                    app:layout_constraintBottom_toBottomOf="@id/image"
+                    app:layout_constraintLeft_toLeftOf="@id/image"
+                    app:layout_constraintRight_toRightOf="@id/image"
+                    app:layout_constraintTop_toTopOf="@id/image" />
+
+                <TextView
+                    android:id="@+id/tv_numbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/order_numbers"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/image" />
+
+                <TextView
+                    android:id="@+id/tv_notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:text="@string/order_long_press"
+                    android:textColor="@color/txt_gray"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_numbers" />
+
+
+                <TextView
+                    android:id="@+id/tv_consu_code"
+                    style="@style/ViewWrap"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:background="@drawable/shape_order_list_btn"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingTop="@dimen/dp_6"
+                    android:paddingRight="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_6"
+                    android:textColor="@color/color_999"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_notice" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+</layout>

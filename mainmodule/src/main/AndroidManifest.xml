@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.daqsoft.mainmodule">
+
+    <application>
+        <activity
+            android:name="com.daqsoft.travelCultureModule.onLineClick.ui.OnLineClickListActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.country.ui.CountryHapDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.daqsoft.travelCultureModule.complaint.ChooseComplaintResourceActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.complaint.ComplaintActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.story.StoryAddressActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.branches.BranchListActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="me.nereo.multi_image_selector.MultiFileSelectorActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.story.AddTagActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.story.MyStoryListActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.clubActivity.ClubInfoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.clubActivity.ClubInfoIntroduce"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.clubActivity.ClubPersonInfoActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.search.SearchActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.story.StrategyDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.resource.ScenicMapModelActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.resource.ScenicDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.daqsoft.travelCultureModule.story.FindStrategyListActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.story.CommonStoryListActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.resource.ScenicDetailMoreActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.resource.ScenicSpotDetailActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.sidetour.SideTourMapActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.resource.FindActivityListActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.resource.ScenicListActivity"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+
+                <!-- 配置为可以根据菜单参数跳转的页面 -->
+                <action android:name="SCENIC" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.daqsoft.travelCultureModule.hotel.ui.HotelListOfActivity"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="HOTEL" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.daqsoft.travelCultureModule.hotel.ui.HotelDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.hotel.ui.HotelInfoActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.contentActivity.ContentActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.contentActivity.CollectionActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.contentActivity.ContentStudyActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.contentActivity.ContentNewActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.branches.StrategyListActivity"
+            android:label="攻略列表"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.daqsoft.travelCultureModule.contentActivity.ContentInfoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.contentActivity.ContentInfoActivity2"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.contentActivity.ContentImgActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.branches.BrandIntroduceActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.citycard.CityListActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.citycard.CurrentCityInfoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.citycard.CityInfoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.citycard.WebViewActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.story.TopicActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.story.TopicDetailActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <!-- 美食列表 -->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.food.FoodLsActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <!-- 美食详情 -->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.food.FoodDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.food.FoodInfoActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.story.TimActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.country.ui.CountryHappinessMoreActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.country.ui.CountryTourActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.country.ui.CountryContentActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.country.ui.CountryCityListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.country.ui.CountryHotelMoreActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.hotActivity.orders.OrderSuccessActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.panoramic.PanoramicActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <!--景点图片相册-->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.resource.SpotsImagesActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <!--活动列表-->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.hotActivity.HotActivitiesActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
+        <activity
+            android:name="com.daqsoft.travelCultureModule.hotActivity.HotGaiLanActivitiesActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <!--景区直播列表-->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.resource.ScenicLivesActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.clubActivity.ClubPersonListActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.contentActivity.ContentCommentListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.itrobot.ItRobotActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.contentActivity.UniversityLsActivity"
+            android:screenOrientation="portrait" />
+        <!--大讲堂列表-->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.lecturehall.LectureHallLsActivity"
+            android:screenOrientation="portrait" />
+        <!--课程详情-->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.lecturehall.LectureHallDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <!--大讲堂提问-->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.lecturehall.LectureHallRequestActivity"
+            android:screenOrientation="portrait" />
+        <!--活动概览列表-->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.hotActivity.HotActivityOverViewActivity"
+            android:screenOrientation="portrait" />
+        <!--我的学习-->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.lecturehall.MineLectureActivity"
+            android:screenOrientation="portrait" />
+        <!--我的提问-->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.lecturehall.MineLectureReqActivity"
+            android:screenOrientation="portrait" />
+        <!--全部乡村更多页面-->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.country.ui.CountryAllMoreActivity"
+            android:screenOrientation="portrait" />
+        <!--乡村详情页面-->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.country.ui.CountryDetailActivity"
+            android:screenOrientation="portrait" />
+        <!--乡村介绍页面-->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.country.ui.CountryDetailMoreActivity"
+            android:screenOrientation="portrait" />
+        <!--景观点详情页面-->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.country.ui.CountryScenicSpotActivity"
+            android:screenOrientation="portrait" />
+        <!--活动首页-->
+        <activity android:name="com.daqsoft.travelCultureModule.hotActivity.ActIndexActivity"
+            android:screenOrientation="portrait" />
+
+        <!--娱乐场所列表-->
+        <activity android:name="com.daqsoft.travelCultureModule.playground.PlayGroundLsActivity"
+            android:screenOrientation="portrait" />
+        <!--娱乐场所详情-->
+        <activity android:name="com.daqsoft.travelCultureModule.playground.PlayGroundDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <!--娱乐场所介绍-->
+        <activity android:name="com.daqsoft.travelCultureModule.playground.PlayGroundInfoActivity"
+            android:screenOrientation="portrait" />
+
+        <!--红黑榜-->
+        <activity android:name="com.daqsoft.travelCultureModule.redblack.ui.RedBlacklRankDetailListActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.daqsoft.travelCultureModule.redblack.ui.RedBlackRankListActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!--馆藏-->
+        <activity
+            android:name="com.daqsoft.travelCultureModule.venuecollect.ExhibitionLsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.daqsoft.travelCultureModule.venuecollect.CulturalRelicLsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.daqsoft.travelCultureModule.venuecollect.CulturalRelicDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.daqsoft.travelCultureModule.venuecollect.ExhibitionDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name="com.daqsoft.travelCultureModule.questionnaire.QuestionNaureLsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.daqsoft.travelCultureModule.questionnaire.QuestionNaureMineLsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.daqsoft.travelCultureModule.questionnaire.QuestionLsSubmitActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.daqsoft.travelCultureModule.questionnaire.QuestionResultLsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.daqsoft.travelCultureModule.themepark.ThemeAreaListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.daqsoft.travelCultureModule.themepark.ThemeAreaDetalActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.daqsoft.travelCultureModule.themepark.ThemePlayListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.daqsoft.travelCultureModule.themepark.ThemeProjectDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.daqsoft.travelCultureModule.researchbase.ResearchListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.researchbase.ResearchDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.researchbase.ResearchDetailMoreActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.daqsoft.travelCultureModule.specialty.SpecialtyListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.daqsoft.travelCultureModule.specialty.SpecialtyDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

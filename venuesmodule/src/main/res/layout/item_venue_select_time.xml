@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_12">
+
+            <TextView
+                android:id="@+id/txt_venue_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_15"
+                tools:text="sssss" />
+
+            <View
+                android:id="@+id/v_haved_resevation"
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_5"
+                android:layout_marginLeft="@dimen/dp_2"
+                android:layout_toRightOf="@+id/txt_venue_time"
+                android:background="@drawable/shape_venues_circle_5"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/txt_venue_select_stauts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/dp_2"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_marginRight="@dimen/dp_2"
+            android:layout_marginBottom="@dimen/dp_11"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_11"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+</layout>
+

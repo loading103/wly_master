@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/main_shape_white_back_5_radius"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/dp_60">
+
+                <ImageView
+                    android:id="@+id/iv_bg1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_270"
+                    android:scaleType="fitXY"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_270"
+                    android:background="@color/black_40"
+                    android:scaleType="fitXY"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    android:id="@+id/av_head"
+                    android:layout_width="@dimen/dp_66"
+                    android:layout_height="@dimen/dp_66"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:src="@drawable/mine_profile_photo_default"
+                    app:is_circle="true"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_flag"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_15"
+                    android:src="@mipmap/volunteer_single_details_icon_tag"
+                    app:layout_constraintRight_toRightOf="@id/av_head"
+                    app:layout_constraintTop_toTopOf="@id/av_head" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/av_head"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_level_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:background="@drawable/volunteer_module_level_1"
+                        android:gravity="center"
+                        android:text="一星志愿者"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_9"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_level_icon"
+                        android:layout_width="@dimen/dp_16"
+                        android:layout_height="@dimen/dp_18"
+                        android:layout_marginTop="@dimen/dp_3"
+                        android:src="@mipmap/volunteer_single_list_icon_level_1"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_volunteer_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/av_head"
+                    tools:text="你大爷" />
+
+                <TextView
+                    android:id="@+id/tv_volunteer_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_volunteer_name"
+                    tools:text="你大爷" />
+
+                <LinearLayout
+                    android:id="@+id/ll_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_volunteer_address">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_service_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_16"
+                            android:text="0小时"
+                            android:textStyle="bold"
+                            tools:text="100小时" />
+
+                        <TextView
+                            android:id="@+id/tv_service_time_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_6"
+                            android:includeFontPadding="false"
+                            android:text="服务时长"
+                            android:textColor="@color/color_a_ff_0_5"
+                            android:textSize="@dimen/sp_11"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_32"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_service_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_16"
+                            android:text="0"
+                            android:textStyle="bold"
+                            tools:text="100" />
+
+                        <TextView
+                            android:id="@+id/tv_service_count_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_6"
+                            android:includeFontPadding="false"
+                            android:text="服务次数"
+                            android:textColor="@color/color_a_ff_0_5"
+                            android:textSize="@dimen/sp_11"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_32"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_16"
+                            android:text="0"
+                            android:textStyle="bold"
+                            tools:text="100" />
+
+                        <TextView
+                            android:id="@+id/tv_score_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_6"
+                            android:includeFontPadding="false"
+                            android:text="公益积分"
+                            android:textColor="@color/color_a_ff_0_5"
+                            android:textSize="@dimen/sp_11"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_32"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_rank"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold"
+                            android:text="0"
+                            tools:text="100" />
+
+                        <TextView
+                            android:id="@+id/tv_rank_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_6"
+                            android:includeFontPadding="false"
+                            android:text="个人排名"
+                            android:textColor="@color/color_a_ff_0_5"
+                            android:textSize="@dimen/sp_11"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:background="@drawable/shape_white_5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ll_service">
+
+                    <ImageView
+                        android:id="@+id/iv_logo"
+                        android:layout_width="@dimen/dp_32"
+                        android:layout_height="@dimen/dp_32"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_17"
+                        android:layout_marginBottom="@dimen/dp_17"
+                        android:src="@mipmap/volunteer_personal_home_id_logo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_volunteer_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:includeFontPadding="false"
+                        android:text="文化和旅游志愿者证"
+                        android:textColor="@color/color_333"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintLeft_toRightOf="@id/iv_logo"
+                        app:layout_constraintTop_toTopOf="@id/iv_logo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:paddingTop="@dimen/dp_4"
+                        android:text="文化暖心 志愿为你"
+                        android:textColor="@color/color_999"
+                        android:textSize="@dimen/sp_11"
+                        app:layout_constraintLeft_toLeftOf="@id/tv_volunteer_card"
+                        app:layout_constraintTop_toBottomOf="@id/tv_volunteer_card" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_60"
+                        android:src="@mipmap/provider_whcgxq_cghd_more"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tv_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:text="我的服务"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_19"
+                    app:layout_constraintLeft_toLeftOf="@id/cl_card"
+                    app:layout_constraintTop_toBottomOf="@id/cl_card" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_mine_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_27"
+                    app:layout_constraintTop_toBottomOf="@id/tv_service" />
+
+                <TextView
+                    android:id="@+id/tv_team_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="团队服务"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_19"
+                    app:layout_constraintLeft_toLeftOf="@id/cl_card"
+                    app:layout_constraintTop_toBottomOf="@id/rv_mine_service" />
+
+                <TextView
+                    android:id="@+id/tv_current_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:includeFontPadding="false"
+                    android:text="当前团队:"
+                    android:textColor="@color/color_999"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="@id/tv_team_service"
+                    app:layout_constraintTop_toBottomOf="@id/tv_team_service" />
+
+                <TextView
+                    android:id="@+id/tv_current_team"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:drawableRight="@mipmap/provider_arrow_down"
+                    android:drawablePadding="@dimen/dp_6"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toRightOf="@id/tv_current_label"
+                    app:layout_constraintTop_toTopOf="@id/tv_current_label"
+                    tools:text="蔡大爷团队" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_team_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_27"
+                    app:layout_constraintTop_toBottomOf="@id/tv_current_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:id="@+id/ll_bottom_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/dp_32"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <TextView
+                android:id="@+id/tv_create_team"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/volunteer_btn_shape_bg_18_2"
+                android:text="创建团队"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/dp_36"
+                android:paddingVertical="@dimen/dp_10"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/tv_create_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/volunteer_btn_shape_bg_18_1"
+                android:text="发服务记录"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/dp_36"
+                android:layout_alignParentRight="true"
+                android:paddingVertical="@dimen/dp_10"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

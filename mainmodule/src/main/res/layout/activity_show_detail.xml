@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="datas"
+            type="com.daqsoft.provider.bean.VenueCollectDetailBean"/>
+
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/toolbar_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_197"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_collapseMode="parallax"
+                        app:layout_collapseParallaxMultiplier="0.5">
+
+                        <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+                            android:id="@+id/cbr_food_detail"
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/dp_40"
+                            android:layout_marginBottom="@dimen/dp_26"
+                            android:minHeight="@dimen/dp_21"
+                            android:orientation="horizontal"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <LinearLayout
+                                android:id="@+id/txt_food_detail_video"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/shape_main_black_10"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/dp_7"
+                                android:paddingTop="@dimen/dp_4"
+                                android:paddingRight="@dimen/dp_7"
+                                android:paddingBottom="@dimen/dp_4"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:id="@+id/img_scenic_detail_play_status"
+                                    android:layout_width="@dimen/dp_7"
+                                    android:layout_height="@dimen/dp_8"
+                                    android:layout_gravity="center_vertical"
+                                    android:src="@mipmap/venue_details_banner_pause" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/dp_3"
+                                    android:includeFontPadding="false"
+                                    android:text="视频"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_10" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/txt_food_detail_pannaor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/dp_4"
+                                android:background="@drawable/shape_main_black_10"
+                                android:minHeight="@dimen/dp_21"
+                                android:paddingLeft="@dimen/dp_7"
+                                android:paddingTop="@dimen/dp_4"
+                                android:paddingRight="@dimen/dp_7"
+                                android:paddingBottom="@dimen/dp_4"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:includeFontPadding="false"
+                                    android:text="全景漫游"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_10" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/txt_food_detail_images_root"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_4"
+                                android:background="@drawable/shape_main_black_10"
+                                android:minHeight="@dimen/dp_21"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/dp_7"
+                                android:paddingTop="@dimen/dp_4"
+                                android:paddingRight="@dimen/dp_7"
+                                android:paddingBottom="@dimen/dp_4"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:includeFontPadding="false"
+                                    android:text="画册"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_10" />
+
+                                <TextView
+                                    android:id="@+id/txt_food_detail_images"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginLeft="@dimen/dp_3"
+                                    android:includeFontPadding="false"
+                                    android:text=""
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_10" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_m_12"
+                android:background="@drawable/shape_hotel_detail_top"
+                android:overScrollMode="never"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:id="@+id/ll_root"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:paddingLeft="@dimen/dp_16"
+                        android:paddingRight="@dimen/dp_16"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tv_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            android:text="@{datas.name}"
+                            android:textStyle="bold"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_22" />
+                        <TextView
+                            android:id="@+id/tv_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:text= "展览时间：常设展览"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14" />
+                        <TextView
+                            android:id="@+id/tv_adress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:text= "@{String.format(@string/show_list_address,datas.exhibitionAddress)}"
+                            android:visibility='@{ TextUtils.isEmpty(datas.exhibitionAddress) ? View.GONE:View.VISIBLE}'
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14" />
+
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/ll_infor"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:visibility='@{TextUtils.isEmpty(datas.introduce)?View.GONE:View.VISIBLE}'-->
+<!--                            android:orientation="vertical"-->
+<!--                            tools:ignore="WebViewLayout">-->
+<!--                            <include-->
+<!--                                android:id="@+id/il_food_introuduce"-->
+<!--                                layout="@layout/include_detail_module"-->
+<!--                                app:hide="@{false}"-->
+<!--                                app:hideRight="@{true}"-->
+<!--                                app:leftLabel="@{`展览介绍`}" />-->
+<!--                            <WebView-->
+<!--                                android:id="@+id/web_infor"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="@dimen/dp_22"-->
+<!--                                android:scrollbars="none" />-->
+<!--                        </LinearLayout>-->
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_infor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:visibility='@{TextUtils.isEmpty(datas.introduce)?View.GONE:View.VISIBLE}'
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:paddingRight="@dimen/dp_16"
+                        android:paddingLeft="@dimen/dp_16"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_root"
+                        tools:ignore="WebViewLayout">
+                        <include
+                            android:id="@+id/il_food_introuduce"
+                            layout="@layout/include_detail_module"
+                            app:hide="@{false}"
+                            app:hideRight="@{true}"
+                            app:leftLabel="@{`展览介绍`}" />
+                    </LinearLayout>
+                    <com.daqsoft.provider.view.web.ContentWebView
+                        android:id="@+id/web_infor"
+                        android:layout_width="match_parent"
+                        android:visibility='@{TextUtils.isEmpty(datas.introduce)?View.GONE:View.VISIBLE}'
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_infor"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_22"
+                        android:scrollbars="none" />
+                    <ImageView
+                        android:id="@+id/iv_content_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/web_infor"
+                        android:padding="@dimen/dp_20"
+                        android:src="@mipmap/activity_down"
+                        android:visibility="gone" />
+
+
+                    <!--所有展品-->
+                    <com.daqsoft.provider.businessview.view.ProviderShowView
+                        android:id="@+id/pro_all_culture"
+                        android:layout_width="match_parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_content_more"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content" />
+
+                    <!--推荐-->
+                    <com.daqsoft.provider.businessview.view.ProviderRecommendExhibition
+                        android:id="@+id/pro_xg_tj"
+                        android:layout_width="match_parent"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/pro_all_culture"
+                        android:layout_height="wrap_content" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
+</layout>

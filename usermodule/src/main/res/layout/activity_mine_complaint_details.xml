@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.daqsoft.usermodule.ui.complaint.ComplaintDetailsViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/f5"
+            tools:context=".ui.complaint.MineComplaintDetailsActivity">
+
+
+            <LinearLayout
+                android:id="@+id/ll_complaint_deal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_20"
+                android:visibility="@{model.details.status == 4?View.GONE:View.VISIBLE}"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_36"
+                    android:layout_height="@dimen/dp_36"
+                    android:src="@mipmap/complaint_details_completed" />
+
+                <TextView
+                    android:id="@+id/tv_deal_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@{model.details.status == 5?`已受理`:model.details.status == 6?`已处理`:``}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    tools:text="已处理" />
+
+                <TextView
+                    android:id="@+id/tv_deal_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@{model.details.status == 6 ?model.details.handleResult:model.details.status == 5?model.details.acceptResult:``}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_13"
+                    android:visibility="@{model.details.status == 6 &amp; !model.details.handleResult.equals(``)?View.VISIBLE:model.details.status == 5 &amp; !model.details.acceptResult.equals(``)?View.VISIBLE:View.GONE}"
+                    tools:text="处理意见：酒店刚在整顿期间，若还出现这种问题，请直接
+            联系我们。同时酒店同意退还您一半的房费，作为补偿。" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_complaint_base_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_20"
+                app:layout_constraintTop_toBottomOf="@+id/ll_complaint_deal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="基本信息"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="wrap_content"
+                        android:text="姓名"
+                        android:textColor="@color/txt_gray_black"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/tv_complaint_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_24"
+                        android:text="@{model.details.name}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_14"
+                        tools:text="12234547545" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="wrap_content"
+                        android:text="手机号码"
+                        android:textColor="@color/txt_gray_black"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/tv_complaint_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_24"
+                        android:text="@{model.details.phone}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_14"
+                        tools:text="12234547545" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="wrap_content"
+                        android:text="性别"
+                        android:textColor="@color/txt_gray_black"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/tv_complaint_sex"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_24"
+                        android:text="@{model.details.sex == 1?`男`:model.details.sex == 2?`女`:`保密`}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_14"
+                        tools:text="12234547545" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_complaint_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_20"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/ll_complaint_base_info">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="投诉事件"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="wrap_content"
+                        android:text="投诉类型"
+                        android:textColor="@color/txt_gray_black"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/tv_complaint_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_24"
+                        android:text="@{model.details.complaintsType.equals(`personnel`)?`人员`:model.details.complaintsType.equals(`service`)?`服务`:`环境` }"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_14"
+                        tools:text="12234547545" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="wrap_content"
+                        android:text="被投诉方"
+                        android:textColor="@color/txt_gray_black"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/tv_complaint_resource"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_24"
+                        android:text="@{model.details.respondent}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_14"
+                        tools:text="12234547545" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="wrap_content"
+                        android:text="发生地"
+                        android:textColor="@color/txt_gray_black"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/tv_complaint_region"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_24"
+                        android:text="@{model.details.region}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_14"
+                        tools:text="12234547545" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="wrap_content"
+                        android:text="详细地址"
+                        android:textColor="@color/txt_gray_black"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/tv_complaint_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_24"
+                        android:text="@{model.details.address}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_14"
+                        tools:text="122345475451223454754512234547545122345475451223454754512234547545122345475451223454754512234547545" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="wrap_content"
+                        android:text="发生时间"
+                        android:textColor="@color/txt_gray_black"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/tv_complaint_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_24"
+                        android:text="@{model.details.incidentTime}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_14"
+                        tools:text="12234547545" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="wrap_content"
+                        android:text="投诉事由"
+                        android:textColor="@color/txt_gray_black"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/tv_complaint_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_24"
+                        android:text="@{model.details.complaintsReasons}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_14"
+                        tools:text="1223454754sfdsfsdfsdfsfadsfsdfsfsdfsfsfasdfsffsdfasf5" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:visibility="@{model.details.evidenceImages.size()==0 &amp;model.details.evidenceVideo.size() ==0?View.GONE:View.VISIBLE}">
+
+                    <TextView
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="wrap_content"
+                        android:text="上传凭证"
+                        android:textColor="@color/txt_gray_black"
+                        android:textSize="@dimen/sp_14" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_details_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:scrollbars="none"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_complaint_content" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_complaint_deal_result"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_20"
+                android:visibility="@{model.details.status == 6?View.VISIBLE:View.GONE}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_complaint_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.details.status == 6 &amp; model.details.satisfied == -1?`您对本次投诉处理结果满意吗`:`您对本次投诉处理结果满意评价为`}"
+                    android:textColor="@color/txt_black"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"
+                    android:visibility="@{model.details.status == 6 &amp; model.details.satisfied == -1?View.VISIBLE:View.GONE}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:orientation="horizontal">
+
+                    <com.daqsoft.baselib.widgets.CenterDrawableTextView
+                        android:id="@+id/tv_good"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_34"
+                        android:layout_marginRight="@dimen/dp_6"
+                        android:layout_weight="1"
+                        android:background="@drawable/selected_main_gray_5"
+                        android:drawableLeft="@mipmap/complaint_details_good"
+                        android:drawablePadding="@dimen/dp_8"
+                        android:gravity="center"
+                        android:text="满意"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_14"
+                        android:visibility="@{model.details.satisfied == 1 || model.details.satisfied == -1?View.VISIBLE:View.GONE }" />
+
+                    <com.daqsoft.baselib.widgets.CenterDrawableTextView
+                        android:id="@+id/tv_bad"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_34"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:layout_weight="1"
+                        android:background="@drawable/selected_main_gray_5"
+                        android:drawableLeft="@mipmap/complaint_details_bad"
+                        android:drawablePadding="@dimen/dp_8"
+                        android:gravity="center"
+                        android:text="不满意"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_14"
+                        android:visibility="@{model.details.satisfied == 0  || model.details.satisfied == -1?View.VISIBLE:View.GONE }" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_commit_complaint_comment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="提交"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                android:visibility="@{model.details.status == 6 &amp; model.details.satisfied == -1?View.VISIBLE:View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_complaint_deal_result" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

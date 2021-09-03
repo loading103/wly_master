@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="legacy_module_yellow_ff9e05">#ff9e05</color>
+    <color name="legacy_module_red_ff6b53">#ff6b53</color>
+    <color name="legacy_module_white_fff5e6">#fff5e6</color>
+    <color name="legacy_module_white_f7f7f7">#f7f7f7</color>
+    <color name="legacy_module_green_6ac302">#6ac302</color>
+    <color name="legacy_module_divide">#F5FBFE</color>
+    <color name="legacy_module_gray_f0">#f0f0f0</color>
+    <color name="legacy_module_f5">#f5f5f5</color>
+    <color name="legacy_module_c2bf">#c2bfba</color>
+    <color name="legacy_module_fedb9c">#fedb9c</color>
+    <color name="legacy_module_ff9e05">#ff9e05</color>
+    <color name="legacy_module_ff4e4e">#ff4e4e</color>
+    <color name="legacy_module_f3ae09">#f3ae09</color>
+    <color name="legacy_module_alpha_60">#69333333</color>
+    <color name="legacy_module_alpha_00_50">#80000000</color>
+    <color name="legacy_module_fff5e6">#fff5e6</color>
+    <color name="legacy_module_e2fce9">#e2fce9</color>
+    <color name="legacy_module_color_666">#666666</color>
+    <color name="legacy_module_color_333">#333333</color>
+    <color name="legacy_module_color_999">#999999</color>
+    <color name="legacy_module_color_f5f5f5">#f5f5f5</color>
+    <color name="legacy_module_color_2ECD4D">#2ECD4D</color>
+    <color name="legacy_module_e0e0e0">#e0e0e0</color>
+    <color name="legacy_module_color_222">#222222</color>
+    <color name="legacy_module_color_alpha_00">#00ffffff</color>
+    <color name="legacy_module_color_alpha_50">#50000000</color>
+    <color name="legacy_module_color_e8e8e8">#e8e8e8</color>
+    <color name="legacy_module_color_d4d4d4">#d4d4d4</color>
+    <color name="legacy_module_color_333333">#333333</color>
+    <color name="legacy_module_color_alpha_80">#80000000</color>
+    <color name="legacy_module_916112">#916112</color>
+    <color name="legacy_module_color_red_ff6b53">#ff6b53</color>
+    <color name="legacy_module_color_bdbdbd">#bdbdbd</color>
+    <color name="legacy_module_color_85000000">#85000000</color>
+    <color name="legacy_module_eaf7f5">#eaf7f5</color>
+    <color name="legacy_module_34ac9e">#34ac9e</color>
+    <color name="legacy_module_68b8aa">#68b8aa</color>
+    <color name="legacy_module_color_b08f69">#b08f69</color>
+    <color name="legacy_module_color_f5f1ec">#f5f1ec</color>
+    <color name="legacy_module_color_eaf7f5">#eaf7f5</color>
+    <color name="legacy_module_color_34ac9e">#34ac9e</color>
+    <color name="legacy_module_color_ee2d1b">#ee2d1b</color>
+    <color name="legacy_module_color_ff4e4e">#ff4e4e</color>
+    <color name="legacy_module_color_4586c0">#4586c0</color>
+    <color name="legacy_module_alpha_40">#66000000</color>
+    <color name="legacy_module_primary_alpha_40">#6634ac9e</color>
+
+    <!-- 非遗主题色-->
+    <color name="legacy_module_primary_color">#34ac9e</color>
+    <color name="legacy_module_primary_active_color">#2E978B</color>
+    <color name="legacy_module_primary_forbidden_color">#D6EEEC</color>
+
+    <!-- 非遗次要主题色-->
+    <color name="legacy_module_minor_color">#B08F69</color>
+    <color name="legacy_module_minor_active_color">#987C5C</color>
+    <color name="legacy_module_minor_forbidden_color">#EFE9E1</color>
+
+    <!-- 标签颜色 -->
+    <color name="legacy_module_label_color">#EAF7F5</color>
+    <color name="legacy_module_label1_color">#F5F1EC</color>
+
+</resources>

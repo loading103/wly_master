@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--主题色 -->
+    <color name="colorPrimary">#36cd64</color>
+    <color name="colorPrimary_90">#87ce74</color>
+    <color name="colorPrimarySecond">#ff9e05</color>
+    <!--白色-->
+    <color name="white">#ffffff</color>
+    <color name="white_90">#e6ffffff</color>
+    <color name="white_20">#33ffffff</color>
+    <!--字体黑色-->
+    <color name="txt_black">#333333</color>
+    <!--字体黑灰色-->
+    <color name="txt_gray_black">#666666</color>
+    <!--字体灰色-->
+    <color name="txt_gray">#999999</color>
+    <color name="black">#000000</color>
+    <color name="black_50">#80000000</color>
+    <!--分割线-->
+    <color name="dividing_line">#e2e2e2</color>
+    <color name="divide_e8">#e8e8e8</color>
+    <color name="e6e6e6">#e6e6e6</color>
+    <color name="color_36cd64">#36cd64</color>
+    <!--进度条-->
+    <color name="color_e2d9bd">#e2d9bd</color>
+    <color name="color_ffaf2f">#ffaf2f</color>
+    <color name="color_ff9e05">#ff9e05</color>
+    <color name="color_805500">#805500</color>
+    <color name="color_7f5400">#7f5400</color>
+    <color name="color_ff_white">#00ffffff</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
+
+    <!--时间选择控件-->
+    <color name="background">#F2F2F2</color>
+    <color name="classify_background">#F3F5F7</color>
+    <color name="white_1">#f2eaea</color>
+    <color name="white_2">#977c7c</color>
+    <color name="line">#e4d8d8</color>
+    <color name="text">#666666</color>
+    <color name="hint">#D2D2D2</color>
+    <color name="title_bg">#F67357</color>
+    <color name="title_bg2">#f49581</color>
+    <color name="tradinfo_bg">#3F000000</color>
+    <color name="transparency">#00000000</color>
+    <color name="transparency_black">#3F000000</color>
+    <color name="yellow">#FFB35E</color>
+    <color name="gray">#F2F2F2</color>
+    <color name="hintText">#dad6d6</color>
+    <color name="stroke_bg">#bab6b6</color>
+    <color name="Popupwindows_bg">#a19e9e</color>
+    <color name="province_line_border">#D0D0D0</color>
+    <color name="scan_corner_color">#0effc2</color>
+    <color name="black_1">#000</color>
+    <color name="pickerview_bg_topbar">#f5f5f5</color>
+    <color name="amount_selected">#f3f2f4</color>
+    <color name="search_text_color">#b9b5b5</color>
+    <color name="split_line">#11112233</color>
+    <color name="text1">#59B29C</color>
+    <color name="text2">#333333</color>
+    <color name="transparent">#00000000</color>
+    <color name="title_transpant">#3F000000</color>
+    <color name="colorTranl">#bd232323</color>
+    <color name="text_enable">#c2b3b3</color>
+
+    <color name="color_e2e2e2">#e2e2e2</color>
+    <!-- 景区标签背景1-->
+    <color name="btn_bg1">#e2fce9</color>
+    <!-- 景区标签背景2-->
+    <color name="btn_bg2">#fff5e6</color>
+    <!-- 景区标签文本-->
+    <color name="btn_txt">#ff9e05</color>
+    <!--渐变按钮颜色 -->
+    <color name="btn_gradient_start_color">#09b671</color>
+    <color name="btn_gradient_end_color">#87ce74</color>
+    <!--UI色卡值-->
+    <!--主色-->
+    <color name="app_main_color">#36CD64</color>
+    <color name="app_main_active">#32BD5D</color>
+    <color name="app_main_forbidden">#C2F0D0</color>
+    <!--副色-->
+    <color name="app_second_color">#FF8E05</color>
+    <color name="app_second_active">#EF9406</color>
+    <color name="app_second_forbidden">#FFF5E6</color>
+    <!-- 按钮色 UI给的有问题，后续王磊补充-->
+    <color name="app_button_main">#36CD64</color>
+    <color name="app_button_second">#FF9E05</color>
+    <!--常用标签-->
+    <color name="app_tag_one">#E2FCE9</color>
+    <color name="app_tag_two">#FFF5E6</color>
+    <color name="app_tag_three">#E8F4FF</color>
+    <color name="app_tag_four">#FFE6E6</color>
+    <!--字体色-->
+    <color name="app_tv_leve_one">#333333</color>
+    <color name="app_tv_leve_two">#666666</color>
+    <color name="app_tv_leve_three">#999999</color>
+    <!--分割线-->
+    <color name="app_divider_one">#E8E8E8</color>
+    <color name="app_divider_two">#D4D4D4</color>
+    <!--背景色-->
+    <color name="app_default_bg">#f5f5f5</color>
+
+    <color name="color_cb2b2b">#36cd64</color>
+    <color name="color_33cb2b2b" tools:ignore="MissingDefaultResource">#3336cd64</color>
+    <color name="common_color_e25e49">#87ce74</color>
+</resources>

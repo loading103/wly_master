@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.daqsoft.provider.bean.MessageListBean" />
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_message_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_15"
+            android:maxLength="16"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_13"
+            android:text="@{data.createTime}"
+            tools:text="2020-12-16 12：00" />
+
+        <com.daqsoft.provider.view.cardview.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@color/white"
+            app:cardCornerRadius="@dimen/dp_5"
+            app:cardElevation="@dimen/dp_2">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <View
+                    android:id="@+id/v_vote_start_time_tip"
+                    android:layout_width="@dimen/dp_5"
+                    android:layout_height="@dimen/dp_5"
+                    android:visibility="invisible"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_22"
+                    android:background="@drawable/shape_provider_red_5" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_15">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_6"
+                            android:layout_marginRight="@dimen/dp_12"
+                            android:ellipsize="end"
+                            android:text="@{data.title}"
+                            android:textColor="@color/color_333"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold"
+                            tools:text="你关注的活动有变更，请及时查看！"/>
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:layout_marginRight="@dimen/dp_12"
+                        android:textColor="@color/color_999"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:visibility='@{(data.content==null || data.content.equals(""))?View.GONE:View.VISIBLE}'
+                        android:textSize="@dimen/sp_13"
+                        tools:text="这里显示修改的具体内容，有就显示，没有不显示。最多显示两排。这里显示修改的具体内容，最多显..."
+                        android:text="@{data.content}" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:layout_marginTop="@dimen/dp_11"
+                        android:layout_marginRight="@dimen/dp_12"
+                        android:textColor="@color/color_999"
+                        android:maxLines="2"
+                        android:visibility='@{(data.nickName==null || data.nickName.equals(""))?View.GONE:View.VISIBLE}'
+                        android:ellipsize="end"
+                        android:textSize="@dimen/sp_13"
+                        tools:text="变更者：唐三"
+                        android:text="@{data.nickName}" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginRight="@dimen/dp_12"
+                        android:background="@drawable/shape_f5_r5"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dp_14">
+
+                        <ImageView
+                            android:id="@+id/img_msg_request"
+                            android:layout_width="@dimen/dp_70"
+                            android:layout_height="@dimen/dp_53"
+                            raduis='@{"3"}'
+                            imageUrl="@{data.getImaUrl()}"/>
+
+                        <TextView
+                            android:id="@+id/img_name1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_toRightOf="@+id/img_msg_request"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="@{data.relationTitle}"
+                            android:textColor="@color/color_666"
+                            android:textSize="@dimen/sp_12"
+                            tools:text="水水斤斤计较斤斤水水斤斤计较斤斤计较急急急急急急急急急计较急急急急急急急急急" />
+
+                        <TextView
+                            android:id="@+id/img_content1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_toRightOf="@+id/img_msg_request"
+                            android:layout_below="@+id/img_name1"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="@color/color_999"
+                            android:textSize="@dimen/sp_12"
+                            android:layout_marginTop="10dp"
+                            android:text="@{data.getType()}"
+                            tools:text="活动分类" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.daqsoft.provider.view.cardview.CardView>
+    </LinearLayout>
+</layout>

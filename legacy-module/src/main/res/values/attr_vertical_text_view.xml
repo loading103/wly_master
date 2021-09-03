@@ -1,0 +1,18 @@
+<resources>
+    <declare-styleable name="LegacyModuleVerticalTextView">
+        <attr name="legacy_module_text" format="string|reference"/>
+        <attr name="legacy_module_textColor" format="color|reference"/>
+        <attr name="legacy_module_textSize" format="dimension|reference"/>
+        <attr name="legacy_module_rowSpacing" format="dimension|reference"/>
+        <attr name="legacy_module_columnSpacing" format="dimension|reference"/>
+        <attr name="legacy_module_columnLength" format="integer"/>
+        <attr name="legacy_module_maxColumns" format="integer"/>
+        <attr name="legacy_module_atMostHeight" format="boolean"/>
+        <attr name="legacy_module_isCharCenter" format="boolean"/>
+        <attr name="legacy_module_textStyle">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

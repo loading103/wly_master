@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="logo"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/dp_338"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_168"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_12"
+            android:src="@drawable/home_selector_collect"
+            app:layout_constraintRight_toRightOf="@id/image"
+            app:layout_constraintTop_toTopOf="@id/image" />
+
+
+        <TextView
+            android:layout_marginBottom="@dimen/dp_16"
+            android:layout_marginLeft="@dimen/dp_16"
+            app:layout_constraintLeft_toLeftOf="@+id/image"
+            app:layout_constraintBottom_toBottomOf="@id/image"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:id="@+id/tv_period"
+            android:text="2020.08.08 - 2020.09.20"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:layout_marginBottom="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_16"
+            app:layout_constraintRight_toRightOf="@id/image"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_period"
+            app:layout_constraintBottom_toTopOf="@+id/tv_period"
+            android:gravity="center_vertical"
+            android:id="@+id/tv_activity_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/sp_18"
+            tools:text="好啊，疫后四川氧你" />
+
+        <com.daqsoft.provider.view.FlowLayout
+            android:layout_marginBottom="@dimen/dp_11"
+            app:layout_constraintBottom_toTopOf="@+id/tv_activity_name"
+            app:layout_constraintRight_toRightOf="@id/image"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_activity_name"
+            android:id="@+id/fl_activity_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        </com.daqsoft.provider.view.FlowLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

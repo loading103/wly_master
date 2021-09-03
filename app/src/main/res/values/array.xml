@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--个人中心的更多服务-->
+    <string-array name="mine_service_title">
+        <item>购物退款</item>
+        <item>我的投诉</item>
+        <item>志愿服务</item>
+        <item>我的信用</item>
+        <item>在线客服</item>
+        <item>发展达人</item>
+        <item>商城二维码</item>
+        <item>玩转达人</item>
+        <item>我的钱包</item>
+        <item>意见反馈</item>
+    </string-array>
+    <!--个人中心的更多服务的图标-->
+    <array name="mine_service_icon">
+        <item>@mipmap/mine_center_service_refund</item>
+        <item>@mipmap/mine_center_service_complaint</item>
+        <item>@mipmap/mine_center_service_volunteer</item>
+        <item>@mipmap/mine_center_service_credit</item>
+        <item>@mipmap/mine_center_service_online</item>
+        <item>@mipmap/mine_center_service_developing</item>
+        <item>@mipmap/mine_center_service_mall</item>
+        <item>@mipmap/mine_center_service_play</item>
+        <item>@mipmap/mine_center_service_wallet</item>
+    </array>
+    <!--个人中心的更多服务的标识-->
+    <string-array name="mine_service_type">
+        <item>refund</item>
+        <item>complaint</item>
+        <item>volunteer</item>
+        <item>credit</item>
+        <item>online</item>
+        <item>developing</item>
+        <item>mall</item>
+        <item>play</item>
+        <item>wallet</item>
+        <item>feedback</item>
+    </string-array>
+
+
+</resources>

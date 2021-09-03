@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.daqsoft.travelCultureModule.clubActivity.bean.ClubInfoBean" />
+
+        <variable
+            name="bean"
+            type="ClubInfoBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_164">
+
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/vp_cii"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp_164" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:layout_marginBottom="@dimen/dp_16"
+                        android:background="@drawable/club_info_introduce_img"
+                        android:gravity="bottom"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/dp_6"
+                        android:paddingTop="@dimen/dp_5"
+                        android:paddingRight="@dimen/dp_6"
+                        android:paddingBottom="@dimen/dp_5">
+
+                        <TextView
+                            android:id="@+id/tv_cii_cur"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_12" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="/"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_9" />
+
+                        <TextView
+                            android:id="@+id/tv_cii_all"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="9"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_9" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_cii_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="四川名族大学学生社团联合会"
+                            android:textColor="@color/color_333"
+                            android:textSize="@dimen/sp_21"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_ci_level"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/clube_info_introduce_type"
+                                android:paddingLeft="@dimen/dp_6"
+                                android:paddingTop="@dimen/dp_5"
+                                android:paddingRight="@dimen/dp_6"
+                                android:paddingBottom="@dimen/dp_5"
+                                android:text="社团等级"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_11" />
+
+                            <TextView
+                                android:id="@+id/tv_ci_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_5"
+                                android:background="@drawable/clube_info_introduce_type"
+                                android:paddingLeft="@dimen/dp_6"
+                                android:paddingTop="@dimen/dp_5"
+                                android:paddingRight="@dimen/dp_6"
+                                android:paddingBottom="@dimen/dp_5"
+                                android:text="公益"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_11" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_14"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_cii_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_14"
+                                android:visibility="@{bean.startTime!=null &amp;&amp;!bean.startTime.empty}" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="创建"
+                                android:textColor="@color/color_999"
+                                android:textSize="@dimen/sp_14"
+                                android:visibility="@{bean.startTime!=null &amp;&amp;!bean.startTime.empty}" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_12"
+                                android:layout_marginRight="@dimen/dp_12"
+                                android:text="|"
+                                android:textColor="@color/color_999"
+                                android:textSize="@dimen/sp_14"
+                                android:visibility="@{bean.teamPerson!=0}" />
+
+                            <TextView
+                                android:id="@+id/tv_cii_personnum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_14"
+                                android:visibility="@{bean.teamPerson!=0}" />
+
+                            <TextView
+                                android:id="@+id/tv_cill_personnum_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="成员"
+                                android:textColor="@color/color_999"
+                                android:textSize="@dimen/sp_14"
+                                android:visibility="@{bean.teamPerson!=0}" />
+
+                            <TextView
+                                android:id="@+id/tv_cii_fans_divder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_12"
+                                android:layout_marginRight="@dimen/dp_12"
+                                android:text="|"
+                                android:textColor="@color/color_999"
+                                android:textSize="@dimen/sp_14"
+                                android:visibility="@{bean.teamPerson!=0&amp;&amp;bean.fansNum!=0}" />
+
+                            <TextView
+                                android:id="@+id/tv_cii_fans"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_333"
+                                android:visibility="@{bean.fansNum!=0}"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:id="@+id/tv_cill_fans_lab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="位粉丝"
+                                android:visibility="@{bean.fansNum!=0}"
+                                android:textColor="@color/color_999"
+                                android:textSize="@dimen/sp_14" />
+                        </LinearLayout>
+
+                        <!--<LinearLayout
+                            android:id="@+id/ll_cii_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="@dimen/dp_66"
+                                android:layout_height="wrap_content"
+                                android:text="团队类型"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_13" />
+
+                            <TextView
+                                android:id="@+id/tv_cii_type"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_13" />
+                        </LinearLayout>-->
+
+                        <LinearLayout
+                            android:id="@+id/ll_cii_resperson"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="@dimen/dp_66"
+                                android:layout_height="wrap_content"
+                                android:text="负责人"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_13" />
+
+                            <TextView
+                                android:id="@+id/tv_cii_resperson"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_13" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_cii_department"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="@dimen/dp_66"
+                                android:layout_height="wrap_content"
+                                android:text="主管单位"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_13" />
+
+                            <TextView
+                                android:id="@+id/tv_cii_department"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_13" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_cii_area"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="@dimen/dp_66"
+                                android:layout_height="wrap_content"
+                                android:text="所在地区"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_13" />
+
+                            <TextView
+                                android:id="@+id/tv_cii_are"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_13" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_cii_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="@dimen/dp_66"
+                                android:layout_height="wrap_content"
+                                android:text="联系电话"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_13" />
+
+                            <TextView
+                                android:id="@+id/tv_cii_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@mipmap/community_phone"
+                                android:drawablePadding="5dp"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_13" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_cii_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="@dimen/dp_66"
+                                android:layout_height="wrap_content"
+                                android:text="联系地址"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_13" />
+
+                            <TextView
+                                android:id="@+id/tv_cii_address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@mipmap/community_address"
+                                android:drawablePadding="5dp"
+                                android:textColor="@color/color_666"
+                                android:textSize="@dimen/sp_13" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_8"
+                        android:background="@color/f5"
+                        android:visibility="gone" />
+
+                    <com.daqsoft.provider.businessview.view.ListenerAudioView
+                        android:id="@+id/v_club_info_audios"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_40"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_8"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:background="@color/f5"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_cii_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:orientation="vertical"
+                        tools:ignore="WebViewLayout">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            android:text="团队介绍"
+                            android:textColor="@color/color_333"
+                            android:textSize="@dimen/sp_19"
+                            android:textStyle="bold" />
+
+                        <WebView
+                            android:id="@+id/web_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:paddingBottom="@dimen/dp_9" />
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/tv_cii_content"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:textColor="@color/color_333"-->
+                        <!--                            android:textSize="@dimen/sp_15"-->
+                        <!--                            android:layout_marginTop="@dimen/dp_20"-->
+                        <!--                            android:paddingBottom="@dimen/dp_9"/>-->
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

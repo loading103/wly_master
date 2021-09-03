@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.daqsoft.travelCultureModule.country.ui.CountryTourActivity">
+
+    <data />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/country_tour_coor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_f5f5f5"
+            app:elevation="@dimen/dp_0"
+            app:layout_behavior="com.yuruiyin.appbarlayoutbehavior.AppBarLayoutBehavior"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                app:layout_scrollFlags="scroll">
+                <!--乡村游头部信息-->
+                <include
+                    android:id="@+id/country_header"
+                    layout="@layout/country_travel_header"
+                    android:visibility="gone" />
+                <!--全部乡村-->
+                <include
+                    android:id="@+id/country_all"
+                    layout="@layout/country_all"
+                    android:visibility="gone" />
+                <!--风物推荐-->
+                <include
+                    android:id="@+id/country_fw_recommend"
+                    layout="@layout/country_fw_recommend"
+                    android:visibility="gone" />
+                <!--游记攻略-->
+                <include
+                    android:id="@+id/country_travel_guide"
+                    layout="@layout/country_travel_guide_layout"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <!--标题部分-->
+            <include
+                android:id="@+id/ll_header_title"
+                android:visibility="gone"
+                layout="@layout/country_header_title" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.daqsoft.travelCultureModule.country.view.CountryNestScrollView
+            android:id="@+id/nestScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_f5f5f5"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!--农家乐列表-->
+                <include
+                    android:id="@+id/ll_country_tour"
+                    layout="@layout/country_tour_list"
+                    android:visibility="gone" />
+                <!--住民宿列表-->
+                <include
+                    android:id="@+id/ll_live_stay"
+                    layout="@layout/country_tour_list"
+                    android:visibility="gone" />
+                <!--讲故事列表-->
+                <include
+                    android:id="@+id/ll_read_story"
+                    layout="@layout/country_tour_list"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </com.daqsoft.travelCultureModule.country.view.CountryNestScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

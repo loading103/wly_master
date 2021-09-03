@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_40">
+
+            <TextView
+                android:id="@+id/tv_provider_content_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/whcgxq_bt_bq"
+                android:drawablePadding="@dimen/dp_12"
+                android:includeFontPadding="false"
+                android:paddingLeft="@dimen/dp_20"
+                android:text="@{title}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_19"
+                android:textStyle="bold"
+                tools:text="资讯" />
+
+        </RelativeLayout>
+
+        <com.daqsoft.provider.view.web.ContentWebView
+            android:id="@+id/web_infor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_22"
+            android:scrollbars="none" />
+    </LinearLayout>
+</layout>

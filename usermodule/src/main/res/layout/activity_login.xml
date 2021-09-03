@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="vm"
+            type="com.daqsoft.usermodule.ui.userInoformation.LoginRegisterViewModel" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_20"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:text="@string/user_phone"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+
+                <com.daqsoft.provider.view.ClearEditText
+                    android:id="@+id/et_phone"
+                    style="@style/EditText_Common"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_28"
+                    android:layout_gravity="center_vertical"
+                    android:hint="请输入手机号码"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:text="@={vm.phone}"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+
+                android:background="@color/dividing_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:text="@string/user_label_code"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/bind_phone_code"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:hint="请输入6位验证码"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:singleLine="true"
+                    android:text="@={vm.code}"
+                    android:textColorHint="@color/txt_gray"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:id="@+id/bind_phone_code_avail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:enabled="false"
+                    android:onClick="sendCode"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingTop="@dimen/dp_4"
+                    android:paddingRight="@dimen/dp_8"
+                    android:paddingBottom="@dimen/dp_4"
+                    android:text="@string/user_get_code"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:background="@color/dividing_line" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llAgree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/register_check_bg"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:text="@string/user_str_read_agree"
+                    android:textColor="@color/txt_gray"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/registerAgreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_str_register_agreement"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/check"
+                    app:layout_constraintLeft_toRightOf="@+id/check"
+                    app:layout_constraintTop_toTopOf="@+id/check" />
+
+                <TextView
+                    android:id="@+id/userPostAgreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_str_post_agreement"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintBottom_toBottomOf="@+id/check"
+                    app:layout_constraintLeft_toRightOf="@+id/registerAgreement"
+                    app:layout_constraintTop_toTopOf="@+id/check" />
+
+                <TextView
+                    android:id="@+id/userPrivacyRights"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:text="@string/user_str_post_aapointment"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/check" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="@drawable/user_selector_login_btn"
+                android:enabled="false"
+                android:gravity="center"
+                android:onClick="submit"
+                android:paddingTop="@dimen/dp_12"
+                android:paddingBottom="@dimen/dp_12"
+                android:text="@string/user_login"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+
+            <LinearLayout
+                android:id="@+id/ll_to_another"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_20"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/goRegisterLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_str_no_account"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:id="@+id/goRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableRight="@mipmap/more_right_arrow"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:onClick="goAnother"
+                    android:paddingLeft="@dimen/dp_8"
+                    android:paddingTop="@dimen/dp_4"
+                    android:paddingRight="@dimen/dp_8"
+                    android:paddingBottom="@dimen/dp_4"
+                    android:text="@string/user_str_go_register"
+                    android:textColor="@color/user_text_main_enable_selector"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

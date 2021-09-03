@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_80"
+        android:layout_gravity="center"
+        android:layout_marginRight="@dimen/dp_10"
+        android:clipChildren="true"
+        app:cardCornerRadius="@dimen/dp_5">
+
+        <FrameLayout
+            android:layout_gravity="center"
+            android:layout_width="@dimen/dp_82"
+            android:layout_height="@dimen/dp_82"
+            android:clipChildren="true">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/iv"
+                android:layout_width="@dimen/dp_84"
+                android:layout_height="@dimen/dp_84"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/slow_live_color_85000000"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16"
+                tools:text="此刻\n新疆" />
+
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
+

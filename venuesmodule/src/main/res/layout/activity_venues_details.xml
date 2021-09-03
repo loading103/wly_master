@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="commentNum"
+            type="String" />
+
+        <variable
+            name="likeNum"
+            type="String" />
+
+        <variable
+            name="collectNum"
+            type="String" />
+
+        <variable
+            name="model"
+            type="com.daqsoft.venuesmodule.model.VenuesDetailsViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants"
+        android:fillViewport="true"
+        android:focusableInTouchMode="true">
+
+
+        <com.daqsoft.provider.scrollview.DqScrollView
+            android:id="@+id/scroll_venues"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/v_line_venues_bottom"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="1">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_188">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/vp_venues_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_188"
+                        android:background="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginBottom="@dimen/dp_24"
+                        android:minHeight="@dimen/dp_21"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/v_venues_video"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/shape_venues_black_10"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/dp_6"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/img_venus_play_status"
+                                android:layout_width="@dimen/dp_7"
+                                android:layout_height="@dimen/dp_8"
+                                android:layout_gravity="center_vertical"
+                                android:src="@mipmap/venue_details_banner_pause" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/dp_3"
+                                android:text="@string/venue_video"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/v_venues_images"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_4"
+                            android:background="@drawable/shape_venues_black_10"
+                            android:minHeight="@dimen/dp_21"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/dp_6"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/venue_images"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+
+                            <TextView
+                                android:id="@+id/txt_venue_top_img_index"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginLeft="@dimen/dp_3"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/v_venues_720"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_4"
+                            android:background="@drawable/shape_venues_black_10"
+                            android:minHeight="@dimen/dp_21"
+                            android:paddingLeft="@dimen/dp_7"
+                            android:paddingRight="@dimen/dp_7"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/img_venues_720"
+                                android:layout_width="@dimen/dp_15"
+                                android:layout_height="@dimen/dp_10"
+                                android:layout_gravity="center"
+                                android:src="@mipmap/venue_details_banner_720" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_m_12"
+                    android:background="@drawable/main_shape_white_back_5_radius"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/dp_24"
+                    android:paddingBottom="@dimen/dp_24">
+                    <!--场馆基础信息-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_venues_details_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/dp_20"
+                        android:paddingRight="@dimen/dp_20"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <TextView
+                            android:id="@+id/tv_venues_details_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="@{model.venuesDetailsBean.name}"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/dp_24"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="123454" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_venues_details_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_4"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_venues_details_name" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_info"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_18"
+                            android:textColor="@color/color_999"
+                            android:textSize="@dimen/sp_12"
+                            android:visibility="gone"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/recycler_venues_details_label" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_details_time_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_35"
+                            android:text="@string/details_open_week"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_venues_info" />
+
+                        <TextView
+                            android:id="@+id/txt_venue_open_time_value"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:lineSpacingExtra="@dimen/dp_4"
+                            android:text="@{model.openWeek}"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:visibility="gone"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_venues_details_time_title"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_venues_details_time_title"
+                            tools:text="10:00-18:00" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_details_address_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            android:text="@string/details_address"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:textStyle="bold"
+                            android:visibility="@{(model.venuesDetailsBean.regionName.equals(``) || model.venuesDetailsBean.regionName==null)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txt_venue_open_time_value" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_details_address_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:drawableRight="@mipmap/whcgxq_lcdz_dt"
+                            android:gravity="center_vertical"
+                            android:text="@{model.venuesDetailsBean.regionName}"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:visibility="@{(model.venuesDetailsBean.regionName.equals(``) || model.venuesDetailsBean.regionName==null)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_venues_details_address_title"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_venues_details_address_title"
+                            tools:text="蓝田街道蓝安路二段景山小区对面天府五街软件园C1" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_details_phone_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            android:text="@string/details_phone"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:textStyle="bold"
+                            android:visibility="@{(model.venuesDetailsBean.phone.equals(``) || model.venuesDetailsBean.phone==null)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_venues_details_address_value" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_details_phone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:drawableRight="@mipmap/whcgxq_lxdh"
+                            android:text="@{model.venuesDetailsBean.phone}"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:visibility="@{(model.venuesDetailsBean.phone.equals(``) || model.venuesDetailsBean.phone==null)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_venues_details_phone_title"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_venues_details_phone_title"
+                            tools:text="10:00-18:00" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_website"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            android:text="@string/website"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:textStyle="bold"
+                            android:visibility="@{(model.venuesDetailsBean.websiteUrl.equals(``) || model.venuesDetailsBean.websiteUrl==null)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_venues_details_phone_title" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_website_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:drawableRight="@mipmap/main_details_link"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@{model.venuesDetailsBean.websiteUrl}"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:visibility="@{(model.venuesDetailsBean.websiteUrl.equals(``) || model.venuesDetailsBean.websiteUrl==null)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_venues_website"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_venues_website"
+                            tools:text="10:00-18:00" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_wexin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            android:text="@string/wexin_number"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:textStyle="bold"
+                            android:visibility="@{(model.venuesDetailsBean.officialUrl.equals(``) || model.venuesDetailsBean.officialUrl==null)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_venues_website_value" />
+
+                        <TextView
+                            android:id="@+id/tv_wex_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:ellipsize="end"
+                            android:maxEms="9"
+                            android:maxLines="1"
+                            android:text="@{model.venuesDetailsBean.officialName}"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:visibility="@{(model.venuesDetailsBean.officialUrl.equals(``) || model.venuesDetailsBean.officialUrl==null)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_venues_wexin"
+                            app:layout_constraintTop_toTopOf="@+id/tv_venues_wexin"
+                            tools:text="10:00-18:00" />
+
+                        <TextView
+                            android:id="@+id/tv_wex_qrcode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:text="@string/qr_code_info"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/sp_14"
+                            android:visibility="@{(model.venuesDetailsBean.officialUrl.equals(``) || model.venuesDetailsBean.officialUrl==null)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_wex_name"
+                            app:layout_constraintTop_toTopOf="@+id/tv_wex_name"
+                            tools:text="10:00-18:00" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_online_read"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            android:text="@string/read_online"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:textStyle="bold"
+                            android:visibility="@{model.venuesDetailsBean.onlineReadingImage.equals(``)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_wex_name" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_online_read_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:ellipsize="end"
+                            android:maxEms="6"
+                            android:maxLines="1"
+                            android:text="@{model.venuesDetailsBean.onlineReadingOfficialName}"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:visibility="@{model.venuesDetailsBean.onlineReadingImage.equals(``)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_venues_online_read"
+                            app:layout_constraintTop_toTopOf="@+id/tv_venues_online_read"
+                            tools:text="10:00-18:00" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_online_read_operation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:text="复制"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/sp_14"
+                            android:visibility="@{model.venuesDetailsBean.onlineReadingImage.equals(``)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_venues_online_read_value"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_venues_online_read"
+                            tools:text="10:00-18:00" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <!--城市名片 微官网做，APP不做-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_venues_details_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_60"
+                        android:layout_marginTop="@dimen/dp_40"
+                        android:background="@mipmap/whcgxq_zytf_bg"
+                        android:paddingLeft="@dimen/dp_20"
+                        android:paddingRight="@dimen/dp_20"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/cl_venues_details_info">
+
+                        <ImageView
+                            android:id="@+id/iv_venues_details_card"
+                            android:layout_width="@dimen/dp_32"
+                            android:layout_height="@dimen/dp_32"
+                            android:src="@mipmap/whcgxq_zytf_logo"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_details_card_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_12"
+                            android:layout_marginTop="@dimen/dp_16"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toRightOf="@+id/iv_venues_details_card"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="智游天府" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_details_card_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_4"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            app:layout_constraintLeft_toLeftOf="@id/tv_venues_details_card_name"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_venues_details_card_name"
+                            tools:text="成都，一座你来了就不想走的城市" />
+
+                        <TextView
+                            android:id="@+id/tv_venues_details_entry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_24"
+                            android:background="@drawable/user_back_main_strok_main_round_large"
+                            android:gravity="center"
+                            android:text="@string/details_entry"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_10"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <FrameLayout
+                        android:id="@+id/fl_venue_reservation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <!--便捷服务-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_40"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/dp_20"
+                        android:paddingRight="@dimen/dp_20">
+
+                        <TextView
+                            android:id="@+id/venues_details_listener"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@mipmap/whcgxq_bt_bq"
+                            android:drawablePadding="@dimen/dp_12"
+                            android:text="@string/details_server"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_19"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:orientation="horizontal"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/x_resource">
+
+                            <LinearLayout
+                                android:id="@+id/ll_venues_details_bathroom"
+                                style="@style/ll_details_server"
+                                onClickCommand="@{model.goToilet}"
+                                android:layout_marginRight="@dimen/dp_4">
+
+                                <TextView
+                                    style="@style/tv_details_server"
+                                    android:text="@string/details_server_bathroom" />
+
+                                <ImageView
+                                    style="@style/iv_details_server"
+                                    android:src="@mipmap/whcgxq_bjfw_zcs" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_venues_details_parking"
+                                style="@style/ll_details_server"
+                                onClickCommand="@{model.goToPark}"
+                                android:layout_marginLeft="@dimen/dp_4"
+                                android:layout_marginRight="@dimen/dp_4">
+
+                                <TextView
+                                    style="@style/tv_details_server"
+                                    android:text="@string/details_server_parking" />
+
+                                <ImageView
+                                    style="@style/iv_details_server"
+                                    android:src="@mipmap/whcgxq_bjfw_tcc" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_venues_details_bus"
+                                style="@style/ll_details_server"
+                                android:layout_marginLeft="@dimen/dp_4"
+                                android:layout_marginRight="@dimen/dp_4">
+
+                                <TextView
+                                    style="@style/tv_details_server"
+                                    android:text="@string/details_server_bus1" />
+
+                                <ImageView
+                                    style="@style/iv_details_server"
+                                    android:layout_gravity="bottom|right"
+                                    android:src="@mipmap/whcgxq_bjfw_gjcx" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_venues_details_complaint"
+                                style="@style/ll_details_server"
+                                android:layout_marginLeft="@dimen/dp_4"
+                                android:visibility="gone">
+
+                                <TextView
+                                    style="@style/tv_details_server"
+                                    android:text="@string/details_server_complaint" />
+
+                                <ImageView
+                                    style="@style/iv_details_server"
+                                    android:src="@mipmap/whcgxq_bjfw_lyts" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--场馆介绍-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_venues_details_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_60"
+                        android:paddingLeft="@dimen/dp_20"
+                        android:paddingRight="@dimen/dp_20"
+                        android:visibility="@{model.venuesDetailsBean.introduce.equals(``)?View.GONE:View.VISIBLE}"
+                        app:layout_constraintTop_toBottomOf="@+id/cl_venues_details_server">
+
+                        <TextView
+                            android:id="@+id/venues_details_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@mipmap/whcgxq_bt_bq"
+                            android:drawablePadding="@dimen/dp_12"
+                            android:text="@string/details_venues_content"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_19"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.daqsoft.provider.view.web.LoadMoreWebView
+                            android:id="@+id/web_venues_details_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_28"
+                            android:lineSpacingExtra="@dimen/dp_4"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            app:layout_constraintTop_toBottomOf="@+id/venues_details_content"
+                            app:maxLoadHeight="@dimen/dp_180" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <!--听解说-->
+                    <com.daqsoft.venuesmodule.activity.widgets.VenueCommentaryView
+                        android:id="@+id/vcv_commentary_speaking"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+                    <!--场馆活动-->
+                    <com.daqsoft.venuesmodule.activity.widgets.VenueActivitesView
+                        android:id="@+id/vav_venue_acitvity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+                    <!--活动室-->
+                    <com.daqsoft.venuesmodule.activity.widgets.VenueActivityRoomView
+                        android:id="@+id/varv_venue_activity_room"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+                    <!--场馆资讯-->
+                    <com.daqsoft.provider.businessview.view.ProviderContentView
+                        android:id="@+id/prv_conent_ls"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+                    <!--用户评论-->
+                    <com.daqsoft.venuesmodule.activity.widgets.VenueCommentLsView
+                        android:id="@+id/vnc_venue_coments"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <!--周边推荐-->
+                    <com.daqsoft.venuesmodule.activity.widgets.VenueRecommendView
+                        android:id="@+id/vnc_venue_recommend"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+                    <!--读故事-->
+                    <com.daqsoft.venuesmodule.activity.widgets.VenueStoriesView
+                        android:id="@+id/vns_venue_stoies"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+
+                    <!--交通信息-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_venues_details_traffic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_60"
+                        android:paddingLeft="@dimen/dp_20"
+                        android:paddingRight="@dimen/dp_20"
+                        android:visibility="@{model.venuesDetailsBean.trafficInfo.equals(``)?View.GONE:View.VISIBLE}"
+                        app:layout_constraintTop_toBottomOf="@+id/cl_venues_details_content">
+
+                        <TextView
+                            android:id="@+id/venues_details_traffic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@mipmap/whcgxq_bt_bq"
+                            android:drawablePadding="@dimen/dp_12"
+                            android:text="@string/details_traffic_info"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_19"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.daqsoft.provider.view.web.LoadMoreWebView
+                            android:id="@+id/web_venues_details_traffic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_28"
+                            android:lineSpacingExtra="@dimen/dp_4"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            app:layout_constraintTop_toBottomOf="@+id/venues_details_traffic" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </com.daqsoft.provider.scrollview.DqScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recy_top_scroll_stick"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_42"
+            android:background="@color/white"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/v_line_venues_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:background="@color/e8e8e8"
+            app:layout_constraintBottom_toTopOf="@+id/v_main_activity_bottom"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_52"
+            android:orientation="horizontal"
+            android:id="@+id/v_main_activity_bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_52"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_thumb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/venue_bottom_icon_like_normal"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:gravity="center"
+                    android:text="@{likeNum}"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_11" />
+
+                <TextView
+                    android:id="@+id/tv_collect"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/venue_bottom_icon_collect_normal"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:gravity="center"
+                    android:text="@{collectNum}"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_11" />
+
+                <TextView
+                    android:id="@+id/tv_comment_num"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/venue_bottom_icon_comment"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:gravity="center"
+                    android:text="@string/venue_writer_comment"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_11" />
+
+                <TextView
+                    android:id="@+id/tv_share"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:drawableTop="@mipmap/venue_bottom_icon_share"
+                    android:drawablePadding="@dimen/dp_5"
+                    android:gravity="center"
+                    android:text="@string/venue_share"
+                    android:textColor="@color/txt_gray_black"
+                    android:textSize="@dimen/sp_11" />
+
+                <TextView
+                    android:id="@+id/txt_venue_reservation"
+                    android:layout_width="@dimen/dp_140"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="@string/venue_reservation"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <Button
+                android:text="加入行程"
+                android:visibility="gone"
+                android:id="@+id/add_itinerary"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ff6b53"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_5"
+            android:background="@color/dividing_line"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

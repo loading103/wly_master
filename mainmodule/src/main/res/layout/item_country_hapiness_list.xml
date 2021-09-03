@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!--        <variable-->
+        <!--            name="vm"-->
+        <!--            type="com.daqsoft.travelCultureModule.country.model.CountryTourViewModel" />-->
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp_20">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/v_country_hap_imgs"
+                android:layout_width="@dimen/dp_105"
+                android:layout_height="@dimen/dp_126"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.daqsoft.baselib.widgets.ArcImageView
+                    android:id="@+id/img_country_hap_ls"
+                    android:layout_width="@dimen/dp_105"
+                    android:layout_height="@dimen/dp_126"
+                    android:scaleType="centerCrop"
+                    app:corner_radius="@dimen/dp_5" />
+
+                <ImageView
+                    android:id="@+id/img_country_hap_collect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_10"
+                    android:src="@mipmap/activity_collect_normal" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true">
+
+                    <ImageView
+                        android:id="@+id/img_country_hap_720"
+                        android:layout_width="@dimen/dp_18"
+                        android:layout_height="@dimen/dp_18"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/dp_8"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:background="@mipmap/food_details_720"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/img_country_hap_video"
+                        android:layout_width="@dimen/dp_18"
+                        android:layout_height="@dimen/dp_18"
+                        android:layout_marginEnd="@dimen/dp_4"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:layout_toStartOf="@+id/img_country_hap_720"
+                        android:background="@mipmap/food_details_video"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_country_hap_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_toEndOf="@+id/v_country_hap_imgs"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/v_country_hap_imgs"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/v_country_hap_imgs" />
+
+            <com.daqsoft.travelCultureModule.country.view.LabelsView
+                android:id="@+id/recy_country_hap_labels"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_country_hap_name"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_13"
+                android:layout_toEndOf="@+id/v_country_hap_imgs"
+                android:minHeight="25dp"
+                app:labelBackground="@drawable/country_bdbdbd_stroke_1_round_3"
+                app:labelTextColor="@color/color_333"
+                app:labelTextHeight="wrap_content"
+                app:labelTextPaddingBottom="@dimen/dp_2_5"
+                app:labelTextPaddingLeft="@dimen/dp_6"
+                app:labelTextPaddingRight="@dimen/dp_6"
+                app:labelTextPaddingTop="@dimen/dp_2_5"
+                app:labelTextSize="@dimen/sp_10"
+                app:labelTextWidth="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/v_country_hap_imgs"
+                app:layout_constraintTop_toBottomOf="@+id/txt_country_hap_name"
+                app:lineMargin="@dimen/dp_3"
+                app:maxSelect="0"
+                app:minSelect="1"
+                app:selectType="MULTI"
+                app:wordMargin="@dimen/dp_4" />
+
+            <TextView
+                android:id="@+id/txt_country_hap_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recy_country_hap_labels"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_7"
+                android:layout_toEndOf="@+id/v_country_hap_imgs"
+                android:gravity="left"
+                android:textColor="@color/color_666"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_country_hap_info"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_hotel_room_rmb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/txt_hotel_room_price"
+                    android:includeFontPadding="false"
+                    android:text="@string/rmb"
+                    android:textColor="@color/color_ff6b53"
+                    android:textSize="@dimen/sp_10" />
+
+                <TextView
+                    android:id="@+id/txt_hotel_room_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/txt_hotel_room_rmb"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/color_ff6b53"
+                    android:textSize="@dimen/sp_16"
+                    tools:text="0" />
+
+                <TextView
+                    android:id="@+id/txt_hotel_room_qi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/txt_hotel_room_price"
+                    android:layout_toEndOf="@+id/txt_hotel_room_price"
+                    android:includeFontPadding="false"
+                    android:text="@string/qi"
+                    android:textColor="@color/color_666"
+                    android:textSize="@dimen/sp_10" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/v_country_hap_acitvity"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_32"
+            android:layout_marginTop="@dimen/dp_10"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/txt_item_country_hap_activity_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_20"
+                android:text="活动："
+                android:textColor="@color/ff9e05"
+                android:textSize="@dimen/sp_12"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_item_country_hap_activity_words"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:layout_toEndOf="@+id/txt_item_country_hap_activity_label"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_12" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

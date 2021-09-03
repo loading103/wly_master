@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="MissingDefaultResource">
+    <item android:left="@dimen/dp_10" android:right="@dimen/dp_10">
+        <shape>
+            <solid
+                android:color="@color/gray_f2f2f2">
+            </solid>
+            <corners
+                android:bottomLeftRadius="@dimen/dp_15"
+                android:bottomRightRadius="@dimen/dp_15" >
+            </corners>
+        </shape>
+    </item>
+
+
+    <item android:bottom="@dimen/dp_8" android:left="@dimen/dp_5" android:right="@dimen/dp_5" >
+        <shape>
+            <solid
+                android:color="@color/gray_f7f7f7">
+            </solid>
+            <corners
+                android:bottomLeftRadius="@dimen/dp_15"
+                android:bottomRightRadius="@dimen/dp_15" >
+            </corners>
+        </shape>
+    </item>
+
+    <item android:bottom="@dimen/dp_16" >
+        <shape>
+            <solid
+                android:color="@color/white">
+            </solid>
+            <corners
+                android:bottomLeftRadius="@dimen/dp_15"
+                android:bottomRightRadius="@dimen/dp_15" >
+            </corners>
+        </shape>
+    </item>
+
+</layer-list>

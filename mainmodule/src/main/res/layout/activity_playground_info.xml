@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+        <import type="android.text.TextUtils"/>
+
+        <import type="org.jsoup.examples.HtmlToPlainText" />
+
+        <variable
+            name="bean"
+            type="com.daqsoft.provider.bean.PlayGroundDetailBean" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_f5f5f5"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                app:cardCornerRadius="@dimen/dp_5"
+                app:layout_constraintTop_toBottomOf="@id/tv_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@{bean.name}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_18"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/tv_summery"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:ellipsize="end"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="@dimen/dp_4"
+                        android:gravity="center"
+                        android:maxLines="3"
+                        android:text="@{bean.briefing}"
+                        android:visibility="@{TextUtils.isEmpty(bean.briefing)?View.GONE:View.VISIBLE}"
+                        android:textColor="@color/txt_gray"
+                        android:textSize="@dimen/sp_12"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cdv_map_v"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_14"
+                        android:layout_marginRight="@dimen/dp_20"
+                        app:cardCornerRadius="@dimen/dp_5"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_summery">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.amap.api.maps.MapView
+                                android:id="@+id/map_view"
+                                android:layout_width="0dip"
+                                android:layout_height="0dip"
+                                app:layout_constraintDimensionRatio="3:1.2"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <TextView
+                        android:id="@+id/tv_location"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:includeFontPadding="false"
+                        android:text="@{`娱乐场所地址：`+bean.regionName}"
+                        android:textColor="@color/txt_black"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility='@{(bean.regionName=="" || bean.regionName==null)?View.GONE:View.VISIBLE}'
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cdv_map_v" />
+
+                    <View
+                        android:id="@+id/v_scenic_more_line"
+                        android:layout_width="0dip"
+                        android:layout_height="@dimen/dp_0_5"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:background="@color/d4d4d4"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_location" />
+
+                    <TextView
+                        android:id="@+id/tv_navigation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:drawableLeft="@mipmap/activity_details_address"
+                        android:drawablePadding="@dimen/dp_8"
+                        android:gravity="center"
+                        android:onClick="goToNavigation"
+                        android:padding="@dimen/dp_12"
+                        android:text="导航"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/tv_phone"
+                        app:layout_constraintTop_toBottomOf="@id/v_scenic_more_line"
+                        app:layout_constraintVertical_weight="1" />
+
+                    <View
+                        android:layout_width="@dimen/dp_0_5"
+                        android:layout_height="@dimen/dp_24"
+                        android:background="@color/d4d4d4"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_navigation"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_navigation" />
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:drawableLeft="@mipmap/activity_details_phone"
+                        android:drawablePadding="@dimen/dp_8"
+                        android:gravity="center"
+                        android:padding="@dimen/dp_12"
+                        android:text="@string/food_contact_playshop"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@id/tv_navigation"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v_scenic_more_line"
+                        app:layout_constraintVertical_weight="1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_12"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20">
+
+                <include
+                    android:id="@+id/il_voice"
+                    layout="@layout/include_detail_module"
+                    app:hide="@{false}"
+                    app:hideRight="@{true}"
+                    app:leftLabel="@{`基础信息`}" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="@string/details_phone"
+                    android:visibility="gone"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContent='@{bean.phone}'
+                    app:rightContentColor="@color/colorPrimary"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_open_time"
+                    rightContent='@{String.format("%1$s - %2$s",bean.openStartTime , bean.openEndTime)}'
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="营业时间"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_area"
+                    rightContent='@{String.format(@string/iv_area_m,bean.area??"")}'
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="场地面积"
+                    android:visibility='@{(bean.area==null || bean.area=="") ? View.GONE:View.VISIBLE}'
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_capacity"
+                    rightContent='@{String.format(@string/iv_capacity,bean.capacity??"")}'
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="可容纳人数"
+                    android:visibility='@{(bean.capacity==null || bean.capacity.equals("")) ?View.GONE:View.VISIBLE}'
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_ky_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="开业时间"
+                    android:visibility='@{(bean.openYear==null || bean.openYear.equals("")) ? View.GONE:View.VISIBLE}'
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_zx_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="装修时间"
+                    android:visibility='@{(bean.decorationTime==null || bean.decorationTime.equals("")) ?View.GONE:View.VISIBLE}'
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContentColor="@color/txt_black"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_website"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:visibility="@{(bean.websiteUrl.equals(``)|| bean.websiteUrl==null)?View.GONE:View.VISIBLE}"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="官网地址"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContent='@{bean.websiteUrl}'
+                    app:rightContentColor="@color/colorPrimary"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+
+                <com.daqsoft.provider.view.ItemView
+                    android:id="@+id/iv_wx_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:visibility="@{(bean.officialName.equals(``)|| bean.officialName==null)?View.GONE:View.VISIBLE}"
+                    app:contentGravity="left"
+                    app:labelPadding="@dimen/dp_6"
+                    app:labelSize="@dimen/sp_14"
+                    app:labelType="bold"
+                    app:leftLabel="微信公众号"
+                    app:leftLabelColor="@color/txt_black"
+                    app:rightContent='@{bean.officialName}'
+                    app:rightContentColor="@color/colorPrimary"
+                    app:rightContentSize="@dimen/sp_14"
+                    app:showArrow="false"
+                    app:showDivider="false" />
+                <include
+                    android:id="@+id/il_food_type"
+                    layout="@layout/include_detail_module"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hideRight="@{true}"
+                    app:leftLabel="@{`适用场景`}" />
+
+                <com.daqsoft.provider.view.LabelsView
+                    android:id="@+id/llv_food_types"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:minHeight="25dp"
+                    android:padding="5dp"
+                    app:labelBackground="@drawable/shape_white_5_stroker"
+                    app:labelTextColor="@color/txt_black"
+                    app:labelTextHeight="wrap_content"
+                    app:labelTextPaddingBottom="5dp"
+                    app:labelTextPaddingLeft="10dp"
+                    app:labelTextPaddingRight="10dp"
+                    app:labelTextPaddingTop="5dp"
+                    app:labelTextSize="14sp"
+                    app:labelTextWidth="wrap_content"
+                    app:lineMargin="10dp"
+                    app:maxSelect="0"
+                    app:minSelect="1"
+                    app:selectType="SINGLE"
+                    app:wordMargin="10dp" />
+
+                <include
+                    android:id="@+id/il_food_service_tools"
+                    layout="@layout/include_detail_module"
+                    app:hide="@{false}"
+                    app:hideRight="@{true}"
+                    app:leftLabel="@{`服务设施`}" />
+
+                <com.daqsoft.provider.view.LabelsView
+                    android:id="@+id/llv_food_service_tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:minHeight="25dp"
+                    android:padding="5dp"
+                    app:labelBackground="@drawable/shape_white_5_stroker"
+                    app:labelTextColor="@color/txt_black"
+                    app:labelTextHeight="wrap_content"
+                    app:labelTextPaddingBottom="5dp"
+                    app:labelTextPaddingLeft="10dp"
+                    app:labelTextPaddingRight="10dp"
+                    app:labelTextPaddingTop="5dp"
+                    app:labelTextSize="14sp"
+                    app:labelTextWidth="wrap_content"
+                    app:lineMargin="10dp"
+                    app:maxSelect="0"
+                    app:minSelect="1"
+                    app:selectType="SINGLE"
+                    app:wordMargin="10dp" />
+                <include
+                    android:id="@+id/il_food_service_ts"
+                    layout="@layout/include_detail_module"
+                    app:hide="@{false}"
+                    app:hideRight="@{true}"
+                    app:leftLabel="@{`特色服务`}" />
+
+                <com.daqsoft.provider.view.LabelsView
+                    android:id="@+id/llv_food_service_ts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:minHeight="25dp"
+                    android:padding="5dp"
+                    app:labelBackground="@drawable/shape_white_5_stroker"
+                    app:labelTextColor="@color/txt_black"
+                    app:labelTextHeight="wrap_content"
+                    app:labelTextPaddingBottom="5dp"
+                    app:labelTextPaddingLeft="10dp"
+                    app:labelTextPaddingRight="10dp"
+                    app:labelTextPaddingTop="5dp"
+                    app:labelTextSize="14sp"
+                    app:labelTextWidth="wrap_content"
+                    app:lineMargin="10dp"
+                    app:maxSelect="0"
+                    app:minSelect="1"
+                    app:selectType="SINGLE"
+                    app:wordMargin="10dp" />
+
+                <include
+                    android:id="@+id/il_food_introuduce"
+                    layout="@layout/include_detail_module"
+                    app:hide="@{false}"
+                    app:hideRight="@{true}"
+                    app:leftLabel="@{`娱乐场所介绍`}" />
+
+                <WebView
+                    android:id="@+id/txt_food_introduce"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:scrollbars="none" />
+
+                <include
+                    android:id="@+id/il_food_traffic_info"
+                    layout="@layout/include_detail_module"
+                    app:hide="@{false}"
+                    app:hideRight="@{true}"
+                    app:leftLabel="@{@string/main_traffic_info}" />
+
+                <WebView
+                    android:id="@+id/txt_food_traffic_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none" />
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30" />
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

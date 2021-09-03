@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isNeedBooking"
+            type="Boolean" />
+        <variable
+            name="bean"
+            type="com.daqsoft.provider.bean.OrderDetailBean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:padding="@dimen/dp_16">
+
+        <TextView
+            android:id="@+id/mOrderCodeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="@{ isNeedBooking?5:5 ,default = 5}"
+            android:text="@string/order_code"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mOrderValueTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_16"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toRightOf="@id/mOrderCodeTv"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2050 2489 6014 5870" />
+
+        <TextView
+            android:id="@+id/mCopyTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_copy"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mOrderTimeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/order_booking_time"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mOrderCodeTv" />
+
+        <TextView
+            android:id="@+id/mOrderTimeValueTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="@id/mOrderValueTv"
+            app:layout_constraintTop_toTopOf="@id/mOrderTimeTv"
+            tools:text="2019-6-17 20:28:35" />
+
+        <TextView
+            android:id="@+id/tv_booking_start_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/order_booking_start"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_14"
+            android:visibility="@{bean.bookingTimeStart.equals(``)&amp; bean.bookingTimeStart!=null?View.VISIBLE:View.GONE, default = gone}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mOrderTimeTv" />
+
+        <TextView
+            android:id="@+id/tv_booking_start_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:text="@{bean.bookingTimeStart}"
+            android:visibility="@{bean.bookingTimeStart.equals(``)&amp; bean.bookingTimeStart!=null?View.VISIBLE:View.GONE, default = gone}"
+            app:layout_constraintLeft_toLeftOf="@id/mOrderValueTv"
+            app:layout_constraintTop_toTopOf="@id/tv_booking_start_label"
+            tools:text="2019-6-17 20:28:35" />
+
+        <TextView
+            android:id="@+id/tv_booking_end_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/order_booking_end"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_14"
+            android:visibility="@{bean.bookingTimeEnd.equals(``)&amp; bean.bookingTimeEnd!=null?View.VISIBLE:View.GONE, default = gone}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_booking_start_label" />
+
+        <TextView
+            android:id="@+id/tv_booking_end_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:text="@{bean.bookingTimeEnd}"
+            android:visibility="@{bean.bookingTimeEnd.equals(``)&amp; bean.bookingTimeEnd!=null?View.VISIBLE:View.GONE, default = gone}"
+            app:layout_constraintLeft_toLeftOf="@id/mOrderValueTv"
+            app:layout_constraintTop_toTopOf="@id/tv_booking_end_label"
+            tools:text="2019-6-17 20:28:35" />
+        <TextView
+            android:id="@+id/mBuyNumberTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/order_goods_number_2"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_booking_end_label" />
+
+        <TextView
+            android:id="@+id/mBuyNumberValueTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="@id/mOrderValueTv"
+            app:layout_constraintTop_toTopOf="@id/mBuyNumberTv"
+            tools:text="2" />
+
+        <TextView
+            android:id="@+id/mHaveSendTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/order_shipped_number"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mBuyNumberTv" />
+
+        <TextView
+            android:id="@+id/mHaveSendValueTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="@id/mOrderValueTv"
+            app:layout_constraintTop_toTopOf="@id/mHaveSendTv"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/mRealMarkTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/order_remark"
+            android:textColor="@color/txt_gray_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mHaveSendTv" />
+
+        <TextView
+            android:id="@+id/mRealMarkValueTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintTop_toTopOf="@+id/mRealMarkTv"
+            app:layout_constraintStart_toStartOf="@+id/mHaveSendValueTv"
+            app:layout_constraintEnd_toEndOf="@+id/mCopyTv"
+            tools:text="希望卖家检查好质量再发货" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000">
+
+        <com.daqsoft.provider.utils.camera.CameraPreview
+            android:id="@+id/camera_surface"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <View
+            android:id="@+id/v_left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/v_bottom"
+            android:layout_below="@+id/v_top"
+            android:layout_toLeftOf="@+id/camera_crop_container"
+            android:layout_weight="1"
+            android:background="@color/preview_mock" />
+
+        <View
+            android:id="@+id/v_right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/v_bottom"
+            android:layout_below="@+id/v_top"
+            android:layout_toRightOf="@+id/camera_crop_container"
+            android:layout_weight="1"
+            android:background="@color/preview_mock" />
+
+        <View
+            android:id="@+id/v_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/camera_crop_container"
+            android:background="@color/preview_mock" />
+
+        <View
+            android:id="@+id/v_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/camera_crop_container"
+            android:background="@color/preview_mock" />
+
+        <LinearLayout
+            android:id="@+id/camera_crop_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_220"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/camera_crop"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_220"
+                android:scaleType="fitXY"
+                android:src="@mipmap/venue_book_id_box" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/preview_mock"
+                android:gravity="center"
+                android:text="触摸自动对焦"
+                android:textColor="#afff"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_tip_idcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/camera_crop_container"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="请将相框对准身份证"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14" />
+
+        <FrameLayout
+            android:id="@+id/fl_right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_tip_idcard">
+
+            <RelativeLayout
+                android:id="@+id/camera_option"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/camera_flash"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/camera_flash_off"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/camera_take"
+                    android:layout_width="@dimen/dp_60"
+                    android:layout_height="@dimen/dp_60"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_38"
+                    android:src="@drawable/shape_circle_take_photo" />
+
+                <ImageView
+                    android:id="@+id/camera_close"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/camera_close"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/camera_result"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/camera_result_ok"
+                        android:layout_width="@dimen/dp_56"
+                        android:layout_height="@dimen/dp_56"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/shape_circle_take_photo_confrim"
+                        android:gravity="center"
+                        android:text="确认"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_14" />
+
+                    <TextView
+                        android:id="@+id/camera_result_cancel"
+                        android:layout_width="@dimen/dp_56"
+                        android:layout_height="@dimen/dp_56"
+                        android:layout_marginLeft="@dimen/dp_25"
+                        android:layout_toRightOf="@+id/camera_result_ok"
+                        android:background="@drawable/shape_circle_take_photo_replay"
+                        android:gravity="center"
+                        android:text="重拍"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_14" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </FrameLayout>
+    </RelativeLayout>
+</layout>

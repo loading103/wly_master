@@ -1,0 +1,11 @@
+include ':com.heytap.msp-push-2.1.0'
+include ':bcprov-jdk15on-1.59'
+include ':vote-module'
+include ':app', ':mainmodule', ':venuesmodule',
+        ':activitiesmodule', ':usermodule', ':provider',
+        ':baselib', ':integralmodule',':image-selector',
+        ':jcvideoplayer-lib',':servicemodule',':guidemodule',
+        ':slow-live-module',
+        ':legacy-module', ':volunteer-module'
+rootProject.name='wly_master'
+include ':ltinerary_module'

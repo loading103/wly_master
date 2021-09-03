@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="scenicCount"
+            type="String" />
+
+        <variable
+            name="siteCount"
+            type="String" />
+
+        <variable
+            name="like"
+            type="Boolean" />
+
+        <variable
+            name="collect"
+            type="Boolean" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/cl_brand"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+
+                <ImageView
+                    android:id="@+id/iv_city_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_500"
+                    android:scaleType="centerCrop" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_500"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/ll_brand_head"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_20"
+                                android:layout_marginRight="@dimen/dp_20"
+                                android:layout_marginBottom="@dimen/dp_20"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_51"
+                                    android:layout_height="@dimen/dp_36"
+                                    android:background="@mipmap/brand_sign"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:id="@+id/tv_bi_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_20"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_30"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_bi_sign"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_14" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginBottom="@dimen/dp_20"
+                                android:gravity="bottom"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_bi_collect"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/dp_30"
+                                    android:drawableTop="@mipmap/brand_card_collect_normal"
+                                    android:drawablePadding="@dimen/dp_9"
+                                    android:gravity="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_11" />
+
+                                <TextView
+                                    android:id="@+id/tv_bi_like"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableTop="@mipmap/brand_card_like_normal"
+                                    android:drawablePadding="@dimen/dp_9"
+                                    android:gravity="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_11" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_barand_boom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            android:layout_marginRight="@dimen/dp_20"
+                            android:background="@drawable/main_shape_50_back_5_radius"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/dp_16"
+                            android:paddingTop="@dimen/dp_14"
+                            android:paddingBottom="@dimen/dp_14">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@mipmap/brand_card_fun"
+                                android:drawablePadding="@dimen/dp_7"
+                                android:text='@{scenicCount+"个玩乐点"}'
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_13" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginRight="12dp"
+                                android:drawablePadding="@dimen/dp_7"
+                                android:text="·"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_13" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@mipmap/brand_card_destination"
+                                android:drawablePadding="@dimen/dp_7"
+                                android:text='@{siteCount+"个目的地城市"}'
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_13" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_20">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_brand_bpjs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dp_48"
+                        android:text="品牌介绍"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_19"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="@dimen/dp_73"
+                        android:layout_height="@dimen/dp_4"
+                        android:layout_alignBottom="@+id/tv_brand_bpjs"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="@dimen/dp_4"
+                        android:background="#80ffffff" />
+                </RelativeLayout>
+
+                <com.daqsoft.travelCultureModule.branches.view.ExpandableTextView
+                    android:id="@+id/et_brand_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_25"
+                    android:maxLines="4"
+                    android:text="构建大熊猫"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14" />
+
+                <include
+                    android:id="@+id/ll_jqwl"
+                    layout="@layout/layout_brand_secnic" />
+
+                <include
+                    android:id="@+id/ll_ywgl"
+                    layout="@layout/layout_brand_palyfun" />
+
+                <include
+                    android:id="@+id/ll_mdd"
+                    layout="@layout/layout_brand_mudidi" />
+
+                <include
+                    android:id="@+id/ll_moreBrand"
+                    layout="@layout/layout_brand_more" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

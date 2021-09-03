@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="@dimen/dp_71"
+        android:layout_height="@dimen/dp_71"
+        android:layout_margin="@dimen/dp_5">
+
+        <ImageView
+            android:id="@+id/rounded_item_image"
+            android:layout_width="@dimen/dp_56"
+            android:layout_height="@dimen/dp_56"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:id="@+id/mask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#88000000"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/item_imgage_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:src="@drawable/punch_delecte" />
+
+        <ImageView
+            android:id="@+id/item_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/common_button_play"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/item_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableTop="@drawable/upload_faile"
+            android:drawablePadding="@dimen/dp_4"
+            android:text="重新上传"
+            android:textColor="@color/red"
+            android:textSize="@dimen/sp_10"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/item_audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableTop="@drawable/audio_icon"
+            android:drawablePadding="@dimen/dp_8"
+            android:text="音频文件"
+            android:textColor="#98a9ca"
+            android:textSize="@dimen/sp_8"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_h"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_4"
+            android:layout_gravity="top"
+            android:max="100" />
+    </FrameLayout>
+</layout>

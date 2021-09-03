@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="status"
+            type="String" />
+
+        <variable
+            name="price"
+            type="String" />
+
+        <variable
+            name="number"
+            type="String" />
+
+        <variable
+            name="time"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="phone"
+            type="String" />
+
+        <variable
+            name="idNumber"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_12"
+        android:background="@drawable/user_back_white_stroke_e8_round_5_pad_0"
+        android:paddingTop="@dimen/dp_12"
+        android:paddingBottom="@dimen/dp_12">
+
+        <LinearLayout
+            android:id="@+id/ll_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.3">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{name}"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/user_back_main_strok_main_round_large"
+                android:text="@{status}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_des"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/dp_0_5"
+            app:layout_constraintBottom_toBottomOf="@id/ll_name"
+            app:layout_constraintLeft_toRightOf="@id/ll_name"
+            app:layout_constraintTop_toTopOf="@id/ll_name"
+            app:layout_constraintWidth_percent="0.7">
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_6"
+                app:labelSize="@dimen/sp_12"
+                app:leftLabel="@string/order_consume_use_time_"
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContent='@{time}'
+                app:rightContentColor="@color/txt_gray"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/tv_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_6"
+                app:labelSize="@dimen/sp_12"
+                app:leftLabel="@string/order_consume_use_number_"
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContent='@{number}'
+                app:rightContentColor="@color/txt_gray"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/tv_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_6"
+                app:labelSize="@dimen/sp_12"
+                app:leftLabel="@string/order_contact_phone"
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContent='@{phone}'
+                app:rightContentColor="@color/txt_gray"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/tv_idcard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{idNumber!=null}"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_6"
+                app:labelSize="@dimen/sp_12"
+                app:leftLabel="证件号码"
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContent="@{idNumber}"
+                app:rightContentColor="@color/txt_gray"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/tv_remaks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_6"
+                app:labelSize="@dimen/sp_12"
+                app:leftLabel="预约备注"
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContentColor="@color/txt_gray"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

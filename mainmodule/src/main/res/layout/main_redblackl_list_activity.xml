@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.daqsoft.travelCultureModule.redblack.viewmodle.RedBlackListViewModel" />
+
+    </data>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <com.daqsoft.baselib.widgets.MyHeadView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.daqsoft.baselib.widgets.MyHeadView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_activity"
+                android:layout_width="match_parent"
+                android:background="#330c7b"
+                android:layout_height="match_parent" />
+          <include
+              android:id="@+id/ll_empty"
+              android:layout_marginTop="@dimen/dp_120"
+              layout="@layout/layout_adapter_theme_empty"
+              android:visibility="gone"
+              android:layout_height="match_parent"
+              android:layout_width="match_parent"/>
+        </FrameLayout>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</layout>

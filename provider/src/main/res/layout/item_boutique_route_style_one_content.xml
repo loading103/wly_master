@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="info"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/dp_160"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="@dimen/dp_18"
+        android:layout_marginRight="4dp">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/image"
+            url="@{url}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_108"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/common_image_screen_no_data"
+            app:corner_bottom_left_radius="@dimen/dp_5"
+            app:corner_bottom_right_radius="@dimen/dp_5"
+            app:corner_top_left_radius="@dimen/dp_5"
+            app:corner_top_right_radius="@dimen/dp_5"
+            app:is_circle="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{name}"
+            android:textColor="@color/text2"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="@+id/image"
+            app:layout_constraintTop_toBottomOf="@+id/image"
+            tools:text="成都两天两夜，够麻辣够地道美食主题游" />
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{info}"
+            android:textColor="@color/color_36cd64"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="@+id/image"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            tools:text="亲子游" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

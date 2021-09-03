@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:background="@drawable/clube_info_introduce_type"
+        android:paddingLeft="@dimen/dp_7"
+        android:paddingTop="@dimen/dp_3"
+        android:paddingRight="@dimen/dp_7"
+        android:paddingBottom="@dimen/dp_3"
+        tools:text="游玩"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_10" />
+
+</layout>

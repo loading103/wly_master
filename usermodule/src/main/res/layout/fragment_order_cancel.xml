@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="detail"
+            type="com.daqsoft.provider.bean.OrderDetail" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="@string/order_string_cancel"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/v_order_cance_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/dp_16">
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/booking_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_0"
+                app:labelSize="@dimen/sp_12"
+                app:labelWidth="@dimen/dp_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:leftLabel="@string/order_cancel_time"
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContent='@{detail.updateTime}'
+                app:rightContentColor="@color/txt_gray"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/booking_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_0"
+                app:labelSize="@dimen/sp_12"
+                app:labelWidth="@dimen/dp_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/booking_time"
+                app:leftLabel="@string/order_cancel_number"
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContent='@{detail.orderNum}'
+                app:rightContentColor="@color/txt_gray"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+
+            <com.daqsoft.provider.view.ItemView
+                android:id="@+id/tv_back_money"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                app:contentGravity="left"
+                app:labelPadding="@dimen/dp_0"
+                app:labelSize="@dimen/sp_12"
+                app:labelWidth="@dimen/dp_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/booking_address"
+                app:leftLabel="@string/order_cancel_back_money"
+                app:leftLabelColor="@color/txt_gray"
+                app:rightContentColor="@color/red"
+                app:rightContentSize="@dimen/sp_12"
+                app:showArrow="false"
+                app:showDivider="false" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.daqsoft.provider.scrollview.DqRecylerView
+            android:id="@+id/rv_order_cances"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:visibility="gone" />
+    </LinearLayout>
+</layout>

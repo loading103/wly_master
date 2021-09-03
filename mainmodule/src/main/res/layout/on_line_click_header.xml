@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/img_bg"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:shadowColor="@color/color_666"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:layout_marginTop="@dimen/dp_27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_22"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_19"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_header_num"
+            android:shadowColor="@color/color_666"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:layout_marginTop="@dimen/dp_27"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.daqsoft.provider.view.XGallery
+            android:id="@+id/x_line_click"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_147"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_below="@+id/tv_name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:xGallery_itemHeight="@dimen/dp_147"
+            app:xGallery_itemWidth="@dimen/dp_325" />
+    </RelativeLayout>
+
+
+</layout>

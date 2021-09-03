@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            style="@style/ViewWrap"
+            android:textSize="@dimen/sp_19"
+            android:text="选择想去的城市"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:textColor="@color/color_333333"/>
+
+        <View style="@style/HorizontalLineStyle"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            app:spanCount="3"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:id="@+id/recycler_view"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_width="match_parent"
+            app:layoutManager="GridLayoutManager"/>
+
+        <Button
+            android:id="@+id/next_view"
+            android:textSize="@dimen/dp_16"
+            android:text="下一步：分配游玩天数"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_FF9E05"/>
+
+    </LinearLayout>
+
+</layout>

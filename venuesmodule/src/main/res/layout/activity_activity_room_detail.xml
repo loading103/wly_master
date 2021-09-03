@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.daqsoft.venuesmodule.activity.ActivityRoomDetailVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+
+
+        <com.daqsoft.provider.scrollview.DqScrollView
+            android:id="@+id/scroll_activity_room"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_188">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/vp_activity_room_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_188"
+                        android:background="@color/white"
+                        android:visibility="gone" />
+
+                    <com.daqsoft.provider.view.convenientbanner.ConvenientBanner
+                        android:id="@+id/cbr_activity_room_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_188" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginBottom="@dimen/dp_24"
+                        android:minHeight="@dimen/dp_21"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/v_activity_room_video"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/shape_venues_black_10"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/dp_6"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/img_activity_room_play_status"
+                                android:layout_width="@dimen/dp_7"
+                                android:layout_height="@dimen/dp_8"
+                                android:layout_gravity="center_vertical"
+                                android:src="@mipmap/venue_details_banner_pause" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/dp_3"
+                                android:text="@string/venue_video"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/v_activity_room_images"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_4"
+                            android:background="@drawable/shape_venues_black_10"
+                            android:minHeight="@dimen/dp_21"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/dp_6"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/venue_images"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+
+                            <TextView
+                                android:id="@+id/txt_activity_room_top_img_index"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginLeft="@dimen/dp_3"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/v_activity_room_720"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_4"
+                            android:background="@drawable/shape_venues_black_10"
+                            android:minHeight="@dimen/dp_21"
+                            android:paddingLeft="@dimen/dp_7"
+                            android:paddingRight="@dimen/dp_7"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/img_activity_room_720"
+                                android:layout_width="@dimen/dp_15"
+                                android:layout_height="@dimen/dp_10"
+                                android:layout_gravity="center"
+                                android:src="@mipmap/venue_details_banner_720" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_m_12"
+                    android:background="@drawable/main_shape_white_back_5_radius"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/dp_24"
+                    android:paddingBottom="@dimen/dp_24">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_activity_details_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/dp_20"
+                        android:paddingRight="@dimen/dp_20"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_activity_room_details_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:includeFontPadding="false"
+                            android:text="@{model.activityRoomDetail.name}"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/dp_24"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toLeftOf="@id/tv_open_status"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="ceshisdfsdfaslefsadfasdfasdf" />
+
+                        <TextView
+                            android:id="@+id/tv_open_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/shape_label_second_color_bg_2"
+                            android:text="暂不开放"
+                            android:textColor="@color/btn_txt1"
+                            android:textSize="@dimen/sp_12"
+                            android:visibility="gone"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_activity_room_details_name"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tv_activity_room_details_name" />
+
+                        <TextView
+                            android:id="@+id/tv_activity_label_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:background="@drawable/shape_label_primary_color_bg_2"
+                            android:text="@{model.activityRoomDetail.labelName}"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/sp_12"
+                            android:visibility="@{model.activityRoomDetail.labelName.equals(``)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_activity_room_details_name"
+                            tools:text="博物馆" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_17"
+                            android:text="免费"
+                            android:textColor="@color/color_333"
+                            android:textSize="@dimen/sp_12"
+                            app:layout_constraintLeft_toRightOf="@id/tv_activity_label_name"
+                            app:layout_constraintTop_toTopOf="@id/tv_activity_label_name" />
+
+                        <RelativeLayout
+                            android:id="@+id/rl_activity_faithaudit_status"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_12"
+                            android:background="@drawable/shape_label_primary_color_bg_2"
+                            android:paddingVertical="@dimen/dp_5"
+                            android:visibility="@{model.activityRoomDetail.faithAuditStatus.equals(`1`)?View.VISIBLE:View.GONE}"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_activity_label_name">
+
+                            <TextView
+                                android:id="@+id/tv_honesty"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/dp_12"
+                                android:drawableLeft="@mipmap/activity_details_exempt"
+                                android:drawablePadding="@dimen/dp_8"
+                                android:textColor="@color/txt_black"
+                                android:textSize="@dimen/sp_12"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                tools:text="诚信分大于550分才能预订" />
+
+                            <TextView
+                                android:id="@+id/tv_to_honesty"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/dp_12"
+                                android:layout_marginRight="@dimen/dp_12"
+                                android:drawableRight="@mipmap/provider_whcgxq_cghd_more"
+                                android:drawablePadding="@dimen/dp_5"
+                                android:text="我的诚信"
+                                android:textColor="@color/txt_black"
+                                android:textSize="@dimen/sp_12" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_room_area"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_28"
+                            android:orientation="horizontal"
+                            android:visibility="@{model.activityRoomDetail.area==null?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toLeftOf="@id/tv_activity_room_details_name"
+                            app:layout_constraintTop_toBottomOf="@id/rl_activity_faithaudit_status">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="面积"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_14"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_room_area"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_14"
+                                android:text="@string/activity_room_area"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_14" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_room_people"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            android:orientation="horizontal"
+                            android:visibility="@{model.activityRoomDetail.galleryful==null?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toLeftOf="@id/tv_activity_room_details_name"
+                            app:layout_constraintTop_toBottomOf="@id/ll_room_area"
+                            app:layout_goneMarginTop="@dimen/dp_28">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="容纳"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_14"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_room_people"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_14"
+                                android:text="@string/activity_room_people"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_14" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_room_equipment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            android:orientation="horizontal"
+                            android:visibility="@{model.activityRoomDetail.equipment.equals(``)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toLeftOf="@id/tv_activity_room_details_name"
+                            app:layout_constraintTop_toBottomOf="@id/ll_room_people"
+                            app:layout_goneMarginTop="@dimen/dp_28">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="设备"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_14"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_room_equipment"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_14"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="@{model.activityRoomDetail.equipment}"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_14" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_room_phone_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            android:text="电话 "
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:textStyle="bold"
+                            android:visibility="@{model.activityRoomDetail.phone.equals(``)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toLeftOf="@id/tv_activity_room_details_name"
+                            app:layout_constraintTop_toBottomOf="@id/ll_room_equipment" />
+
+                        <TextView
+                            android:id="@+id/tv_room_details_phone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:drawableRight="@mipmap/whcgxq_lxdh"
+                            android:text="@{model.activityRoomDetail.phone}"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_14"
+                            android:visibility="@{model.activityRoomDetail.phone.equals(``)?View.GONE:View.VISIBLE}"
+                            app:layout_constraintLeft_toRightOf="@+id/tv_room_phone_title"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tv_room_phone_title"
+                            tools:text="10:00-18:00" />
+
+                        <!--解说-->
+                        <LinearLayout
+                            android:id="@+id/ll_audio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_24"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            app:layout_constraintLeft_toLeftOf="@id/tv_activity_room_details_name"
+                            app:layout_constraintTop_toBottomOf="@id/tv_room_details_phone"
+                            app:layout_goneMarginTop="@dimen/dp_28">
+
+                            <TextView
+                                android:id="@+id/tv_audio_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/color_333"
+                                android:textSize="@dimen/sp_14"
+                                android:textStyle="bold"
+                                tools:text="音頻資源" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_player_audio"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_25"
+                                android:layout_marginLeft="@dimen/dp_15"
+                                android:background="@drawable/shape_venues_fff5e6_5"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/iv_audio"
+                                    android:layout_width="@dimen/dp_10"
+                                    android:layout_height="@dimen/dp_10"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/dp_5"
+                                    android:src="@mipmap/venue_details_banner_pause"
+                                    android:tint="@color/activity_room_color_f7915f" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_35"
+                                    android:layout_height="@dimen/dp_10"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="@dimen/dp_5"
+                                    android:scaleType="fitXY"
+                                    android:src="@mipmap/activity_room_audio_flag"
+                                    android:tint="@color/activity_room_color_f7915f" />
+
+
+                                <TextView
+                                    android:id="@+id/tv_audio_duration"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:paddingLeft="@dimen/dp_5"
+                                    android:paddingRight="@dimen/dp_5"
+                                    android:textColor="@color/activity_room_color_f7915f"
+                                    android:textSize="@dimen/sp_12"
+                                    tools:text="4′30″" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_activity_details_room"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_60"
+                            android:drawableLeft="@mipmap/whcgxq_bt_bq"
+                            android:drawablePadding="@dimen/dp_12"
+                            android:text="@string/activity_details_room"
+                            android:textColor="@color/txt_black"
+                            android:textSize="@dimen/sp_19"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/ll_audio"
+                            app:layout_goneMarginTop="@dimen/dp_60" />
+
+                        <TextView
+                            android:id="@+id/tv_activity_order_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_8"
+                            android:text="@string/activity_details_room_info"
+                            android:textColor="@color/color_999"
+                            android:textSize="@dimen/sp_12"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_activity_details_room"
+                            app:layout_constraintLeft_toRightOf="@id/tv_activity_details_room"
+                            app:layout_constraintTop_toTopOf="@id/tv_activity_details_room" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_activity_room_date"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_28"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_activity_details_room" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.daqsoft.provider.scrollview.DqScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

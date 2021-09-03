@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="price"
+            type="String" />
+
+        <variable
+            name="left"
+            type="String" />
+
+        <variable
+            name="totalNumber"
+            type="String" />
+
+        <variable
+            name="time"
+            type="String" />
+
+        <variable
+            name="address"
+            type="String" />
+
+        <variable
+            name="phone"
+            type="String" />
+
+        <variable
+            name="bmtime"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_24"
+        android:paddingRight="@dimen/dp_24">
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            android:text="@{price}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_28"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tool:text="adf" />
+
+        <TextView
+            android:id="@+id/tv_integral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_integral"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp_12"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_price"
+            app:layout_constraintLeft_toRightOf="@id/tv_price" />
+
+        <ImageView
+            android:id="@+id/iv_tag_image"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_15"
+            android:src="@mipmap/activity_details_people"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tv_left_number"
+            app:layout_constraintRight_toLeftOf="@id/tv_left_number" />
+
+        <TextView
+            android:id="@+id/tv_left_number"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_15"
+            android:layout_marginStart="@dimen/dp_32"
+            android:background="@drawable/main_shape_white_back_stroke_16b2fa_8_radius"
+            android:paddingLeft="@dimen/dp_6"
+            android:paddingRight="@dimen/dp_6"
+            android:text="@{left}"
+            android:textColor="@color/c_16b2fa"
+            android:textSize="@dimen/sp_11"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_price"
+            app:layout_constraintLeft_toRightOf="@id/tv_integral"
+            tool:text="剩余名额12个" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{name}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_price"
+            tool:text="adsfasdfasdfasdf" />
+
+        <TextView
+            android:id="@+id/tv_subhead"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            tool:text="adsfasdfasdfasdf" />
+
+        <com.daqsoft.provider.scrollview.DqRecylerView
+            android:id="@+id/rv_tags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="@dimen/dp_12"
+            app:layout_constraintTop_toBottomOf="@id/tv_subhead" />
+        <TextView
+            android:id="@+id/tv_tags"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="0dip"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/dp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_subhead"
+            android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:id="@+id/rl_honesty"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_36"
+            android:layout_marginTop="@dimen/dp_12"
+            android:paddingRight="@dimen/dp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/shape_color_primary_70_2_0_5"
+            app:layout_constraintTop_toBottomOf="@id/tv_tags">
+
+            <TextView
+                android:id="@+id/tv_honesty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_12"
+                android:drawableLeft="@mipmap/main_detail_enjoy"
+                android:drawablePadding="@dimen/dp_8"
+                android:text=""
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tool:text="诚信分大于550分才能预订" />
+
+            <TextView
+                android:id="@+id/tv_to_honesty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_12"
+                android:drawableRight="@mipmap/activity_details_right"
+                android:drawablePadding="@dimen/dp_5"
+                android:text="我的诚信"
+                android:textColor="@color/txt_black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintLeft_toLeftOf="parent" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_can_in_person_num_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_40"
+            android:text="可参与人数"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_honesty" />
+
+        <TextView
+            android:id="@+id/tv_can_in_person_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:ellipsize="end"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toRightOf="@id/tv_can_in_person_num_label"
+            app:layout_constraintTop_toTopOf="@id/tv_can_in_person_num_label"
+            tool:text="2019.09.02 08:00" />
+
+        <TextView
+            android:id="@+id/tv_bm_time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_28"
+            android:text="报名时间"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_can_in_person_num_label" />
+
+        <TextView
+            android:id="@+id/tv_bm_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:ellipsize="end"
+            android:text="@{bmtime}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@id/tv_bm_time_label"
+            app:layout_constraintTop_toTopOf="@id/tv_bm_time_label"
+            tool:text="2019.05.08 08:00~2019.09.02 08:00\n2019.05.08 08:00~2019.09.02 08:00" />
+
+        <TextView
+            android:id="@+id/tv_time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_28"
+            android:text="活动时间"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_bm_time_label" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:ellipsize="end"
+            android:text="@{time}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toRightOf="@id/tv_time_label"
+            app:layout_constraintTop_toTopOf="@id/tv_time_label"
+            tool:text="2019.05.08 08:00~2019.09.02 08:00\n2019.05.08 08:00~2019.09.02 08:00" />
+
+        <TextView
+            android:id="@+id/tv_address_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_28"
+            android:text="活动地址"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_time" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:drawableEnd="@mipmap/whcgxq_lcdz_dt"
+            android:drawablePadding="@dimen/dp_32"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/tv_address_label"
+            app:layout_constraintTop_toTopOf="@id/tv_address_label" />
+
+        <TextView
+            android:id="@+id/tv_phone_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_28"
+            android:text="联系电话"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_address" />
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:drawableEnd="@mipmap/whcgxq_lxdh"
+            android:drawablePadding="@dimen/dp_32"
+            android:text="@{phone}"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/tv_phone_label"
+            app:layout_constraintTop_toTopOf="@id/tv_phone_label"
+            tool:text="028-1234567" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

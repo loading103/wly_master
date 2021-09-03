@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.daqsoft.travelCultureModule.hotel.viewmodel.HotelListViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/iv_map"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/iv_map"
+            app:layout_constraintRight_toLeftOf="@id/iv_map"
+            android:background="@drawable/home_b_f5_stroke_null_round_5"
+            android:text="@string/main_hotel_search"
+            android:layout_margin="@dimen/dp_20"
+            android:drawableLeft="@mipmap/activity_search"
+            android:drawablePadding="@dimen/dp_8"
+            android:paddingLeft="@dimen/dp_12"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:textSize="@dimen/sp_13"
+            android:textColor="@color/txt_black"/>
+
+        <ImageView
+            android:id="@+id/iv_map"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:scaleType="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:src="@mipmap/activity_map"
+            android:layout_margin="@dimen/dp_20"
+            android:background="@drawable/home_b_f5_stroke_null_round_5"
+            onClickCommand="@{vm.gotoMap}"/>
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/sr_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintTop_toBottomOf="@id/iv_map"
+            android:paddingTop="@dimen/sp_16">
+            <com.daqsoft.baselib.widgets.PandaRefreshHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.daqsoft.baselib.widgets.PandaRefreshHeader>
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/iv_map">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.daqsoft.travelCultureModule.resource.ResourceTypeSelectView
+                        android:id="@+id/rts_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_activity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/dp_20"
+                        android:paddingRight="@dimen/dp_20"/>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

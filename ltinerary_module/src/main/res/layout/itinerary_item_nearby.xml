@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="url"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_80">
+
+        <com.daqsoft.baselib.widgets.ArcImageView
+            android:id="@+id/view_poster"
+            placeholder="@{@drawable/grid_placeholde}"
+            url="@{url}"
+            android:layout_width="@dimen/dp_94"
+            android:layout_height="match_parent"
+            app:corner_radius="@dimen/dp_5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            app:layout_constraintBottom_toTopOf="@+id/cl"
+            android:id="@+id/hotel_name_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/view_poster"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="假日酒店" />
+
+        <!--<TextView
+            tools:text="9.8诚信分"
+            android:id="@+id/credit_view"
+            style="@style/TextStyleB"
+            android:textColor="@color/color_FF9E05"
+            app:layout_constraintStart_toEndOf="@id/view_poster"
+            app:layout_constraintTop_toBottomOf="@id/hotel_name_view"/>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintBottom_toTopOf="@+id/time_view"
+            android:id="@+id/cl"
+            app:layout_constraintLeft_toLeftOf="@id/hotel_name_view"
+            app:layout_constraintRight_toRightOf="@+id/hotel_name_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/hotel_name_view"
+            tools:layout_editor_absoluteX="1dp">
+
+            <TextView
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/color_666"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/label_name"
+                tools:text="可预订" />
+
+            <TextView
+                android:layout_marginLeft="@dimen/dp_5"
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/color_666"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activity_view"
+                app:layout_constraintStart_toEndOf="@id/label_name"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="在线活动5个" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="@dimen/sp_12"
+            android:textColor="@color/color_666"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/time_view"
+            app:layout_constraintLeft_toLeftOf="@id/hotel_name_view"
+            app:layout_constraintTop_toBottomOf="@id/cl"
+            app:layout_constraintBottom_toTopOf="@+id/address_view"
+            tools:text="开放时间" />
+
+        <TextView
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/address_view"
+            android:textSize="@dimen/sp_12"
+            android:textColor="@color/color_666"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/hotel_name_view"
+            app:layout_constraintTop_toBottomOf="@id/time_view"
+            tools:text="距离多少多少公里？" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

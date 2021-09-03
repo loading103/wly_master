@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="MissingDefaultResource">
+    <item>
+        green
+        <shape>
+            <gradient
+                android:angle="0"
+                android:startColor="@color/green_09b671"
+                android:centerColor="@color/green_87ce74"
+                android:endColor="@color/green_36cd64"
+                >
+            </gradient>
+            <corners
+                android:topLeftRadius="@dimen/dp_3"
+                android:topRightRadius="@dimen/dp_12"
+                android:bottomLeftRadius="@dimen/dp_3"
+                android:bottomRightRadius="@dimen/dp_12" />
+            <size android:width="@dimen/dp_55" android:height="@dimen/dp_24"/>
+        </shape>
+    </item>
+</layer-list>

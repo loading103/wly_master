@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="module_name">志愿者</string>
+    <string name="volunteer_module_volunteer_list_title">志愿者</string>
+    <string name="volunteer_module_volunteer_apply_title">志愿者申请</string>
+    <string name="volunteer_module_volunteer_team_apply_title">志愿团队申请</string>
+    <string name="volunteer_module_volunteer_team_list_title">志愿者团队</string>
+    <string name="volunteer_module_volunteer_activity_title">志愿招募</string>
+    <string name="volunteer_module_volunteer_rank_title">志愿者排行榜</string>
+    <string name="volunteer_module_volunteer_detail_title">志愿者详情</string>
+    <string name="volunteer_module_volunteer_team_detail_title">志愿者团队详情</string>
+    <string name="volunteer_module_volunteer_team_list_sign_title">志愿签到</string>
+    <string name="volunteer_module_volunteer_service_record_list_title">志愿风采</string>
+    <string name="volunteer_module_volunteer_service_record_detail_title">服务记录详情</string>
+    <string name="volunteer_module_volunteer_brand_title">志愿品牌</string>
+    <string name="volunteer_module_volunteer_brand_detail_title">志愿品牌详情</string>
+    <string name="volunteer_module_volunteer_focus_title">我的关注</string>
+    <string name="volunteer_module_volunteer_team_member_title">团队成员</string>
+    <string name="volunteer_module_volunteer_team_sign_apply_title">申请志愿服务签到</string>
+
+    <string name="volunteer_module_register">志愿者注册</string>
+    <string name="volunteer_module_team_register">志愿团队注册</string>
+    <string name="volunteer_module_week_rank_title">本周公益榜单</string>
+
+    <string name="volunteer_module_label_service_count">服务次数</string>
+    <string name="volunteer_module_label_service_time">服务时长</string>
+    <string name="volunteer_module_label_score">公益积分</string>
+
+    <string name="volunteer_module_label_team_num">团队人数</string>
+    <string name="volunteer_module_label_team_service_time">服务时长(小时）</string>
+    <string name="volunteer_module_label_team_service_count">服务次数</string>
+
+    <string name="volunteer_module_register_title">文化和旅游志愿者注册</string>
+    <string name="volunteer_module_apply_txt">我自愿参加文化和旅游志愿者队伍，自觉践行“奉献、友
+                                            爱、互助、进步”的志愿者精神，帮助他人、提升自我，
+                                            服务社会，传播先进文化，为建设美丽、和谐四川贡献力
+                                            量。</string>
+    <string name="volunteer_module_register_label_name">姓名</string>
+    <string name="volunteer_module_register_label_hint_name">请输入真实姓名</string>
+    <string name="volunteer_module_register_label_sex">性别</string>
+    <string name="volunteer_module_register_label_hint_sex">请选择您的性别</string>
+    <string name="volunteer_module_register_label_national">民族</string>
+    <string name="volunteer_module_register_label_hint_national">请选择您的民族</string>
+    <string name="volunteer_module_register_label_idcard">身份证号</string>
+    <string name="volunteer_module_register_label_hint_idcard">请输入您的身份证号</string>
+    <string name="volunteer_module_register_label_phone">手机号</string>
+    <string name="volunteer_module_register_label_hint_phone">请输入您的手机号</string>
+    <string name="volunteer_module_register_label_code">验证码</string>
+    <string name="volunteer_module_register_label_hint_code">请输入验证码</string>
+    <string name="volunteer_module_register_label_hint_send_code">发送验证码</string>
+    <string name="volunteer_module_register_label_agree_txt">我已阅读并同意</string>
+    <string name="volunteer_module_register_label_agree_protcol">《四川文化和旅游志愿服务协议》</string>
+
+    <string name="volunteer_module_register_label_txt">志愿者注册</string>
+    <string name="volunteer_module_register_label_hint_txt">确保所填信息真实有效，以便您申请成功</string>
+    <string name="volunteer_module_register_label_service_region">服务地区</string>
+    <string name="volunteer_module_register_label_hint_service_region">请选择省/市/县</string>
+    <string name="volunteer_module_register_label_volunteer_region">志愿者归属</string>
+    <string name="volunteer_module_register_label_hint_volunteer_region">所选归属作为您志愿者注册信息的审核单位</string>
+    <string name="volunteer_module_register_label_education">最高学历</string>
+    <string name="volunteer_module_register_label_hint_education">请选择</string>
+    <string name="volunteer_module_register_label_school">毕业院校及专业</string>
+    <string name="volunteer_module_register_label_hint_school">请输入毕业院校及专业</string>
+    <string name="volunteer_module_register_label_job_status">从业状况</string>
+    <string name="volunteer_module_register_label_hint_job_status">请选择</string>
+    <string name="volunteer_module_upload_id_card_photo">上传身份证照片</string>
+    <string name="volunteer_module_upload_id_card_photo_hint">请上传身份证的正反两面照，四角完整，亮度均匀，照片清晰</string>
+    <string name="volunteer_module_register_contact">紧急联系人</string>
+    <string name="volunteer_module_register_contact_name">请输入联系人姓名</string>
+    <string name="volunteer_module_register_contact_phone">请输入联系人电话</string>
+    <string name="volunteer_module_register_skill">个人特长</string>
+    <string name="volunteer_module_register_hint_skill">请选择个人特长</string>
+    <string name="volunteer_module_register_health">健康状态</string>
+    <string name="volunteer_module_register_hint_health">请选择健康状态</string>
+    <string name="volunteer_module_register_language">擅长语言</string>
+    <string name="volunteer_module_register_hint_language">请选择擅长的语言</string>
+    <string name="volunteer_module_register_service_time">服务时间</string>
+    <string name="volunteer_module_register_hint_service_time">请选择可服务时间</string>
+    <string name="volunteer_module_register_service_type">服务意向</string>
+    <string name="volunteer_module_register_hint_service_type">请选择志愿服务意向，可多选</string>
+    <string name="volunteer_module_register_email">电子邮箱</string>
+    <string name="volunteer_module_register_hint_email">请输入个人电子邮箱</string>
+    <string name="volunteer_module_register_qq">QQ</string>
+    <string name="volunteer_module_register_hint_qq">请输入QQ号</string>
+    <string name="volunteer_module_register_address">详细地址</string>
+    <string name="volunteer_module_register_hint_address">请选择地区</string>
+    <string name="volunteer_module_register_hint_detail_address">输入街道门牌号等信息</string>
+
+
+    <string name="volunteer_module_team_register_title">文化和旅游志愿者团队注册</string>
+    <string name="volunteer_module_team_register_label_name">负责人姓名</string>
+    <string name="volunteer_module_team_register_label_sex">负责人性别</string>
+    <string name="volunteer_module_team_register_label_national">负责人民族</string>
+    <string name="volunteer_module_team_register_label_idcard">负责人身份证号</string>
+    <string name="volunteer_module_team_register_label_phone">负责人手机号</string>
+    <string name="volunteer_module_team_register_label_txt">志愿团队注册</string>
+    <string name="volunteer_module_register_label_team_region">志愿者团队归属</string>
+    <string name="volunteer_module_register_label_hint_team_region">所选归属作为您志愿团队注册信息的审核单位</string>
+    <string name="volunteer_module_team_register_label_teamname">团队名称</string>
+    <string name="volunteer_module_team_register_label_hint_teamname">请输入团队名称，不超过50字</string>
+    <string name="volunteer_module_team_register_service_type">服务类型</string>
+    <string name="volunteer_module_team_register_hint_service_type">请选择</string>
+    <string name="volunteer_module_team_register_create_time">团队成立日期</string>
+    <string name="volunteer_module_team_register_company">主管单位名称</string>
+    <string name="volunteer_module_team_register_hint_company">请输入单位名称</string>
+    <string name="volunteer_module_team_register_logo">团队标志</string>
+    <string name="volunteer_module_team_register_address">团队地址</string>
+    <string name="volunteer_module_team_register_hint_address">选择地址</string>
+    <string name="volunteer_module_team_register_contact">团队联系电话</string>
+    <string name="volunteer_module_team_register_hint_contact">请输入团联系电话</string>
+    <string name="volunteer_module_team_register_brand">团队服务品牌</string>
+    <string name="volunteer_module_team_register_hint_brand">请输入服务品牌名称</string>
+    <string name="volunteer_module_team_register_introduce">团队简介</string>
+    <string name="volunteer_module_team_register_hint_introduce">请输入团队简介，200字以内</string>
+    <string name="volunteer_module_str_count_down">%1$d秒后重发</string>
+
+    <string name="volunteer_module_volunteer_center">志愿者中心</string>
+
+    <!--基本资料 -->
+    <string name="volunteer_information_title">基本资料</string>
+    <string name="volunteer_head_portrait">头像</string>
+    <string name="volunteer_register_date">注册日期</string>
+    <string name="volunteer_id">志愿者编号</string>
+    <string name="volunteer_id_card">证件号</string>
+    <string name="volunteer_id_card_photo">身份证照片</string>
+    <string name="volunteer_level">志愿者星级</string>
+
+    <string name="volunteer_update_contact">修改紧急联系人</string>
+    <string name="volunteer_sn_label">志愿者编号</string>
+    <string name="volunteer_declartion">文化暖心 &#160;志愿为你</string>
+    <string name="volunteer_tel">志愿服务咨询热线：</string>
+    <string name="volunteer_notice_label">志愿者须知</string>
+    <string name="volunteer_notice1">
+        1、文化和旅游志愿者电子证是由智游天府平台提供的文化和旅游志愿者身份识别电子产品。
+    </string>
+    <string name="volunteer_notice2">
+        2、志愿者电子证只对智游天府平台文化和旅游志愿者身份认证提供帮助。
+    </string>
+    <string name="volunteer_notice3">
+        3、请妥善保管，使用时请遵守现骨干规定和章程，如有违法违规等行为，智游天府平台不承担法律后果。
+    </string>
+    <string name="volunteer_notice4">
+        4、本志愿者电子证最终解释权归智游天府所有。
+    </string>
+    <string name="volunteer_card_title">志愿者证</string>
+
+
+    <string name="volunteer_services_in_title">志愿服务</string>
+    <string name="volunteer_reg_label">文化和旅游志愿者注册</string>
+    <string name="volunteer_reg_declar">文化暖心，志愿为你，等着你加入！</string>
+    <string name="volunteer_team_reg_label">文化和旅游志愿者团队注册</string>
+    <string name="volunteer_reg_check_status">审核中</string>
+    <string name="volunteer_check_no_suc_label">审核未通过</string>
+    <string name="volunteer_show_apply_label">查看申请</string>
+    <string name="volunteer_cancel_apply_label">撤回申请</string>
+    <string name="volunteer_apply_record">申请记录</string>
+</resources>
